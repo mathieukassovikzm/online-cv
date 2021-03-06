@@ -1,0 +1,89 @@
+/* ------------- STYLE GENERAL ------------- */
+* {
+  font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+}
+input[type="text"],
+button {
+  appearance: inherit;
+  border-style: inherit;
+}
+a {
+  color: inherit;
+  cursor: pointer;
+}
+ul,
+ol {
+  list-style: none;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  margin: 0;
+  border: none;
+}
+button:focus,
+input:focus,
+textarea:focus {
+  outline: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+}
+img {
+  max-height: 100%;
+  height: auto;
+}
+section {
+  padding: 45px 0 80px 0;
+}
+section .heading {
+  text-align: center;
+  padding-bottom: 40px;
+}
+section h2 {
+  text-transform: uppercase;
+}
+
+.bg-light {
+  background: $secondary-light;
+  color: $txt-dark;
+  .divider {
+    background: $primary;
+    box-shadow: 1px 1px #fff;
+  }
+}
+.bg-dark {
+  background: $primary;
+  color: $txt-light;
+  .divider {
+    background: #fff;
+    box-shadow: 1px 1px #2d373d;
+  }
+}
+
+.divider {
+  width: 100px;
+  height: 2px;
+  margin: 0 auto;
+}

@@ -1,0 +1,34 @@
+.btn {
+  font-weight: bold;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-top: 20px;
+  padding: 18px 50px;
+  border-radius: 3px;
+  transition: all 0.2s ease-in 0s;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.bg-dark {
+  .btn {
+    border: 1px solid $light;
+    color: $light;
+    &:hover {
+      background: $light;
+      color: $primary;
+    }
+  }
+}
+
+.bg-light {
+  .btn {
+    border: 1px solid $dark;
+    color: $dark;
+    &:hover {
+      background: $dark;
+      color: $primary;
+    }
+  }
+}
