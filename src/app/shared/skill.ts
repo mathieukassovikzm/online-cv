@@ -4,5 +4,5 @@ export interface Skill {
   id: number;
   name: string;
   type: TypeSkill;
-  power: number
+  power: number;
 }
