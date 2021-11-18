@@ -9,7 +9,7 @@ export class SvgPremiereProComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
 }
