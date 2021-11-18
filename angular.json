@@ -33,9 +33,13 @@
             "styles": [
               "src/app/styles/styles.scss"
             ],
-            "stylePreprocessorOptions": {
+            "stylePreprocessorOptions":{
               "includePaths": [
-                "src/app/styles/"
+                "src/styles/styles.scss",
+                "src/app/styles/0-helpers/",
+                "src/app/styles/1-base/",
+                "src/app/styles/2-pages/",
+                "src/app/styles/3-modules/"
               ]
             },
             "scripts": []

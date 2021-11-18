@@ -29,21 +29,6 @@
       ],
       "@app/*": [
         "./src/app/*"
-      ],
-      "@components/*": [
-        "./src/app/components/*"
-      ],
-      "@modules/*": [
-        "./src/app/modules*"
-      ],
-      "@pages/*": [
-        "./src/app/pages/*"
-      ],
-      "@services/*": [
-        "./src/app/services/*"
-      ],
-      "@shared/*": [
-        "./src/app/shared/*"
       ]
     },
   },
