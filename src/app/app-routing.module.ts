@@ -4,7 +4,10 @@ import { HomeComponent } from '@pages/home/home.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
+  {
+    path: 'home',
+    loadChildren: () => import('@app/pages/page-home/page-home.module').then(m => m.PageHomeModule),
+  },
 ];
 
 @NgModule({

@@ -3,11 +3,11 @@ import { TypeSkillEnum } from '@app/models/type-skill-enum';
 import { SkillService } from '@app/services/skill.service';
 
 @Component({
-  selector: 'app-skills',
-  templateUrl: './skills.component.html',
-  styleUrls: ['./skills.component.scss']
+  selector: 'app-page-skills',
+  templateUrl: './page-skills.component.html',
+  styleUrls: ['./page-skills.component.scss']
 })
-export class SkillsComponent implements OnInit {
+export class PageSkillsComponent implements OnInit {
 
   typesSkills: TypeSkillEnum[] = [];
 
