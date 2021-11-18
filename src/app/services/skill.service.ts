@@ -3,9 +3,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 import { MessageService } from './message.service';
-import { Skill } from '@shared/skill';
-import { TypeSkill } from '@shared/type-skill';
-import { SKILLS } from '@shared/mock-skills';
+import { SKILLS } from '@app/models/mock-skills';
+import { TypeSkill } from '@app/models/type-skill';
+import { ISkillModel } from '@app/models/skill';
 
 @Injectable({
   providedIn: 'root'
@@ -22,30 +22,30 @@ export class SkillService {
     private http: HttpClient,
     private messageService: MessageService) { }
 
-  getTypesSkills(): TypeSkill[] {
+  // getTypesSkills(): TypeSkill[] {
 
-  }
+  // }
 
-  getSkillsFromMock(): Observable<Skill[]> {
+  getSkillsFromMock(): Observable<ISkillModel[]> {
     const ListSkills = of(SKILLS);
     this.messageService.add('SkillService: fetched SKILLS');
     return ListSkills;
   }
 
   /** GET SKILLS from the server */
-  getSkillsFromServeur(): Observable<Skill[]> {
-    return this.http.get<Skill[]>(this.SkillsUrl)
+  getSkillsFromServeur(): Observable<ISkillModel[]> {
+    return this.http.get<ISkillModel[]>(this.SkillsUrl)
       .pipe(
         tap(_ => this.log('fetched SKILLS')),
-        catchError(this.handleError<Skill[]>('getSKILLS', []))
+        catchError(this.handleError<ISkillModel[]>('getSKILLS', []))
       );
   }
 
-  getSkill(id: number): Observable<Skill> {
+  getSkill(id: number): Observable<ISkillModel> {
     const url = `${this.SkillsUrl}/${id}`;
-    return this.http.get<Skill>(url).pipe(
+    return this.http.get<ISkillModel>(url).pipe(
       tap(_ => this.log(`fetched Skill id=${id}`)),
-      catchError(this.handleError<Skill>(`getSkill id=${id}`))
+      catchError(this.handleError<ISkillModel>(`getSkill id=${id}`))
     );
   }
 

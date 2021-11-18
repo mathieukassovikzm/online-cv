@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
+import { ISkillModel } from '@app/models/skill';
+import { TypeSkill } from '@app/models/type-skill';
 import { InMemoryDbService } from 'angular-in-memory-web-api';
-import { TypeSkill } from '@shared/type-skill';
-import { Skill } from '@shared/skill';
 
 @Injectable({
   providedIn: 'root',
@@ -35,7 +35,7 @@ export class InMemoryDataService implements InMemoryDbService {
   // the method below returns the initial number (11).
   // if the skills array is not empty, the method below returns the highest
   // skill id + 1.
-  genId(skills: Skill[]): number {
+  genId(skills: ISkillModel[]): number {
     return skills.length > 0 ? Math.max(...skills.map(skill => skill.id)) + 1 : 11;
   }
 }

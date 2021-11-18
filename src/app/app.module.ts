@@ -11,7 +11,7 @@ import { AboutComponent } from '@components/about/about.component';
 import { SkillsComponent } from '@components/skills/skills.component';
 import { SkillComponent } from '@components/skills/skill/skill.component';
 
-import { AppRoutingModule } from './modules/app-routing/app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 import { InMemoryDataService } from '@services/in-memory-data.service';
 
 @NgModule({

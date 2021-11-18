@@ -1,6 +1,6 @@
 import { TypeSkill } from './type-skill';
 
-export interface Skill {
+export interface ISkillModel {
   id: number;
   name: string;
   type: TypeSkill;

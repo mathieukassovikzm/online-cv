@@ -1,7 +1,7 @@
 import { TypeSkill } from './type-skill';
-import { Skill } from './skill';
+import { ISkillModel } from './skill';
 
-export const SKILLS: Skill[] = [
+export const SKILLS: ISkillModel[] = [
   { id: 11, name: 'Angular', type: TypeSkill.FrontEnd, power: 50 },
   { id: 12, name: 'VueJs', type: TypeSkill.FrontEnd, power: 75 },
   { id: 13, name: 'HTML5', type: TypeSkill.FrontEnd, power: 50 },

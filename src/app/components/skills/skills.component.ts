@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { TypeSkill } from '@app/models/type-skill';
 import { SkillService } from '@services/skill.service';
-import { Skill } from '@shared/skill';
-import { TypeSkill } from '@shared/type-skill';
 
 @Component({
   selector: 'app-skills',
@@ -19,7 +18,7 @@ export class SkillsComponent implements OnInit {
   }
 
   getTypesSkills(): void {
-    this.skillService.getTypesSkills()
-      .subscribe(typesSkills => this.typesSkills = typesSkills);
+    // this.skillService.getTypesSkills()
+    //   .subscribe(typesSkills => this.typesSkills = typesSkills);
   }
 }
