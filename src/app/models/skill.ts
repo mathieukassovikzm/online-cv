@@ -1,8 +1,8 @@
-import { TypeSkill } from './type-skill';
+import { TypeSkillEnum } from './type-skill-enum';
 
 export interface ISkillModel {
   id: number;
   name: string;
-  type: TypeSkill;
+  type: TypeSkillEnum;
   power: number;
 }

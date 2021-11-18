@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { TypeSkill } from '@app/models/type-skill';
-import { SkillService } from '@services/skill.service';
+import { TypeSkillEnum } from '@app/models/type-skill-enum';
+import { SkillService } from '@app/services/skill.service';
 
 @Component({
   selector: 'app-skills',
@@ -9,7 +9,7 @@ import { SkillService } from '@services/skill.service';
 })
 export class SkillsComponent implements OnInit {
 
-  typesSkills: TypeSkill[] = [];
+  typesSkills: TypeSkillEnum[] = [];
 
   constructor(private skillService: SkillService) { }
 
