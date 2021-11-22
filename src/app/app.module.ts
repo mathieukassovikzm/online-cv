@@ -20,8 +20,8 @@ import { reducers } from '@app/store/app.state';
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    StoreModule.forRoot({}),
-    StoreModule.forFeature('appState', reducers),
+    // StoreModule.forRoot({}),
+    // StoreModule.forFeature('appState', reducers),
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
     // Remove it when a real server is ready to receive requests.
@@ -30,7 +30,7 @@ import { reducers } from '@app/store/app.state';
     ),
   ],
   providers: [
-    Store
+    // Store
   ],
   bootstrap: [AppComponent]
 })
