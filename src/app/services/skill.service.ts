@@ -4,7 +4,7 @@ import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 import { MessageService } from './message.service';
 import { SKILLS } from '@app/models/mock-skills';
-import { TypeSkillEnum } from '@app/models/type-skill-enum';
+import { TypeSkillEnum } from '@app/models/type-skill.enum';
 import { ISkillModel } from '@app/models/skill';
 
 @Injectable({

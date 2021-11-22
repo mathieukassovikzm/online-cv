@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TypeSkillEnum } from '@app/models/type-skill-enum';
+import { TypeSkillEnum } from '@app/models/type-skill.enum';
 import { SkillService } from '@app/services/skill.service';
 
 @Component({

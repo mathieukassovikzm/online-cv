@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ISkillModel } from '@app/models/skill';
-import { TypeSkillEnum } from '@app/models/type-skill-enum';
+import { TypeSkillEnum } from '@app/models/type-skill.enum';
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 
 @Injectable({

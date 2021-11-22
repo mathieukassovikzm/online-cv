@@ -1,4 +1,4 @@
-import { TypeSkillEnum } from './type-skill-enum';
+import { TypeSkillEnum } from './type-skill.enum';
 import { ISkillModel } from './skill';
 
 export const SKILLS: ISkillModel[] = [

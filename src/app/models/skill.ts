@@ -1,4 +1,4 @@
-import { TypeSkillEnum } from './type-skill-enum';
+import { TypeSkillEnum } from './type-skill.enum';
 
 export interface ISkillModel {
   id: number;
