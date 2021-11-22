@@ -3,13 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { Store, StoreModule } from '@ngrx/store';
+// import { Store, StoreModule } from '@ngrx/store';
 
 import { AppComponent } from './app.component';
 
 import { AppRoutingModule } from './app-routing.module';
-import { InMemoryDataService } from '@app/services/in-memory-data.service';
-import { reducers } from '@app/store/app.state';
+import { InMemoryDataService } from './services/in-memory-data.service';
+// import { reducers } from '@app/store/app.state';
 
 @NgModule({
   declarations: [

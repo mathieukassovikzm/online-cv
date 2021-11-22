@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { TypeSkillEnum } from '@app/models/type-skill.enum';
-import { SkillService } from '@app/services/skill.service';
+import { TypeSkillEnum } from 'src/app/models/type-skill.enum';
+import { SkillService } from 'src/app/services/skill.service';
 
 @Component({
   selector: 'app-page-skills',
