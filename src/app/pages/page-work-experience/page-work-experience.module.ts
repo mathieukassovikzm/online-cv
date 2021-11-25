@@ -6,6 +6,7 @@ import { PageWorkExperienceComponent } from './page-work-experience.component';
   imports: [
     CommonModule
   ],
+  exports: [PageWorkExperienceComponent],
   declarations: [PageWorkExperienceComponent]
 })
 export class PageWorkExperienceModule { }

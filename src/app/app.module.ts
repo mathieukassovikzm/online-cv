@@ -3,13 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-// import { Store, StoreModule } from '@ngrx/store';
+import { Store, StoreModule } from '@ngrx/store';
 
 import { AppComponent } from './app.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { InMemoryDataService } from './services/in-memory-data.service';
-// import { reducers } from '@app/store/app.state';
+import { reducers } from './store/app.state';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 @NgModule({
   declarations: [
@@ -20,8 +21,9 @@ import { InMemoryDataService } from './services/in-memory-data.service';
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    // StoreModule.forRoot({}),
-    // StoreModule.forFeature('appState', reducers),
+    StoreModule.forRoot({}),
+    StoreModule.forFeature('appState', reducers),
+    StoreDevtoolsModule.instrument(),
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
     // Remove it when a real server is ready to receive requests.
@@ -30,7 +32,7 @@ import { InMemoryDataService } from './services/in-memory-data.service';
     ),
   ],
   providers: [
-    // Store
+    Store
   ],
   bootstrap: [AppComponent]
 })

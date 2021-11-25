@@ -6,6 +6,7 @@ import { PageArchievementsComponent } from './page-archievements.component';
   imports: [
     CommonModule
   ],
+  exports: [PageArchievementsComponent],
   declarations: [PageArchievementsComponent]
 })
 export class PageArchievementsModule { }

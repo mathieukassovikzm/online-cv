@@ -6,6 +6,7 @@ import { PageExtractComponent } from './page-extract.component';
   imports: [
     CommonModule
   ],
+  exports: [PageExtractComponent],
   declarations: [PageExtractComponent]
 })
 export class PageExtractModule { }

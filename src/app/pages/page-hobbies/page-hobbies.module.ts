@@ -6,6 +6,7 @@ import { PageHobbiesComponent } from './page-hobbies.component';
   imports: [
     CommonModule
   ],
+  exports: [PageHobbiesComponent],
   declarations: [PageHobbiesComponent]
 })
 export class PageHobbiesModule { }

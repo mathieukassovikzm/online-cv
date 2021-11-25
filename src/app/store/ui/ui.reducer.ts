@@ -1,6 +1,6 @@
-import { LanguagesEnum } from '@app/models/laguages.enum';
 import { createReducer, on } from '@ngrx/store';
-import { ActUiSetMenuOpened } from './ui.actions';
+import { LanguagesEnum } from 'src/app/models/laguages.enum';
+import { ActUiSetLanguage } from './ui.actions';
 
 export interface UiState {
   s_language: LanguagesEnum;
@@ -13,5 +13,5 @@ const initialUiState: UiState = {
 
 export const uiReducer = createReducer(
   initialUiState,
-  on(ActUiSetMenuOpened, (state, { language }) => ({ ...state, s_language: language }))
+  on(ActUiSetLanguage, (state, { language }) => ({ ...state, s_language: language }))
 );

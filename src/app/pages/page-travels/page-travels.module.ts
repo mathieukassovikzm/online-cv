@@ -6,6 +6,7 @@ import { PageTravelsComponent } from './page-travels.component';
   imports: [
     CommonModule
   ],
+  exports: [PageTravelsComponent],
   declarations: [PageTravelsComponent]
 })
 export class PageTravelsModule { }

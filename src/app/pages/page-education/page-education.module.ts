@@ -6,6 +6,7 @@ import { PageEducationComponent } from './page-education.component';
   imports: [
     CommonModule
   ],
+  exports: [PageEducationComponent],
   declarations: [PageEducationComponent]
 })
 export class PageEducationModule { }
