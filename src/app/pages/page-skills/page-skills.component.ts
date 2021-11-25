@@ -18,7 +18,6 @@ export class PageSkillsComponent implements OnInit {
   }
 
   getTypesSkills(): void {
-    // this.skillService.getTypesSkills()
-    //   .subscribe(typesSkills => this.typesSkills = typesSkills);
+    this.skillService.getTypesSkills();
   }
 }

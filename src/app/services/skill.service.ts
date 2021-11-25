@@ -5,6 +5,7 @@ import { catchError, map, tap } from 'rxjs/operators';
 import { MessageService } from './message.service';
 import { ISkillModel } from '../models/skill';
 import { SKILLS } from '../models/mock-skills';
+import { TypeSkillEnum } from '../models/type-skill.enum';
 
 @Injectable({
   providedIn: 'root'
@@ -21,9 +22,12 @@ export class SkillService {
     private http: HttpClient,
     private messageService: MessageService) { }
 
-  // getTypesSkills(): TypeSkill[] {
-
-  // }
+  getTypesSkills(): any {
+    const typeSkills = Object.keys(TypeSkillEnum).filter((item) => {
+        return isNaN(Number(item));
+    });
+    console.log(typeSkills);
+  }
 
   getSkillsFromMock(): Observable<ISkillModel[]> {
     const ListSkills = of(SKILLS);
