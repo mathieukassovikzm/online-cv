@@ -1,18 +1,15 @@
-import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { catchError, map, tap } from 'rxjs/operators';
-import { MessageService } from './message.service';
+import { catchError, tap } from 'rxjs/operators';
 import { ISkillModel } from '../models/skill';
-import { SKILLS } from '../models/mock-skills';
 import { TypeSkillEnum } from '../models/type-skill.enum';
+import { MessageService } from './message.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SkillService {
-
-  private SkillsUrl = 'api/skills';  // URL to web api
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -24,29 +21,23 @@ export class SkillService {
 
   getTypesSkills(): any {
     const typeSkills = Object.keys(TypeSkillEnum).filter((item) => {
-        return isNaN(Number(item));
+      return isNaN(Number(item));
     });
     console.log(typeSkills);
   }
 
-  getSkillsFromMock(): Observable<ISkillModel[]> {
-    const ListSkills = of(SKILLS);
-    this.messageService.add('SkillService: fetched SKILLS');
-    return ListSkills;
-  }
-
   /** GET SKILLS from the server */
-  getSkillsFromServeur(): Observable<ISkillModel[]> {
-    return this.http.get<ISkillModel[]>(this.SkillsUrl)
+  getLstSkillsFromServeur(): Observable<ISkillModel[]> {
+    console.log('getLstSkillsFromServeur')
+    return this.http.get<ISkillModel[]>('api/skills')
       .pipe(
         tap(_ => this.log('fetched SKILLS')),
         catchError(this.handleError<ISkillModel[]>('getSKILLS', []))
       );
   }
 
-  getSkill(id: number): Observable<ISkillModel> {
-    const url = `${this.SkillsUrl}/${id}`;
-    return this.http.get<ISkillModel>(url).pipe(
+  getSkillFromServeur(id: number): Observable<ISkillModel> {
+    return this.http.get<ISkillModel>(`api/skill/${id}`).pipe(
       tap(_ => this.log(`fetched Skill id=${id}`)),
       catchError(this.handleError<ISkillModel>(`getSkill id=${id}`))
     );

@@ -11,6 +11,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { InMemoryDataService } from './services/in-memory-data.service';
 import { reducers } from './store/app.state';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { EffectsModule } from '@ngrx/effects';
+import { SkillsEffects } from './store/skills/skills.effects';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,10 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     HttpClientModule,
     StoreModule.forRoot({}),
     StoreModule.forFeature('appState', reducers),
+    EffectsModule.forRoot(),
+    EffectsModule.forFeature([
+      SkillsEffects
+    ]),
     StoreDevtoolsModule.instrument(),
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.

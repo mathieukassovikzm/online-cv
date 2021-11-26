@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable, Subscription } from 'rxjs';
 import { LanguagesEnum } from './models/laguages.enum';
+import { ActSkillsGetLstSkills } from './store/skills/skills.actions';
 import { getUiLanguage } from './store/ui/ui.selectors';
 
 @Component({
@@ -23,6 +24,9 @@ export class AppComponent implements OnInit, OnDestroy {
   ngOnInit() {
     const subLang = this.lang$.subscribe(res => this.lang = res);
     this.subscription.add(subLang);
+
+    this.store.dispatch(ActSkillsGetLstSkills());
+
   }
 
   ngOnDestroy() {
