@@ -19,11 +19,10 @@ export class SkillService {
     private http: HttpClient,
     private messageService: MessageService) { }
 
-  getTypesSkills(): any {
-    const typeSkills = Object.keys(TypeSkillEnum).filter((item) => {
+  getTypesSkills(): Array<Object> {
+    return Object.keys(TypeSkillEnum).filter((item) => {
       return isNaN(Number(item));
     });
-    console.log(typeSkills);
   }
 
   /** GET SKILLS from the server */

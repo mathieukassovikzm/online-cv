@@ -1,11 +1,32 @@
 <div class="logoAndBar">
+
   <div class="logo">
-    <img src="./assets/images/skills-webdesign-html.png" alt="webdesign HTML">
+    <app-svg-angular *ngIf="skill.name === 'Angular'"></app-svg-angular>
+    <app-svg-vuejs *ngIf="skill.name === 'VueJs'"></app-svg-vuejs>
+    <app-svg-html *ngIf="skill.name === 'HTML5'"></app-svg-html>
+    <app-svg-css *ngIf="skill.name === 'CSS3'"></app-svg-css>
+    <app-svg-typescript *ngIf="skill.name === 'TypeScript'"></app-svg-typescript>
+    <app-svg-javascript *ngIf="skill.name === 'Javascript'"></app-svg-javascript>
+  
+    <app-svg-c-sharp *ngIf="skill.name === 'C#'"></app-svg-c-sharp>
+    <app-svg-c-sharp *ngIf="skill.name === 'Java'"></app-svg-c-sharp>
+    <app-svg-sql-oracle *ngIf="skill.name === 'Oracle'"></app-svg-sql-oracle>
+
+    <app-svg-premiere-pro *ngIf="skill.name === 'Premiere'"></app-svg-premiere-pro>
+    <app-svg-after-effects *ngIf="skill.name === 'After Effects'"></app-svg-after-effects>
+    <app-svg-illustrator *ngIf="skill.name === 'Illustrator'"></app-svg-illustrator>
+    <app-svg-lightroom *ngIf="skill.name === 'Lightroom'"></app-svg-lightroom>
+    <app-svg-photoshop *ngIf="skill.name === 'Photoshop'"></app-svg-photoshop>
+
+    <app-svg-angular *ngIf="skill.name === 'French'"></app-svg-angular>
+    <app-svg-angular *ngIf="skill.name === 'English'"></app-svg-angular>
+    <app-svg-angular *ngIf="skill.name === 'Spanish'"></app-svg-angular>
+
   </div>
   <div class="progress">
     <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"
-      style="width:85%">
-      <h5>HTML 75%</h5>
+      [style]="getBarWidth()">
+      <h5>{{skill.name}} {{skill.power}}%</h5>
     </div>
   </div>
 </div>

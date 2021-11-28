@@ -1,19 +1,40 @@
 <section id="skills" class="bg-light">
   <div class="divider"></div>
   <div class="heading">
-    <h2>Skills</h2>
+    <h2 class="txt-fr">Skills</h2>
+    <h2 class="txt-en">Skills</h2>
+    <h2 class="txt-es">Skills</h2>
     <div class="container">
+      <div class="ctn-skills-front-end" *ngIf="skillsFrontEnd$ | async as skillsFrontEnd">
+        <h3>Front-End</h3>
+        <div class="" *ngFor="let item of skillsFrontEnd">
+          <app-skill [skill]="item"></app-skill>
+        </div>
+      </div>
 
+      <div class="ctn-skills-front-end" *ngIf="skillsBackEnd$ | async as skillsBackEnd">
+        <h3>Back-End</h3>
+        <div class="" *ngFor="let item of skillsBackEnd">
+          <app-skill [skill]="item"></app-skill>
+        </div>
+      </div>
 
-      <div class="">
-        <div class="">
-          <h3>Web Front-End</h3>
+      <div class="ctn-skills-front-end" *ngIf="skillsDevOps$ | async as skillsDevOps">
+        <h3>DevOps</h3>
+        <div class="" *ngFor="let item of skillsDevOps">
+          <app-skill [skill]="item"></app-skill>
+        </div>
+      </div>
+
+      <div class="ctn-skills-front-end" *ngIf="skillsAdobe$ | async as skillsAdobe">
+        <h3>Adobe</h3>
+        <div class="" *ngFor="let item of skillsAdobe">
+          <app-skill [skill]="item"></app-skill>
         </div>
       </div>
     </div>
   </div>
 
 
-  <app-skill></app-skill>
 
 </section>

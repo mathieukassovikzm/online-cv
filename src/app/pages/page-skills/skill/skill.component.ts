@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ISkillModel } from 'src/app/models/skill';
 
 @Component({
   selector: 'app-skill',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SkillComponent implements OnInit {
 
+  @Input() skill = <ISkillModel>{};
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  getBarWidth(): string {
+    return `width:${this.skill.power}%`;
+  }
 }
