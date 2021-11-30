@@ -3,5 +3,8 @@ export enum TypeSkillEnum {
   BackEnd,
   Adobe,
   Langages,
-  DevOps
+  DevOps,
+  Versionning,
+  Bdd,
+  Tools
 }

@@ -19,9 +19,23 @@
         </div>
       </div>
 
-      <div class="ctn-skills-front-end" *ngIf="skillsDevOps$ | async as skillsDevOps">
-        <h3>DevOps</h3>
-        <div class="" *ngFor="let item of skillsDevOps">
+      <div class="ctn-skills-front-end" *ngIf="skillsBdd$ | async as skillsBdd">
+        <h3>Base de données</h3>
+        <div class="" *ngFor="let item of skillsBdd">
+          <app-skill [skill]="item"></app-skill>
+        </div>
+      </div>
+
+      <div class="ctn-skills-front-end" *ngIf="skillsVersionning$ | async as skillsVersionning">
+        <h3>Versionning</h3>
+        <div class="" *ngFor="let item of skillsVersionning">
+          <app-skill [skill]="item"></app-skill>
+        </div>
+      </div>
+
+      <div class="ctn-skills-front-end" *ngIf="skillsTools$ | async as skillsTools">
+        <h3>Tools</h3>
+        <div class="" *ngFor="let item of skillsTools">
           <app-skill [skill]="item"></app-skill>
         </div>
       </div>
@@ -29,6 +43,13 @@
       <div class="ctn-skills-front-end" *ngIf="skillsAdobe$ | async as skillsAdobe">
         <h3>Adobe</h3>
         <div class="" *ngFor="let item of skillsAdobe">
+          <app-skill [skill]="item"></app-skill>
+        </div>
+      </div>
+
+      <div class="ctn-skills-front-end" *ngIf="skillsLangages$ | async as skillsLangages">
+        <h3>Languages</h3>
+        <div class="" *ngFor="let item of skillsLangages">
           <app-skill [skill]="item"></app-skill>
         </div>
       </div>

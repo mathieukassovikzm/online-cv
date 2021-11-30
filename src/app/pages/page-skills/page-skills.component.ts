@@ -13,16 +13,20 @@ import { getLstSkillsByType } from 'src/app/store/skills/skills.selectors';
 })
 export class PageSkillsComponent implements OnInit {
 
-  public skillsBackEnd$ = new Observable<ISkillModel[]>();
   public skillsFrontEnd$ = new Observable<ISkillModel[]>();
-  public skillsDevOps$ = new Observable<ISkillModel[]>();
+  public skillsBackEnd$ = new Observable<ISkillModel[]>();
+  public skillsBdd$ = new Observable<ISkillModel[]>();
+  public skillsVersionning$ = new Observable<ISkillModel[]>();
+  public skillsTools$ = new Observable<ISkillModel[]>();
   public skillsAdobe$ = new Observable<ISkillModel[]>();
   public skillsLangages$ = new Observable<ISkillModel[]>();
 
   constructor(private store: Store) {
-    this.skillsBackEnd$ = store.select<ISkillModel[]>(getLstSkillsByType(TypeSkillEnum.BackEnd));
     this.skillsFrontEnd$ = store.select<ISkillModel[]>(getLstSkillsByType(TypeSkillEnum.FrontEnd));
-    this.skillsDevOps$ = store.select<ISkillModel[]>(getLstSkillsByType(TypeSkillEnum.DevOps));
+    this.skillsBackEnd$ = store.select<ISkillModel[]>(getLstSkillsByType(TypeSkillEnum.BackEnd));
+    this.skillsBdd$ = store.select<ISkillModel[]>(getLstSkillsByType(TypeSkillEnum.Bdd));
+    this.skillsVersionning$ = store.select<ISkillModel[]>(getLstSkillsByType(TypeSkillEnum.Versionning));
+    this.skillsTools$ = store.select<ISkillModel[]>(getLstSkillsByType(TypeSkillEnum.Tools));
     this.skillsAdobe$ = store.select<ISkillModel[]>(getLstSkillsByType(TypeSkillEnum.Adobe));
     this.skillsLangages$ = store.select<ISkillModel[]>(getLstSkillsByType(TypeSkillEnum.Langages));
   }

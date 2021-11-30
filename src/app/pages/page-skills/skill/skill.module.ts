@@ -17,11 +17,14 @@ import { SvgAfterEffectsComponent } from 'src/app/shared/svgs/adobe/svg-after-ef
 import { SvgIllustratorModule } from 'src/app/shared/svgs/adobe/svg-illustrator/svg-illustrator.module';
 import { SvgLightroomModule } from 'src/app/shared/svgs/adobe/svg-lightroom/svg-lightroom.module';
 import { SvgPhotoshopModule } from 'src/app/shared/svgs/adobe/svg-photoshop/svg-photoshop.module';
+import { SvgDiviModule } from 'src/app/shared/svgs/dev-front/svg-divi/svg-divi.module';
+import { SvgWordpressModule } from 'src/app/shared/svgs/dev-front/svg-wordpress/svg-wordpress.module';
+import { SvgGitModule } from 'src/app/shared/svgs/dev-ops/svg-git/svg-git.module';
+import { SvgSassModule } from 'src/app/shared/svgs/dev-front/svg-sass/svg-sass.module';
 
 @NgModule({
   imports: [
     CommonModule,
-    SvgAfterEffectsModule,
 
     SvgAngularModule,
     SvgVuejsModule,
@@ -29,11 +32,19 @@ import { SvgPhotoshopModule } from 'src/app/shared/svgs/adobe/svg-photoshop/svg-
     SvgCompassModule,
     SvgHtmlModule,
     SvgCssModule,
+    SvgSassModule,
     SvgTypescriptModule,
     SvgJavascriptModule,
+    SvgDiviModule,
+    SvgWordpressModule,
 
     SvgCSharpModule,
+
+    SvgCSharpModule,
+
     SvgSqlOracleModule,
+
+    SvgGitModule,
 
     SvgPremiereProModule,
     SvgAfterEffectsModule,
