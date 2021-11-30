@@ -11,7 +11,7 @@ import { SvgCssModule } from 'src/app/shared/svgs/dev-front/svg-css/svg-css.modu
 import { SvgTypescriptModule } from 'src/app/shared/svgs/dev-front/svg-typescript/svg-typescript.module';
 import { SvgJavascriptModule } from 'src/app/shared/svgs/dev-front/svg-javascript/svg-javascript.module';
 import { SvgCSharpModule } from 'src/app/shared/svgs/dev-back/svg-c-sharp/svg-c-sharp.module';
-import { SvgSqlOracleModule } from 'src/app/shared/svgs/dev-back/svg-sql-oracle/svg-sql-oracle.module';
+import { SvgSqlOracleModule } from 'src/app/shared/svgs/dev-bdd/svg-sql-oracle/svg-sql-oracle.module';
 import { SvgPremiereProModule } from 'src/app/shared/svgs/adobe/svg-premiere-pro/svg-premiere-pro.module';
 import { SvgAfterEffectsComponent } from 'src/app/shared/svgs/adobe/svg-after-effects/svg-after-effects.component';
 import { SvgIllustratorModule } from 'src/app/shared/svgs/adobe/svg-illustrator/svg-illustrator.module';
@@ -21,6 +21,17 @@ import { SvgDiviModule } from 'src/app/shared/svgs/dev-front/svg-divi/svg-divi.m
 import { SvgWordpressModule } from 'src/app/shared/svgs/dev-front/svg-wordpress/svg-wordpress.module';
 import { SvgGitModule } from 'src/app/shared/svgs/dev-ops/svg-git/svg-git.module';
 import { SvgSassModule } from 'src/app/shared/svgs/dev-front/svg-sass/svg-sass.module';
+import { SvgCPlusPlusModule } from 'src/app/shared/svgs/dev-back/svg-c-plus-plus/svg-c-plus-plus.module';
+import { SvgJavaModule } from 'src/app/shared/svgs/dev-back/svg-java/svg-java.module';
+import { SvgSourcetreeModule } from 'src/app/shared/svgs/tool/svg-sourcetree/svg-sourcetree.module';
+import { SvgVisualStudioCodeModule } from 'src/app/shared/svgs/tool/svg-visual-studio-code/svg-visual-studio-code.module';
+import { SvgVisualStudioModule } from 'src/app/shared/svgs/tool/svg-visual-studio/svg-visual-studio.module';
+import { SvgAtomModule } from 'src/app/shared/svgs/tool/svg-atom/svg-atom.module';
+import { SvgGitkrakenModule } from 'src/app/shared/svgs/tool/svg-gitkraken/svg-gitkraken.module';
+import { SvgMysqlModule } from 'src/app/shared/svgs/dev-bdd/svg-mysql/svg-mysql.module';
+import { SvgFrModule } from 'src/app/shared/svgs/language/svg-fr/svg-fr.module';
+import { SvgEnModule } from 'src/app/shared/svgs/language/svg-en/svg-en.module';
+import { SvgEsModule } from 'src/app/shared/svgs/language/svg-es/svg-es.module';
 
 @NgModule({
   imports: [
@@ -39,12 +50,19 @@ import { SvgSassModule } from 'src/app/shared/svgs/dev-front/svg-sass/svg-sass.m
     SvgWordpressModule,
 
     SvgCSharpModule,
-
-    SvgCSharpModule,
+    SvgCPlusPlusModule,
+    SvgJavaModule,
 
     SvgSqlOracleModule,
+    SvgMysqlModule,
 
     SvgGitModule,
+
+    SvgVisualStudioModule,
+    SvgVisualStudioCodeModule,
+    SvgGitkrakenModule,
+    SvgAtomModule,
+    SvgSourcetreeModule,
 
     SvgPremiereProModule,
     SvgAfterEffectsModule,
@@ -52,6 +70,9 @@ import { SvgSassModule } from 'src/app/shared/svgs/dev-front/svg-sass/svg-sass.m
     SvgLightroomModule,
     SvgPhotoshopModule,
 
+    SvgFrModule,
+    SvgEnModule,
+    SvgEsModule
   ],
   exports: [SkillComponent],
   declarations: [SkillComponent]
