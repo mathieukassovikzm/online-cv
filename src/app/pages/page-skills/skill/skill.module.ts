@@ -19,7 +19,7 @@ import { SvgLightroomModule } from 'src/app/shared/svgs/adobe/svg-lightroom/svg-
 import { SvgPhotoshopModule } from 'src/app/shared/svgs/adobe/svg-photoshop/svg-photoshop.module';
 import { SvgDiviModule } from 'src/app/shared/svgs/dev-front/svg-divi/svg-divi.module';
 import { SvgWordpressModule } from 'src/app/shared/svgs/dev-front/svg-wordpress/svg-wordpress.module';
-import { SvgGitModule } from 'src/app/shared/svgs/dev-ops/svg-git/svg-git.module';
+import { SvgGitModule } from 'src/app/shared/svgs/versionning/svg-git/svg-git.module';
 import { SvgSassModule } from 'src/app/shared/svgs/dev-front/svg-sass/svg-sass.module';
 import { SvgCPlusPlusModule } from 'src/app/shared/svgs/dev-back/svg-c-plus-plus/svg-c-plus-plus.module';
 import { SvgJavaModule } from 'src/app/shared/svgs/dev-back/svg-java/svg-java.module';
@@ -32,6 +32,7 @@ import { SvgMysqlModule } from 'src/app/shared/svgs/dev-bdd/svg-mysql/svg-mysql.
 import { SvgFrModule } from 'src/app/shared/svgs/language/svg-fr/svg-fr.module';
 import { SvgEnModule } from 'src/app/shared/svgs/language/svg-en/svg-en.module';
 import { SvgEsModule } from 'src/app/shared/svgs/language/svg-es/svg-es.module';
+import { SvgSvnModule } from 'src/app/shared/svgs/versionning/svg-svn/svg-svn.module';
 
 @NgModule({
   imports: [
@@ -57,6 +58,7 @@ import { SvgEsModule } from 'src/app/shared/svgs/language/svg-es/svg-es.module';
     SvgMysqlModule,
 
     SvgGitModule,
+    SvgSvnModule,
 
     SvgVisualStudioModule,
     SvgVisualStudioCodeModule,
