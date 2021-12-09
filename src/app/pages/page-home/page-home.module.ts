@@ -7,6 +7,7 @@ import { PageHomeRoutingModule } from './page-home-routing.module';
 import { NavigationModule } from 'src/app/shared/components/navigation/navigation.module';
 import { PageExtractModule } from '../page-extract/page-extract.module';
 import { PageArchievementsModule } from '../page-archievements/page-archievements.module';
+import { PageEducationModule } from '../page-education/page-education.module';
 
 @NgModule({
   imports: [
@@ -14,6 +15,7 @@ import { PageArchievementsModule } from '../page-archievements/page-archievement
     NavigationModule,
     PageHomeRoutingModule,
     PageAboutModule,
+    PageEducationModule,
     PageSkillsModule,
     PageExtractModule,
     PageArchievementsModule
