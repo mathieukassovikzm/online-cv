@@ -1,34 +1,19 @@
 @import "helpers-dir";
+:host {
+  .navbar {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
 
-/*------------- NAVBAR -------------*/
-.navbar {
-  font-weight: bold;
-  text-transform: uppercase;
-  font-size: 15px;
-  letter-spacing: 4px;
-  .navbar-nav {
-    display: inline-block;
-    float: none;
-    vertical-align: top;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 15px;
+    letter-spacing: 4px;
+
+    .navbar-nav {
+      display: inline-block;
+      display: flex;
+      flex-wrap: nowrap;
+    }
   }
-}
-#myNavbar {
-  width: 90%;
-  margin: 0px auto;
-  text-align: center;
-}
-.navbar li a {
-  color: #2d373d !important;
-  text-align: center;
-}
-.navbar li a:hover,
-.nav li.active a {
-  color: #fdda00 !important;
-  background-color: #fff !important;
-}
-.navbar-default .navbar-toggle {
-  border-style: none;
-}
-.icon-bar {
-  background-color: #fff;
 }

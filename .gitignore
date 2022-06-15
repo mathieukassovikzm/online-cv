@@ -3,7 +3,7 @@ package-lock.json
 
 # compiled output
 /dist
-/tmp
+/tmpw
 /out-tsc
 # Only exists if Bazel was run
 /bazel-out
