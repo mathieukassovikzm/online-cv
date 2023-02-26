@@ -1,30 +1,42 @@
+:host,
+.app {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
 .app.lang-fr {
   ::ng-deep {
     .txt-fr {
       display: block;
     }
+
     .txt-en,
     .txt-es {
       display: none;
     }
   }
 }
+
 .app.lang-en {
   ::ng-deep {
     .txt-en {
       display: block;
     }
+
     .txt-fr,
     .txt-es {
       display: none;
     }
   }
 }
+
 .app.lang-es {
   ::ng-deep {
     .txt-es {
       display: block;
     }
+
     .txt-fr,
     .txt-en {
       display: none;

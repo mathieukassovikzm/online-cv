@@ -13,6 +13,7 @@ import { reducers } from './store/app.state';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
 import { SkillsEffects } from './store/skills/skills.effects';
+import { NavigationModule } from './shared/components/navigation/navigation.module';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { SkillsEffects } from './store/skills/skills.effects';
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
     ),
+    NavigationModule
   ],
   providers: [
     Store
