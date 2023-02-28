@@ -18,6 +18,7 @@ $n: 10;
   position: fixed;
   bottom: 0;
   width: 100%;
+  z-index: 11;
 
   .tabbar {
     background: $nav-c;
@@ -36,7 +37,7 @@ $n: 10;
         justify-content: center;
         align-items: center;
         position: relative;
-        z-index: 1;
+        z-index: 51;
 
         img {
           border-radius: 50%;
@@ -54,7 +55,7 @@ $n: 10;
           ::ng-deep {
             svg {
               position: relative;
-              z-index: 2;
+              z-index: 52;
               width: 24px;
               height: 24px;
               margin: auto;
@@ -81,7 +82,7 @@ $n: 10;
           }
 
           span.bubble {
-            z-index: 1;
+            z-index: 51;
             opacity: 0;
 
             &:after {
@@ -155,7 +156,7 @@ $n: 10;
       width: 100%;
       height: $nav-burger-s;
       background-color: $light;
-      box-shadow: 0 1px 4px 0 rgb(15 15 20 / 10%);
+      box-shadow: $box-shadow;
     }
   }
 }
@@ -165,7 +166,7 @@ $n: 10;
   :host {
     position: relative;
     display: flex;
-    width: $nav-w;
+    width: 0;
     height: calc(100vh - $app-p*2);
 
     .tabbar {
@@ -175,8 +176,8 @@ $n: 10;
       width: $nav-w;
       height: 100%;
       padding: 0;
-      box-shadow: 0 1px 4px 0 rgb(15 15 20 / 10%);
-      transition: .55s ease-in-out;
+      box-shadow: $box-shadow;
+      transition: $animation-duration ease-in-out;
       overflow: hidden;
 
       ul {

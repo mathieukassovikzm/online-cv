@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class UiService {
-  isNavOpen = false;
+  isNavOpen = true;
   constructor() {}
 
   toggleNavOpen(): void {

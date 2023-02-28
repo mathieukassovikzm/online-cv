@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UiService } from 'src/app/services/ui.service';
 
 @Component({
   selector: 'app-page-home',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageHomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(public uiService: UiService) { }
 
   ngOnInit(): void {
   }
 
+  curtainClicked(): void {
+    this.uiService.toggleNavOpen();
+  }
 }

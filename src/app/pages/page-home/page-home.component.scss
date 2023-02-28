@@ -1,0 +1,52 @@
+@import "helpers-dir";
+
+$bannerd-w: 290px;
+
+/* ---------------------- Media query ----------------------------*/
+@media only screen and (min-width: $min-width-xl) {
+  :host {
+    .banner-desc {
+      position: fixed;
+      width: $bannerd-w;
+      min-width: $bannerd-w;
+      height: calc(100vh - $app-p*2);
+      z-index: 999;
+      box-shadow: $box-shadow;
+      transition: $animation-duration ease-in-out;
+      background-color: $primary-super-light;
+    }
+
+    .main-content {
+      position: relative;
+      padding-right: $nav-w;
+      padding-left: $desc-w;
+      transition: $animation-duration ease-in-out;
+
+      .app-curtain {
+        background: rgba(30, 30, 40, .88);
+        position: absolute;
+        z-index: 9;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        opacity: 0;
+        visibility: hidden;
+        transition: $animation-duration ease-in-out;
+        pointer-events: all;
+      }
+    }
+  }
+
+  .app.is-opened .site-content {
+    :host .main-content {
+      transform: translateX(-1*($nav-w-opened - $nav-w));
+
+      .app-curtain {
+        visibility: visible;
+        opacity: .7;
+      }
+    }
+  }
+}
