@@ -2,8 +2,10 @@
  * Colors
 **************************************/
 $primary: #556789;
+$primary-super-light: #e1e7ef;
 $primary-light: #8395b9;
 $primary-dark: #293d5c;
+$primary-super-dark: #01060f;
 
 $secondary: #f5d798;
 $secondary-light: #ffffc9;
@@ -16,3 +18,25 @@ $txt-light: $light;
 $txt-dark: $dark;
 
 $background: $light;
+
+/*******************************
+ * Variables Globales
+ *******************************/
+
+$app-p: 15px;
+$nav-h: 64px;
+$nav-w: 80px;
+$nav-w-opened: 230px;
+$burger-w: 50px;
+$desc-w: 290px;
+$animation-duration-short: 0.2s;
+$animation-duration: 0.55s;
+
+/*******************************
+ * Media Query
+ *******************************/
+$min-width-xs: 350px;
+$min-width-s: 450px;
+$min-width-m: 650px;
+$min-width-l: 850px;
+$min-width-xl: 1020px;

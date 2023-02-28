@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { LanguagesEnum } from 'src/app/models/laguages.enum';
+import { UiService } from 'src/app/services/ui.service';
 import { ActUiSetLanguage } from 'src/app/store/ui/ui.actions';
 
 @Component({

@@ -1,0 +1,38 @@
+[
+  { "id": 11, "name": "Angular", "type": "FrontEnd", "power": 90 },
+  { "id": 12, "name": "VueJs", "type": "FrontEnd", "power": 80 },
+  { "id": 12, "name": "Blazor", "type": "FrontEnd", "power": 50 },
+  { "id": 13, "name": "HTML5", "type": "FrontEnd", "power": 90 },
+  { "id": 14, "name": "CSS3", "type": "FrontEnd", "power": 90 },
+  { "id": 15, "name": "SCSS", "type": "FrontEnd", "power": 90 },
+  { "id": 16, "name": "Javascript", "type": "FrontEnd", "power": 60 },
+  { "id": 17, "name": "TypeScript", "type": "FrontEnd", "power": 70 },
+  { "id": 18, "name": "Wordpress", "type": "FrontEnd", "power": 50 },
+  { "id": 19, "name": "Divi", "type": "FrontEnd", "power": 50 },
+
+  { "id": 30, "name": "C#", "type": "BackEnd", "power": 80 },
+  { "id": 31, "name": "Java", "type": "BackEnd", "power": 70 },
+  { "id": 32, "name": "C++", "type": "BackEnd", "power": 50 },
+
+  { "id": 40, "name": "Oracle", "type": "BackEnd", "power": 80 },
+  { "id": 41, "name": "MySql", "type": "BackEnd", "power": 50 },
+
+  { "id": 50, "name": "Svn", "type": "Versionning", "power": 60 },
+  { "id": 51, "name": "Git", "type": "Versionning", "power": 60 },
+
+  { "id": 60, "name": "Visual Studio", "type": "Tools", "power": 80 },
+  { "id": 61, "name": "Visual Studio Code", "type": "Tools", "power": 80 },
+  { "id": 62, "name": "Atom", "type": "Tools", "power": 60 },
+  { "id": 63, "name": "GitKraken", "type": "Tools", "power": 60 },
+  { "id": 64, "name": "SourceTree", "type": "Tools", "power": 60 },
+
+  { "id": 70, "name": "Premiere", "type": "Adobe", "power": 80 },
+  { "id": 71, "name": "After Effects", "type": "Adobe", "power": 60 },
+  { "id": 72, "name": "Illustrator", "type": "Adobe", "power": 60 },
+  { "id": 73, "name": "Lightroom", "type": "Adobe", "power": 90 },
+  { "id": 74, "name": "Photoshop", "type": "Adobe", "power": 40 },
+
+  { "id": 90, "name": "French", "type": "Langages", "power": 100 },
+  { "id": 91, "name": "English", "type": "Langages", "power": 100 },
+  { "id": 92, "name": "Spanish", "type": "Langages", "power": 90 }
+]

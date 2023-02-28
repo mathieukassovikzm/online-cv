@@ -1,8 +1,14 @@
+@import "helpers-dir";
+
 :host,
 .app {
   width: 100%;
   height: 100%;
-  display: block;
+
+  .site-content {
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
 }
 
 .app.lang-fr {
@@ -42,4 +48,67 @@
       display: none;
     }
   }
+}
+
+/* ---------------------- Media query ----------------------------*/
+@media only screen and (min-width: $min-width-xl) {
+  :host {
+    .app {
+      display: flex;
+      padding: $app-p;
+      max-width: 1440px;
+      margin-left: auto;
+      margin-right: auto;
+      overflow-x: hidden;
+
+      .site-content {
+
+
+        .banner-desc {
+          position: fixed;
+          width: 290px;
+          min-width: 290px;
+          height: calc(100vh - 30px);
+          z-index: 999;
+          -webkit-box-shadow: 0 3px 8px 0 rgb(15 15 20 / 20%);
+          box-shadow: 0 3px 8px 0 rgb(15 15 20 / 20%);
+          -webkit-transition: .55s ease-in-out;
+          transition: .55s ease-in-out;
+        }
+
+        .main-content {
+          position: relative;
+          padding-right: $nav-w;
+          padding-left: $desc-w;
+          transition: .55s ease-in-out;
+
+          .app-curtain {
+            background: rgba(30, 30, 40, .88);
+            position: absolute;
+            z-index: 9;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            opacity: 0;
+            -webkit-transition: .55s ease-in-out;
+            transition: .55s ease-in-out;
+            pointer-events: all;
+            opacity: .7;
+          }
+        }
+      }
+
+      &.is-opened {
+        ::ng-deep .tabbar {
+          width: $nav-w-opened;
+        }
+
+        .site-content .main-content {
+          transform: translateX(-1*$nav-w-opened);
+        }
+      }
+    }
+  }
+
 }

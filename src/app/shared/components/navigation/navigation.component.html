@@ -1,7 +1,14 @@
 <nav class="tabbar">
+  <div class="container-burger">
+    <app-burger></app-burger>
+  </div>
   <ul>
     <li [class.active]="itemMenuActif===1">
-      <img class="photo" src="./../../../../assets/images/PhotoCv.jpg" alt="Mathieu LE BELLEC" (click)="switchMenu(1)">
+      <label class="home">
+        <img class="photo" src="./../../../../assets/images/PhotoCv.jpg" alt="Mathieu LE BELLEC"
+          (click)="switchMenu(1)">
+        <span class="txt">Home</span>
+      </label>
     </li>
     <li [class.active]="itemMenuActif===2">
       <label>

@@ -1,23 +1,23 @@
+@use 'sass:math';
 @import "helpers-dir";
 
-$nav-c: $primary;
-$nav-h: 64px;
-$nav-text-c: $secondary;
-$nav-label-h: 52px;
-$nav-icon-c-active: $secondary;
-$nav-icon-c-inactive: rgba($secondary-light, .5);
-$nav-icon-c-hover: $secondary-dark;
-$nav-circle-c: $primary;
 
+$nav-c: $primary-super-light;
+$nav-text-c: $txt-dark;
+$nav-label-h: 52px;
+$nav-icon-c-active: $txt-dark;
+$nav-icon-c-inactive: rgba($txt-dark, .5);
+$nav-icon-c-hover: $secondary-dark;
+$nav-circle-c: $nav-c;
+$nav-burger-s: $nav-w;
+$nav-t-duration: 0.05s;
 $nav-nb-elt: 4;
+$n: 10;
 
 :host {
+  position: fixed;
+  bottom: 0;
   width: 100%;
-  height: 100%;
-  display: block;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
 
   .tabbar {
     background: $nav-c;
@@ -25,7 +25,7 @@ $nav-nb-elt: 4;
     height: $nav-h;
     padding: 0 12px;
 
-    &>ul {
+    ul {
       display: flex;
       height: 100%;
       position: relative;
@@ -97,6 +97,15 @@ $nav-nb-elt: 4;
               margin: -14px 0 0 -22px;
             }
           }
+
+
+
+          &.home {
+
+            .txt {
+              display: none;
+            }
+          }
         }
 
         &:hover {
@@ -106,6 +115,10 @@ $nav-nb-elt: 4;
         }
 
         &.active {
+          label.home {
+            transform: none;
+          }
+
           label {
             transform: translateY(-14px) scale(1);
 
@@ -124,6 +137,126 @@ $nav-nb-elt: 4;
             span.bubble {
               opacity: 1;
             }
+          }
+        }
+      }
+    }
+
+    .container-burger {
+      .component-burger {
+        position: absolute;
+        left: math.div($nav-w - $burger-w, 2);
+        top: math.div($nav-w - $burger-w, 2);
+        width: $burger-w;
+        height: $burger-w;
+      }
+
+      display: none;
+      width: 100%;
+      height: $nav-burger-s;
+      background-color: $light;
+      box-shadow: 0 1px 4px 0 rgb(15 15 20 / 10%);
+    }
+  }
+}
+
+/* ---------------------- Media query ----------------------------*/
+@media only screen and (min-width: $min-width-xl) {
+  :host {
+    position: relative;
+    display: flex;
+    width: $nav-w;
+    height: calc(100vh - $app-p*2);
+
+    .tabbar {
+      position: absolute;
+      right: 0;
+
+      width: $nav-w;
+      height: 100%;
+      padding: 0;
+      box-shadow: 0 1px 4px 0 rgb(15 15 20 / 10%);
+      transition: .55s ease-in-out;
+      overflow: hidden;
+
+      ul {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        flex: inherit;
+        min-width: $nav-w-opened;
+        height: calc(100vh - $nav-w - $app-p*2);
+        margin: 0 0 $nav-w;
+        overflow-x: hidden;
+
+        li {
+          width: 100%;
+          flex: inherit;
+          transform: translateX(60px);
+          transition: $animation-duration ease-in-out;
+
+          @for $i from 1 through $n {
+            &:nth-child(#{$i}) {
+              transition-delay: $i*$nav-t-duration;
+            }
+          }
+
+          img {
+            display: none;
+          }
+
+          label {
+            width: 100%;
+            justify-content: flex-start;
+
+            ::ng-deep {
+              svg {
+                display: none;
+              }
+            }
+
+            .txt {
+              display: block;
+              width: 100%;
+              top: 0;
+              padding: 10px 30px;
+              cursor: pointer;
+              text-align: left;
+              font-size: inherit;
+              font-weight: inherit;
+              opacity: 0;
+              transition: $animation-duration ease-in-out;
+            }
+
+            span.bubble {
+              display: none;
+            }
+
+            &.home {
+              .txt {
+                display: block;
+                opacity: 0;
+              }
+            }
+          }
+        }
+      }
+
+      .container-burger {
+        display: block;
+      }
+    }
+  }
+
+  .is-opened {
+    :host {
+      .tabbar ul li {
+        transform: translateX(0px);
+
+        label,
+        label.home {
+          .txt {
+            opacity: 1;
           }
         }
       }
