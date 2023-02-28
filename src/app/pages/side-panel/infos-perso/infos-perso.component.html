@@ -1,0 +1,6 @@
+<ul>
+  <li *ngFor="let item of infosPerso | keyvalue">
+    <h6>{{ item.value.question}}</h6>
+    <span>{{ item.value.answer }}</span>
+  </li>
+</ul>

@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { IInfosModel } from '../models/infos';
 import { ISkillModel } from '../models/skill';
 import { TypeSkillEnum } from '../models/type-skill.enum';
-import { infos } from './cv-math/infos';
+import { infosFr } from './cv-math/infos';
 import { skills } from './cv-math/skills';
 
 @Injectable({
@@ -19,7 +19,7 @@ export class InfosService {
 
   /** GET Infos from the server */
   getInfos(): IInfosModel {
-    return infos;
+    return infosFr;
   }
 
   getTypesSkills(): Array<Object> {

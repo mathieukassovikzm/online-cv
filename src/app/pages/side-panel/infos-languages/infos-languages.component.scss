@@ -1,0 +1,13 @@
+@import "helpers-dir";
+
+:host {
+  padding: $bannerd-p (
+    $bannerd-p*2
+  );
+
+}
+
+/* ---------------------- Media query ----------------------------*/
+@media only screen and (min-width: $min-width-xl) {
+  :host {}
+}

@@ -1,0 +1,38 @@
+@import "helpers-dir";
+
+$img-s: 200px;
+
+/*------------- ABOUT -------------*/
+:host {
+  .about {
+    padding: 30px;
+    box-shadow: $box-shadow;
+    background-color: $light;
+
+    .profile-picture {
+      text-align: center;
+      margin: 0 auto;
+      margin-bottom: 15px;
+      float: none !important;
+      width: $img-s;
+      height: $img-s;
+
+      img {
+        border-radius: 50%;
+      }
+    }
+
+    .heading {
+      text-align: center;
+
+      h1 .family-name {
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+/* ---------------------- Media query ----------------------------*/
+@media only screen and (min-width: $min-width-xl) {
+  :host {}
+}

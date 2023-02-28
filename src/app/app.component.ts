@@ -16,10 +16,10 @@ export class AppComponent implements OnInit, OnDestroy {
   private subscription = new Subscription();
 
   constructor(public uiService: UiService) {
-    this.lang = this.uiService.getUiLanguage();
   }
 
   ngOnInit() {
+    this.lang = this.uiService.getUiLanguage();
   }
 
   ngOnDestroy() {

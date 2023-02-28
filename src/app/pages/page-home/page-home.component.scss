@@ -10,10 +10,18 @@ $bannerd-w: 290px;
       width: $bannerd-w;
       min-width: $bannerd-w;
       height: calc(100vh - $app-p*2);
-      z-index: 999;
       box-shadow: $box-shadow;
-      transition: $animation-duration ease-in-out;
       background-color: $primary-super-light;
+      transition: $animation-duration ease-in-out;
+      z-index: 999;
+
+      .divider {
+        background: $primary-dark;
+        width: 80%;
+        height: 1px;
+        opacity: .3;
+        margin: auto;
+      }
     }
 
     .main-content {

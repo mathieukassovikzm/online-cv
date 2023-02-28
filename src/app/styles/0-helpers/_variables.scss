@@ -22,16 +22,26 @@ $background: $light;
 /*******************************
  * Variables Globales
  *******************************/
-
 $app-p: 15px;
-$nav-h: 64px;
-$nav-w: 80px;
-$nav-w-opened: 230px;
-$burger-w: 50px;
 $desc-w: 290px;
 $animation-duration-short: 0.2s;
 $animation-duration: 0.55s;
 $box-shadow : 0 3px 8px 0 rgb(15 15 20 / 20%);
+
+/*******************************
+ * Navigation
+ *******************************/
+$nav-h: 64px;
+$nav-w: 80px;
+$nav-w-opened: 230px;
+$burger-w: 50px;
+
+/*******************************
+ * Banner
+ *******************************/
+$bannerd-w: 290px;
+$bannerd-p: 15px;
+
 /*******************************
  * Media Query
  *******************************/

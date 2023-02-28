@@ -5,7 +5,7 @@ import { LanguagesEnum } from '../models/laguages.enum';
   providedIn: 'root',
 })
 export class UiService {
-  isNavOpen = true;
+  isNavOpen = false;
   uiLanguage = LanguagesEnum.French;
 
   constructor() { }
