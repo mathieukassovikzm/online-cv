@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Store } from '@ngrx/store';
 import { LanguagesEnum } from 'src/app/models/laguages.enum';
 import { UiService } from 'src/app/services/ui.service';
-import { ActUiSetLanguage } from 'src/app/store/ui/ui.actions';
 
 @Component({
   selector: 'app-navigation',
@@ -13,23 +11,23 @@ export class NavigationComponent implements OnInit {
   public itemMenuActif = 1;
   // public photo = require('./../../../../assets/images/PhotoCv.jpg');
 
-  constructor(private store: Store) {}
+  constructor(private uiService: UiService) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   switchMenu(idDtemClicked: number): void {
     this.itemMenuActif = idDtemClicked;
   }
 
   switchToFrench(): void {
-    this.store.dispatch(ActUiSetLanguage({ language: LanguagesEnum.French }));
+    this.uiService.setUiLanguage(LanguagesEnum.French);
   }
 
   switchToEnglish(): void {
-    this.store.dispatch(ActUiSetLanguage({ language: LanguagesEnum.English }));
+    this.uiService.setUiLanguage(LanguagesEnum.English);
   }
 
   switchToSpanish(): void {
-    this.store.dispatch(ActUiSetLanguage({ language: LanguagesEnum.Spanish }));
+    this.uiService.setUiLanguage(LanguagesEnum.Spanish);
   }
 }

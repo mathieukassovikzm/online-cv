@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
 import { ISkillModel } from 'src/app/models/skill';
 import { TypeSkillEnum } from 'src/app/models/type-skill.enum';
-import { SkillService } from 'src/app/services/skill.service';
-import { getLstSkillsByType } from 'src/app/store/skills/skills.selectors';
+import { InfosService } from 'src/app/services/infos.service';
 
 @Component({
   selector: 'app-page-skills',
@@ -13,22 +10,20 @@ import { getLstSkillsByType } from 'src/app/store/skills/skills.selectors';
 })
 export class PageSkillsComponent implements OnInit {
 
-  public skillsFrontEnd$ = new Observable<ISkillModel[]>();
-  public skillsBackEnd$ = new Observable<ISkillModel[]>();
-  public skillsBdd$ = new Observable<ISkillModel[]>();
-  public skillsVersionning$ = new Observable<ISkillModel[]>();
-  public skillsTools$ = new Observable<ISkillModel[]>();
-  public skillsAdobe$ = new Observable<ISkillModel[]>();
-  public skillsLangages$ = new Observable<ISkillModel[]>();
+  public skillsFrontEnd = <ISkillModel[]>[];
+  public skillsBackEnd = <ISkillModel[]>[];
+  public skillsBdd = <ISkillModel[]>[];
+  public skillsVersionning = <ISkillModel[]>[];
+  public skillsTools = <ISkillModel[]>[];
+  public skillsAdobe = <ISkillModel[]>[];
 
-  constructor(private store: Store) {
-    this.skillsFrontEnd$ = store.select<ISkillModel[]>(getLstSkillsByType(TypeSkillEnum.FrontEnd));
-    this.skillsBackEnd$ = store.select<ISkillModel[]>(getLstSkillsByType(TypeSkillEnum.BackEnd));
-    this.skillsBdd$ = store.select<ISkillModel[]>(getLstSkillsByType(TypeSkillEnum.Bdd));
-    this.skillsVersionning$ = store.select<ISkillModel[]>(getLstSkillsByType(TypeSkillEnum.Versionning));
-    this.skillsTools$ = store.select<ISkillModel[]>(getLstSkillsByType(TypeSkillEnum.Tools));
-    this.skillsAdobe$ = store.select<ISkillModel[]>(getLstSkillsByType(TypeSkillEnum.Adobe));
-    this.skillsLangages$ = store.select<ISkillModel[]>(getLstSkillsByType(TypeSkillEnum.Langages));
+  constructor(private infosService: InfosService) {
+    this.skillsFrontEnd = infosService.getLstSkillsByType(TypeSkillEnum.FrontEnd);
+    this.skillsBackEnd = infosService.getLstSkillsByType(TypeSkillEnum.FrontEnd);
+    this.skillsBdd = infosService.getLstSkillsByType(TypeSkillEnum.FrontEnd);
+    this.skillsVersionning = infosService.getLstSkillsByType(TypeSkillEnum.FrontEnd);
+    this.skillsTools = infosService.getLstSkillsByType(TypeSkillEnum.FrontEnd);
+    this.skillsAdobe = infosService.getLstSkillsByType(TypeSkillEnum.FrontEnd);
   }
 
   ngOnInit(): void {

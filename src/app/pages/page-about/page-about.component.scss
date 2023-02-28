@@ -1,21 +1,29 @@
 @import "helpers-dir";
 
+$img-s: 120px;
+
 /*------------- ABOUT -------------*/
 .about {
   padding-top: 100px;
+
   .profile-picture {
     text-align: center;
     margin: 0 auto;
     float: none !important;
+    width: $img-s;
+    height: $img-s;
+
     img {
       border-radius: 50%;
     }
   }
+
   .heading h1 {
-    text-transform: uppercase;
-    text-shadow: 1px 1px 1px #fff;
+
+    .family-name {
+      text-transform: uppercase;
+    }
   }
-  .heading h3 {
-    text-shadow: 1px 1px 1px #fff;
-  }
+
+  .heading h3 {}
 }
