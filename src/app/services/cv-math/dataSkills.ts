@@ -34,8 +34,4 @@ export const skills: ISkillModel[] = [
   { id: 72, name: "Illustrator", type: TypeSkillEnum.Adobe, power: 60 },
   { id: 73, name: "Lightroom", type: TypeSkillEnum.Adobe, power: 90 },
   { id: 74, name: "Photoshop", type: TypeSkillEnum.Adobe, power: 40 },
-
-  { id: 90, name: "French", type: TypeSkillEnum.Langages, power: 100 },
-  { id: 91, name: "English", type: TypeSkillEnum.Langages, power: 100 },
-  { id: 92, name: "Spanish", type: TypeSkillEnum.Langages, power: 90 }
 ]

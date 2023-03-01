@@ -1,10 +1,9 @@
 @import "helpers-dir";
 
 :host {
-  padding: $bannerd-p (
-    $bannerd-p*2
-  );
-
+  ul {
+    padding: $bannerd-p $bannerd-p*2 ;
+  }
 }
 
 /* ---------------------- Media query ----------------------------*/

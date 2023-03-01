@@ -1,0 +1,12 @@
+@import "helpers-dir";
+
+:host {
+  .section-skills {
+    padding: $bannerd-p $bannerd-p*2 ;
+  }
+}
+
+/* ---------------------- Media query ----------------------------*/
+@media only screen and (min-width: $min-width-xl) {
+  :host {}
+}

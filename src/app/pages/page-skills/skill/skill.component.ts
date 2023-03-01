@@ -16,6 +16,6 @@ export class SkillComponent implements OnInit {
   }
 
   getBarWidth(): string {
-    return `width:${this.skill.power}%`;
+    return `stroke-dashoffset:${100 - this.skill.power}`;
   }
 }

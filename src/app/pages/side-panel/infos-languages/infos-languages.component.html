@@ -1,3 +1,6 @@
-<p>
-  infos-languages works!
-</p>
+<ul>
+  <li *ngFor="let item of lstLanguages">
+    <h6>{{ item.name}}</h6>
+    <span>{{ item.power }}</span>
+  </li>
+</ul>

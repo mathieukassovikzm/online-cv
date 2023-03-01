@@ -18,15 +18,14 @@ export class PageSkillsComponent implements OnInit {
   public skillsAdobe = <ISkillModel[]>[];
 
   constructor(private infosService: InfosService) {
-    this.skillsFrontEnd = infosService.getLstSkillsByType(TypeSkillEnum.FrontEnd);
-    this.skillsBackEnd = infosService.getLstSkillsByType(TypeSkillEnum.FrontEnd);
-    this.skillsBdd = infosService.getLstSkillsByType(TypeSkillEnum.FrontEnd);
-    this.skillsVersionning = infosService.getLstSkillsByType(TypeSkillEnum.FrontEnd);
-    this.skillsTools = infosService.getLstSkillsByType(TypeSkillEnum.FrontEnd);
-    this.skillsAdobe = infosService.getLstSkillsByType(TypeSkillEnum.FrontEnd);
   }
 
   ngOnInit(): void {
-
+    this.skillsFrontEnd = this.infosService.getLstSkillsByType(TypeSkillEnum.FrontEnd);
+    this.skillsBackEnd = this.infosService.getLstSkillsByType(TypeSkillEnum.FrontEnd);
+    this.skillsBdd = this.infosService.getLstSkillsByType(TypeSkillEnum.FrontEnd);
+    this.skillsVersionning = this.infosService.getLstSkillsByType(TypeSkillEnum.FrontEnd);
+    this.skillsTools = this.infosService.getLstSkillsByType(TypeSkillEnum.FrontEnd);
+    this.skillsAdobe = this.infosService.getLstSkillsByType(TypeSkillEnum.FrontEnd);
   }
 }

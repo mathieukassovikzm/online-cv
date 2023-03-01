@@ -1,10 +1,14 @@
 import { HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { IInfosModel } from '../models/infos';
+import { LanguagesEnum } from '../models/laguages.enum';
+import { ILanguageModel } from '../models/language';
 import { ISkillModel } from '../models/skill';
 import { TypeSkillEnum } from '../models/type-skill.enum';
-import { infosFr } from './cv-math/infos';
-import { skills } from './cv-math/skills';
+import { infosEn, infosEs, infosFr } from './cv-math/dataInfos';
+import { languagesFr, languagesEn, languagesEs } from './cv-math/dataLanguages';
+import { skills } from './cv-math/dataSkills';
+import { UiService } from './ui.service';
 
 @Injectable({
   providedIn: 'root'
@@ -15,11 +19,30 @@ export class InfosService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
 
-  constructor() { }
+  constructor(public uiService: UiService) { }
 
-  /** GET Infos from the server */
   getInfos(): IInfosModel {
-    return infosFr;
+    switch (this.uiService.getUiLanguage()) {
+      case LanguagesEnum.French:
+        return infosFr;
+      case LanguagesEnum.English:
+        return infosEn;
+      case LanguagesEnum.Spanish:
+        return infosEs;
+      default: return infosFr;
+    }
+  }
+
+  getLanguages(): ILanguageModel[] {
+    switch (this.uiService.getUiLanguage()) {
+      case LanguagesEnum.French:
+        return languagesFr;
+      case LanguagesEnum.English:
+        return languagesEn;
+      case LanguagesEnum.Spanish:
+        return languagesEs;
+      default: return languagesFr;
+    }
   }
 
   getTypesSkills(): Array<Object> {

@@ -2,17 +2,15 @@
 
 :host {
   ul {
-    padding: $bannerd-p (
-      $bannerd-p*2
-    );
+    padding: $bannerd-p $bannerd-p*2 ;
 
-  li {
-    list-style-type: none;
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 5px;
+    li {
+      list-style-type: none;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 5px;
+    }
   }
-}
 }
 
 /* ---------------------- Media query ----------------------------*/

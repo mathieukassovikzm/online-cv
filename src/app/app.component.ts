@@ -27,7 +27,7 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   isOpen(): boolean {
-    return this.uiService.isNavOpen;
+    return this.uiService.getIsNavOpen();
   }
 
   onLang(): string {
