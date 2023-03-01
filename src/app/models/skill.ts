@@ -5,4 +5,5 @@ export interface ISkillModel {
   name: string;
   type: TypeSkillEnum;
   power: number;
+  display: boolean;
 }

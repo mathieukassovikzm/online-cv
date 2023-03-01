@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostBinding, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-svg-illustrator',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./svg-illustrator.component.scss']
 })
 export class SvgIllustratorComponent implements OnInit {
+  @HostBinding('class') class = 'svg-skill';
 
   constructor() { }
 

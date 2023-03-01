@@ -9,6 +9,7 @@ import { infosEn, infosEs, infosFr } from './cv-math/dataInfos';
 import { languagesFr, languagesEn, languagesEs } from './cv-math/dataLanguages';
 import { skills } from './cv-math/dataSkills';
 import { UiService } from './ui.service';
+import _ from "lodash";
 
 @Injectable({
   providedIn: 'root'
@@ -56,7 +57,7 @@ export class InfosService {
     return skills;
   }
 
-  getLstSkillsByType(type: TypeSkillEnum): ISkillModel[] {
-    return skills;
+  getLstSkillsByType(typeSkill: TypeSkillEnum): ISkillModel[] {
+    return _.filter(skills, { type: typeSkill, display: true });
   }
 }

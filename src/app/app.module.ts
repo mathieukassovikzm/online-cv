@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 import { BrowserModule } from '@angular/platform-browser';
-import { AppComponent } from './app.component';
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
 import { NavigationModule } from './shared/components/navigation/navigation.module';
 
 @NgModule({
@@ -14,7 +13,7 @@ import { NavigationModule } from './shared/components/navigation/navigation.modu
     AppRoutingModule,
     BrowserModule,
     FormsModule,
-    StoreDevtoolsModule.instrument(),
+    // StoreDevtoolsModule.instrument(),
     NavigationModule
   ],
   bootstrap: [AppComponent]

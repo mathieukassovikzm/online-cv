@@ -22,10 +22,10 @@ export class PageSkillsComponent implements OnInit {
 
   ngOnInit(): void {
     this.skillsFrontEnd = this.infosService.getLstSkillsByType(TypeSkillEnum.FrontEnd);
-    this.skillsBackEnd = this.infosService.getLstSkillsByType(TypeSkillEnum.FrontEnd);
-    this.skillsBdd = this.infosService.getLstSkillsByType(TypeSkillEnum.FrontEnd);
-    this.skillsVersionning = this.infosService.getLstSkillsByType(TypeSkillEnum.FrontEnd);
-    this.skillsTools = this.infosService.getLstSkillsByType(TypeSkillEnum.FrontEnd);
-    this.skillsAdobe = this.infosService.getLstSkillsByType(TypeSkillEnum.FrontEnd);
+    this.skillsBackEnd = this.infosService.getLstSkillsByType(TypeSkillEnum.BackEnd);
+    this.skillsBdd = this.infosService.getLstSkillsByType(TypeSkillEnum.Bdd);
+    this.skillsVersionning = this.infosService.getLstSkillsByType(TypeSkillEnum.Versionning);
+    this.skillsTools = this.infosService.getLstSkillsByType(TypeSkillEnum.Tools);
+    this.skillsAdobe = this.infosService.getLstSkillsByType(TypeSkillEnum.Adobe);
   }
 }

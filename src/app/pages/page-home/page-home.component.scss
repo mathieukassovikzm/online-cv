@@ -14,6 +14,11 @@ $bannerd-w: 290px;
       background-color: $primary-super-light;
       transition: $animation-duration ease-in-out;
       z-index: 999;
+      overflow-y: auto;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
 
       .divider {
         background: $primary-dark;
