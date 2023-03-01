@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ILanguageModel } from 'src/app/models/language';
+import { CodeLanguageEnum, ILanguageModel } from 'src/app/models/language';
 import { InfosService } from 'src/app/services/infos.service';
 
 @Component({
@@ -10,6 +10,11 @@ import { InfosService } from 'src/app/services/infos.service';
 export class InfosLanguagesComponent implements OnInit {
 
   public lstLanguages = <ILanguageModel[]>[];
+  public codeFr = CodeLanguageEnum.FR;
+  public codeEn = CodeLanguageEnum.EN;
+  public codeEs = CodeLanguageEnum.ES;
+
+
   constructor(private infosService: InfosService) { }
 
   ngOnInit() {

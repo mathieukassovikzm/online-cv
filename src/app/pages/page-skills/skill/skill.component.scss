@@ -1,10 +1,8 @@
 @import "helpers-dir";
 
-$skill-logo-s: 30px;
+$skill-logo-s: 40px;
 $skill-bar-outside-c: $secondary-light;
 $skill-bar-inside-c: $primary;
-$skill-bar-height: 40px;
-$skill-bar-border-radius: 5px;
 
 .skill {
   display: flex;
