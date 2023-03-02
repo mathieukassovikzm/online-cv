@@ -1,25 +1,16 @@
 <section class="section-education">
-  <div class="education">
-    <div class="date">
-      2010 - 2013
+  <div class="education" *ngFor="let item of educations">
+    <div class="title">
+      <h5 class="school">
+        {{item.title}} - {{item.school}}
+      </h5>
+      <h5 class="date">
+        {{item.date}}
+      </h5>
     </div>
+
     <div class="place">
-      Rennes, France
-    </div>
-    <div class="name">
-      BAC +5, Ingénieur SRC - INSA -
+      {{item.place}}
     </div>
   </div>
-
 </section>
-<p class="txt-fr">
-  2008 - 2010 : DUT GEII - IUT - Brest, France
-</p>
-<p class="txt-en">
-  2010 - 2013: Systems & Communication Network Engineer - INSA - Rennes, France
-  2008 - 2010: DUT GEII - IUT - Brest, France
-</p>
-<p class="txt-es">
-  2010 - 2013: Ingeniero de sistemas - INSA - Rennes, France
-  2008 - 2010: DUT GEII - IUT - Brest, France
-</p>
