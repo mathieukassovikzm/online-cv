@@ -65,10 +65,41 @@
         ::ng-deep .tabbar {
           width: $nav-w-opened;
         }
+
+        .site-content .main-content {
+          transform: translateX(-1*($nav-w-opened - $nav-w));
+
+          .app-curtain {
+            visibility: visible;
+            opacity: .7;
+          }
+        }
       }
 
       .site-content::-webkit-scrollbar {
         display: none;
+      }
+
+      .main-content {
+        position: relative;
+        padding-right: $nav-w;
+        padding-left: $desc-w;
+        transition: $animation-duration ease-in-out;
+
+        .app-curtain {
+          background: rgba(30, 30, 40, .88);
+          position: absolute;
+          z-index: 9;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          pointer-events: none;
+          opacity: 0;
+          visibility: hidden;
+          transition: $animation-duration ease-in-out;
+          pointer-events: all;
+        }
       }
     }
   }

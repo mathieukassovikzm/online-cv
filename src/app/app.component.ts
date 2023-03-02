@@ -14,8 +14,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
   private subscription = new Subscription();
 
-  constructor(public uiService: UiService) {
-  }
+  constructor(public uiService: UiService) {}
 
   ngOnInit() {
     this.lang = this.uiService.getUiLanguage();
@@ -40,5 +39,9 @@ export class AppComponent implements OnInit, OnDestroy {
       default:
         return '';
     }
+  }
+
+  curtainClicked(): void {
+    this.uiService.toggleNavOpen();
   }
 }

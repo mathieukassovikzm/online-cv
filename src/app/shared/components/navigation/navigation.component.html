@@ -7,13 +7,13 @@
       <label class="home">
         <img class="photo" src="./../../../../assets/images/PhotoCv.jpg" alt="Mathieu LE BELLEC"
           (click)="switchMenu(1)">
-        <span class="txt">Home</span>
+        <span class="txt" routerLink="/home" routerLinkActive="active">Home</span>
       </label>
     </li>
     <li [class.active]="itemMenuActif===2">
       <label>
         <app-svg-info (click)="switchMenu(2)"></app-svg-info>
-        <span class="txt">About</span>
+        <span class="txt" routerLink="/about" routerLinkActive="active">About</span>
         <span class="bubble"></span>
       </label>
     </li>
