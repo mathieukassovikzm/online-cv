@@ -12,5 +12,12 @@
     <!-- <a href="docs/Mathieu_Le_Bellec_Cv_En.pdf" class="btn btn-light">Download Curriculum</a> -->
   </div>
   <div class="divider"></div>
+  <div class="curriculum">
+    <a [href]="info.curriculum.answer" target="_blank">
+      <p>{{info.curriculum.question}}</p>
+      <app-svg-download></app-svg-download>
+    </a>
+  </div>
+  <div class="divider"></div>
   <app-lst-socials></app-lst-socials>
 </div>

@@ -16,6 +16,10 @@ export const infosFr: IInfosModel = {
     drivingLiscence: { question: 'Permis de conduire:', answer: 'Oui' },
     car: { question: 'Voiture', answer: 'Oui' },
   },
+  curriculum: {
+    question: 'Télécharger CV:',
+    answer: './assets/Mathieu_Le_Bellec_Cv_Fr_V2.pdf',
+  },
 };
 
 export const infosEn: IInfosModel = {
@@ -33,6 +37,10 @@ export const infosEn: IInfosModel = {
     },
     car: { question: 'Car', answer: 'Yes' },
   },
+  curriculum: {
+    question: 'Download CV:',
+    answer: './assets/Mathieu_Le_Bellec_Cv_Fr_V2.pdf',
+  },
 };
 
 export const infosEs: IInfosModel = {
@@ -49,6 +57,10 @@ export const infosEs: IInfosModel = {
     },
     drivingLiscence: { question: 'Licencia de conducir:', answer: 'Si' },
     car: { question: 'Auto', answer: 'Si' },
+  },
+  curriculum: {
+    question: 'Descargar CV:',
+    answer: './assets/Mathieu_Le_Bellec_Cv_Fr_V2.pdf',
   },
 };
 

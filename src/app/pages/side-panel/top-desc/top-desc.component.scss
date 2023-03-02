@@ -3,6 +3,7 @@
 $img-s: 120px;
 $lamp-s : 17px;
 $lamp-c : $primary-light;
+$svg-dowload-s: 16px;
 
 /*------------- ABOUT -------------*/
 :host {
@@ -58,6 +59,25 @@ $lamp-c : $primary-light;
     .divider {
       margin-top: 15px;
       margin-bottom: 15px;
+    }
+
+    .curriculum {
+      position: relative;
+      width: 80%;
+      margin: auto;
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      font-weight: 600;
+
+      a {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      ::ng-deep svg {
+        width: $svg-dowload-s;
+      }
     }
   }
 }

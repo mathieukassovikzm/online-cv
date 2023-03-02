@@ -7,6 +7,7 @@ export interface IInfosModel {
   title: string;
   available: boolean;
   infosPersonnal: IInfosPersonalModel;
+  curriculum: IQuestionReponseModel;
 }
 
 export interface IInfosPersonalModel {
