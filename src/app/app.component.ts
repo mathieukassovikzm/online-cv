@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { LanguagesEnum } from './models/laguages.enum';
+import { CodeLanguageEnum } from './models/enum';
 import { UiService } from './services/ui.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { UiService } from './services/ui.service';
 })
 export class AppComponent implements OnInit, OnDestroy {
   title = 'online-cv-math';
-  private lang: LanguagesEnum = LanguagesEnum.French;
+  private lang: CodeLanguageEnum = CodeLanguageEnum.FR;
 
   private subscription = new Subscription();
 
@@ -30,11 +30,11 @@ export class AppComponent implements OnInit, OnDestroy {
 
   onLang(): string {
     switch (this.lang) {
-      case LanguagesEnum.French:
+      case CodeLanguageEnum.FR:
         return 'lang-fr';
-      case LanguagesEnum.English:
+      case CodeLanguageEnum.EN:
         return 'lang-en';
-      case LanguagesEnum.Spanish:
+      case CodeLanguageEnum.ES:
         return 'lang-es';
       default:
         return '';

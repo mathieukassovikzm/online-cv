@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ISkillModel } from 'src/app/models/skill';
-import { TypeSkillEnum } from 'src/app/models/type-skill.enum';
+import { TypeSkillEnum } from 'src/app/models/enum';
+import { ISkillModel } from 'src/app/models/infos';
 import { InfosService } from 'src/app/services/infos.service';
 
 @Component({

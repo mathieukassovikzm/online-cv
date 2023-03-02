@@ -1,5 +1,5 @@
+import { CodeLanguageEnum, CodeSocialNetworkEnum, TypeSkillEnum } from './enum';
 import { IQuestionReponseModel } from './QuestionReponse';
-import { ISocialNetwork } from './socialNetwork';
 
 export interface IInfosModel {
   name: string;
@@ -16,4 +16,25 @@ export interface IInfosPersonalModel {
   status: IQuestionReponseModel;
   drivingLiscence: IQuestionReponseModel;
   car: IQuestionReponseModel;
+}
+
+export interface ISkillModel {
+  id: number;
+  name: string;
+  type: TypeSkillEnum;
+  power: number;
+  display: boolean;
+}
+
+export interface ISocialNetwork {
+  code: CodeSocialNetworkEnum;
+  name: string;
+  url: string;
+  display: boolean;
+}
+
+export interface ILanguageModel {
+  code: CodeLanguageEnum;
+  name: string;
+  power: string;
 }

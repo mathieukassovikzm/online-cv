@@ -1,21 +1,22 @@
 import { HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { IInfosModel } from '../models/infos';
-import { LanguagesEnum } from '../models/laguages.enum';
-import { ILanguageModel } from '../models/language';
-import { ISkillModel } from '../models/skill';
-import { TypeSkillEnum } from '../models/type-skill.enum';
+import _ from 'lodash';
+import { CodeLanguageEnum, TypeSkillEnum } from '../models/enum';
+import {
+  IInfosModel,
+  ILanguageModel,
+  ISkillModel,
+  ISocialNetwork,
+} from '../models/infos';
 import {
   infosEn,
   infosEs,
   infosFr,
   lstSocialNetwork,
 } from './cv-math/dataInfos';
-import { languagesFr, languagesEn, languagesEs } from './cv-math/dataLanguages';
+import { languagesEn, languagesEs, languagesFr } from './cv-math/dataLanguages';
 import { skills } from './cv-math/dataSkills';
 import { UiService } from './ui.service';
-import _ from 'lodash';
-import { ISocialNetwork } from '../models/socialNetwork';
 
 @Injectable({
   providedIn: 'root',
@@ -29,11 +30,11 @@ export class InfosService {
 
   getInfos(): IInfosModel {
     switch (this.uiService.getUiLanguage()) {
-      case LanguagesEnum.French:
+      case CodeLanguageEnum.FR:
         return infosFr;
-      case LanguagesEnum.English:
+      case CodeLanguageEnum.EN:
         return infosEn;
-      case LanguagesEnum.Spanish:
+      case CodeLanguageEnum.ES:
         return infosEs;
       default:
         return infosFr;
@@ -46,11 +47,11 @@ export class InfosService {
 
   getLanguages(): ILanguageModel[] {
     switch (this.uiService.getUiLanguage()) {
-      case LanguagesEnum.French:
+      case CodeLanguageEnum.FR:
         return languagesFr;
-      case LanguagesEnum.English:
+      case CodeLanguageEnum.EN:
         return languagesEn;
-      case LanguagesEnum.Spanish:
+      case CodeLanguageEnum.ES:
         return languagesEs;
       default:
         return languagesFr;

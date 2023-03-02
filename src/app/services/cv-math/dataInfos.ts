@@ -1,8 +1,5 @@
-import { IInfosModel } from 'src/app/models/infos';
-import {
-  CodeSocialNetworkEnum,
-  ISocialNetwork,
-} from 'src/app/models/socialNetwork';
+import { CodeSocialNetworkEnum } from 'src/app/models/enum';
+import { IInfosModel, ISocialNetwork } from 'src/app/models/infos';
 
 export const infosFr: IInfosModel = {
   name: 'Mathieu',

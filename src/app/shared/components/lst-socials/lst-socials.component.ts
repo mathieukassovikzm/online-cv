@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  CodeSocialNetworkEnum,
-  ISocialNetwork,
-} from 'src/app/models/socialNetwork';
+import { CodeSocialNetworkEnum } from 'src/app/models/enum';
+import { ISocialNetwork } from 'src/app/models/infos';
 import { InfosService } from 'src/app/services/infos.service';
 
 @Component({

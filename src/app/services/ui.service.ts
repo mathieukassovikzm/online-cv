@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
-import { LanguagesEnum } from '../models/laguages.enum';
+import { CodeLanguageEnum } from '../models/enum';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UiService {
   private isNavOpen = false;
-  private uiLanguage = LanguagesEnum.French;
+  private uiLanguage = CodeLanguageEnum.FR;
 
-  constructor() { }
+  constructor() {}
 
   toggleNavOpen(): void {
     this.isNavOpen = !this.isNavOpen;
@@ -18,11 +18,11 @@ export class UiService {
     return this.isNavOpen;
   }
 
-  getUiLanguage(): LanguagesEnum {
+  getUiLanguage(): CodeLanguageEnum {
     return this.uiLanguage;
   }
 
-  setUiLanguage(lang: LanguagesEnum): void {
+  setUiLanguage(lang: CodeLanguageEnum): void {
     this.uiLanguage = lang;
   }
 }
