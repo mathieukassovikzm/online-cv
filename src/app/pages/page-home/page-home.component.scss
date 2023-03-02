@@ -1,25 +1,8 @@
 @import "helpers-dir";
 
-$bannerd-w: 290px;
-
 /* ---------------------- Media query ----------------------------*/
 @media only screen and (min-width: $min-width-xl) {
   :host {
-    .banner-desc {
-      position: fixed;
-      width: $bannerd-w;
-      min-width: $bannerd-w;
-      height: calc(100vh - $app-p*2);
-      box-shadow: $box-shadow;
-      background-color: $primary-super-light;
-      transition: $animation-duration ease-in-out;
-      z-index: 999;
-      overflow-y: auto;
-
-      &::-webkit-scrollbar {
-        display: none;
-      }
-    }
 
     .main-content {
       position: relative;
