@@ -1,11 +1,12 @@
-import { IQuestionReponseModel } from "./QuestionReponse";
+import { IQuestionReponseModel } from './QuestionReponse';
+import { ISocialNetwork } from './socialNetwork';
 
 export interface IInfosModel {
   name: string;
   famillyName: string;
   title: string;
   available: boolean;
-  infosPersonnal: IInfosPersonalModel
+  infosPersonnal: IInfosPersonalModel;
 }
 
 export interface IInfosPersonalModel {

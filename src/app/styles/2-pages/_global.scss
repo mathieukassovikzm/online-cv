@@ -70,3 +70,11 @@ section .heading {
   text-align: center;
   padding-bottom: 40px;
 }
+
+.divider {
+  background: $primary-dark;
+  width: 80%;
+  height: 1px;
+  opacity: .3;
+  margin: auto;
+}

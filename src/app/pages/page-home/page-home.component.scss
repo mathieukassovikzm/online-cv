@@ -19,14 +19,6 @@ $bannerd-w: 290px;
       &::-webkit-scrollbar {
         display: none;
       }
-
-      .divider {
-        background: $primary-dark;
-        width: 80%;
-        height: 1px;
-        opacity: .3;
-        margin: auto;
-      }
     }
 
     .main-content {

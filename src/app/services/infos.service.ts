@@ -5,22 +5,27 @@ import { LanguagesEnum } from '../models/laguages.enum';
 import { ILanguageModel } from '../models/language';
 import { ISkillModel } from '../models/skill';
 import { TypeSkillEnum } from '../models/type-skill.enum';
-import { infosEn, infosEs, infosFr } from './cv-math/dataInfos';
+import {
+  infosEn,
+  infosEs,
+  infosFr,
+  lstSocialNetwork,
+} from './cv-math/dataInfos';
 import { languagesFr, languagesEn, languagesEs } from './cv-math/dataLanguages';
 import { skills } from './cv-math/dataSkills';
 import { UiService } from './ui.service';
-import _ from "lodash";
+import _ from 'lodash';
+import { ISocialNetwork } from '../models/socialNetwork';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class InfosService {
-
   httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
   };
 
-  constructor(public uiService: UiService) { }
+  constructor(public uiService: UiService) {}
 
   getInfos(): IInfosModel {
     switch (this.uiService.getUiLanguage()) {
@@ -30,8 +35,13 @@ export class InfosService {
         return infosEn;
       case LanguagesEnum.Spanish:
         return infosEs;
-      default: return infosFr;
+      default:
+        return infosFr;
     }
+  }
+
+  getLstSocialNetwork(): ISocialNetwork[] {
+    return _.filter(lstSocialNetwork, { display: true });
   }
 
   getLanguages(): ILanguageModel[] {
@@ -42,7 +52,8 @@ export class InfosService {
         return languagesEn;
       case LanguagesEnum.Spanish:
         return languagesEs;
-      default: return languagesFr;
+      default:
+        return languagesFr;
     }
   }
 
