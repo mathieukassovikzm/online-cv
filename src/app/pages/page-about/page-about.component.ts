@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { IAboutModel } from 'src/app/models/about';
+import { AboutService } from 'src/app/services/about.service';
 import { UiService } from 'src/app/services/ui.service';
 
 @Component({
@@ -7,6 +9,9 @@ import { UiService } from 'src/app/services/ui.service';
   styleUrls: ['./page-about.component.scss'],
 })
 export class PageAboutComponent implements OnInit {
-  constructor() {}
-  ngOnInit(): void {}
+  public about: IAboutModel = {};
+  constructor(private aboutService: AboutService) {}
+  ngOnInit(): void {
+    this.about = this.aboutService.getAbout();
+  }
 }

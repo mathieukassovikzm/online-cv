@@ -1,5 +1,11 @@
 import { Injectable } from '@angular/core';
 import { CodeLanguageEnum } from '../models/enum';
+import { IUiTxtAboutModel } from '../models/uiTxt';
+import {
+  uiTxtAboutEn,
+  uiTxtAboutEs,
+  uiTxtAboutFr,
+} from './ui-txt/ui-txt-about';
 
 @Injectable({
   providedIn: 'root',
@@ -24,5 +30,18 @@ export class UiService {
 
   setUiLanguage(lang: CodeLanguageEnum): void {
     this.uiLanguage = lang;
+  }
+
+  getUiTxtAbout(): IUiTxtAboutModel {
+    switch (this.uiLanguage) {
+      case CodeLanguageEnum.FR:
+        return uiTxtAboutFr;
+      case CodeLanguageEnum.EN:
+        return uiTxtAboutEn;
+      case CodeLanguageEnum.ES:
+        return uiTxtAboutEs;
+      default:
+        return uiTxtAboutFr;
+    }
   }
 }

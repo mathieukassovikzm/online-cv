@@ -1,11 +1,7 @@
-export interface IAboutModel {
-  extract: string;
-  educations: IEducationModel[];
-}
+import { IExperienceModel } from './experience';
 
-export interface IEducationModel {
-  title: string;
-  school: string;
-  date: string;
-  place: string;
+export interface IAboutModel {
+  extract?: string;
+  educations?: IExperienceModel[];
+  archievements?: IExperienceModel[];
 }

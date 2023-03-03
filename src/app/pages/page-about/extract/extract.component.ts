@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { IUiTxtAboutModel } from 'src/app/models/uiTxt';
 import { AboutService } from 'src/app/services/about.service';
+import { UiService } from 'src/app/services/ui.service';
 
 @Component({
   selector: 'app-extract',
@@ -7,10 +9,15 @@ import { AboutService } from 'src/app/services/about.service';
   styleUrls: ['./extract.component.scss'],
 })
 export class ExtractComponent implements OnInit {
-  public extract = '';
-  constructor(private aboutService: AboutService) {}
+  public extract? = '';
+  public txt?: IUiTxtAboutModel;
+  constructor(
+    private aboutService: AboutService,
+    private uiService: UiService
+  ) {}
 
   ngOnInit() {
     this.extract = this.aboutService.getAbout().extract;
+    this.txt = this.uiService.getUiTxtAbout();
   }
 }

@@ -1,16 +1,6 @@
 <section class="section-education">
-  <div class="education" *ngFor="let item of educations">
-    <div class="title">
-      <h5 class="school">
-        {{item.title}} - {{item.school}}
-      </h5>
-      <h5 class="date">
-        {{item.date}}
-      </h5>
-    </div>
-
-    <div class="place">
-      {{item.place}}
-    </div>
+  <h2>{{txt?.educationTitle}}</h2>
+  <div class="education card-container" *ngFor="let education of educations">
+    <app-card [item]="education"></app-card>
   </div>
 </section>

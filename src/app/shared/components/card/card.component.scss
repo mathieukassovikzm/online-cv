@@ -1,0 +1,20 @@
+@import "helpers-dir";
+
+:host {
+
+  .title {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .place {
+    color: $grey;
+    font-style: italic;
+    font-size: 12px;
+  }
+}
+
+/* ---------------------- Media query ----------------------------*/
+@media only screen and (min-width: $min-width-xl) {
+  :host {}
+}

@@ -1,5 +1,5 @@
-<app-extract></app-extract>
-<app-education></app-education>
-<!-- <app-archievements></app-archievements>
-<app-travels></app-travels>
+<app-extract *ngIf="about?.extract"></app-extract>
+<app-education *ngIf="about?.educations"></app-education>
+<app-archievements *ngIf="about?.archievements"></app-archievements>
+<!--<app-travels></app-travels>
 <app-hobbies></app-hobbies> -->
