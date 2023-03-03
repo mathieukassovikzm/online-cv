@@ -1,12 +1,20 @@
 @import "helpers-dir";
+$svg-quote-s: 15px;
 
 :host {
-  p {
-    position: relative;
-    background-size: cover;
-    padding: 30px;
-    box-shadow: 0 3px 8px 0 rgb(15 15 20 / 20%);
+  .quote-in ::ng-deep svg {
+    transform: scaleX(-1);
   }
+
+  .icon ::ng-deep svg {
+    width: $svg-quote-s;
+    height: $svg-quote-s;
+
+    path {
+      fill: $primary;
+    }
+  }
+
 }
 
 /* ---------------------- Media query ----------------------------*/

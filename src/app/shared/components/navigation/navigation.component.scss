@@ -32,7 +32,7 @@ $n: 10;
       position: relative;
 
       li {
-        flex: 0 0 100%/$nav-nb-elt;
+        flex: 0 0 math.div(100%, $nav-nb-elt);
         display: flex;
         justify-content: center;
         align-items: center;
