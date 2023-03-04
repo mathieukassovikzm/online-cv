@@ -1,4 +1,5 @@
 import { IAboutModel } from 'src/app/models/about';
+import { TypeExperienceEnum } from 'src/app/models/enum';
 
 export const aboutFr: IAboutModel = {
   extract:
@@ -6,25 +7,27 @@ export const aboutFr: IAboutModel = {
   educations: [
     {
       title: 'BAC +5, Ingénieur SRC',
-      subTitle: 'INSA',
+      company: 'INSA',
       date: '2010 - 2013',
-      place: 'Rennes, France',
+      address: 'Rennes, France',
+      typeExpe: TypeExperienceEnum.Education,
       display: true,
     },
     {
       title: 'DUT GEII',
-      subTitle: 'IUT',
+      company: 'IUT',
       date: '2008 - 2010',
-      place: 'Brest, France',
+      address: 'Brest, France',
+      typeExpe: TypeExperienceEnum.Education,
       display: true,
     },
   ],
   archievements: [
     {
       title: 'Développeur Web',
-      subTitle: 'Go2sport.fr',
+      company: 'Go2sport.fr',
       date: '01/2019 - 03/2019',
-      place: 'Rennes, France',
+      address: 'Rennes, France',
       description: {
         dsc: "Développement d'un site internet professionnel pour un membre de ma famille",
         tasks: [
@@ -34,13 +37,14 @@ export const aboutFr: IAboutModel = {
         ],
         technicalEnv: ['Html5', 'Css3', 'Scss', 'VueJs'],
       },
+      typeExpe: TypeExperienceEnum.Archievement,
       display: true,
     },
     {
       title: 'Volontaire dans une ONG',
-      subTitle: 'All Hands and Hearts',
+      company: 'All Hands and Hearts',
       date: '03/2019 - 07/2019',
-      place: 'Oaxaca, Mexique',
+      address: 'Oaxaca, Mexique',
       description: {
         dsc: 'Volontaire pour All Hand and Hearts à Oaxaca au Mexique afin de reconstruire une école.',
         tasks: [
@@ -49,15 +53,18 @@ export const aboutFr: IAboutModel = {
           "En charge des classes d'anglais pour la communauté.",
         ],
       },
+      typeExpe: TypeExperienceEnum.Archievement,
       display: true,
     },
     {
       title: "Professeur de français et d'anglais",
+      company: 'Indépendant',
       date: '06/2017 - 02/2019',
-      place: 'Rennes, France / Antofagasta & Santiago, Chile',
+      address: 'Rennes, France / Antofagasta & Santiago, Chile',
       description: {
         dsc: "Classes particulières d'anglais et de français principalement centrées sur la conversation orale, apprentissage du vocabulaire, des règles de grammaires, le tout de manière ludique et pédagogique.",
       },
+      typeExpe: TypeExperienceEnum.Archievement,
       display: true,
     },
   ],
@@ -69,25 +76,27 @@ export const aboutEn: IAboutModel = {
   educations: [
     {
       title: 'Systems & Communication Network Engineer',
-      subTitle: 'INSA',
+      company: 'INSA',
       date: '2010 - 2013',
-      place: 'Rennes, France',
+      address: 'Rennes, France',
+      typeExpe: TypeExperienceEnum.Education,
       display: true,
     },
     {
       title: 'DUT GEII',
-      subTitle: 'IUT',
+      company: 'IUT',
       date: '2008 - 2010',
-      place: 'Brest, France',
+      address: 'Brest, France',
+      typeExpe: TypeExperienceEnum.Education,
       display: true,
     },
   ],
   archievements: [
     {
       title: 'Développeur Web',
-      subTitle: 'Go2sport.fr',
+      company: 'Go2sport.fr',
       date: '01/2019 - 03/2019',
-      place: 'Rennes, France',
+      address: 'Rennes, France',
       description: {
         dsc: 'Development of a professional website for a family member.',
         tasks: [
@@ -97,13 +106,14 @@ export const aboutEn: IAboutModel = {
         ],
         technicalEnv: ['Html5', 'Css3', 'Scss', 'VueJs'],
       },
+      typeExpe: TypeExperienceEnum.Archievement,
       display: true,
     },
     {
       title: 'Volunteer for an GNO',
-      subTitle: 'All Hands and Hearts',
+      company: 'All Hands and Hearts',
       date: '03/2019 - 07/2019',
-      place: 'Oaxaca, Mexique',
+      address: 'Oaxaca, Mexique',
       description: {
         dsc: 'Worked as a volunteer for All Hands And Hearts in Oaxaca Mexico reconstruing a school.',
         tasks: [
@@ -112,15 +122,18 @@ export const aboutEn: IAboutModel = {
           'In charged of the English Classes for the community.',
         ],
       },
+      typeExpe: TypeExperienceEnum.Archievement,
       display: true,
     },
     {
       title: "Professeur de français et d'anglais",
+      company: 'Independant',
       date: '06/2017 - 02/2019',
-      place: 'Rennes, France / Antofagasta & Santiago, Chile',
+      address: 'Rennes, France / Antofagasta & Santiago, Chile',
       description: {
         dsc: 'Providing individual specific English and French language tuition. Primarily focusing on the development of core conversational skills and fluidity, vocabulary improvement and expansion, and the introduction and application of fundamental principles of grammar.',
       },
+      typeExpe: TypeExperienceEnum.Archievement,
       display: true,
     },
   ],
@@ -132,25 +145,27 @@ export const aboutEs: IAboutModel = {
   educations: [
     {
       title: 'Systems & Communication Network Engineer',
-      subTitle: 'INSA',
+      company: 'INSA',
       date: '2010 - 2013',
-      place: 'Rennes, France',
+      address: 'Rennes, France',
+      typeExpe: TypeExperienceEnum.Education,
       display: true,
     },
     {
       title: 'DUT GEII',
-      subTitle: 'IUT',
+      company: 'IUT',
       date: '2008 - 2010',
-      place: 'Brest, France',
+      address: 'Brest, France',
+      typeExpe: TypeExperienceEnum.Education,
       display: true,
     },
   ],
   archievements: [
     {
       title: 'Desarrollador Web',
-      subTitle: 'Go2sport.fr',
+      company: 'Go2sport.fr',
       date: '01/2019 - 03/2019',
-      place: 'Rennes, France',
+      address: 'Rennes, France',
       description: {
         dsc: 'Desarrollo de un sitio web profesional para un miembro familiar.',
         tasks: [
@@ -160,13 +175,14 @@ export const aboutEs: IAboutModel = {
         ],
         technicalEnv: ['Html5', 'Css3', 'Scss', 'VueJs'],
       },
+      typeExpe: TypeExperienceEnum.Archievement,
       display: true,
     },
     {
       title: 'Voluntario en ONG',
-      subTitle: 'All Hands and Hearts',
+      company: 'All Hands and Hearts',
       date: '03/2019 - 07/2019',
-      place: 'Oaxaca, Mexique',
+      address: 'Oaxaca, Mexique',
       description: {
         dsc: 'Voluntario para All Hand and Hearts en Oaxaca México para reconstruir una escuela que fue destruida por un terremoto.',
         tasks: [
@@ -175,15 +191,18 @@ export const aboutEs: IAboutModel = {
           'En cargo de las clases de inglés por la comunidad.',
         ],
       },
+      typeExpe: TypeExperienceEnum.Archievement,
       display: true,
     },
     {
       title: 'Profesor de inglés / Frances',
+      company: 'Independiante',
       date: '06/2017 - 02/2019',
-      place: 'Rennes, France / Antofagasta & Santiago, Chile',
+      address: 'Rennes, France / Antofagasta & Santiago, Chile',
       description: {
         dsc: 'Enseñanza del idioma inglés en forma individual y acorde a las características de cada alumno. Principalmente enfocado en el desarrollo de capacidades de conversación y en su fluidez. Al mismo tiempo trabajo en la mejora y ampliación del vocabulario y en la introducción y aplicación de los principios fundamentales de la gramática.',
       },
+      typeExpe: TypeExperienceEnum.Archievement,
       display: true,
     },
   ],

@@ -2,6 +2,13 @@
 $svg-quote-s: 15px;
 
 :host {
+  .card-container {
+    position: relative;
+    background-size: cover;
+    padding: $content-p;
+    box-shadow: $box-shadow;
+  }
+
   .quote-in ::ng-deep svg {
     transform: scaleX(-1);
   }

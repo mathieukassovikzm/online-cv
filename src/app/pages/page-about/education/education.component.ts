@@ -19,6 +19,6 @@ export class EducationComponent implements OnInit {
 
   ngOnInit() {
     this.educations = this.aboutService.getAbout().educations;
-    this.txt = this.uiService.getUiTxtAbout();
+    this.txt = this.uiService.getUiTxt().aboutTxt;
   }
 }

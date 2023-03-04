@@ -9,6 +9,12 @@
     overflow-x: hidden;
     overflow-y: scroll;
   }
+
+  .main-content {
+    .router-content {
+      padding: $content-p;
+    }
+  }
 }
 
 .app.lang-fr {
@@ -85,10 +91,6 @@
         padding-right: $nav-w;
         padding-left: $desc-w;
         transition: $animation-duration ease-in-out;
-
-        .router-content {
-          padding: $content-p;
-        }
 
         .app-curtain {
           background: rgba(30, 30, 40, .88);

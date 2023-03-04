@@ -1,17 +1,57 @@
 @import "helpers-dir";
 
+$card-svg-s: 65px;
+$card-svg-right: 20px;
+$card-svg-top: -50px;
+
 :host {
-
-  .title {
+  .card-container {
+    position: relative;
     display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-start;
     justify-content: space-between;
+    background-size: cover;
+    padding: $content-p;
+    box-shadow: $box-shadow;
+
+    .card-infos {
+      flex-grow: 2;
+      padding-right: $content-p;
+    }
+
+    .title-container {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .subtitle {
+      color: $grey;
+      font-style: italic;
+      font-size: 12px;
+    }
+
+    .card-logo {
+      position: relative;
+      top: $card-svg-top;
+      width: $card-svg-s;
+      height: $card-svg-s;
+      border-radius: 50%;
+      background-color: $light;
+      box-shadow: $box-shadow;
+
+      .icon {
+        display: block;
+        width: $card-svg-s;
+        height: $card-svg-s;
+      }
+
+      ::ng-deep svg {
+        transform: scale(.7);
+      }
+    }
   }
 
-  .place {
-    color: $grey;
-    font-style: italic;
-    font-size: 12px;
-  }
 }
 
 /* ---------------------- Media query ----------------------------*/

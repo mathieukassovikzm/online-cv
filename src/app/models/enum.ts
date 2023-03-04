@@ -22,3 +22,9 @@ export enum TypeSkillEnum {
   Bdd,
   Tools,
 }
+
+export enum TypeExperienceEnum {
+  Education,
+  Archievement,
+  ExperiencePro,
+}

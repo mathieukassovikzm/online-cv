@@ -19,6 +19,6 @@ export class ArchievementsComponent implements OnInit {
 
   ngOnInit() {
     this.archievements = this.aboutService.getAbout().archievements;
-    this.txt = this.uiService.getUiTxtAbout();
+    this.txt = this.uiService.getUiTxt().aboutTxt;
   }
 }

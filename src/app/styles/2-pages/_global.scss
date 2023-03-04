@@ -79,9 +79,9 @@ section .heading {
   margin: auto;
 }
 
-.card-container {
-  position: relative;
-  background-size: cover;
-  padding: 30px;
-  box-shadow: 0 3px 8px 0 rgb(15 15 20 / 20%);
+.lst-cards-container {
+  .card-component {
+    display: block;
+    margin-bottom: 25px;
+  }
 }

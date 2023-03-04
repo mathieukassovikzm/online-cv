@@ -1,6 +1,6 @@
 <section class="section-education">
   <h2>{{txt?.archivementTitle}}</h2>
-  <div class="education card-container" *ngFor="let archievement of archievements">
-    <app-card [item]="archievement"></app-card>
+  <div class="lst-cards-container">
+    <app-card [item]="archievement" *ngFor="let archievement of archievements"></app-card>
   </div>
 </section>

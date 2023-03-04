@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { TypeSkillEnum } from 'src/app/models/enum';
 import { ISkillModel } from 'src/app/models/infos';
+import { IUiTxtSkillsModel } from 'src/app/models/uiTxt';
 import { InfosService } from 'src/app/services/infos.service';
+import { UiService } from 'src/app/services/ui.service';
 
 @Component({
   selector: 'app-infos-skills',
@@ -15,10 +17,16 @@ export class InfosSkillsComponent implements OnInit {
   public skillsVersionning = <ISkillModel[]>[];
   public skillsTools = <ISkillModel[]>[];
   public skillsAdobe = <ISkillModel[]>[];
+  public txt?: IUiTxtSkillsModel;
 
-  constructor(private infosService: InfosService) {}
+  constructor(
+    private infosService: InfosService,
+    private uiService: UiService
+  ) {}
 
   ngOnInit(): void {
+    this.txt = this.uiService.getUiTxt().sidePanelTxt?.skillsTitles;
+
     this.skillsFrontEnd = this.infosService.getLstSkillsByType(
       TypeSkillEnum.FrontEnd
     );

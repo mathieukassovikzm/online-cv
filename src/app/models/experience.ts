@@ -1,9 +1,12 @@
+import { TypeExperienceEnum } from './enum';
+
 export interface IExperienceModel {
   title: string;
-  subTitle?: string;
+  company?: string;
   date?: string;
-  place?: string;
+  address?: string;
   description?: IDescriptionModel;
+  typeExpe: TypeExperienceEnum;
   display: boolean;
 }
 

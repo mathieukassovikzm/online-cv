@@ -18,6 +18,6 @@ export class ExtractComponent implements OnInit {
 
   ngOnInit() {
     this.extract = this.aboutService.getAbout().extract;
-    this.txt = this.uiService.getUiTxtAbout();
+    this.txt = this.uiService.getUiTxt().aboutTxt;
   }
 }

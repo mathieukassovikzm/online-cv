@@ -1,4 +1,4 @@
-<section class="section-skills">
+<div class="section-skills">
   <div class="ctn-skills-front-end" *ngIf="skillsFrontEnd">
     <h3>Front-End</h3>
     <div class="" *ngFor="let item of skillsFrontEnd">
@@ -6,38 +6,38 @@
     </div>
   </div>
 
-  <div class="ctn-skills-front-end" *ngIf="skillsBackEnd">
+  <div class="ctn-skills-back-end" *ngIf="skillsBackEnd">
     <h3>Back-End</h3>
     <div class="" *ngFor="let item of skillsBackEnd">
       <app-skill [skill]="item"></app-skill>
     </div>
   </div>
 
-  <div class="ctn-skills-front-end" *ngIf="skillsBdd">
-    <h3>Base de données</h3>
+  <div class="ctn-skills-bdd-end" *ngIf="skillsBdd">
+    <h3>{{txt?.bddTitle}}</h3>
     <div class="" *ngFor="let item of skillsBdd">
       <app-skill [skill]="item"></app-skill>
     </div>
   </div>
 
-  <div class="ctn-skills-front-end" *ngIf="skillsVersionning">
-    <h3>Versionning</h3>
+  <div class="ctn-skills-versionning-end" *ngIf="skillsVersionning">
+    <h3>{{txt?.versionningTitle}}</h3>
     <div class="" *ngFor="let item of skillsVersionning">
       <app-skill [skill]="item"></app-skill>
     </div>
   </div>
 
-  <div class="ctn-skills-front-end" *ngIf="skillsTools">
-    <h3>Tools</h3>
+  <div class="ctn-skills-tools-end" *ngIf="skillsTools">
+    <h3>{{txt?.toolsTitle}}</h3>
     <div class="" *ngFor="let item of skillsTools">
       <app-skill [skill]="item"></app-skill>
     </div>
   </div>
 
-  <div class="ctn-skills-front-end" *ngIf="skillsAdobe">
+  <div class="ctn-skills-adobe-end" *ngIf="skillsAdobe">
     <h3>Adobe</h3>
     <div class="" *ngFor="let item of skillsAdobe">
       <app-skill [skill]="item"></app-skill>
     </div>
   </div>
-</section>
+</div>

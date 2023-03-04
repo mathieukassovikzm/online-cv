@@ -1,6 +1,6 @@
 <section class="section-education">
   <h2>{{txt?.educationTitle}}</h2>
-  <div class="education card-container" *ngFor="let education of educations">
-    <app-card [item]="education"></app-card>
+  <div class="lst-cards-container">
+    <app-card [item]="education" *ngFor="let education of educations"></app-card>
   </div>
 </section>

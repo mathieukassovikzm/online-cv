@@ -1,15 +1,32 @@
-<div class="title">
-  <h5 class="title">
-    {{item?.title}}
-  </h5>
+<div class="card-container">
+  <div class="card-infos">
+    <div class="title-container">
+      <h5 class="title">
+        {{item?.title}}
+      </h5>
 
-  <h5 class="date">
-    {{item?.date}}
-  </h5>
-</div>
-<h6 class="subTitle">
-  {{item?.subTitle}}
-</h6>
-<div class="place">
-  {{item?.place}}
+      <h5 class="date">
+        {{item?.date}}
+      </h5>
+    </div>
+    <h6 class="subtitle">
+      {{item?.company}} - {{item?.address}}
+    </h6>
+    <div class="desc" *ngIf="!!item?.description">
+      <p>{{item?.description?.dsc}}</p>
+      <div class="tasks" *ngIf="item?.description?.tasks">
+        <h5>{{txt?.tasksTitle}}</h5>
+        <p>{{item?.description?.tasks}}</p>
+      </div>
+      <div class="technicalEnv" *ngIf="item?.description?.technicalEnv">
+        <h5>{{txt?.technicalEnvTitle}}</h5>
+        <p>{{item?.description?.technicalEnv}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="card-logo">
+    <app-svg-education *ngIf="item?.typeExpe === typeExpeEduc"> </app-svg-education>
+    <app-svg-medal *ngIf="item?.typeExpe === typeExpeArchi"> </app-svg-medal>
+    <app-svg-work *ngIf="item?.typeExpe === typeExpeExpePro"> </app-svg-work>
+  </div>
 </div>
