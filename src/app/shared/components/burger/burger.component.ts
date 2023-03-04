@@ -8,12 +8,12 @@ import { UiService } from 'src/app/services/ui.service';
 })
 export class BurgerComponent implements OnInit {
   @HostBinding('class') class = 'component-burger';
-  constructor(public uiService: UiService) { }
+  constructor(public uiService: UiService) {}
 
-  ngOnInit() { }
+  ngOnInit() {}
 
   burgerClicked(): void {
-    this.uiService.toggleNavOpen();
+    this.uiService.toggleNav();
   }
 
   isOpen(): boolean {

@@ -12,8 +12,12 @@ export class UiService {
 
   constructor() {}
 
-  toggleNavOpen(): void {
+  toggleNav(): void {
     this.isNavOpen = !this.isNavOpen;
+  }
+
+  closeNav(): void {
+    this.isNavOpen = false;
   }
 
   getIsNavOpen(): boolean {

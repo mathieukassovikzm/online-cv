@@ -42,6 +42,6 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   curtainClicked(): void {
-    this.uiService.toggleNavOpen();
+    this.uiService.toggleNav();
   }
 }

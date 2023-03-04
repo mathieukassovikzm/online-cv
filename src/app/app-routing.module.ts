@@ -5,6 +5,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/about', pathMatch: 'full' },
   {
     path: 'home',
+    data: { displayName: 'Home' },
     loadChildren: () =>
       import('./pages/page-home/page-home.module').then(
         (m) => m.PageHomeModule
@@ -12,6 +13,7 @@ const routes: Routes = [
   },
   {
     path: 'about',
+    data: { displayName: 'About' },
     loadChildren: () =>
       import('./pages/page-about/page-about.module').then(
         (m) => m.PageAboutModule

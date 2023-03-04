@@ -2,18 +2,21 @@
   <div class="container-burger">
     <app-burger></app-burger>
   </div>
+  <div class="current-page">
+    <p>{{pageActiveName}}</p>
+  </div>
   <ul>
     <li [class.active]="itemMenuActif===1">
-      <label class="home">
+      <label class="home" routerLink="/home" routerLinkActive="active">
         <img class="photo" src="./../../../../assets/images/PhotoCv.jpg" alt="Mathieu LE BELLEC"
           (click)="switchMenu(1)">
-        <span class="txt" routerLink="/home" routerLinkActive="active">Home</span>
+        <span class="txt">Home</span>
       </label>
     </li>
     <li [class.active]="itemMenuActif===2">
-      <label>
+      <label routerLink="/about" routerLinkActive="active">
         <app-svg-info (click)="switchMenu(2)"></app-svg-info>
-        <span class="txt" routerLink="/about" routerLinkActive="active">About</span>
+        <span class="txt">About</span>
         <span class="bubble"></span>
       </label>
     </li>
