@@ -1,9 +1,9 @@
 <div class="card-container">
   <div class="card-infos">
     <div class="title-container">
-      <h5 class="title">
+      <h4 class="title">
         {{item?.title}}
-      </h5>
+      </h4>
 
       <h5 class="date">
         {{item?.date}}
@@ -12,13 +12,13 @@
     <h6 class="subtitle">
       {{item?.company}} - {{item?.address}}
     </h6>
-    <div class="desc" *ngIf="!!item?.description">
-      <p>{{item?.description?.dsc}}</p>
-      <div class="tasks" *ngIf="item?.description?.tasks">
+    <div class="description" *ngIf="!!item?.description">
+      <p class="dsc">{{item?.description?.dsc}}</p>
+      <div class="subtitle tasks" *ngIf="item?.description?.tasks">
         <h5>{{txt?.tasksTitle}}</h5>
         <p>{{item?.description?.tasks}}</p>
       </div>
-      <div class="technicalEnv" *ngIf="item?.description?.technicalEnv">
+      <div class="subtitle technicalEnv" *ngIf="item?.description?.technicalEnv">
         <h5>{{txt?.technicalEnvTitle}}</h5>
         <p>{{item?.description?.technicalEnv}}</p>
       </div>

@@ -1,29 +1,18 @@
 @import "helpers-dir";
 
-$card-svg-s: 65px;
+$card-svg-s: 45px;
 $card-svg-right: 20px;
-$card-svg-top: -50px;
+$card-svg-top: -22px;
 
 :host {
   .card-container {
     position: relative;
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: flex-start;
-    justify-content: space-between;
-    background-size: cover;
     padding: $content-p;
     box-shadow: $box-shadow;
 
-    .card-infos {
-      flex-grow: 2;
-      padding-right: $content-p;
-    }
+    .card-infos {}
 
-    .title-container {
-      display: flex;
-      justify-content: space-between;
-    }
+    .title-container {}
 
     .subtitle {
       color: $grey;
@@ -31,9 +20,14 @@ $card-svg-top: -50px;
       font-size: 12px;
     }
 
+    .dsc {
+      margin: 10px 0;
+    }
+
     .card-logo {
-      position: relative;
+      position: absolute;
       top: $card-svg-top;
+      right: $card-svg-right;
       width: $card-svg-s;
       height: $card-svg-s;
       border-radius: 50%;
@@ -51,10 +45,43 @@ $card-svg-top: -50px;
       }
     }
   }
-
 }
 
 /* ---------------------- Media query ----------------------------*/
 @media only screen and (min-width: $min-width-xl) {
-  :host {}
+  $card-svg-s: 65px;
+  $card-svg-right: 20px;
+  $card-svg-top: -50px;
+
+  :host {
+    .card-container {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: flex-start;
+      justify-content: space-between;
+      background-size: cover;
+
+      .card-infos {
+        flex-grow: 2;
+        padding-right: $content-p;
+      }
+
+      .title-container {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .card-logo {
+        position: relative;
+        top: $card-svg-top;
+        width: $card-svg-s;
+        height: $card-svg-s;
+
+        .icon {
+          width: $card-svg-s;
+          height: $card-svg-s;
+        }
+      }
+    }
+  }
 }
