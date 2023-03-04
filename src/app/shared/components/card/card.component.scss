@@ -14,7 +14,7 @@ $card-svg-top: -22px;
 
     .title-container {}
 
-    .subtitle {
+    .subtitle h5 {
       color: $grey;
       font-style: italic;
       font-size: 12px;
@@ -74,6 +74,7 @@ $card-svg-top: -22px;
       .card-logo {
         position: relative;
         top: $card-svg-top;
+        right: auto;
         width: $card-svg-s;
         height: $card-svg-s;
 

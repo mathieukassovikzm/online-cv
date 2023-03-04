@@ -7,6 +7,7 @@ import { HobbiesModule } from './hobbies/hobbies.module';
 import { PageAboutRoutingModule } from './page-about-routing.module';
 import { PageAboutComponent } from './page-about.component';
 import { TravelsModule } from './travels/travels.module';
+import { WorkExperienceModule } from './work-experience/work-experience.module';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { TravelsModule } from './travels/travels.module';
     ArchievementsModule,
     ExtractModule,
     EducationModule,
+    WorkExperienceModule,
     HobbiesModule,
     TravelsModule,
   ],
