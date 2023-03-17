@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SidePanelModule } from './pages/side-panel/side-panel.module';
+import { FooterModule } from './shared/components/footer/footer.module';
 import { NavigationModule } from './shared/components/navigation/navigation.module';
 
 @NgModule({
@@ -15,6 +16,7 @@ import { NavigationModule } from './shared/components/navigation/navigation.modu
     // StoreDevtoolsModule.instrument(),
     NavigationModule,
     SidePanelModule,
+    FooterModule,
   ],
   bootstrap: [AppComponent],
 })
