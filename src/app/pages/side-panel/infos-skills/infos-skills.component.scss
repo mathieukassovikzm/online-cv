@@ -1,0 +1,18 @@
+@import "helpers-dir";
+
+:host {
+  .section-skills {
+    padding: $bannerd-p $bannerd-p*2 ;
+
+    h3 {
+      text-align: center;
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+  }
+}
+
+/* ---------------------- Media query ----------------------------*/
+@media only screen and (min-width: $min-width-xl) {
+  :host {}
+}

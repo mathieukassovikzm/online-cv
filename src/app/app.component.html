@@ -1,3 +1,13 @@
-<div class="app" [class]="onLang()">
-  <router-outlet></router-outlet>
+<div class="app" [class]="onLang()" [class.is-opened]="isOpen()">
+  <div class="site-content">
+    <app-side-panel></app-side-panel>
+    <div class="main-content">
+      <div class="router-content">
+        <router-outlet></router-outlet>
+      </div>
+      <app-footer></app-footer>
+      <div class="app-curtain" (click)="curtainClicked()"></div>
+    </div>
+  </div>
+  <app-navigation></app-navigation>
 </div>

@@ -1,19 +1,293 @@
+@use 'sass:math';
 @import "helpers-dir";
+
+
+$nav-c: $primary-super-light;
+$nav-text-c: $txt-dark;
+$nav-label-h: 52px;
+$nav-icon-c-active: $txt-dark;
+$nav-icon-c-inactive: rgba($txt-dark, .5);
+$nav-icon-c-hover: $secondary-dark;
+$nav-circle-c: $nav-c;
+$nav-burger-s: $nav-w;
+$nav-t-duration: 0.05s;
+$nav-nb-elt: 4;
+$n: 10;
+
 :host {
-  .navbar {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 11;
 
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 15px;
-    letter-spacing: 4px;
+  .tabbar {
+    background: $nav-c;
+    width: 100%;
+    height: $nav-h;
+    padding: 0 12px;
 
-    .navbar-nav {
-      display: inline-block;
+    ul {
       display: flex;
-      flex-wrap: nowrap;
+      height: 100%;
+      position: relative;
+
+      li {
+        flex: 0 0 math.div(100%, $nav-nb-elt);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        z-index: 51;
+
+        img {
+          border-radius: 50%;
+          width: 50px;
+          height: 50px;
+        }
+
+        label {
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          align-items: center;
+          transition: all ease 0.2s;
+
+          ::ng-deep {
+            svg {
+              position: relative;
+              z-index: 52;
+              width: 24px;
+              height: 24px;
+              margin: auto;
+              transform-origin: 50% 50%;
+              transform: translateY(6px);
+              cursor: pointer;
+
+              path {
+                fill: $nav-icon-c-inactive;
+              }
+            }
+          }
+
+          .txt {
+            position: relative;
+            font-size: 10px;
+            font-weight: 500;
+            text-align: center;
+            opacity: 0;
+            color: $nav-text-c;
+            transform-origin: 50% 0;
+            transition: transform .4s cubic-bezier(.2, .64, .48, 1.12), opacity .4s ease, color .4s ease;
+            top: 8px;
+          }
+
+          span.bubble {
+            z-index: 51;
+            opacity: 0;
+
+            &:after {
+              content: '';
+              width: 44px;
+              height: 44px;
+              display: block;
+              border-radius: 50%;
+              background: $nav-circle-c;
+              position: absolute;
+              left: 50%;
+              top: 0;
+              margin: -14px 0 0 -22px;
+            }
+          }
+
+
+
+          &.home {
+
+            .txt {
+              display: none;
+            }
+          }
+        }
+
+        &:hover {
+          ::ng-deep svg path {
+            fill: $nav-icon-c-hover;
+          }
+        }
+
+        &.active {
+          label.home {
+            transform: none;
+          }
+
+          label {
+            transform: translateY(-14px) scale(1);
+
+            ::ng-deep svg {
+              top: -3px;
+
+              path {
+                fill: $nav-icon-c-active;
+              }
+            }
+
+            .txt {
+              opacity: 1;
+            }
+
+            span.bubble {
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+
+    .container-burger {
+      .component-burger {
+        position: absolute;
+        left: math.div($nav-w - $burger-w, 2);
+        top: math.div($nav-w - $burger-w, 2);
+        width: $burger-w;
+        height: $burger-w;
+      }
+
+      display: none;
+      width: 100%;
+      height: $nav-burger-s;
+      background-color: $light;
+      box-shadow: $box-shadow;
+    }
+
+    .current-page {
+      display: none;
+
+      width: 200px;
+      transform: rotate(90deg);
+      position: absolute;
+      overflow: hidden;
+      top: 200px;
+      left: -62px;
+      text-transform: uppercase;
+      font-size: 13px;
+      letter-spacing: 1px;
+      font-weight: 500;
+      transition: .4s ease-in-out;
+    }
+  }
+}
+
+/* ---------------------- Media query ----------------------------*/
+@media only screen and (min-width: $min-width-xl) {
+  :host {
+    position: relative;
+    display: flex;
+    width: 0;
+    height: calc(100vh - $app-p*2);
+
+    .tabbar {
+      position: absolute;
+      right: 0;
+
+      width: $nav-w;
+      height: 100%;
+      padding: 0;
+      box-shadow: $box-shadow;
+      transition: $animation-duration ease-in-out;
+      overflow: hidden;
+
+      ul {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        flex: inherit;
+        min-width: $nav-w-opened;
+        height: calc(100vh - $nav-w - $app-p*2);
+        margin: 0 0 $nav-w;
+        overflow-x: hidden;
+
+        li {
+          width: 100%;
+          flex: inherit;
+          transform: translateX(60px);
+          transition: $animation-duration ease-in-out;
+
+          @for $i from 1 through $n {
+            &:nth-child(#{$i}) {
+              transition-delay: $i*$nav-t-duration;
+            }
+          }
+
+          img {
+            display: none;
+          }
+
+          label {
+            width: 100%;
+            justify-content: flex-start;
+
+            ::ng-deep {
+              svg {
+                display: none;
+              }
+            }
+
+            .txt {
+              display: block;
+              width: 100%;
+              top: 0;
+              padding: 10px 30px;
+              cursor: pointer;
+              text-align: left;
+              font-size: inherit;
+              font-weight: inherit;
+              opacity: 0;
+              transition: $animation-duration ease-in-out;
+            }
+
+            span.bubble {
+              display: none;
+            }
+
+            &.home {
+              .txt {
+                display: block;
+                opacity: 0;
+              }
+            }
+          }
+        }
+      }
+
+      .container-burger {
+        display: block;
+      }
+
+      .current-page {
+        display: block;
+        opacity: 1;
+      }
+    }
+  }
+
+  .is-opened {
+    :host {
+      .tabbar {
+        ul li {
+          transform: translateX(0px);
+
+          label,
+          label.home {
+            .txt {
+              opacity: 1;
+            }
+          }
+        }
+
+        .current-page {
+          opacity: 0;
+        }
+      }
     }
   }
 }

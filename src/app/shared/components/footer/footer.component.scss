@@ -1,0 +1,21 @@
+@use 'sass:math';
+@import "helpers-dir";
+
+:host {
+  width: 100%;
+  padding: 0 $content-p;
+  position: relative;
+  display: block;
+
+  .section-footer {
+    width: 100%;
+    background: $primary-super-light;
+    padding: math.div($content-p, 2);
+
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+/* ---------------------- Media query ----------------------------*/
+@media only screen and (min-width: $min-width-xl) {}

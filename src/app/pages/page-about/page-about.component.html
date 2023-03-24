@@ -1,10 +1,7 @@
-<section class="about bg-dark">
-  <div class="profile-picture">
-    <!-- <img src='./assets/images/PhotoCv.jpg' alt="Math" class="img-circle"> -->
-  </div>
-  <div class="heading">
-    <h1>Mathieu Le Bellec</h1>
-    <h3>Web Designer</h3>
-    <!-- <a href="docs/Mathieu_Le_Bellec_Cv_En.pdf" class="btn btn-light">Download Curriculum</a> -->
-  </div>
-</section>
+<app-extract *ngIf="about?.extract"></app-extract>
+<!-- <app-education *ngIf="about?.educations"></app-education>
+<app-archievements *ngIf="about?.archievements"></app-archievements>
+<app-work-experience></app-work-experience> -->
+<!--<app-travels></app-travels>
+<app-hobbies></app-hobbies> -->
+<app-life-timeline></app-life-timeline>

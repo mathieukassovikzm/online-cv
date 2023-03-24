@@ -1,26 +1,18 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PageHomeComponent } from './page-home.component';
-import { PageAboutModule } from '../page-about/page-about.module';
-import { PageSkillsModule } from '../page-skills/page-skills.module';
+import { NgModule } from '@angular/core';
+import { BannerModule } from './banner/banner.module';
+import { InfosRecapModule } from './infos-recap/infos-recap.module';
 import { PageHomeRoutingModule } from './page-home-routing.module';
-import { NavigationModule } from 'src/app/shared/components/navigation/navigation.module';
-import { PageExtractModule } from '../page-extract/page-extract.module';
-import { PageArchievementsModule } from '../page-archievements/page-archievements.module';
-import { PageEducationModule } from '../page-education/page-education.module';
+import { PageHomeComponent } from './page-home.component';
 
 @NgModule({
   imports: [
     CommonModule,
-    NavigationModule,
     PageHomeRoutingModule,
-    PageAboutModule,
-    PageEducationModule,
-    PageSkillsModule,
-    PageExtractModule,
-    PageArchievementsModule
+    BannerModule,
+    InfosRecapModule,
   ],
   exports: [PageHomeComponent],
-  declarations: [PageHomeComponent]
+  declarations: [PageHomeComponent],
 })
-export class PageHomeModule { }
+export class PageHomeModule {}

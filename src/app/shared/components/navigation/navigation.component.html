@@ -1,13 +1,38 @@
-<nav class="navbar navbar-default navbar-fixed-top bg-light">
-  <div class="name">Mathieu Le Bellec</div>
-  <ul class="nav navbar-nav">
-    <li><a href="#">About me</a></li>
-    <li><a href="#">Projets</a></li>
-    <li><a href="#">Contacts</a></li>
-    <li class="lst-languages">
-      <button (click)="switchToFrench()">French</button>
-      <button (click)="switchToEnglish()">English</button>
-      <button (click)="switchToSpanish()">Spanish</button>
+<nav class="tabbar">
+  <div class="container-burger">
+    <app-burger></app-burger>
+  </div>
+  <div class="current-page">
+    <p>{{pageActiveName}}</p>
+  </div>
+  <ul>
+    <li [class.active]="itemMenuActif===1">
+      <label class="home" routerLink="/home" routerLinkActive="active">
+        <img class="photo" src="./../../../../assets/images/PhotoCv.jpg" alt="Mathieu LE BELLEC"
+          (click)="switchMenu(1)">
+        <span class="txt">Home</span>
+      </label>
+    </li>
+    <li [class.active]="itemMenuActif===2">
+      <label routerLink="/about" routerLinkActive="active">
+        <app-svg-info (click)="switchMenu(2)"></app-svg-info>
+        <span class="txt">About</span>
+        <span class="bubble"></span>
+      </label>
+    </li>
+    <li [class.active]="itemMenuActif===3">
+      <label>
+        <app-svg-work (click)="switchMenu(3)"></app-svg-work>
+        <span class="txt">Projets</span>
+        <span class="bubble"></span>
+      </label>
+    </li>
+    <li [class.active]="itemMenuActif===4">
+      <label>
+        <app-svg-phone (click)="switchMenu(4)"></app-svg-phone>
+        <span class="txt">Contacts</span>
+        <span class="bubble"></span>
+      </label>
     </li>
   </ul>
 </nav>

@@ -1,0 +1,84 @@
+@import "helpers-dir";
+
+/******* Variables *******/
+$burger-anim-duration: $animation-duration;
+$burger-color: $txt-dark;
+
+
+:host {
+  .icon-burger {
+    z-index: 10;
+    position: relative;
+    width: $burger-w;
+    height: 100%;
+    cursor: pointer;
+
+    transition: transform $burger-anim-duration;
+
+    span {
+      position: absolute;
+      top: 50%;
+      bottom: 50%;
+
+      display: block;
+      width: 25px;
+      height: 2px;
+
+      background-color: $burger-color;
+      transform: translateX(50%) translateY(-50%);
+
+      &::before,
+      &::after {
+        content: '';
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        display: block;
+        width: 25px;
+        height: 2px;
+
+        background-color: $burger-color;
+
+        transform: translateY(-6px);
+        transition: transform $burger-anim-duration;
+      }
+
+      &::after {
+        transform: translateY(6px);
+      }
+    }
+
+    &:hover {
+      span::before {
+        transform: translateY(-8px);
+      }
+
+      span::after {
+        transform: translateY(8px);
+      }
+    }
+
+    span::before,
+    span::after {
+      transform-origin: 50% 50%;
+    }
+
+    &.is-opened {
+      transform: rotate(180deg);
+
+      span {
+        background: transparent;
+
+        &::before {
+          transform: translateY(0) rotate(45deg);
+        }
+
+        &::after {
+          transform: translateY(0) rotate(-45deg);
+        }
+      }
+    }
+  }
+}

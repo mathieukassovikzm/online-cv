@@ -116,5 +116,8 @@
       }
     }
   },
-  "defaultProject": "online-cv-math"
+  "defaultProject": "online-cv-math",
+  "cli": {
+    "analytics": false
+  }
 }

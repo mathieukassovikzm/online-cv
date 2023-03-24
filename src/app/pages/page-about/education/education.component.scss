@@ -1,0 +1,9 @@
+@import "helpers-dir";
+
+:host {}
+
+/* ---------------------- Media query ----------------------------*/
+@media only screen and (min-width: $min-width-xl) {
+  :host {}
+
+}

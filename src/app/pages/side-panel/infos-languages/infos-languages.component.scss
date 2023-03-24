@@ -1,0 +1,26 @@
+@import "helpers-dir";
+
+$skill-logo-s: 25px;
+
+:host {
+  ul {
+    padding: $bannerd-p $bannerd-p*2 ;
+
+    li {
+      display: flex;
+      align-items: center;
+
+      .logo {
+        margin: auto 0;
+        height: 100%;
+        width: $skill-logo-s;
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+/* ---------------------- Media query ----------------------------*/
+@media only screen and (min-width: $min-width-xl) {
+  :host {}
+}

@@ -1,0 +1,88 @@
+@import "helpers-dir";
+
+$card-svg-s: 45px;
+$card-svg-right: 20px;
+$card-svg-top: -22px;
+
+:host {
+  .card-container {
+    position: relative;
+    padding: $content-p;
+    box-shadow: $box-shadow;
+
+    .card-infos {}
+
+    .title-container {}
+
+    .subtitle h5 {
+      color: $grey;
+      font-style: italic;
+      font-size: 12px;
+    }
+
+    .dsc {
+      margin: 10px 0;
+    }
+
+    .card-logo {
+      position: absolute;
+      top: $card-svg-top;
+      right: $card-svg-right;
+      width: $card-svg-s;
+      height: $card-svg-s;
+      border-radius: 50%;
+      background-color: $light;
+      box-shadow: $box-shadow;
+
+      .icon {
+        display: block;
+        width: $card-svg-s;
+        height: $card-svg-s;
+      }
+
+      ::ng-deep svg {
+        transform: scale(.7);
+      }
+    }
+  }
+}
+
+/* ---------------------- Media query ----------------------------*/
+@media only screen and (min-width: $min-width-xl) {
+  $card-svg-s: 65px;
+  $card-svg-right: 20px;
+  $card-svg-top: -50px;
+
+  :host {
+    .card-container {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: flex-start;
+      justify-content: space-between;
+      background-size: cover;
+
+      .card-infos {
+        flex-grow: 2;
+        padding-right: $content-p;
+      }
+
+      .title-container {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .card-logo {
+        position: relative;
+        top: $card-svg-top;
+        right: auto;
+        width: $card-svg-s;
+        height: $card-svg-s;
+
+        .icon {
+          width: $card-svg-s;
+          height: $card-svg-s;
+        }
+      }
+    }
+  }
+}

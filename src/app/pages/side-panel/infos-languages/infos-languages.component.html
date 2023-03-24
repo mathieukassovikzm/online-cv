@@ -1,0 +1,10 @@
+<ul>
+  <li *ngFor="let item of lstLanguages">
+    <div class="logo">
+      <app-svg-fr *ngIf="item.code === codeFr"></app-svg-fr>
+      <app-svg-en *ngIf="item.code === codeEn"></app-svg-en>
+      <app-svg-es *ngIf="item.code === codeEs"></app-svg-es>
+    </div>
+    <h6>{{ item.name}} : {{ item.power }}</h6>
+  </li>
+</ul>

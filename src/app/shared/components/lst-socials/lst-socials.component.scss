@@ -1,0 +1,24 @@
+@import "helpers-dir";
+
+$social-logo-s: 16px;
+
+:host {
+  ul {
+    padding: 0 $bannerd-p*2 ;
+    display: flex;
+    justify-content: center;
+
+    li {
+      margin: 0 6px;
+
+      .logo ::ng-deep svg {
+        width: $social-logo-s;
+      }
+    }
+  }
+}
+
+/* ---------------------- Media query ----------------------------*/
+@media only screen and (min-width: $min-width-xl) {
+  :host {}
+}

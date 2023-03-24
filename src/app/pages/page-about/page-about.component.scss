@@ -1,21 +1,6 @@
 @import "helpers-dir";
 
-/*------------- ABOUT -------------*/
-.about {
-  padding-top: 100px;
-  .profile-picture {
-    text-align: center;
-    margin: 0 auto;
-    float: none !important;
-    img {
-      border-radius: 50%;
-    }
-  }
-  .heading h1 {
-    text-transform: uppercase;
-    text-shadow: 1px 1px 1px #fff;
-  }
-  .heading h3 {
-    text-shadow: 1px 1px 1px #fff;
-  }
+/* ---------------------- Media query ----------------------------*/
+@media only screen and (min-width: $min-width-xl) {
+  :host {}
 }

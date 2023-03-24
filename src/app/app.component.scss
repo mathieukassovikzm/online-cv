@@ -1,33 +1,112 @@
+@import "helpers-dir";
+
+:host,
+.app {
+  width: 100%;
+  height: 100%;
+
+  .site-content {
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+
+  .main-content {
+    .router-content {
+      padding: $content-p;
+    }
+  }
+}
+
 .app.lang-fr {
   ::ng-deep {
     .txt-fr {
       display: block;
     }
+
     .txt-en,
     .txt-es {
       display: none;
     }
   }
 }
+
 .app.lang-en {
   ::ng-deep {
     .txt-en {
       display: block;
     }
+
     .txt-fr,
     .txt-es {
       display: none;
     }
   }
 }
+
 .app.lang-es {
   ::ng-deep {
     .txt-es {
       display: block;
     }
+
     .txt-fr,
     .txt-en {
       display: none;
+    }
+  }
+}
+
+/* ---------------------- Media query ----------------------------*/
+@media only screen and (min-width: $min-width-xl) {
+  :host {
+    .app {
+      display: flex;
+      padding: $app-p;
+      max-width: 1440px;
+      margin-left: auto;
+      margin-right: auto;
+      overflow-x: hidden;
+
+      &.is-opened {
+        ::ng-deep .tabbar {
+          width: $nav-w-opened;
+        }
+
+        .site-content .main-content {
+          transform: translateX(-1*($nav-w-opened - $nav-w));
+
+          .app-curtain {
+            visibility: visible;
+            opacity: .7;
+          }
+        }
+      }
+
+      .site-content::-webkit-scrollbar {
+        display: none;
+      }
+
+      .main-content {
+        position: relative;
+        padding-right: $nav-w;
+        padding-left: $desc-w;
+        transition: $animation-duration ease-in-out;
+
+        .app-curtain {
+          background: rgba(30, 30, 40, .88);
+          position: absolute;
+          z-index: 9;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          pointer-events: none;
+          opacity: 0;
+          visibility: hidden;
+          transition: $animation-duration ease-in-out;
+          pointer-events: all;
+        }
+      }
     }
   }
 }

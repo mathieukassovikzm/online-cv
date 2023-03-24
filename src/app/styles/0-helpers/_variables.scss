@@ -1,16 +1,59 @@
 /**************************************
  * Colors
 **************************************/
-$primary: #d50000;
-$primary-light: #ff5131;
-$primary-dark: #9b0000;
+$primary: #556789;
+$primary-super-light: #e1e7ef;
+$primary-light: #8395b9;
+$primary-dark: #293d5c;
+$primary-super-dark: #01060f;
 
-$secondary: #fafafa;
-$secondary-light: #fff;
-$secondary-dark: #c7c7c7;
+$secondary: #f5d798;
+$secondary-light: #ffffc9;
+$secondary-dark: #c1a669;
+
+$grey: #8c8c8e;
 
 $light: #fafafa;
-$dark: #2d373d;
+$dark: #202733;
 
 $txt-light: $light;
 $txt-dark: $dark;
+
+$background: $light;
+
+/*******************************
+ * Variables Globales
+ *******************************/
+$app-p: 15px;
+$desc-w: 290px;
+$animation-duration-short: 0.2s;
+$animation-duration: 0.55s;
+$box-shadow : 0 3px 8px 0 rgb(15 15 20 / 20%);
+
+/*******************************
+ * Navigation
+ *******************************/
+$nav-h: 64px;
+$nav-w: 80px;
+$nav-w-opened: 230px;
+$burger-w: 50px;
+
+/*******************************
+ * Banner
+ *******************************/
+$bannerd-w: 290px;
+$bannerd-p: 15px;
+
+/*******************************
+ * Content
+ *******************************/
+$content-p: 30px;
+
+/*******************************
+ * Media Query
+ *******************************/
+$min-width-xs: 350px;
+$min-width-s: 450px;
+$min-width-m: 650px;
+$min-width-l: 850px;
+$min-width-xl: 1020px;
