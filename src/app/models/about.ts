@@ -5,4 +5,5 @@ export interface IAboutModel {
   educations?: IExperienceModel[];
   archievements?: IExperienceModel[];
   experiencesPro?: IExperienceModel[];
+  travels?: IExperienceModel[];
 }

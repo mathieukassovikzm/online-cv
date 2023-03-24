@@ -8,6 +8,7 @@ export const aboutFr: IAboutModel = {
     {
       title: 'BAC +5, Ingénieur SRC',
       company: 'INSA',
+      dateEnd: new Date('2013-06-01'),
       date: '2010 - 2013',
       address: 'Rennes, France',
       typeExpe: TypeExperienceEnum.Education,
@@ -16,6 +17,7 @@ export const aboutFr: IAboutModel = {
     {
       title: 'DUT GEII',
       company: 'IUT',
+      dateEnd: new Date('2010-06-01'),
       date: '2008 - 2010',
       address: 'Brest, France',
       typeExpe: TypeExperienceEnum.Education,
@@ -26,7 +28,8 @@ export const aboutFr: IAboutModel = {
     {
       title: 'Développeur Web',
       company: 'Go2sport.fr',
-      date: '01/2019 - 03/2019',
+      dateEnd: new Date('2020-03-01'),
+      date: '01/2020 - 03/2020',
       address: 'Rennes, France',
       description: {
         dsc: "Développement d'un site internet professionnel pour un membre de ma famille",
@@ -43,6 +46,7 @@ export const aboutFr: IAboutModel = {
     {
       title: 'Volontaire dans une ONG',
       company: 'All Hands and Hearts',
+      dateEnd: new Date('2019-07-01'),
       date: '03/2019 - 07/2019',
       address: 'Oaxaca, Mexique',
       description: {
@@ -59,6 +63,7 @@ export const aboutFr: IAboutModel = {
     {
       title: "Professeur de français et d'anglais",
       company: 'Indépendant',
+      dateEnd: new Date('2019-02-01'),
       date: '06/2017 - 02/2019',
       address: 'Rennes, France / Antofagasta & Santiago, Chile',
       description: {
@@ -72,6 +77,7 @@ export const aboutFr: IAboutModel = {
     {
       title: 'Développeur Web',
       company: 'Veonum',
+      dateEnd: new Date('2023-04-01'),
       date: '10/2019 - 03/2023',
       address: 'Rennes, France',
       description: {
@@ -100,6 +106,7 @@ export const aboutFr: IAboutModel = {
     {
       title: 'Développeur Java',
       company: 'Sopra Stéria',
+      dateEnd: new Date('2018-01-01'),
       date: '06/2016 - 01/2018',
       address: 'Rennes, France',
       description: {
@@ -126,6 +133,7 @@ export const aboutFr: IAboutModel = {
     {
       title: 'Stagiaire Développeur C#',
       company: 'Actemium',
+      dateEnd: new Date('2013-07-01'),
       date: '02/2013 - 07/2013',
       address: 'Rennes, France',
       description: {
@@ -154,7 +162,8 @@ export const aboutFr: IAboutModel = {
     {
       title: 'Stagiaire Développeur C++',
       company: 'Cesta',
-      date: '02/2013 - 07/2013',
+      dateEnd: new Date('2012-07-01'),
+      date: '06/2012 - 07/2012',
       address: 'Rennes, France',
       description: {
         dsc: "Développement d'un logiciel de couverture radar. Ce logiciel était en lien étroit avec un logiciel déjà développé par la Cesta de rayonnement d'un radar en fonction de ses caractéristiques. L'utilisateur pouvait déployer les radars à sa disposition sur les différents sites où le déploiement était possible, suivant cette configuration il pouvait observer, sa couverture radar sous différentes vues à différentes altitudes.",
@@ -170,6 +179,68 @@ export const aboutFr: IAboutModel = {
       display: true,
     },
   ],
+  travels: [
+    {
+      title: '1 an backpacking en Amérique Latine',
+      dateEnd: new Date('2019-07-01'),
+      date: '02/2018 - 07/2019',
+      description: {
+        dsc: '',
+      },
+      typeExpe: TypeExperienceEnum.Travel,
+      display: true,
+    },
+    {
+      title: '7 mois backpacking en Asie',
+      dateEnd: new Date('2016-04-01'),
+      date: '10/2015 - 04/2016',
+      description: {
+        dsc: '',
+      },
+      typeExpe: TypeExperienceEnum.Travel,
+      display: true,
+    },
+    {
+      title: '2 ans backpacking en Australie',
+      dateEnd: new Date('2015-10-01'),
+      date: '10/2013 - 10/2015',
+      description: {
+        dsc: '',
+      },
+      typeExpe: TypeExperienceEnum.Travel,
+      display: true,
+    },
+    {
+      title: "1 semestre d'études en Suède",
+      dateEnd: new Date('2013-01-01'),
+      date: '09/2012 - 01/2013',
+      description: {
+        dsc: '',
+      },
+      typeExpe: TypeExperienceEnum.Travel,
+      display: true,
+    },
+    {
+      title: '2 mois au pair aux USA',
+      dateEnd: new Date('2011-08-01'),
+      date: '07/2011 - 08/2011',
+      description: {
+        dsc: '',
+      },
+      typeExpe: TypeExperienceEnum.Travel,
+      display: true,
+    },
+    {
+      title: "3 mois d'études en Angleterre",
+      dateEnd: new Date('2010-06-01'),
+      date: '03/2010 - 06/2010',
+      description: {
+        dsc: '',
+      },
+      typeExpe: TypeExperienceEnum.Travel,
+      display: true,
+    },
+  ],
 };
 
 export const aboutEn: IAboutModel = {
@@ -179,6 +250,7 @@ export const aboutEn: IAboutModel = {
     {
       title: 'Systems & Communication Network Engineer',
       company: 'INSA',
+      dateEnd: new Date('2013-06-01'),
       date: '2010 - 2013',
       address: 'Rennes, France',
       typeExpe: TypeExperienceEnum.Education,
@@ -187,6 +259,7 @@ export const aboutEn: IAboutModel = {
     {
       title: 'DUT GEII',
       company: 'IUT',
+      dateEnd: new Date('2010-06-01'),
       date: '2008 - 2010',
       address: 'Brest, France',
       typeExpe: TypeExperienceEnum.Education,
@@ -197,7 +270,8 @@ export const aboutEn: IAboutModel = {
     {
       title: 'Développeur Web',
       company: 'Go2sport.fr',
-      date: '01/2019 - 03/2019',
+      dateEnd: new Date('2020-03-01'),
+      date: '01/2020 - 03/2020',
       address: 'Rennes, France',
       description: {
         dsc: 'Development of a professional website for a family member.',
@@ -214,6 +288,7 @@ export const aboutEn: IAboutModel = {
     {
       title: 'Volunteer for an GNO',
       company: 'All Hands and Hearts',
+      dateEnd: new Date('2019-07-01'),
       date: '03/2019 - 07/2019',
       address: 'Oaxaca, Mexique',
       description: {
@@ -230,6 +305,7 @@ export const aboutEn: IAboutModel = {
     {
       title: "Professeur de français et d'anglais",
       company: 'Independant',
+      dateEnd: new Date('2019-02-01'),
       date: '06/2017 - 02/2019',
       address: 'Rennes, France / Antofagasta & Santiago, Chile',
       description: {
@@ -248,6 +324,7 @@ export const aboutEs: IAboutModel = {
     {
       title: 'Systems & Communication Network Engineer',
       company: 'INSA',
+      dateEnd: new Date('2013-06-01'),
       date: '2010 - 2013',
       address: 'Rennes, France',
       typeExpe: TypeExperienceEnum.Education,
@@ -256,6 +333,7 @@ export const aboutEs: IAboutModel = {
     {
       title: 'DUT GEII',
       company: 'IUT',
+      dateEnd: new Date('2010-06-01'),
       date: '2008 - 2010',
       address: 'Brest, France',
       typeExpe: TypeExperienceEnum.Education,
@@ -266,7 +344,8 @@ export const aboutEs: IAboutModel = {
     {
       title: 'Desarrollador Web',
       company: 'Go2sport.fr',
-      date: '01/2019 - 03/2019',
+      dateEnd: new Date('2020-03-01'),
+      date: '01/2020 - 03/2020',
       address: 'Rennes, France',
       description: {
         dsc: 'Desarrollo de un sitio web profesional para un miembro familiar.',
@@ -283,6 +362,7 @@ export const aboutEs: IAboutModel = {
     {
       title: 'Voluntario en ONG',
       company: 'All Hands and Hearts',
+      dateEnd: new Date('2019-07-01'),
       date: '03/2019 - 07/2019',
       address: 'Oaxaca, Mexique',
       description: {
@@ -299,6 +379,7 @@ export const aboutEs: IAboutModel = {
     {
       title: 'Profesor de inglés / Frances',
       company: 'Independiante',
+      dateEnd: new Date('2019-02-01'),
       date: '06/2017 - 02/2019',
       address: 'Rennes, France / Antofagasta & Santiago, Chile',
       description: {
