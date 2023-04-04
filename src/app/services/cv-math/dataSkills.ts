@@ -13,8 +13,8 @@ export const skills: ISkillModel[] = [
     id: 12,
     name: 'VueJs',
     type: TypeSkillEnum.FrontEnd,
-    power: 80,
-    display: true,
+    power: 50,
+    display: false,
   },
   {
     id: 12,
@@ -48,14 +48,14 @@ export const skills: ISkillModel[] = [
     id: 16,
     name: 'Javascript',
     type: TypeSkillEnum.FrontEnd,
-    power: 60,
+    power: 70,
     display: true,
   },
   {
     id: 17,
     name: 'TypeScript',
     type: TypeSkillEnum.FrontEnd,
-    power: 60,
+    power: 70,
     display: true,
   },
   {
@@ -78,7 +78,7 @@ export const skills: ISkillModel[] = [
     id: 31,
     name: 'Java',
     type: TypeSkillEnum.BackEnd,
-    power: 70,
+    power: 60,
     display: true,
   },
   {
