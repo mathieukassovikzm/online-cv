@@ -16,8 +16,11 @@ export interface IUiTxtSkillsModel {
 
 export interface IUiTxtAboutModel {
   extractTitle: string;
+  lifeTimelineTitle: string;
+  allExpeTitle: string;
   educationTitle: string;
   archivementTitle: string;
+  expeProTitle: string;
 }
 
 export interface IUiTxtCardModel {
