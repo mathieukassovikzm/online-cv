@@ -37,9 +37,7 @@ export class AboutService {
       about?.archievements,
       about?.experiencesPro
     );
-    console.log(timeline);
     timeline = _.orderBy(timeline, (i) => i.dateEnd, ['desc']);
-    console.log(timeline);
     return timeline;
   }
 }

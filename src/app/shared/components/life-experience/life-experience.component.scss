@@ -1,0 +1,97 @@
+@import "helpers-dir";
+
+$card-svg-s: 45px;
+$card-svg-top: -8px;
+
+:host {
+
+  .timeline-event {
+    position: relative;
+  }
+
+  .timeline-event-copy {
+    padding: 2em 4em 2em 5em;
+    position: relative;
+    top: -1.875em;
+    // left: 4em;
+    width: 100%;
+  }
+
+  .timeline-event-copy h3 {
+    font-size: 1.75em;
+  }
+
+  .timeline-event-copy h4 {
+    font-size: 1.2em;
+    margin-bottom: 1.2em;
+  }
+
+  .timeline-event-copy strong {
+    font-weight: 700;
+  }
+
+  .timeline-event-copy p:not(.timeline-event-thumbnail) {
+    padding-bottom: 1.2em;
+  }
+
+  .timeline-event-thumbnail {
+    transition: box-shadow $animation-duration ease-in 0.1s;
+    color: $txt-light;
+    font-size: 12px;
+    font-weight: bold;
+    background-color: $dark;
+    box-shadow: inset 0 0 0 0em $primary;
+    display: inline-block;
+    margin-bottom: 1.2em;
+    padding: 0.25em 1em 0.2em 1em;
+  }
+
+  .timeline-event-icon {
+    position: absolute;
+    left: 0;
+    top: $card-svg-top;
+    width: $card-svg-s;
+    height: $card-svg-s;
+    border-radius: 50%;
+    background-color: $light;
+    box-shadow: $box-shadow;
+
+    .icon {
+      display: block;
+      width: $card-svg-s;
+      height: $card-svg-s;
+    }
+
+    ::ng-deep svg {
+      transform: scale(.7);
+
+      path,
+      circle,
+      polygon {
+        transition: all $animation-duration-short;
+      }
+    }
+  }
+
+  .timeline-event:hover {
+    .timeline-event-thumbnail {
+      box-shadow: inset 40em 0 0 0 $primary;
+    }
+
+    .timeline-event-icon {
+      ::ng-deep svg {
+
+        path,
+        circle,
+        polygon {
+          fill: $primary;
+        }
+      }
+    }
+  }
+
+
+}
+
+/* ---------------------- Media query ----------------------------*/
+@media only screen and (min-width: $min-width-xl) {}

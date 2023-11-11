@@ -1,0 +1,51 @@
+@import "helpers-dir";
+
+:host {
+  .section-life-timeline {
+    .life-timeline-filter {
+      padding-left: 0;
+      display: flex;
+      margin: 0 auto;
+      padding: 20px 20px 20px 0;
+      transition: all .5s;
+
+      li {
+        margin: 20px 0;
+
+        a {
+          padding: 5px 10px;
+          margin: 0 14px;
+          transition: all .2s ease-in-out .1s;
+
+          &.active {
+            background-color: $primary;
+            padding: 5px 20px;
+            color: $txt-light;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+
+    .lst-cards-container {
+      position: relative;
+
+      &:before {
+        background-color: $dark;
+        content: '';
+        margin-left: -4px;
+        position: absolute;
+        top: 0;
+        left: 2em;
+        width: 2px;
+        height: 100%;
+      }
+    }
+  }
+}
+
+/* ---------------------- Media query ----------------------------*/
+@media only screen and (min-width: $min-width-xl) {
+
+  :host {}
+}

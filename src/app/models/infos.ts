@@ -5,6 +5,8 @@ export interface IInfosModel {
   name: string;
   famillyName: string;
   title: string;
+  email: string;
+  address: string;
   available: boolean;
   infosPersonnal: IInfosPersonalModel;
   curriculum: IQuestionReponseModel;
