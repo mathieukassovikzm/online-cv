@@ -1,5 +1,6 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { Observable, Subscription, tap } from 'rxjs';
 import { CodeLanguageEnum } from './models/enum';
 import { UiService } from './services/ui.service';
 
@@ -14,7 +15,12 @@ export class AppComponent implements OnInit, OnDestroy {
 
   private subscription = new Subscription();
 
-  constructor(public uiService: UiService) {}
+  constructor(
+    public uiService: UiService,
+    protected http: HttpClient,
+  ) {
+    this.HealthApi().subscribe()
+  }
 
   ngOnInit() {
     this.lang = this.uiService.getUiLanguage();
@@ -39,6 +45,24 @@ export class AppComponent implements OnInit, OnDestroy {
       default:
         return '';
     }
+  }
+
+
+  private HealthApi(): Observable<any> {
+    const headers = new HttpHeaders()
+    let tmpHeaders = headers
+    .set('Accept', '*/*')
+    // .set('Content-Type','application/json')
+    // .set('Access-Control-Allow-Headers','Content-Type Access-Control-Allow-Origin')
+    // .set('Access-Control-Allow-Methods','*')
+    // .set('Access-Control-Allow-Origin', 'https://pricing-wa-preprod-01.azurewebsites.net');
+
+    return this.http.get('https://pricing-wa-preprod-01.azurewebsites.net',{ headers: tmpHeaders }).pipe(
+      tap(r => console.log(r))
+      )
+    // return this.http.get('https://pricing-wa-preprod-01.azurewebsites.net/healthApiManager').pipe(
+    //   tap(r => console.log(r))
+    // )
   }
 
   curtainClicked(): void {

@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { SidePanelModule } from './pages/side-panel/side-panel.module';
 import { FooterModule } from './shared/components/footer/footer.module';
 import { NavigationModule } from './shared/components/navigation/navigation.module';
+import { HttpClientModule, provideHttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,6 +20,9 @@ import { NavigationModule } from './shared/components/navigation/navigation.modu
     NavigationModule,
     SidePanelModule,
     FooterModule,
+    HttpClientModule
+  ],
+  providers: [
   ],
   bootstrap: [AppComponent],
 })

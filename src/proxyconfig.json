@@ -1,0 +1,8 @@
+{
+  "/*": {
+    "target": "https://pricing-wa-preprod-01.azurewebsites.net",
+    "secure":false,
+    "logLevel": "debug",
+    "changOrigin": true
+  }
+}
