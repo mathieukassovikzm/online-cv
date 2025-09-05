@@ -1,3 +1,5 @@
+@import "helpers-dir";
+
 :host {
   position: relative;
   display: block;
@@ -6,4 +8,54 @@
   background-image: url("/assets/images/workspace.jpg");
   background-size: cover;
   background-position: center;
+  text-align: center;
+  padding: 10px;
+
+  h1 {
+    color: $txt-light;
+    font-weight: 800;
+    margin-bottom: 15px;
+  }
+  .subtitle {
+    color: $txt-light;
+    font-size: 18px;
+  }
+  .code {
+    color: $primary;
+    text-shadow: 0.5px 0.5px 0px $light;
+  }
+
+  /* typing effect */
+  .cursor {
+    display: inline-block;
+    width: 1ch;
+    animation: blink 1s steps(2, start) infinite;
+  }
+
+  @keyframes blink {
+    to {
+      visibility: hidden;
+    }
+  }
+}
+
+/* ---------------------- Media query ----------------------------*/
+@media only screen and (min-width: $min-width-m) {
+  :host {
+    padding: 20px;
+
+    h1 {
+      color: $txt-light;
+      font-weight: 800;
+      margin-bottom: 15px;
+    }
+  }
+}
+
+/* ---------------------- Media query ----------------------------*/
+@media only screen and (min-width: $min-width-xl) {
+  :host {
+    text-align: left;
+    padding: 60px;
+  }
 }
