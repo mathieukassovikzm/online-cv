@@ -4,7 +4,7 @@ import { IInfosModel, ISocialNetwork } from 'src/app/models/infos';
 const infosCommon = {
   name: 'Mathieu',
   famillyName: 'Le Bellec',
-  title: 'Web Developper',
+  title: 'Full Stack Developper',
   available: false,
   email: 'mathieu.lebellec.pro@gmail.com',
   address: '5 rue Jean Brulelou',
@@ -18,16 +18,13 @@ export const infosFr: IInfosModel = {
   email: infosCommon.email,
   address: infosCommon.address,
   infosPersonnal: {
-    birth: { question: 'Date de naissance:', answer: '10 Dec 1989' },
-    nationality: { question: 'Nationalité:', answer: 'Française' },
-    status: { question: 'Statut:', answer: 'Pacsé' },
-    drivingLiscence: { question: 'Permis de conduire:', answer: 'Oui' },
-    car: { question: 'Voiture', answer: 'Oui' },
+    birth: '10 Dec 1989',
+    nationality: 'Française',
+    status: 'Pacsé',
+    drivingLiscence: 'Oui',
+    car: 'Oui',
   },
-  curriculum: {
-    question: 'Télécharger CV:',
-    answer: './assets/Mathieu_Le_Bellec_Cv_Fr_V2.pdf',
-  },
+  curriculum: './assets/Mathieu_Le_Bellec_Cv_Fr_V2.pdf',
 };
 
 export const infosEn: IInfosModel = {
@@ -38,19 +35,13 @@ export const infosEn: IInfosModel = {
   email: infosCommon.email,
   address: infosCommon.address,
   infosPersonnal: {
-    birth: { question: 'Date of birth:', answer: '10 Dec 1989' },
-    nationality: { question: 'Nationality:', answer: 'French' },
-    status: { question: 'Marital Status:', answer: 'In a civil partnership' },
-    drivingLiscence: {
-      question: 'International Driving Licence:',
-      answer: 'Yes',
-    },
-    car: { question: 'Car', answer: 'Yes' },
+    birth: '10 Dec 1989',
+    nationality: 'French',
+    status: 'In a civil partnership',
+    drivingLiscence: 'Yes',
+    car: 'Yes',
   },
-  curriculum: {
-    question: 'Download CV:',
-    answer: './assets/Mathieu_Le_Bellec_Cv_Fr_V2.pdf',
-  },
+  curriculum: './assets/Mathieu_Le_Bellec_Cv_Fr_V2.pdf',
 };
 
 export const infosEs: IInfosModel = {
@@ -61,19 +52,13 @@ export const infosEs: IInfosModel = {
   email: infosCommon.email,
   address: infosCommon.address,
   infosPersonnal: {
-    birth: { question: 'Fecha de nacimiento:', answer: '10 Dic 1989' },
-    nationality: { question: 'Nacionalidad:', answer: 'Francés' },
-    status: {
-      question: 'Estado Civil:',
-      answer: 'En unión de hecho sin hijos',
-    },
-    drivingLiscence: { question: 'Licencia de conducir:', answer: 'Si' },
-    car: { question: 'Auto', answer: 'Si' },
+    birth: '10 Dic 1989',
+    nationality: 'Francés',
+    status: 'En unión de hecho sin hijos',
+    drivingLiscence: 'Si',
+    car: 'Si',
   },
-  curriculum: {
-    question: 'Descargar CV:',
-    answer: './assets/Mathieu_Le_Bellec_Cv_Fr_V2.pdf',
-  },
+  curriculum: './assets/Mathieu_Le_Bellec_Cv_Fr_V2.pdf',
 };
 
 export const lstSocialNetwork: ISocialNetwork[] = [

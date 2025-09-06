@@ -5,7 +5,22 @@ export interface IUiTxtModel {
 }
 
 export interface IUiTxtSidePanelModel {
+  topDescTitles: IUiTxtTopDescModel;
+  infosPersoTitles: IUiTxtInfosPersoModel;
   skillsTitles: IUiTxtSkillsModel;
+}
+
+export interface IUiTxtTopDescModel {
+  languageTitle: string;
+  cvTitle: string;
+}
+
+export interface IUiTxtInfosPersoModel {
+  birthTitle: string;
+  nationalityTitle: string;
+  statusTitle: string;
+  drivingLiscenceTitle: string;
+  carTitle: string;
 }
 
 export interface IUiTxtSkillsModel {

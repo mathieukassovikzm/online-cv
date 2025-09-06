@@ -17,8 +17,8 @@ export class AboutService {
 
   constructor(public uiService: UiService) {}
 
-  getAbout(): IAboutModel {
-    switch (this.uiService.getUiLanguage()) {
+  getAbout(language: CodeLanguageEnum): IAboutModel {
+    switch (language) {
       case CodeLanguageEnum.FR:
         return aboutFr;
       case CodeLanguageEnum.EN:
@@ -30,8 +30,8 @@ export class AboutService {
     }
   }
 
-  getLifeTimeline(): IExperienceModel[] {
-    const about = this.getAbout();
+  getLifeTimeline(language: CodeLanguageEnum): IExperienceModel[] {
+    const about = this.getAbout(language);
     let timeline: IExperienceModel[] = _.union(
       about?.educations,
       about?.archievements,

@@ -28,8 +28,8 @@ export class InfosService {
 
   constructor(public uiService: UiService) {}
 
-  getInfos(): IInfosModel {
-    switch (this.uiService.getUiLanguage()) {
+  getInfos(language: CodeLanguageEnum): IInfosModel {
+    switch (language) {
       case CodeLanguageEnum.FR:
         return infosFr;
       case CodeLanguageEnum.EN:
@@ -45,8 +45,8 @@ export class InfosService {
     return _.filter(lstSocialNetwork, { display: true });
   }
 
-  getLanguages(): ILanguageModel[] {
-    switch (this.uiService.getUiLanguage()) {
+  getLanguages(language: CodeLanguageEnum): ILanguageModel[] {
+    switch (language) {
       case CodeLanguageEnum.FR:
         return languagesFr;
       case CodeLanguageEnum.EN:

@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, computed, OnInit, Signal } from '@angular/core';
 import { TypeSkillEnum } from 'src/app/models/enum';
 import { ISkillModel } from 'src/app/models/infos';
-import { IUiTxtSkillsModel } from 'src/app/models/uiTxt';
+import { IUiTxtCardModel, IUiTxtSkillsModel } from 'src/app/models/uiTxt';
 import { InfosService } from 'src/app/services/infos.service';
 import { UiService } from 'src/app/services/ui.service';
 
@@ -17,7 +17,11 @@ export class InfosSkillsComponent implements OnInit {
   public skillsVersionning = <ISkillModel[]>[];
   public skillsTools = <ISkillModel[]>[];
   public skillsAdobe = <ISkillModel[]>[];
-  public txt?: IUiTxtSkillsModel;
+
+  private sLanguage = this.uiService.getUiLanguage();
+  public sUiText: Signal<IUiTxtSkillsModel> = computed(() => {
+    return this.uiService.getUiTxt(this.sLanguage())?.sidePanelTxt.skillsTitles;
+  });
 
   constructor(
     private infosService: InfosService,
@@ -25,7 +29,6 @@ export class InfosSkillsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.txt = this.uiService.getUiTxt().sidePanelTxt?.skillsTitles;
 
     this.skillsFrontEnd = this.infosService.getLstSkillsByType(
       TypeSkillEnum.FrontEnd

@@ -2,6 +2,31 @@
 
 $banner-w: 290px;
 
+:host {
+  position: relative;
+
+  .banner-infos {
+    display: none;
+  }
+  .banner-infos.extended {
+    display: block;
+  }
+
+  .btn-extend {
+    position: absolute;
+    display: block;
+    right: 0;
+  }
+
+  .btn-extend .icon.extended ::ng-deep svg {
+    transform: rotate(180deg);
+  }
+
+  .btn-extend .icon ::ng-deep svg {
+    width: 15px;
+  }
+}
+
 /* ---------------------- Media query ----------------------------*/
 @media only screen and (min-width: $min-width-xl) {
   :host {
@@ -9,9 +34,9 @@ $banner-w: 290px;
       position: fixed;
       width: $banner-w;
       min-width: $banner-w;
-      height: calc(100vh - $app-p*2);
+      height: calc(100vh - $app-p * 2);
       box-shadow: $box-shadow;
-      background-color: $primary-super-light;
+      background-color: $grey-light;
       transition: $animation-duration ease-in-out;
       z-index: 999;
       overflow-y: auto;
@@ -19,6 +44,12 @@ $banner-w: 290px;
       &::-webkit-scrollbar {
         display: none;
       }
+    }
+    .banner-infos {
+      display: block;
+    }
+    .btn-extend {
+      display: none;
     }
   }
 }

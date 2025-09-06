@@ -5,14 +5,11 @@ import { SvgEnModule } from 'src/app/shared/svgs/skills/language/svg-en/svg-en.m
 import { SvgEsModule } from 'src/app/shared/svgs/skills/language/svg-es/svg-es.module';
 import { SvgFrModule } from 'src/app/shared/svgs/skills/language/svg-fr/svg-fr.module';
 
+const svgs = [SvgFrModule, SvgEnModule, SvgEsModule];
+
 @NgModule({
-  imports: [
-    SvgFrModule,
-    SvgEnModule,
-    SvgEsModule,
-    CommonModule
-  ],
+  imports: [CommonModule, ...svgs],
   exports: [InfosLanguagesComponent],
-  declarations: [InfosLanguagesComponent]
+  declarations: [InfosLanguagesComponent],
 })
-export class InfosLanguagesModule { }
+export class InfosLanguagesModule {}

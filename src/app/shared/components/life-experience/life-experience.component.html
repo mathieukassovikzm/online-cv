@@ -11,11 +11,11 @@
     <div class="description" *ngIf="!!item?.description">
       <p class="dsc">{{item?.description?.dsc}}</p>
       <div class="subtitle tasks" *ngIf="item?.description?.tasks">
-        <h5>{{txt?.tasksTitle}}</h5>
+        <h5>{{sUiText().tasksTitle}}</h5>
         <p>{{item?.description?.tasks}}</p>
       </div>
       <div class="subtitle technicalEnv" *ngIf="item?.description?.technicalEnv">
-        <h5>{{txt?.technicalEnvTitle}}</h5>
+        <h5>{{sUiText().technicalEnvTitle}}</h5>
         <p>{{item?.description?.technicalEnv}}</p>
       </div>
     </div>

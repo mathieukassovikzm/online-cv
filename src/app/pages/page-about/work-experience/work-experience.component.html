@@ -1,7 +1,7 @@
 <section class="section-education">
-  <h2>{{txt?.archivementTitle}}</h2>
+  <h2>{{sUiText().archivementTitle}}</h2>
   <div class="lst-cards-container">
-    <app-card [item]="expericePro" *ngFor="let expericePro of expericesPro"></app-card>
+    <app-card [item]="expericePro" *ngFor="let expericePro of sExpericesPro()"></app-card>
   </div>
 </section>
 <!-- 

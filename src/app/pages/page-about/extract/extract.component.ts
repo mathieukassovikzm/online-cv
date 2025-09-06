@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, computed, Signal } from '@angular/core';
 import { IUiTxtAboutModel } from 'src/app/models/uiTxt';
 import { AboutService } from 'src/app/services/about.service';
 import { UiService } from 'src/app/services/ui.service';
@@ -8,16 +8,17 @@ import { UiService } from 'src/app/services/ui.service';
   templateUrl: './extract.component.html',
   styleUrls: ['./extract.component.scss'],
 })
-export class ExtractComponent implements OnInit {
-  public extract? = '';
-  public txt?: IUiTxtAboutModel;
+export class ExtractComponent {
+  private sLanguage = this.uiService.getUiLanguage();
+  public sUiText: Signal<IUiTxtAboutModel> = computed(() => {
+    return this.uiService.getUiTxt(this.sLanguage())?.aboutTxt;
+  });
+  public sExtract: Signal<string | undefined> = computed(() => {
+    return this.aboutService.getAbout(this.sLanguage()).extract;
+  });
+
   constructor(
     private aboutService: AboutService,
     private uiService: UiService
   ) {}
-
-  ngOnInit() {
-    this.extract = this.aboutService.getAbout().extract;
-    this.txt = this.uiService.getUiTxt().aboutTxt;
-  }
 }

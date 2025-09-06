@@ -1,6 +1,22 @@
 <ul>
-  <li *ngFor="let item of infosPerso | keyvalue">
-    <h6>{{ item.value.question}}</h6>
-    <span>{{ item.value.answer }}</span>
+  <li>
+    <h6>{{ sUiText().birthTitle}}</h6>
+    <span>{{ sInfosPerso().birth }}</span>
+  </li>
+  <li>
+    <h6>{{ sUiText().nationalityTitle}}</h6>
+    <span>{{ sInfosPerso().nationality }}</span>
+  </li>
+  <li>
+    <h6>{{ sUiText().statusTitle}}</h6>
+    <span>{{ sInfosPerso().status }}</span>
+  </li>
+  <li>
+    <h6>{{ sUiText().drivingLiscenceTitle}}</h6>
+    <span>{{ sInfosPerso().drivingLiscence }}</span>
+  </li>
+  <li>
+    <h6>{{ sUiText().carTitle}}</h6>
+    <span>{{ sInfosPerso().car }}</span>
   </li>
 </ul>
