@@ -1,0 +1,41 @@
+@import "helpers-dir";
+
+:host {
+    ul {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    li {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 15px;
+    }
+
+    li h5 {
+        font-weight: 600;
+        font-size: 22px;
+        color: $primary;
+    }
+}
+
+/* ---------------------- Media query ----------------------------*/
+@media only screen and (min-width: $min-width-s) {
+    :host {
+        ul {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+}
+
+/* ---------------------- Media query ----------------------------*/
+@media only screen and (min-width: $min-width-xl) {
+    :host {
+        ul {
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+    }
+}
