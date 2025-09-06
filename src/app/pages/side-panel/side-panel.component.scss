@@ -3,11 +3,27 @@
 $banner-w: 290px;
 
 :host {
+  position: relative;
+
   .banner-infos {
     display: none;
   }
   .banner-infos.extended {
     display: block;
+  }
+
+  .btn-extend {
+    position: absolute;
+    display: block;
+    right: 0;
+  }
+
+  .btn-extend .icon.extended ::ng-deep svg {
+    transform: rotate(180deg);
+  }
+
+  .btn-extend .icon ::ng-deep svg {
+    width: 15px;
   }
 }
 
@@ -31,6 +47,9 @@ $banner-w: 290px;
     }
     .banner-infos {
       display: block;
+    }
+    .btn-extend {
+      display: none;
     }
   }
 }

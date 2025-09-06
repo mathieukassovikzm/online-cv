@@ -1,7 +1,11 @@
 <div class="banner-desc">
   <app-top-desc></app-top-desc>
 
-  <div class="banner-infos">
+  <button class ='btn-extend' (click)="extendBannerInfos()">
+    <app-svg-download [class.extended]="isBannerInfosExtended"></app-svg-download>
+  </button>
+
+  <div class="banner-infos" [class.extended]="isBannerInfosExtended">
     <app-infos-perso></app-infos-perso>
     <div class="divider"></div>
     <app-infos-languages></app-infos-languages>
