@@ -14,7 +14,6 @@ import { listFadeFadeAnimation } from './animation';
   animations: [listFadeFadeAnimation],
 })
 export class LifeTimelineComponent implements OnInit {
-  public timelineEvents: IExperienceModel[] = [];
   public timelineEventsFiltered?: IExperienceModel[] = [];
   public timelineEventsFilteredTotal = -1;
   public filterActif: TypeExperienceEnum | undefined;
@@ -23,10 +22,12 @@ export class LifeTimelineComponent implements OnInit {
   public typeExpeArchi = TypeExperienceEnum.Archievement;
   public typeExpeExpePro = TypeExperienceEnum.ExperiencePro;
 
-
   private sLanguage = this.uiService.getUiLanguage();
   public sUiText: Signal<IUiTxtAboutModel> = computed(() => {
     return this.uiService.getUiTxt(this.sLanguage())?.aboutTxt;
+  });
+  public sTimelineEvents: Signal<IExperienceModel[]> = computed(() => {
+    return this.aboutService.getLifeTimeline(this.sLanguage());
   });
 
   constructor(
@@ -35,8 +36,7 @@ export class LifeTimelineComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.timelineEvents = this.aboutService.getLifeTimeline();
-    this.timelineEventsFiltered = this.timelineEvents;
+    this.timelineEventsFiltered = this.sTimelineEvents();
     this.timelineEventsFilteredTotal = this.timelineEventsFiltered.length;
   }
 
@@ -46,7 +46,7 @@ export class LifeTimelineComponent implements OnInit {
 
   filterTimelineEvents(filter?: TypeExperienceEnum): void {
     if (filter != undefined) {
-      this.timelineEventsFiltered = _.filter(this.timelineEvents, {
+      this.timelineEventsFiltered = _.filter(this.sTimelineEvents(), {
         typeExpe: filter,
       });
 
@@ -59,8 +59,8 @@ export class LifeTimelineComponent implements OnInit {
         this.timelineEventsFilteredTotal = newTotal;
       }
     } else {
-      this.timelineEventsFiltered = this.timelineEvents;
-      this.timelineEventsFilteredTotal = this.timelineEvents.length;
+      this.timelineEventsFiltered = this.sTimelineEvents();
+      this.timelineEventsFilteredTotal = this.sTimelineEvents().length;
       this.filterActif = undefined;
     }
   }
