@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, computed, OnInit, Signal } from '@angular/core';
 import _ from 'lodash';
 import { TypeExperienceEnum } from 'src/app/models/enum';
 import { IExperienceModel } from 'src/app/models/experience';
@@ -23,7 +23,11 @@ export class LifeTimelineComponent implements OnInit {
   public typeExpeArchi = TypeExperienceEnum.Archievement;
   public typeExpeExpePro = TypeExperienceEnum.ExperiencePro;
 
-  public txt?: IUiTxtAboutModel;
+
+  private sLanguage = this.uiService.getUiLanguage();
+  public sUiText: Signal<IUiTxtAboutModel> = computed(() => {
+    return this.uiService.getUiTxt(this.sLanguage())?.aboutTxt;
+  });
 
   constructor(
     private aboutService: AboutService,
@@ -34,7 +38,6 @@ export class LifeTimelineComponent implements OnInit {
     this.timelineEvents = this.aboutService.getLifeTimeline();
     this.timelineEventsFiltered = this.timelineEvents;
     this.timelineEventsFilteredTotal = this.timelineEventsFiltered.length;
-    this.txt = this.uiService.getUiTxt().aboutTxt;
   }
 
   isActif(filter?: TypeExperienceEnum): boolean {

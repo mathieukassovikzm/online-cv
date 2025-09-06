@@ -1,4 +1,10 @@
-import { Component, HostBinding, Input, OnInit } from '@angular/core';
+import {
+  Component,
+  computed,
+  HostBinding,
+  Input,
+  Signal
+} from '@angular/core';
 import { TypeExperienceEnum } from 'src/app/models/enum';
 import { IExperienceModel } from 'src/app/models/experience';
 import { IUiTxtCardModel } from 'src/app/models/uiTxt';
@@ -9,18 +15,18 @@ import { UiService } from 'src/app/services/ui.service';
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss'],
 })
-export class CardComponent implements OnInit {
+export class CardComponent {
   @HostBinding('class') class = 'card-component';
   @Input() item: IExperienceModel | undefined;
-  public txt?: IUiTxtCardModel;
+
+  private sLanguage = this.uiService.getUiLanguage();
+  public sUiText: Signal<IUiTxtCardModel> = computed(() => {
+    return this.uiService.getUiTxt(this.sLanguage())?.cardTxt;
+  });
 
   public typeExpeEduc = TypeExperienceEnum.Education;
   public typeExpeArchi = TypeExperienceEnum.Archievement;
   public typeExpeExpePro = TypeExperienceEnum.ExperiencePro;
 
   constructor(private uiService: UiService) {}
-
-  ngOnInit() {
-    this.txt = this.uiService.getUiTxt()?.cardTxt;
-  }
 }

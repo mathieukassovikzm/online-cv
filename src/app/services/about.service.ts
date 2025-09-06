@@ -18,7 +18,8 @@ export class AboutService {
   constructor(public uiService: UiService) {}
 
   getAbout(): IAboutModel {
-    switch (this.uiService.getUiLanguage()) {
+    const lang = this.uiService.getUiLanguage();
+    switch (lang()) {
       case CodeLanguageEnum.FR:
         return aboutFr;
       case CodeLanguageEnum.EN:

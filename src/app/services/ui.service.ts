@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, signal, Signal } from '@angular/core';
 import { CodeLanguageEnum } from '../models/enum';
 import { IUiTxtModel } from '../models/uiTxt';
 import { uiTxtEn, uiTxtEs, uiTxtFr } from './ui-txt/ui-txt';
@@ -8,7 +8,7 @@ import { uiTxtEn, uiTxtEs, uiTxtFr } from './ui-txt/ui-txt';
 })
 export class UiService {
   private isNavOpen = false;
-  private uiLanguage = CodeLanguageEnum.FR;
+  private uiLanguage = signal(CodeLanguageEnum.FR);
 
   constructor() {}
 
@@ -24,16 +24,16 @@ export class UiService {
     return this.isNavOpen;
   }
 
-  getUiLanguage(): CodeLanguageEnum {
+  getUiLanguage(): Signal<CodeLanguageEnum> {
     return this.uiLanguage;
   }
 
   setUiLanguage(lang: CodeLanguageEnum): void {
-    this.uiLanguage = lang;
+    this.uiLanguage.set(lang) ;
   }
 
-  getUiTxt(): IUiTxtModel {
-    switch (this.uiLanguage) {
+  getUiTxt(lang: CodeLanguageEnum): IUiTxtModel {
+    switch (lang) {
       case CodeLanguageEnum.FR:
         return uiTxtFr;
       case CodeLanguageEnum.EN:

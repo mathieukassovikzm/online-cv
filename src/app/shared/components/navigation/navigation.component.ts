@@ -43,16 +43,4 @@ export class NavigationComponent implements OnInit {
   switchMenu(idDtemClicked: number): void {
     this.itemMenuActif = idDtemClicked;
   }
-
-  switchToFrench(): void {
-    this.uiService.setUiLanguage(CodeLanguageEnum.FR);
-  }
-
-  switchToEnglish(): void {
-    this.uiService.setUiLanguage(CodeLanguageEnum.EN);
-  }
-
-  switchToSpanish(): void {
-    this.uiService.setUiLanguage(CodeLanguageEnum.ES);
-  }
 }
