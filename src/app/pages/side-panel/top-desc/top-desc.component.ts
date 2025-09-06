@@ -29,14 +29,14 @@ export class TopDescComponent implements OnInit {
   }
 
   switchToFrench(): void {
-    this.uiService.setUiLanguage(CodeLanguageEnum.FR);
+    this.uiService.setUiLanguageAndNavigate(CodeLanguageEnum.FR);
   }
 
   switchToEnglish(): void {
-    this.uiService.setUiLanguage(CodeLanguageEnum.EN);
+    this.uiService.setUiLanguageAndNavigate(CodeLanguageEnum.EN);
   }
 
   switchToSpanish(): void {
-    this.uiService.setUiLanguage(CodeLanguageEnum.ES);
+    this.uiService.setUiLanguageAndNavigate(CodeLanguageEnum.ES);
   }
 }

@@ -1,5 +1,6 @@
 import { Component, computed, Signal } from '@angular/core';
-import { IInfosModel } from 'src/app/models/infos';
+import { IInfosPersonalModel } from 'src/app/models/infos';
+import { IUiTxtInfosPersoModel } from 'src/app/models/uiTxt';
 import { InfosService } from 'src/app/services/infos.service';
 import { UiService } from 'src/app/services/ui.service';
 
@@ -10,8 +11,12 @@ import { UiService } from 'src/app/services/ui.service';
 })
 export class InfosPersoComponent {
   private sLanguage = this.uiService.getUiLanguage();
-  public sInfosPerso: Signal<IInfosModel> = computed(() => {
-    return this.infosService.getInfos(this.sLanguage());
+  public sUiText: Signal<IUiTxtInfosPersoModel> = computed(() => {
+    return this.uiService.getUiTxt(this.sLanguage()).sidePanelTxt
+      .infosPersoTitles;
+  });
+  public sInfosPerso: Signal<IInfosPersonalModel> = computed(() => {
+    return this.infosService.getInfos(this.sLanguage()).infosPersonnal;
   });
 
   constructor(

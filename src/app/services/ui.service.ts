@@ -1,7 +1,8 @@
-import { Injectable, signal, Signal } from '@angular/core';
+import { inject, Injectable, signal, Signal } from '@angular/core';
 import { CodeLanguageEnum } from '../models/enum';
 import { IUiTxtModel } from '../models/uiTxt';
 import { uiTxtEn, uiTxtEs, uiTxtFr } from './ui-txt/ui-txt';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
@@ -10,7 +11,10 @@ export class UiService {
   private isNavOpen = false;
   private uiLanguage = signal(CodeLanguageEnum.FR);
 
-  constructor() {}
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+  ) {}
 
   toggleNav(): void {
     this.isNavOpen = !this.isNavOpen;
@@ -29,7 +33,17 @@ export class UiService {
   }
 
   setUiLanguage(lang: CodeLanguageEnum): void {
-    this.uiLanguage.set(lang) ;
+    this.uiLanguage.set(lang);
+  }
+
+  setUiLanguageAndNavigate(lang: CodeLanguageEnum): void {
+    this.setUiLanguage(lang);
+    // With query parameters
+    this.router.navigate([], {
+      queryParams: { lang },
+      relativeTo: this.route,
+      queryParamsHandling: 'merge'
+    });
   }
 
   getUiTxt(lang: CodeLanguageEnum): IUiTxtModel {

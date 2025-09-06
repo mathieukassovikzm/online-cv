@@ -1,7 +1,7 @@
 export enum CodeLanguageEnum {
-  FR,
-  EN,
-  ES,
+  FR = 'FR',
+  EN = 'EN',
+  ES = 'ES',
 }
 
 export enum CodeSocialNetworkEnum {
