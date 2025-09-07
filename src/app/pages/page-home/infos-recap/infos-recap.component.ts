@@ -10,12 +10,11 @@ import { UiService } from 'src/app/services/ui.service';
   styleUrls: ['./infos-recap.component.scss'],
 })
 export class InfosRecapComponent {
-  private sLanguage = this.uiService.getUiLanguage();
   public sUiText: Signal<IUiTxtAboutModel> = computed(() => {
-    return this.uiService.getUiTxt(this.sLanguage())?.aboutTxt;
+    return this.uiService.getUiTxt()()?.aboutTxt;
   });
   public sLstRecap: Signal<IRecapModel[]> = computed(() => {
-    return this.homeService.getHome(this.sLanguage()).lstRecap;
+    return this.homeService.getHome()().lstRecap;
   });
 
   constructor(private homeService: HomeService, private uiService: UiService) {}

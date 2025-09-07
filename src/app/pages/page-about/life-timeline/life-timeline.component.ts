@@ -22,13 +22,10 @@ export class LifeTimelineComponent implements OnInit {
   public typeExpeArchi = TypeExperienceEnum.Archievement;
   public typeExpeExpePro = TypeExperienceEnum.ExperiencePro;
 
-  private sLanguage = this.uiService.getUiLanguage();
   public sUiText: Signal<IUiTxtAboutModel> = computed(() => {
-    return this.uiService.getUiTxt(this.sLanguage())?.aboutTxt;
+    return this.uiService.getUiTxt()()?.aboutTxt;
   });
-  public sTimelineEvents: Signal<IExperienceModel[]> = computed(() => {
-    return this.aboutService.getLifeTimeline(this.sLanguage());
-  });
+  public sTimelineEvents: Signal<IExperienceModel[]> = this.aboutService.getLifeTimeline();
 
   constructor(
     private aboutService: AboutService,

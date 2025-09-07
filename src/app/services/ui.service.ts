@@ -1,8 +1,8 @@
-import { inject, Injectable, signal, Signal } from '@angular/core';
+import { computed, Injectable, signal, Signal } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CodeLanguageEnum } from '../models/enum';
 import { IUiTxtModel } from '../models/uiTxt';
 import { uiTxtEn, uiTxtEs, uiTxtFr } from './ui-txt/ui-txt';
-import { ActivatedRoute, Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
@@ -11,10 +11,7 @@ export class UiService {
   private isNavOpen = false;
   private uiLanguage = signal(CodeLanguageEnum.FR);
 
-  constructor(
-    private router: Router,
-    private route: ActivatedRoute,
-  ) {}
+  constructor(private router: Router, private route: ActivatedRoute) {}
 
   toggleNav(): void {
     this.isNavOpen = !this.isNavOpen;
@@ -42,20 +39,23 @@ export class UiService {
     this.router.navigate([], {
       queryParams: { lang },
       relativeTo: this.route,
-      queryParamsHandling: 'merge'
+      queryParamsHandling: 'merge',
     });
   }
 
-  getUiTxt(lang: CodeLanguageEnum): IUiTxtModel {
-    switch (lang) {
-      case CodeLanguageEnum.FR:
-        return uiTxtFr;
-      case CodeLanguageEnum.EN:
-        return uiTxtEn;
-      case CodeLanguageEnum.ES:
-        return uiTxtEs;
-      default:
-        return uiTxtFr;
-    }
+  getUiTxt(): Signal<IUiTxtModel> {
+    return computed(() => {
+      const language = this.getUiLanguage();
+      switch (language()) {
+        case CodeLanguageEnum.FR:
+          return uiTxtFr;
+        case CodeLanguageEnum.EN:
+          return uiTxtEn;
+        case CodeLanguageEnum.ES:
+          return uiTxtEs;
+        default:
+          return uiTxtFr;
+      }
+    });
   }
 }

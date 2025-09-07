@@ -1,10 +1,4 @@
-import {
-  Component,
-  computed,
-  HostBinding,
-  Input,
-  Signal
-} from '@angular/core';
+import { Component, computed, HostBinding, Input, Signal } from '@angular/core';
 import { TypeExperienceEnum } from 'src/app/models/enum';
 import { IExperienceModel } from 'src/app/models/experience';
 import { IUiTxtCardModel } from 'src/app/models/uiTxt';
@@ -19,9 +13,8 @@ export class LifeExperienceComponent {
   @HostBinding('class') class = 'life-experience-component';
   @Input() item: IExperienceModel | undefined;
 
-  private sLanguage = this.uiService.getUiLanguage();
   public sUiText: Signal<IUiTxtCardModel> = computed(() => {
-    return this.uiService.getUiTxt(this.sLanguage())?.cardTxt;
+    return this.uiService.getUiTxt()()?.cardTxt;
   });
 
   public typeExpeEduc = TypeExperienceEnum.Education;

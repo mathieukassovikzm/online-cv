@@ -12,10 +12,10 @@ import { UiService } from 'src/app/services/ui.service';
 export class LstEntreprisesComponent {
   private sLanguage = this.uiService.getUiLanguage();
   public sUiText: Signal<IUiTxtAboutModel> = computed(() => {
-    return this.uiService.getUiTxt(this.sLanguage())?.aboutTxt;
+    return this.uiService.getUiTxt()()?.aboutTxt;
   });
   public sLstEntreprises: Signal<IEnterpriseModel[]> = computed(() => {
-    return this.homeService.getHome(this.sLanguage()).lstLogos;
+    return this.homeService.getHome()().lstLogos;
   });
 
   constructor(private homeService: HomeService, private uiService: UiService) {}

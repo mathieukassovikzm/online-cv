@@ -10,13 +10,11 @@ import { UiService } from 'src/app/services/ui.service';
   styleUrls: ['./infos-perso.component.scss'],
 })
 export class InfosPersoComponent {
-  private sLanguage = this.uiService.getUiLanguage();
   public sUiText: Signal<IUiTxtInfosPersoModel> = computed(() => {
-    return this.uiService.getUiTxt(this.sLanguage()).sidePanelTxt
-      .infosPersoTitles;
+    return this.uiService.getUiTxt()().sidePanelTxt.infosPersoTitles;
   });
   public sInfosPerso: Signal<IInfosPersonalModel> = computed(() => {
-    return this.infosService.getInfos(this.sLanguage()).infosPersonnal;
+    return this.infosService.getInfos()().infosPersonnal;
   });
 
   constructor(
