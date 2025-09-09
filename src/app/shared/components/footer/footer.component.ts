@@ -1,9 +1,6 @@
-import { Component, computed, Signal } from '@angular/core';
-import {
-  IInfosModel
-} from 'src/app/models/infos';
+import { Component, Signal } from '@angular/core';
+import { IInfosModel } from 'src/app/models/infos';
 import { InfosService } from 'src/app/services/infos.service';
-import { UiService } from 'src/app/services/ui.service';
 
 @Component({
   selector: 'app-footer',
@@ -11,13 +8,7 @@ import { UiService } from 'src/app/services/ui.service';
   styleUrls: ['./footer.component.scss'],
 })
 export class FooterComponent {
-  private sLanguage = this.uiService.getUiLanguage();
-  public sInfosPerso: Signal<IInfosModel> = computed(() => {
-    return this.infosService.getInfos(this.sLanguage());
-  });
+  public sInfosPerso: Signal<IInfosModel> = this.infosService.getInfos();
 
-  constructor(
-    private uiService: UiService,
-    private infosService: InfosService
-  ) {}
+  constructor(private infosService: InfosService) {}
 }

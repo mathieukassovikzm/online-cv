@@ -19,9 +19,8 @@ export class CardComponent {
   @HostBinding('class') class = 'card-component';
   @Input() item: IExperienceModel | undefined;
 
-  private sLanguage = this.uiService.getUiLanguage();
   public sUiText: Signal<IUiTxtCardModel> = computed(() => {
-    return this.uiService.getUiTxt(this.sLanguage())?.cardTxt;
+    return this.uiService.getUiTxt()()?.cardTxt;
   });
 
   public typeExpeEduc = TypeExperienceEnum.Education;

@@ -10,9 +10,8 @@ import { UiService } from 'src/app/services/ui.service';
   styleUrls: ['./infos-languages.component.scss'],
 })
 export class InfosLanguagesComponent {
-  private sLanguage = this.uiService.getUiLanguage();
   public sLstLanguages: Signal<ILanguageModel[]> = computed(()=>{
-    return this.infosService.getLanguages(this.sLanguage())
+    return this.infosService.getLanguages()()
   });
   public codeFr = CodeLanguageEnum.FR;
   public codeEn = CodeLanguageEnum.EN;

@@ -1,0 +1,67 @@
+@import "helpers-dir";
+
+:host {
+    .carousel-container {
+        overflow-x: hidden;
+        position: relative;
+        transform: translateX(-50%);
+        left: 50%;
+        width: 100%;
+    }
+
+    ul.carousel-slide-container {
+        position: relative;
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    ul.carousel-slide-container li {
+        width: 100%;
+        position: relative;
+        padding: 20px 0;
+    }
+
+    .carousel-controlers {
+        padding: 0 $slide-padding-lr;
+        margin-bottom: 30px;
+        display: flex;
+        justify-content: space-between;
+    }
+    ul.slider-navigation {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 60px;
+    }
+    ul.slider-navigation li {
+        margin-right: 10px !important;
+        width: 8px;
+        height: 4px;
+        margin-left: 0 !important;
+        background-color: $grey;
+        border-radius: 5px;
+        opacity: 0.5;
+        transition: 0.4s ease-in-out;
+    }
+    ul.slider-navigation li.active {
+        width: 20px;
+        background-color: $primary;
+    }
+    ul.slider-navigation li:hover {
+        cursor: pointer;
+    }
+}
+
+/* ---------------------- Media query ----------------------------*/
+@media only screen and (min-width: $min-width-s) {
+    :host {
+    }
+}
+
+/* ---------------------- Media query ----------------------------*/
+@media only screen and (min-width: $min-width-xl) {
+    :host {
+    }
+}

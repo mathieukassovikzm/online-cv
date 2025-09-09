@@ -11,10 +11,10 @@ import { UiService } from 'src/app/services/ui.service';
 export class ExtractComponent {
   private sLanguage = this.uiService.getUiLanguage();
   public sUiText: Signal<IUiTxtAboutModel> = computed(() => {
-    return this.uiService.getUiTxt(this.sLanguage())?.aboutTxt;
+    return this.uiService.getUiTxt()()?.aboutTxt;
   });
   public sExtract: Signal<string | undefined> = computed(() => {
-    return this.aboutService.getAbout(this.sLanguage()).extract;
+    return this.aboutService.getAbout()().extract;
   });
 
   constructor(

@@ -11,14 +11,8 @@ import { UiService } from 'src/app/services/ui.service';
   styleUrls: ['./top-desc.component.scss'],
 })
 export class TopDescComponent implements OnInit {
-  private sLanguage = this.uiService.getUiLanguage();
-
-  public sUiText: Signal<IUiTxtModel> = computed(() => {
-    return this.uiService.getUiTxt(this.sLanguage());
-  });
-  public sInfos: Signal<IInfosModel> = computed(() => {
-    return this.infosService.getInfos(this.sLanguage());
-  });
+  public sUiText: Signal<IUiTxtModel> = this.uiService.getUiTxt();
+  public sInfos: Signal<IInfosModel> = this.infosService.getInfos();
 
   constructor(
     private infosService: InfosService,

@@ -1,5 +1,5 @@
 import { HttpHeaders } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { computed, Injectable, Signal } from '@angular/core';
 import _ from 'lodash';
 import { CodeLanguageEnum, TypeSkillEnum } from '../models/enum';
 import {
@@ -28,34 +28,40 @@ export class InfosService {
 
   constructor(public uiService: UiService) {}
 
-  getInfos(language: CodeLanguageEnum): IInfosModel {
-    switch (language) {
-      case CodeLanguageEnum.FR:
-        return infosFr;
-      case CodeLanguageEnum.EN:
-        return infosEn;
-      case CodeLanguageEnum.ES:
-        return infosEs;
-      default:
-        return infosFr;
-    }
+  getInfos(): Signal<IInfosModel> {
+    return computed(() => {
+      const language = this.uiService.getUiLanguage();
+      switch (language()) {
+        case CodeLanguageEnum.FR:
+          return infosFr;
+        case CodeLanguageEnum.EN:
+          return infosEn;
+        case CodeLanguageEnum.ES:
+          return infosEs;
+        default:
+          return infosFr;
+      }
+    });
   }
 
   getLstSocialNetwork(): ISocialNetwork[] {
     return _.filter(lstSocialNetwork, { display: true });
   }
 
-  getLanguages(language: CodeLanguageEnum): ILanguageModel[] {
-    switch (language) {
-      case CodeLanguageEnum.FR:
-        return languagesFr;
-      case CodeLanguageEnum.EN:
-        return languagesEn;
-      case CodeLanguageEnum.ES:
-        return languagesEs;
-      default:
-        return languagesFr;
-    }
+  getLanguages(): Signal<ILanguageModel[]> {
+    return computed(() => {
+      const language = this.uiService.getUiLanguage();
+      switch (language()) {
+        case CodeLanguageEnum.FR:
+          return languagesFr;
+        case CodeLanguageEnum.EN:
+          return languagesEn;
+        case CodeLanguageEnum.ES:
+          return languagesEs;
+        default:
+          return languagesFr;
+      }
+    });
   }
 
   getTypesSkills(): Array<Object> {

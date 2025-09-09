@@ -1,4 +1,6 @@
-<div class="number">
-
-</div>
-<h6>Years Experience</h6>
+<ul>
+    <li *ngFor="let item of sLstRecap()">
+        <h5>{{item.value}}</h5>
+        <h6>{{item.libelle}}</h6>
+    </li>
+</ul>

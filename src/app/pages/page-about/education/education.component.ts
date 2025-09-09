@@ -12,10 +12,10 @@ import { UiService } from 'src/app/services/ui.service';
 export class EducationComponent {
   private sLanguage = this.uiService.getUiLanguage();
   public sUiText: Signal<IUiTxtAboutModel> = computed(() => {
-    return this.uiService.getUiTxt(this.sLanguage())?.aboutTxt;
+    return this.uiService.getUiTxt()()?.aboutTxt;
   });
   public sEducations: Signal<IExperienceModel[]> = computed(() => {
-    return this.aboutService.getAbout(this.sLanguage()).educations || [];
+    return this.aboutService.getAbout()().educations || [];
   });
 
   constructor(

@@ -1,0 +1,50 @@
+@import "helpers-dir";
+
+:host {
+    .card-container {
+        position: relative;
+        padding: $slide-padding-lr;
+    }
+    .card {
+        position: relative;
+        // width: $slide-width;
+        // margin: 0px $slide-padding-lr;
+        background: $background;
+        box-shadow: $box-shadow;
+        padding: 30px;
+    }
+
+    h5 {
+        font-weight: 600;
+        font-size: 22px;
+        color: $primary;
+    }
+
+    h6 {
+        color: $grey;
+        font-style: italic;
+        margin-top: 5px;
+        margin-bottom: 15px;
+    }
+
+    img {
+        position: absolute;
+        right: 30px;
+        top: -15px;
+        width: 65px;
+        height: 65px;
+        border-radius: 50%;
+    }
+}
+
+/* ---------------------- Media query ----------------------------*/
+@media only screen and (min-width: $min-width-s) {
+    :host {
+    }
+}
+
+/* ---------------------- Media query ----------------------------*/
+@media only screen and (min-width: $min-width-xl) {
+    :host {
+    }
+}
