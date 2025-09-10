@@ -4,12 +4,11 @@ $card-svg-s: 45px;
 $card-svg-top: -8px;
 
 :host {
-
   .timeline-event {
     position: relative;
   }
 
-  .timeline-event-copy {
+  .timeline-event-ctn {
     padding: 2em 4em 2em 5em;
     position: relative;
     top: -1.875em;
@@ -17,21 +16,24 @@ $card-svg-top: -8px;
     width: 100%;
   }
 
-  .timeline-event-copy h3 {
+  .timeline-event-ctn h3 {
     font-size: 1.75em;
   }
 
-  .timeline-event-copy h4 {
+  .timeline-event-ctn h4 {
     font-size: 1.2em;
     margin-bottom: 1.2em;
   }
-
-  .timeline-event-copy strong {
+  .timeline-event-ctn h5 {
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+  .timeline-event-ctn strong {
     font-weight: 700;
   }
 
-  .timeline-event-copy p:not(.timeline-event-thumbnail) {
-    padding-bottom: 1.2em;
+  .timeline-event-ctn .tasks p {
+    padding-bottom: 0;
   }
 
   .timeline-event-thumbnail {
@@ -63,7 +65,7 @@ $card-svg-top: -8px;
     }
 
     ::ng-deep svg {
-      transform: scale(.7);
+      transform: scale(0.7);
 
       path,
       circle,
@@ -80,7 +82,6 @@ $card-svg-top: -8px;
 
     .timeline-event-icon {
       ::ng-deep svg {
-
         path,
         circle,
         polygon {
@@ -89,9 +90,8 @@ $card-svg-top: -8px;
       }
     }
   }
-
-
 }
 
 /* ---------------------- Media query ----------------------------*/
-@media only screen and (min-width: $min-width-xl) {}
+@media only screen and (min-width: $min-width-xl) {
+}

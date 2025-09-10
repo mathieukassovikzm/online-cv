@@ -4,7 +4,7 @@
     <app-svg-medal *ngIf="item?.typeExpe === typeExpeArchi"> </app-svg-medal>
     <app-svg-work *ngIf="item?.typeExpe === typeExpeExpePro"> </app-svg-work>
   </label>
-  <div class="timeline-event-copy">
+  <div class="timeline-event-ctn">
     <p class="timeline-event-thumbnail">{{item?.date}}</p>
     <h3>{{item?.title}}</h3>
     <h4>{{item?.company}} - {{item?.address}}</h4>
@@ -12,9 +12,11 @@
       <p class="dsc">{{item?.description?.dsc}}</p>
       <div class="subtitle tasks" *ngIf="item?.description?.tasks">
         <h5>{{sUiText().tasksTitle}}</h5>
-        <p>{{item?.description?.tasks}}</p>
+        <div *ngFor="let task of item?.description?.tasks">
+          <p>{{task}}</p>
+        </div>
       </div>
-      <div class="subtitle technicalEnv" *ngIf="item?.description?.technicalEnv">
+      <div class="subtitle technical-env" *ngIf="item?.description?.technicalEnv">
         <h5>{{sUiText().technicalEnvTitle}}</h5>
         <p>{{item?.description?.technicalEnv}}</p>
       </div>

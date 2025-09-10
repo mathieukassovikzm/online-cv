@@ -1,4 +1,11 @@
-import { Component, computed, OnInit, Signal } from '@angular/core';
+import {
+  Component,
+  computed,
+  OnInit,
+  signal,
+  Signal,
+  WritableSignal,
+} from '@angular/core';
 import _ from 'lodash';
 import { TypeExperienceEnum } from 'src/app/models/enum';
 import { IExperienceModel } from 'src/app/models/experience';
@@ -14,10 +21,6 @@ import { listFadeFadeAnimation } from './animation';
   animations: [listFadeFadeAnimation],
 })
 export class LifeTimelineComponent implements OnInit {
-  public timelineEventsFiltered?: IExperienceModel[] = [];
-  public timelineEventsFilteredTotal = -1;
-  public filterActif: TypeExperienceEnum | undefined;
-
   public typeExpeEduc = TypeExperienceEnum.Education;
   public typeExpeArchi = TypeExperienceEnum.Archievement;
   public typeExpeExpePro = TypeExperienceEnum.ExperiencePro;
@@ -25,40 +28,45 @@ export class LifeTimelineComponent implements OnInit {
   public sUiText: Signal<IUiTxtAboutModel> = computed(() => {
     return this.uiService.getUiTxt()()?.aboutTxt;
   });
-  public sTimelineEvents: Signal<IExperienceModel[]> = this.aboutService.getLifeTimeline();
+  public sTimelineEvents: Signal<IExperienceModel[]> =
+    this.aboutService.getLifeTimeline();
+
+  public sFilterActif: WritableSignal<TypeExperienceEnum | undefined> =
+    signal(undefined);
+
+  public sTimelineEventsFiltered: Signal<IExperienceModel[]> = computed(() => {
+    const filter = this.sFilterActif();
+    let timelineEvents = this.sTimelineEvents();
+    if (filter != undefined) {
+      return _.filter(timelineEvents, {
+        typeExpe: filter,
+      });
+    }
+    return timelineEvents;
+  });
+
+  public timelineEventsFilteredTotal = computed(
+    () => this.sTimelineEventsFiltered().length
+  );
 
   constructor(
     private aboutService: AboutService,
     private uiService: UiService
   ) {}
 
-  ngOnInit() {
-    this.timelineEventsFiltered = this.sTimelineEvents();
-    this.timelineEventsFilteredTotal = this.timelineEventsFiltered.length;
-  }
+  ngOnInit() {}
 
   isActif(filter?: TypeExperienceEnum): boolean {
-    return this.filterActif == filter;
+    return this.sFilterActif() == filter;
   }
 
   filterTimelineEvents(filter?: TypeExperienceEnum): void {
+    console.log(filter);
     if (filter != undefined) {
-      this.timelineEventsFiltered = _.filter(this.sTimelineEvents(), {
-        typeExpe: filter,
-      });
-
       // On set le filtre actif pour la navigation
-      this.filterActif = filter;
-
-      // On set le nouveau total pour l'animation
-      const newTotal = this.timelineEventsFiltered.length;
-      if (this.timelineEventsFilteredTotal !== newTotal) {
-        this.timelineEventsFilteredTotal = newTotal;
-      }
+      this.sFilterActif.set(filter);
     } else {
-      this.timelineEventsFiltered = this.sTimelineEvents();
-      this.timelineEventsFilteredTotal = this.sTimelineEvents().length;
-      this.filterActif = undefined;
+      this.sFilterActif.set(undefined);
     }
   }
 }
