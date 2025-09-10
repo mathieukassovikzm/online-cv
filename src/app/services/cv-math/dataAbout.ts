@@ -147,7 +147,7 @@ export const aboutFr: IAboutModel = {
     <IExperienceModel>{
       ...iut,
       description: {
-        dsc: 'University Institute of Technology - Department of Electrical Engineering and Industrial Computing',
+        dsc: 'Institut Universitaire de Technologie - Département Génie Electrique et Informatique Industrielle',
       },
     },
   ],
@@ -323,7 +323,7 @@ export const aboutEn: IAboutModel = {
     <IExperienceModel>{
       ...iut,
       description: {
-        dsc: 'Instituto Universitario de Tecnología - Departamento de Ingeniería Eléctrica e Informática Industrial',
+        dsc: 'University Institute of Technology - Department of Electrical Engineering and Industrial Computing',
       },
     },
   ],
@@ -438,7 +438,7 @@ export const aboutEs: IAboutModel = {
     <IExperienceModel>{
       ...iut,
       description: {
-        dsc: 'Institut Universitaire de Technologie - Département Génie Electrique et Informatique Industrielle',
+        dsc: 'Instituto Universitario de Tecnología - Departamento de Ingeniería Eléctrica e Informática Industrial',
       },
     },
   ],
