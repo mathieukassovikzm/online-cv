@@ -1,14 +1,10 @@
-<p class="txt-fr">
-  5 ans batteur dans un groupe
-  10 ans comme guitariste amateur
-
-  12 ans de handball en club
-  Coach universitaire pendant 1 an
-  2 ans de Kayak en club
-
-  Photographie / Vidéo
-</p>
-<p class="txt-en">
+<ul>
+  <li *ngFor="let item of sHobbies()">
+    <h5> {{item.title}} </h5>
+    <p *ngFor="let dsc of item.description"> {{dsc}} </p>
+  </li>
+</ul>
+<!-- <p class="txt-en">
   5 years as a drummer in a band
 
   Amateur guitarist for 10 years
@@ -27,4 +23,4 @@
   Universidad por un año.
 
   Fotografía
-</p>
+</p> -->

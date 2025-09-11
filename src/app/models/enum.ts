@@ -29,3 +29,9 @@ export enum TypeExperienceEnum {
   ExperiencePro,
   Travel,
 }
+
+export enum TypeHobbyEnum {
+  Sport,
+  Creativity,
+  Other,
+}

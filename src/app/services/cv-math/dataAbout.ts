@@ -1,6 +1,7 @@
 import { IAboutModel } from 'src/app/models/about';
-import { TypeExperienceEnum } from 'src/app/models/enum';
+import { TypeExperienceEnum, TypeHobbyEnum } from 'src/app/models/enum';
 import { IExperienceModel } from 'src/app/models/experience';
+import { IHobbyModel } from 'src/app/models/hobby';
 
 // Educations
 const insa = <IExperienceModel>{
@@ -134,6 +135,23 @@ const cesta = <IExperienceModel>{
 
 // Travels
 
+// Hobbies
+const drum = <IHobbyModel>{
+  type: TypeHobbyEnum.Creativity,
+};
+const guitar = <IHobbyModel>{
+  type: TypeHobbyEnum.Creativity,
+};
+const running = <IHobbyModel>{
+  type: TypeHobbyEnum.Sport,
+};
+const handball = <IHobbyModel>{
+  type: TypeHobbyEnum.Sport,
+};
+const photo = <IHobbyModel>{
+  type: TypeHobbyEnum.Creativity,
+};
+
 export const aboutFr: IAboutModel = {
   extract:
     "Je suis très alaise socialement. J'ai l'habitude de cohabiter avec énormément de personnes, de différentes cultures, background. J'aime apprendre des gens et enseigner aux gens. Je suis d'un naturel à aider les gens. Principalement en donnant de mon temps. C'est pour cela que j'ai décidé de dédier 5 mois de ma vie à la reconstruction d'une école au Mexique. Je suis flexible, j'adore apprendre et je suis capable de m'adapter très vite à différents environnements de travail. Capable de travailler en équipe, je suis très enthousiaste avec un sens des responsabilités aigu.",
@@ -187,7 +205,7 @@ export const aboutFr: IAboutModel = {
       },
     },
   ],
-  experiencesPro: [
+  experiencesPro: <IExperienceModel[]>[
     <IExperienceModel>{
       ...veonum,
       title: 'Développeur full stack',
@@ -246,7 +264,7 @@ export const aboutFr: IAboutModel = {
       },
     },
   ],
-  travels: [
+  travels: <IExperienceModel[]>[
     {
       title: '1 an backpacking en Amérique Latine',
       dateEnd: new Date('2019-07-01'),
@@ -306,6 +324,37 @@ export const aboutFr: IAboutModel = {
       },
       typeExpe: TypeExperienceEnum.Travel,
       display: true,
+    },
+  ],
+  hobbies: <IHobbyModel[]>[
+    {
+      ...drum,
+      title: 'Batteur',
+      description: ['5 ans batteur dans un groupe.'],
+    },
+    {
+      ...guitar,
+      title: 'Guitariste',
+      description: ['10 ans comme guitariste amateur.'],
+    },
+    {
+      ...running,
+      title: 'Traileur',
+      description: [],
+    },
+    {
+      ...handball,
+      title: 'Ex handballer',
+      description: ['12 ans de handball en club'],
+    },
+    {
+      ...photo,
+      title: 'Photographie / Vidéo',
+      description:  [
+        "Lors de mes premiers voyage seul mon meilleur ami avait une caméra digne de ce nom.",
+        "Et c'est après de mon voyage au Japon, ou j'étais sans lui, et dont je suis revenu sans aucun cliché convenable, que je me suis dit: 'plus jamais!'.",
+        "J'ai donc investie dans un petit appareil hybride pour faire de la photo de voyage.",
+        "Petit à petit je me suis pris au jeu et je suis maintenant le photographe attitré de ma famille ainsi que de mon groupe d'amis ! J'effectue de temps à autre des prestations semis professionnelles afin de toujours perfectionner mon oeil de photographe."],
     },
   ],
 };
