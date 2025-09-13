@@ -57,6 +57,43 @@ const teacher = <IExperienceModel>{
 };
 
 // Experiences Pro
+const freelanceBouygues = <IExperienceModel>{
+  company: 'Freelance - Bouygues Telecom',
+  dateEnd: new Date('2025-12-30'),
+  date: '04/2023 - 12/2025',
+  address: 'Rennes, France',
+  description: {
+    technicalEnv: [
+      'Angular',
+      'HTML5',
+      'SCSS',
+      'DevExtreme',
+      'C#',
+      'Git',
+      'Azure DevOps',
+      'Bruno',
+    ],
+  },
+  typeExpe: TypeExperienceEnum.ExperiencePro,
+  display: true,
+};
+const freelanceSolina = <IExperienceModel>{
+  company: 'Freelance - Solina',
+  dateEnd: new Date('2024-11-01'),
+  date: '10/2024 - 11/2024',
+  address: 'Rennes, France',
+  description: {
+    technicalEnv: [
+      'Angular',
+      'HTML5',
+      'SCSS',
+      'Git',
+      'Kendo',
+    ],
+  },
+  typeExpe: TypeExperienceEnum.ExperiencePro,
+  display: true,
+};
 const veonum = <IExperienceModel>{
   company: 'Veonum',
   dateEnd: new Date('2023-04-01'),
@@ -138,18 +175,23 @@ const cesta = <IExperienceModel>{
 // Hobbies
 const drum = <IHobbyModel>{
   type: TypeHobbyEnum.Creativity,
+  photo: './assets/hobbies/20250814-ChalokBaanKaoBay-017.jpg',
 };
 const guitar = <IHobbyModel>{
   type: TypeHobbyEnum.Creativity,
+  photo: './assets/hobbies/20250814-ChalokBaanKaoBay-017.jpg',
 };
 const running = <IHobbyModel>{
   type: TypeHobbyEnum.Sport,
+  photo: './assets/hobbies/20250814-ChalokBaanKaoBay-017.jpg',
 };
 const handball = <IHobbyModel>{
   type: TypeHobbyEnum.Sport,
+  photo: './assets/hobbies/20250814-ChalokBaanKaoBay-017.jpg',
 };
 const photo = <IHobbyModel>{
   type: TypeHobbyEnum.Creativity,
+  photo: './assets/hobbies/20250814-ChalokBaanKaoBay-017.jpg',
 };
 
 export const aboutFr: IAboutModel = {
@@ -328,34 +370,54 @@ export const aboutFr: IAboutModel = {
   ],
   hobbies: <IHobbyModel[]>[
     {
-      ...drum,
-      title: 'Batteur',
-      description: ['5 ans batteur dans un groupe.'],
-    },
-    {
       ...guitar,
       title: 'Guitariste',
-      description: ['10 ans comme guitariste amateur.'],
+      description: [
+        "À 15 ans, je suis entré en seconde où j'ai rencontré de nouveaux amis qui commençaient tout juste un groupe de musique.",
+        "À force de fréquenter régulièrement le club musique avec mes amis, j'ai fini par sauter le pas et prendre une guitare en main.",
+        "Depuis, je ne l'ai jamais vraiment lâchée !",
+        "J'ai fini par intégrer le groupe moi aussi pendant 1 an, et je continue encore aujourd'hui en tant que guitariste amateur."
+      ],
+    },
+    {
+      ...drum,
+      title: 'Batteur',
+      description: [
+        "Après la fin d'une première expérience dans un groupe à la guitare, mon meilleur ami a décidé de monter un nouveau groupe où il cherchait un batteur.",
+        "C'est sur cette opportunité que j'ai décidé de me lancer dans la batterie...",
+        "J'ai finalement passé 5 ans derrière les fûts !",
+        "Aujourd'hui, étant donné l'encombrement et le niveau de décibels, il est plus difficile de s'entraîner, mais la batterie reste malgré tout une passion durable."
+      ],
     },
     {
       ...running,
       title: 'Traileur',
-      description: [],
+      description: [
+        "En 2020, nous avons tous fait face à un confinement dû au Covid...",
+        "Étant quelque peu bigorexique, il me fallait trouver un sport réalisable tout en respectant les règles de cette période très particulière...",
+        "Comme beaucoup de monde, je me suis donc mis à courir, et je me suis pris au jeu !",
+        "Aujourd'hui, je suis très impliqué dans la pratique du trail, avec plusieurs courses de 50 km à mon actif, dont 3 participations au trail de la Pointe du Raz."
+      ],
     },
     {
       ...handball,
-      title: 'Ex handballer',
-      description: ['12 ans de handball en club'],
+      title: 'Ex-handballeur',
+      description: [
+        "Fils d'un handballeur, toute ma famille a toujours été fan de ce sport.",
+        "J'ai donc, comme mes deux frères, joué 12 ans en club avant d'être coach de l'équipe 2 de l'INSA pendant 1 an."
+      ],
     },
     {
       ...photo,
       title: 'Photographie / Vidéo',
-      description:  [
-        "Lors de mes premiers voyage seul mon meilleur ami avait une caméra digne de ce nom.",
-        "Et c'est après de mon voyage au Japon, ou j'étais sans lui, et dont je suis revenu sans aucun cliché convenable, que je me suis dit: 'plus jamais!'.",
-        "J'ai donc investie dans un petit appareil hybride pour faire de la photo de voyage.",
-        "Petit à petit je me suis pris au jeu et je suis maintenant le photographe attitré de ma famille ainsi que de mon groupe d'amis ! J'effectue de temps à autre des prestations semis professionnelles afin de toujours perfectionner mon oeil de photographe."],
-    },
+      description: [
+        "Lors de mes premiers voyages, seul mon meilleur ami possédait une caméra digne de ce nom.",
+        "C'est après mon voyage au Japon, où j'étais sans lui et d'où je suis revenu sans aucun cliché convenable, que je me suis dit : 'plus jamais !'.",
+        "J'ai donc investi dans un petit appareil hybride pour faire de la photo de voyage.",
+        "Petit à petit, je me suis pris au jeu et je suis maintenant le photographe attitré de ma famille ainsi que de mon groupe d'amis !",
+        "J'effectue de temps à autre des prestations semi-professionnelles afin de toujours perfectionner mon œil de photographe."
+      ],
+    }
   ],
 };
 
@@ -472,6 +534,57 @@ export const aboutEn: IAboutModel = {
       },
     },
   ],
+  hobbies: <IHobbyModel[]>[
+    {
+      ...guitar,
+      title: 'Guitarist',
+      description: [
+        "At 15, I entered high school where I met new friends who were just starting a band.",
+        "By frequently going to the music club with my friends, I eventually took the plunge and picked up a guitar.",
+        "Since then, I've never really put it down!",
+        "I ended up joining the band myself for 1 year, and I still play today as an amateur guitarist."
+      ],
+    },
+    {
+      ...drum,
+      title: 'Drummer',
+      description: [
+        "After my first experience in a band as a guitarist, my best friend decided to start a new band where he was looking for a drummer.",
+        "It was through this opportunity that I decided to take up the drums...",
+        "I ended up spending 5 years behind the kit!",
+        "Today, given the space and noise level, it's harder to practice, but drumming remains a lasting passion."
+      ],
+    },
+    {
+      ...running,
+      title: 'Trail Runner',
+      description: [
+        "In 2020, we all faced a lockdown due to Covid...",
+        "Being somewhat addicted to exercise, I had to find a sport I could practice while respecting the rules of that very particular period...",
+        "Like many others, I started running, and I got hooked!",
+        "Today, I'm deeply involved in trail running, with several 50 km races completed, including 3 participations in the Pointe du Raz trail."
+      ],
+    },
+    {
+      ...handball,
+      title: 'Former Handball Player',
+      description: [
+        "Son of a handball player, my whole family has always been passionate about this sport.",
+        "So, like my two brothers, I played for 12 years in a club before coaching INSA's second team for 1 year."
+      ],
+    },
+    {
+      ...photo,
+      title: 'Photography / Video',
+      description: [
+        "During my first trips, only my best friend had a decent camera.",
+        "After my trip to Japan, where I was without him and came back without any proper photos, I told myself: 'never again!'.",
+        "So I invested in a small hybrid camera for travel photography.",
+        "Little by little, I got into it, and I am now the designated photographer of my family and my group of friends!",
+        "From time to time, I also take on semi-professional assignments to keep improving my photographer's eye."
+      ],
+    }
+  ],
 };
 
 export const aboutEs: IAboutModel = {
@@ -585,5 +698,56 @@ export const aboutEs: IAboutModel = {
         ],
       },
     },
+  ],
+  hobbies: <IHobbyModel[]>[
+    {
+      ...guitar,
+      title: 'Guitarrista',
+      description: [
+        "A los 15 años entré en secundaria, donde conocí a nuevos amigos que acababan de formar una banda.",
+        "Al frecuentar regularmente el club de música con mis amigos, terminé dando el paso y cogiendo una guitarra.",
+        "¡Desde entonces, nunca la he soltado de verdad!",
+        "Finalmente me uní a la banda durante 1 año, y todavía hoy sigo tocando como guitarrista aficionado."
+      ],
+    },
+    {
+      ...drum,
+      title: 'Baterista',
+      description: [
+        "Después de mi primera experiencia en una banda como guitarrista, mi mejor amigo decidió formar un nuevo grupo en el que buscaba un baterista.",
+        "Fue con esta oportunidad que decidí lanzarme a la batería...",
+        "¡Terminé pasando 5 años detrás de los tambores!",
+        "Hoy en día, debido al espacio y al nivel de decibelios, es más difícil practicar, pero la batería sigue siendo una pasión duradera."
+      ],
+    },
+    {
+      ...running,
+      title: 'Corredor de Trail',
+      description: [
+        "En 2020 todos nos enfrentamos a un confinamiento debido al Covid...",
+        "Siendo un poco adicto al deporte, necesitaba encontrar una actividad que pudiera practicar respetando las reglas de aquel periodo tan particular...",
+        "Como mucha gente, empecé a correr ¡y me enganché!",
+        "Hoy estoy muy implicado en la práctica del trail, con varias carreras de 50 km completadas, incluyendo 3 participaciones en el trail de la Pointe du Raz."
+      ],
+    },
+    {
+      ...handball,
+      title: 'Exjugador de Balonmano',
+      description: [
+        "Hijo de un jugador de balonmano, toda mi familia siempre ha sido fanática de este deporte.",
+        "Así que, como mis dos hermanos, jugué 12 años en un club antes de entrenar al segundo equipo del INSA durante 1 año."
+      ],
+    },
+    {
+      ...photo,
+      title: 'Fotografía / Vídeo',
+      description: [
+        "En mis primeros viajes, solo mi mejor amigo tenía una cámara en condiciones.",
+        "Tras mi viaje a Japón, en el que estuve sin él y del que volví sin ninguna foto decente, me dije: '¡nunca más!'.",
+        "Así que invertí en una pequeña cámara híbrida para la fotografía de viajes.",
+        "Poco a poco me fui enganchando, y ahora soy el fotógrafo oficial de mi familia y de mi grupo de amigos.",
+        "De vez en cuando también realizo trabajos semiprofesionales para seguir perfeccionando mi ojo de fotógrafo."
+      ],
+    }
   ],
 };

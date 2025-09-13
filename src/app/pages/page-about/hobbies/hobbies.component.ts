@@ -20,5 +20,6 @@ export class HobbiesComponent {
   constructor(
     private aboutService: AboutService,
     private uiService: UiService
-  ) {}
+  ) { }
+
 }

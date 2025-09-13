@@ -1,0 +1,19 @@
+
+<div class="card-container">
+  <div class="card-infos">
+    <div class="title-container">
+      <h4 class="title">
+        {{item?.title}}
+      </h4>
+    </div>
+    <div class="description" *ngIf="item?.description as description">
+      <p *ngFor="let dsc of description"> {{dsc}} </p>
+    </div>
+  </div>
+  <img [src]="item?.photo" alt="">
+  <div class="card-logo">
+    <app-svg-education *ngIf="item?.type === typeCreativity"> </app-svg-education>
+    <app-svg-medal *ngIf="item?.type === typeSport"> </app-svg-medal>
+    <app-svg-work *ngIf="item?.type === typeOther"> </app-svg-work>
+  </div>
+</div>

@@ -1,26 +1,5 @@
 <ul>
   <li *ngFor="let item of sHobbies()">
-    <h5> {{item.title}} </h5>
-    <p *ngFor="let dsc of item.description"> {{dsc}} </p>
+    <app-hobby [item]="item"></app-hobby>
   </li>
 </ul>
-<!-- <p class="txt-en">
-  5 years as a drummer in a band
-
-  Amateur guitarist for 10 years
-  Practised handball for 12 years
-  University team coach for 1 year
-  Practised Kayak during 2 years
-
-  Photography
-</p>
-<p class="txt-es">
-  5 años como baterista en una banda
-  10 años como guitarrista amateur
-
-  Handball por 12 años en un club
-  Entrenador del equipo de la
-  Universidad por un año.
-
-  Fotografía
-</p> -->
