@@ -1,0 +1,19 @@
+@import "helpers-dir";
+
+:host {
+    ul {
+        display: grid;
+        grid-template-columns: 1fr;
+        column-gap: 10px;
+        row-gap: 10px;
+    }
+}
+
+/* ---------------------- Media query ----------------------------*/
+@media only screen and (min-width: $min-width-l) {
+    :host {
+        ul {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+}

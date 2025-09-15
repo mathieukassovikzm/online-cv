@@ -5,10 +5,14 @@ $card-svg-right: 20px;
 $card-svg-top: -22px;
 
 :host {
+  height: 100%;
+  display: block;
+
   .card-container {
     position: relative;
     box-shadow: $box-shadow;
     overflow-y: hidden;
+    height: 100%;
   }
 
   .card-container img {
@@ -16,12 +20,11 @@ $card-svg-top: -22px;
   }
 
   .card-infos {
-    position: absolute;
+    position: relative;
     width: 100%;
     background-color: $background;
     padding: 30px 20px;
-    bottom: 0;
-    // transform: translateY(112px);
+    transform: translateY(0px);
   }
 
   .title-container {
@@ -61,41 +64,19 @@ $card-svg-top: -22px;
 }
 
 /* ---------------------- Media query ----------------------------*/
-@media only screen and (min-width: $min-width-xl) {
-  $card-svg-s: 65px;
-  $card-svg-right: 20px;
-  $card-svg-top: -50px;
-
+@media only screen and (min-width: $min-width-xxl) {
   :host {
-    // .card-container {
-    //   display: flex;
-    //   flex-wrap: nowrap;
-    //   align-items: flex-start;
-    //   justify-content: space-between;
-    //   background-size: cover;
-    // }
+    .card-infos {
+      cursor: pointer;
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      transition: transform 0.5s ease-in-out;
+      transform: auto;
+    }
 
-    // .card-infos {
-    //   flex-grow: 2;
-    //   padding-right: $content-p;
-    // }
-
-    // .title-container {
-    //   display: flex;
-    //   justify-content: space-between;
-    // }
-
-    // .card-logo {
-    //   position: relative;
-    //   top: $card-svg-top;
-    //   right: auto;
-    //   width: $card-svg-s;
-    //   height: $card-svg-s;
-
-    //   .icon {
-    //     width: $card-svg-s;
-    //     height: $card-svg-s;
-    //   }
-    // }
+    .card-infos:hover {
+      transform: translateY(0px) !important;
+    }
   }
 }
