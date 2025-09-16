@@ -83,6 +83,14 @@ export const homeEn: IHomeModel = {
       ...sebastienPinet,
       text: 'Very good',
     },
+    {
+      ...michelPelgrin,
+      text: 'Au top',
+    },
+    {
+      ...patrickLeprince,
+      text: 'Au top',
+    }
   ],
   lstLogos: lstLogosEntreprises,
 };
@@ -99,6 +107,14 @@ export const homeEs: IHomeModel = {
       ...sebastienPinet,
       text: 'Muy Bueno',
     },
+    {
+      ...michelPelgrin,
+      text: 'Au top',
+    },
+    {
+      ...patrickLeprince,
+      text: 'Au top',
+    }
   ],
   lstLogos: lstLogosEntreprises,
 };
