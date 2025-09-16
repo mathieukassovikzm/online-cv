@@ -100,7 +100,7 @@ section .heading {
 
 $color-lightness: 70%;
 
-.svg-lang.lang-fr:not(.is-active) path {
+.lst-languages .svg-lang.lang-fr:not(.is-active) path {
   &.cls-2 {
     fill: color.scale($fr-white, $lightness: $color-lightness);
   }
@@ -114,7 +114,7 @@ $color-lightness: 70%;
   }
 }
 
-.svg-lang.lang-en:not(.is-active) path {
+.lst-languages .svg-lang.lang-en:not(.is-active) path {
   &.cls-2 {
     fill: color.scale($en-white, $lightness: $color-lightness);
   }
@@ -125,13 +125,13 @@ $color-lightness: 70%;
   }
 }
 
-.svg-lang.lang-en:not(.is-active) circle {
+.lst-languages .svg-lang.lang-en:not(.is-active) circle {
   &.cls-1 {
     fill: color.scale($en-blue, $lightness: $color-lightness);
   }
 }
 
-.svg-lang.lang-es:not(.is-active) path {
+.lst-languages .svg-lang.lang-es:not(.is-active) path {
   &.cls-1 {
     fill: color.scale($es-red, $lightness: $color-lightness);
   }
