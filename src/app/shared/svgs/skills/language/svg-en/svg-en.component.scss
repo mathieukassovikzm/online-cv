@@ -1,17 +1,16 @@
-:host{
+@import "helpers-dir";
+
+:host {
   .cls-1 {
-    fill: #2158a6;
+    fill: $en-blue;
   }
 
   .cls-2 {
-    fill: #fff;
+    fill: $en-white;
   }
 
-  .cls-3 {
-    fill: #d62128;
-  }
-
+  .cls-3,
   .cls-4 {
-    fill: #d6202a;
+    fill: $en-red;
   }
 }

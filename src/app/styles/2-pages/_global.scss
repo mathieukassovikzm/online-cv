@@ -1,3 +1,5 @@
+@use 'sass:color';
+
 /* ------------- STYLE GENERAL ------------- */
 * {
   font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
@@ -93,5 +95,48 @@ section .heading {
   .card-component {
     display: block;
     margin-bottom: 25px;
+  }
+}
+
+$color-lightness: 70%;
+
+.svg-lang.lang-fr:not(.is-active) path {
+  &.cls-2 {
+    fill: color.scale($fr-white, $lightness: $color-lightness);
+  }
+
+  &.cls-2 {
+    fill: color.scale($fr-red, $lightness: $color-lightness);
+  }
+
+  &.cls-3 {
+    fill: color.scale($fr-blue, $lightness: $color-lightness);
+  }
+}
+
+.svg-lang.lang-en:not(.is-active) path {
+  &.cls-2 {
+    fill: color.scale($en-white, $lightness: $color-lightness);
+  }
+
+  &.cls-3,
+  &.cls-4 {
+    fill: color.scale($en-red, $lightness: $color-lightness);
+  }
+}
+
+.svg-lang.lang-en:not(.is-active) circle {
+  &.cls-1 {
+    fill: color.scale($en-blue, $lightness: $color-lightness);
+  }
+}
+
+.svg-lang.lang-es:not(.is-active) path {
+  &.cls-1 {
+    fill: color.scale($es-red, $lightness: $color-lightness);
+  }
+
+  &.cls-2 {
+    fill: color.scale($es-yellow, $lightness: $color-lightness);
   }
 }
