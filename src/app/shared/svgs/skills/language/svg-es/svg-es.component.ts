@@ -6,7 +6,7 @@ import { Component, HostBinding, OnInit } from '@angular/core';
   styleUrls: ['./svg-es.component.scss']
 })
 export class SvgEsComponent implements OnInit {
-  @HostBinding('class') class = 'svg-lang';
+  @HostBinding('class') class = 'svg-lang lang-es';
 
   constructor() { }
 

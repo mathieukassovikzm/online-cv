@@ -1,9 +1,11 @@
-:host{
+@import "helpers-dir";
+
+:host {
   .cls-1 {
-    fill: #da202b;
+    fill: $es-red;
   }
 
   .cls-2 {
-    fill: #fcda43;
+    fill: $es-yellow;
   }
 }

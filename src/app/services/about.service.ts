@@ -30,11 +30,11 @@ export class AboutService {
 
   getLifeTimeline(): Signal<IExperienceModel[]> {
     return computed(() => {
-      const about = this.getAbout();
+      const about = this.getAbout()();
       let timeline: IExperienceModel[] = _.union(
-        about()?.educations,
-        about()?.archievements,
-        about()?.experiencesPro
+        about?.educations,
+        about?.archievements,
+        about?.experiencesPro
       );
       timeline = _.orderBy(timeline, (i) => i.dateEnd, ['desc']);
       return timeline;

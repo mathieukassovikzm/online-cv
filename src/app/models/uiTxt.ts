@@ -31,6 +31,7 @@ export interface IUiTxtSkillsModel {
 
 export interface IUiTxtAboutModel {
   extractTitle: string;
+  hobbiesTitle: string;
   lifeTimelineTitle: string;
   allExpeTitle: string;
   educationTitle: string;

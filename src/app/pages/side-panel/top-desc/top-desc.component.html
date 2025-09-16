@@ -15,9 +15,9 @@
   <div class="languages">
     <p>{{sUiText().sidePanelTxt.topDescTitles.languageTitle}}</p>
     <div class="lst-languages">
-      <app-svg-fr (click)="switchToFrench()"></app-svg-fr>
-      <app-svg-en (click)="switchToEnglish()"></app-svg-en>
-      <app-svg-es (click)="switchToSpanish()"></app-svg-es>
+      <app-svg-fr [class.is-active]="sLanguage() === codeFR" (click)="switchToFrench()"></app-svg-fr>
+      <app-svg-en [class.is-active]="sLanguage() === codeEN" (click)="switchToEnglish()"></app-svg-en>
+      <app-svg-es [class.is-active]="sLanguage() === codeES" (click)="switchToSpanish()"></app-svg-es>
     </div>
   </div>
   <div class="divider"></div>

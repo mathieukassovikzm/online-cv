@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { filter, Subscription, tap } from 'rxjs';
-import { CodeLanguageEnum } from 'src/app/models/enum';
 import { UiService } from 'src/app/services/ui.service';
 
 @Component({
@@ -15,6 +14,8 @@ export class NavigationComponent implements OnInit {
 
   private sub = new Subscription();
   // public photo = require('./../../../../assets/images/PhotoCv.jpg');
+
+  public language = this.uiService.getUiLanguage();
 
   constructor(
     private router: Router,

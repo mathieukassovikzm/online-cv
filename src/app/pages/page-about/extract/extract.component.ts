@@ -9,7 +9,6 @@ import { UiService } from 'src/app/services/ui.service';
   styleUrls: ['./extract.component.scss'],
 })
 export class ExtractComponent {
-  private sLanguage = this.uiService.getUiLanguage();
   public sUiText: Signal<IUiTxtAboutModel> = computed(() => {
     return this.uiService.getUiTxt()()?.aboutTxt;
   });

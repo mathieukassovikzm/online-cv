@@ -1,0 +1,82 @@
+@import "helpers-dir";
+
+$card-svg-s: 45px;
+$card-svg-right: 20px;
+$card-svg-top: -22px;
+
+:host {
+  height: 100%;
+  display: block;
+
+  .card-container {
+    position: relative;
+    box-shadow: $box-shadow;
+    overflow-y: hidden;
+    height: 100%;
+  }
+
+  .card-container img {
+    width: 100%;
+  }
+
+  .card-infos {
+    position: relative;
+    width: 100%;
+    background-color: $background;
+    padding: 30px 20px;
+    transform: translateY(0px);
+  }
+
+  .title-container {
+    margin-bottom: 20px;
+  }
+
+  .subtitle h5 {
+    color: $grey;
+    font-style: italic;
+    font-size: 12px;
+  }
+
+  .dsc {
+    margin: 10px 0;
+  }
+
+  .card-logo {
+    position: absolute;
+    top: $card-svg-top;
+    right: $card-svg-right;
+    width: $card-svg-s;
+    height: $card-svg-s;
+    border-radius: 50%;
+    background-color: $light;
+    box-shadow: $box-shadow;
+
+    .icon {
+      display: block;
+      width: $card-svg-s;
+      height: $card-svg-s;
+    }
+
+    ::ng-deep svg {
+      transform: scale(.7);
+    }
+  }
+}
+
+/* ---------------------- Media query ----------------------------*/
+@media only screen and (min-width: $min-width-xxl) {
+  :host {
+    .card-infos {
+      cursor: pointer;
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      transition: transform 0.5s ease-in-out;
+      transform: auto;
+    }
+
+    .card-infos:hover {
+      transform: translateY(0px) !important;
+    }
+  }
+}

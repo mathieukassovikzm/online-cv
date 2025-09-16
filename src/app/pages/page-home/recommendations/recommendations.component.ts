@@ -13,7 +13,7 @@ import {
 import { fromEvent, Observable, Subscription } from 'rxjs';
 import { IRecommendationModel } from 'src/app/models/home';
 import { HomeService } from 'src/app/services/home.service';
-import { animationMultipleCarousel } from './animation';
+import { animationMultipleCarousel } from 'src/app/shared/class/animation-carousel';
 
 @Component({
   selector: 'app-recommendations',
