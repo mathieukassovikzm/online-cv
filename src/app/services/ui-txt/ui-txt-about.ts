@@ -2,6 +2,7 @@ import { IUiTxtAboutModel } from 'src/app/models/uiTxt';
 
 export const uiTxtAboutFr: IUiTxtAboutModel = {
   extractTitle: 'Extract',
+  hobbiesTitle: 'Mes passions',
   lifeTimelineTitle: 'Mon histoire',
   allExpeTitle: 'Toutes',
   educationTitle: 'Formation',
@@ -11,6 +12,7 @@ export const uiTxtAboutFr: IUiTxtAboutModel = {
 
 export const uiTxtAboutEn: IUiTxtAboutModel = {
   extractTitle: 'Extract',
+  hobbiesTitle: 'Hobbies',
   lifeTimelineTitle: 'My history',
   allExpeTitle: 'All',
   educationTitle: 'Education',
@@ -20,6 +22,7 @@ export const uiTxtAboutEn: IUiTxtAboutModel = {
 
 export const uiTxtAboutEs: IUiTxtAboutModel = {
   extractTitle: 'Extracto',
+  hobbiesTitle: 'Pasatiempos',
   lifeTimelineTitle: 'Mi historia',
   allExpeTitle: 'Todas',
   educationTitle: 'Extract',

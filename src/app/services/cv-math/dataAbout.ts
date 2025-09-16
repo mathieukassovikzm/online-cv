@@ -249,6 +249,28 @@ export const aboutFr: IAboutModel = {
   ],
   experiencesPro: <IExperienceModel[]>[
     <IExperienceModel>{
+      ...freelanceBouygues,
+      title: 'Développeur full stack',
+      description: {
+        ...freelanceBouygues.description,
+        dsc: "",
+        tasks: [
+          "",
+        ],
+      },
+    },
+    <IExperienceModel>{
+      ...freelanceSolina,
+      title: 'Développeur Frontend',
+      description: {
+        ...freelanceSolina.description,
+        dsc: "",
+        tasks: [
+          "",
+        ],
+      },
+    },
+    <IExperienceModel>{
       ...veonum,
       title: 'Développeur full stack',
       description: {
@@ -476,6 +498,28 @@ export const aboutEn: IAboutModel = {
   ],
   experiencesPro: [
     <IExperienceModel>{
+      ...freelanceBouygues,
+      title: 'Full stack developer',
+      description: {
+        ...freelanceBouygues.description,
+        dsc: "",
+        tasks: [
+          "",
+        ],
+      },
+    },
+    <IExperienceModel>{
+      ...freelanceSolina,
+      title: 'Frontend Developer',
+      description: {
+        ...freelanceSolina.description,
+        dsc: "",
+        tasks: [
+          "",
+        ],
+      },
+    },
+    <IExperienceModel>{
       ...veonum,
       title: 'Full stack developer',
       description: {
@@ -641,6 +685,28 @@ export const aboutEs: IAboutModel = {
     },
   ],
   experiencesPro: [
+    <IExperienceModel>{
+      ...freelanceBouygues,
+      title: 'Desarrollador Full Stack',
+      description: {
+        ...freelanceBouygues.description,
+        dsc: "",
+        tasks: [
+          "",
+        ],
+      },
+    },
+    <IExperienceModel>{
+      ...freelanceSolina,
+      title: 'Desarrollador Frontend',
+      description: {
+        ...freelanceSolina.description,
+        dsc: "",
+        tasks: [
+          "",
+        ],
+      },
+    },
     <IExperienceModel>{
       ...veonum,
       title: 'Desarrollador Full Stack',
