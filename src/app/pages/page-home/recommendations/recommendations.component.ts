@@ -22,8 +22,7 @@ import { animationMultipleCarousel } from 'src/app/shared/class/animation-carous
   animations: [animationMultipleCarousel],
 })
 export class RecommendationsComponent
-  implements OnInit, AfterViewInit, OnDestroy
-{
+  implements OnInit, AfterViewInit, OnDestroy {
   public sSlides: Signal<IRecommendationModel[]> = computed(
     () => this.homeService.getHome()()?.lstRecommendations
   );
@@ -35,46 +34,23 @@ export class RecommendationsComponent
   public slideWidth = computed(() => {
     const nbSlides = this.nbSlidesToShow();
     const containerRecoWidth = this.containerRecoWidth();
-    console.log(`containerRecoWidth : ${containerRecoWidth}`);
-    console.log(`nbSlides : ${nbSlides}`);
-    console.log(`slideWidth : ${containerRecoWidth / nbSlides}`);
     return containerRecoWidth / nbSlides;
   });
   public getSlideWidth = computed(() => {
     return `${this.slideWidth()}px`;
   });
 
-  /** Margin left and right of the slide */
-  private slideMarginLr = computed(() => {
-    const nbSlides = this.nbSlidesToShow();
-    if (nbSlides === 1) {
-      return 50;
-    } else {
-      return 0;
-    }
-  });
-  public getSlideMarginLr = computed(() => {
-    return `${this.slideMarginLr}px`;
-  });
-
-  public carouselWidth = computed(() => {
-    return (
-      (this.slideWidth() + 2 * this.slideMarginLr()) * this.nbSlidesToShow()
-    );
-  });
-  public getCarouselWidth = computed(() => {
-    return `${this.carouselWidth()}px`;
-  });
+  public carouselWidth = computed(() => this.slideWidth() * this.nbSlidesToShow());
 
   /** Does the slides change automaticaly */
   private autoSlides = false;
   /** Delay between 2 changes */
-  private delay = 5000;
+  private delay = 3000;
 
   public currentSlide = 0;
   private nbSlidesToShow = signal(1);
   private resizeObservable$: Observable<Event>;
-  private subscription$: Subscription = new Subscription();
+  private subscription$ = new Subscription();
   private interval: any;
 
   constructor(
@@ -98,8 +74,7 @@ export class RecommendationsComponent
       const elem = document.getElementById('carousel-slide-container');
       //check if the number is even
       if (nbSlidesToShow % 2 == 0) {
-        elem!.style.left = `${this.carouselWidth() / 2}px`;
-        console.log(`left : ${elem!.style.left}`);
+        elem!.style.left = `${this.slideWidth() / 2}px`;
       } else {
         elem!.style.left = `auto`;
       }
@@ -130,12 +105,13 @@ export class RecommendationsComponent
   }
 
   private setNbSlidesToShow() {
-    let windowWidth = document.documentElement.clientWidth;
-    if (windowWidth < 900 && this.nbSlidesToShow() != 1) {
-      this.nbSlidesToShow.set(1);
-    } else if (900 < windowWidth && this.nbSlidesToShow() != 2) {
-      this.nbSlidesToShow.set(2);
-    }
+    this.nbSlidesToShow.set(1);
+    // let windowWidth = document.documentElement.clientWidth;
+    // if (windowWidth < 900 && this.nbSlidesToShow() != 1) {
+    //   this.nbSlidesToShow.set(1);
+    // } else if (900 < windowWidth && this.nbSlidesToShow() != 2) {
+    //   this.nbSlidesToShow.set(2);
+    // }
     // else if (1300 < windowWidth && this.nbSlidesToShow() != 3) {
     //   this.nbSlidesToShow.set(3);
     //   this.recenterCarousel(this.nbSlidesToShow());
@@ -145,9 +121,21 @@ export class RecommendationsComponent
   public previousSlide(): void {
     this.currentSlide--;
   }
+
   public nextSlide(): void {
     this.currentSlide++;
   }
+
+  // public getCurrentSlide(index: number): number {
+  //   if (index < this.sSlides().length) {
+  //     console.log(`index: ${index}`)
+  //     return index;
+  //   }
+  //   else {
+  //     console.log(`index calculated: ${index / this.sSlides().length}`)
+  //     return index / this.sSlides().length;
+  //   }
+  // }
 
   public isVisibleSlide(): boolean {
     return true;
