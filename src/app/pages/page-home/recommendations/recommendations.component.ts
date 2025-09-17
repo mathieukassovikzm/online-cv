@@ -23,9 +23,11 @@ import { animationMultipleCarousel } from 'src/app/shared/class/animation-carous
 })
 export class RecommendationsComponent
   implements OnInit, AfterViewInit, OnDestroy {
-  public sSlides: Signal<IRecommendationModel[]> = computed(
-    () => this.homeService.getHome()()?.lstRecommendations
-  );
+  public sSlides: Signal<IRecommendationModel[]> = computed(() => {
+    let slides = this.homeService.getHome()()?.lstRecommendations;
+    slides = slides.map((slide, index) => { return { ...slide, id: index } })
+    return slides;
+  });
   public evolutingLstSlide: IRecommendationModel[] = [];
 
   private containerRecoWidth = signal(0);
@@ -39,6 +41,7 @@ export class RecommendationsComponent
   public getSlideWidth = computed(() => {
     return `${this.slideWidth()}px`;
   });
+  public signedSlideWidth = 0; // <- new
 
   public carouselWidth = computed(() => this.slideWidth() * this.nbSlidesToShow());
 
@@ -48,6 +51,7 @@ export class RecommendationsComponent
   private delay = 3000;
 
   public currentSlide = 0;
+  public navIndex = 0;     // drives active nav dot
   private nbSlidesToShow = signal(1);
   private resizeObservable$: Observable<Event>;
   private subscription$ = new Subscription();
@@ -119,23 +123,16 @@ export class RecommendationsComponent
   }
 
   public previousSlide(): void {
+    this.signedSlideWidth = this.carouselWidth(); // positif -> container moves right
+    this.navIndex = (this.currentSlide - 1 + this.sSlides().length) % this.sSlides().length;
     this.currentSlide--;
   }
 
   public nextSlide(): void {
+    this.signedSlideWidth = this.carouselWidth() * -1; // negative -> container moves left
+    this.navIndex = (this.currentSlide + 1) % this.sSlides().length;
     this.currentSlide++;
   }
-
-  // public getCurrentSlide(index: number): number {
-  //   if (index < this.sSlides().length) {
-  //     console.log(`index: ${index}`)
-  //     return index;
-  //   }
-  //   else {
-  //     console.log(`index calculated: ${index / this.sSlides().length}`)
-  //     return index / this.sSlides().length;
-  //   }
-  // }
 
   public isVisibleSlide(): boolean {
     return true;
@@ -144,25 +141,22 @@ export class RecommendationsComponent
   public onAnimationDoneEvent(event: AnimationEvent) {
     // ici on incrément
     if (event.fromState < event.toState) {
-      // on récupére l'élément qui disparait
-      var elt = this.evolutingLstSlide[0];
       // on pop l'élément du tableau car il a disparu
-      this.evolutingLstSlide.shift();
+      const first = this.evolutingLstSlide.shift();
       // on le rajoute a la fin
-      this.evolutingLstSlide.push(elt!);
+      this.evolutingLstSlide.push(first!);
     }
-    // ici on décrément
+     // ici on décrément
     else if (event.fromState > event.toState) {
-      // on récupére l'élément qui disparait
-      var elt = this.evolutingLstSlide[this.evolutingLstSlide.length - 1];
       // on pop l'élément du tableau car il a disparu
-      this.evolutingLstSlide.pop();
+      const last = this.evolutingLstSlide.pop();
       // on le rajoute a la fin
-      this.evolutingLstSlide.unshift(elt!);
+      this.evolutingLstSlide.unshift(last!);
     }
   }
 
   public onNavClick(index: number): void {
     this.currentSlide = index;
+    this.navIndex = this.sSlides().findIndex(s => s.id === index);
   }
 }

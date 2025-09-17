@@ -10,6 +10,7 @@ export interface IRecapModel {
 }
 
 export interface IRecommendationModel {
+  id?: number;
   nom: string;
   enterprise: string;
   email?: string;

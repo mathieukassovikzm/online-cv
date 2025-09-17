@@ -3,7 +3,7 @@
     class="carousel-slide-container"
     [@slideInOut]="{
       value: currentSlide,
-      params: { slideWidthTotal: carouselWidth() }
+      params: { slideWidthTotal: signedSlideWidth }
     }"
     (@slideInOut.done)="onAnimationDoneEvent($event)">
     <li *ngFor="let slide of evolutingLstSlide; let i = index">
@@ -18,7 +18,7 @@
         <li 
           *ngFor="let slide of sSlides(); let i = index" 
           (click)="onNavClick(i)"
-          [class.active]="i === currentSlide">
+          [class.active]="i === navIndex">
         </li>
     </ul>
     <div class="slider-btns">

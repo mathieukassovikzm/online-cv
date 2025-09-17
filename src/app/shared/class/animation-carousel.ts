@@ -133,7 +133,7 @@ export const animationMultipleCarousel = trigger('slideInOut', [
   transition(':increment', [
     useAnimation(containerSlideAnimation, {
       params: {
-        slideWidthTotal: '-{{slideWidthTotal}}',
+        slideWidthTotal: '{{slideWidthTotal}}',
         animationDuration: animationDuration,
       },
     }),
