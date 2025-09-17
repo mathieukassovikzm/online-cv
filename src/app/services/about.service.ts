@@ -1,8 +1,7 @@
 import { computed, Injectable, Signal } from '@angular/core';
 import _ from 'lodash';
-import { IAboutModel } from '../models/about';
+import { IAboutModel, IExperienceModel } from '../models/about';
 import { CodeLanguageEnum } from '../models/enum';
-import { IExperienceModel } from '../models/experience';
 import { aboutEn, aboutEs, aboutFr } from './cv-math/dataAbout';
 import { UiService } from './ui.service';
 
@@ -10,7 +9,7 @@ import { UiService } from './ui.service';
   providedIn: 'root',
 })
 export class AboutService {
-  constructor(private uiService: UiService) {}
+  constructor(private uiService: UiService) { }
 
   getAbout(): Signal<IAboutModel> {
     return computed(() => {

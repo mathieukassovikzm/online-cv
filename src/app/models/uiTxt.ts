@@ -1,5 +1,6 @@
 export interface IUiTxtModel {
   sidePanelTxt: IUiTxtSidePanelModel;
+  homeTxt: IUiTxtHomeModel;
   aboutTxt: IUiTxtAboutModel;
   cardTxt: IUiTxtCardModel;
 }
@@ -27,6 +28,11 @@ export interface IUiTxtSkillsModel {
   bddTitle: string;
   versionningTitle: string;
   toolsTitle: string;
+}
+
+export interface IUiTxtHomeModel {
+  servicesTitle: string;
+  recommendationsTitle: string;
 }
 
 export interface IUiTxtAboutModel {

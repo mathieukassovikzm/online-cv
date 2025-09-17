@@ -1,7 +1,5 @@
-import { IAboutModel } from 'src/app/models/about';
+import { IAboutModel, IExperienceModel, IHobbyModel } from 'src/app/models/about';
 import { TypeExperienceEnum, TypeHobbyEnum } from 'src/app/models/enum';
-import { IExperienceModel } from 'src/app/models/experience';
-import { IHobbyModel } from 'src/app/models/hobby';
 
 // Educations
 const insa = <IExperienceModel>{

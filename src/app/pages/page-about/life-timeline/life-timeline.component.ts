@@ -7,8 +7,8 @@ import {
   WritableSignal,
 } from '@angular/core';
 import _ from 'lodash';
+import { IExperienceModel } from 'src/app/models/about';
 import { TypeExperienceEnum } from 'src/app/models/enum';
-import { IExperienceModel } from 'src/app/models/experience';
 import { IUiTxtAboutModel } from 'src/app/models/uiTxt';
 import { AboutService } from 'src/app/services/about.service';
 import { UiService } from 'src/app/services/ui.service';
@@ -52,9 +52,9 @@ export class LifeTimelineComponent implements OnInit {
   constructor(
     private aboutService: AboutService,
     private uiService: UiService
-  ) {}
+  ) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   isActif(filter?: TypeExperienceEnum): boolean {
     return this.sFilterActif() == filter;

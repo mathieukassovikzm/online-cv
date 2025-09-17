@@ -2,6 +2,7 @@ import {
   IEnterpriseModel,
   IHomeModel,
   IRecommendationModel,
+  IServiceModel,
 } from 'src/app/models/home';
 
 export const lstLogosEntreprises = <IEnterpriseModel[]>[
@@ -21,6 +22,33 @@ export const lstLogosEntreprises = <IEnterpriseModel[]>[
   { name: 'Veonum', logo: './assets/logos/Veonum.png', alt: 'Logo Veonum' },
 ];
 
+// ------------ Services ------------ 
+export const devBackend = <IServiceModel>{
+  title: "",
+  descriptions: []
+};
+
+export const devFrontend = <IServiceModel>{
+  title: "",
+  descriptions: []
+};
+
+export const devFullStack = <IServiceModel>{
+  title: "",
+  descriptions: []
+};
+
+export const weddingPhotography = <IServiceModel>{
+  title: "",
+  descriptions: []
+};
+
+export const famillyPhotograph = <IServiceModel>{
+  title: "",
+  descriptions: []
+};
+
+// ------------ Recommendations ------------ 
 export const sebastienPinet = <IRecommendationModel>{
   nom: 'Sebastien Pinet',
   enterprise: 'Véonum',
@@ -46,7 +74,6 @@ export const michelPelgrin = <IRecommendationModel>{
   phone: '+33 6 16 10 73 42',
 };
 
-
 export const homeFr: IHomeModel = {
   lstRecap: [
     { libelle: "Année d'expérience", value: 10 },
@@ -54,16 +81,53 @@ export const homeFr: IHomeModel = {
     { libelle: 'Completed Projects', value: 10 },
     { libelle: 'Honors and Awards', value: 10 },
   ],
+  lstServices: [
+    <IServiceModel>{
+      ...devBackend,
+      title: "Développement backend",
+      descriptions: [
+        "orem ipsum dolor sit amet, consectetur adipisicing elit. Delectus esse commodi deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur doloribus"
+      ]
+    },
+    <IServiceModel>{
+      ...devFrontend,
+      title: "Développement front",
+      descriptions: [
+        "orem ipsum dolor sit amet, consectetur adipisicing elit. Delectus esse commodi deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur doloribus"
+      ]
+    },
+    <IServiceModel>{
+      ...devFullStack,
+      title: "Développement fullstack",
+      descriptions: [
+        "orem ipsum dolor sit amet, consectetur adipisicing elit. Delectus esse commodi deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur doloribus"
+      ]
+    },
+    <IServiceModel>{
+      ...weddingPhotography,
+      title: "Photographe de mariage",
+      descriptions: [
+        "orem ipsum dolor sit amet, consectetur adipisicing elit. Delectus esse commodi deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur doloribus"
+      ]
+    },
+    <IServiceModel>{
+      ...famillyPhotograph,
+      title: "Photographe de famille",
+      descriptions: [
+        "orem ipsum dolor sit amet, consectetur adipisicing elit. Delectus esse commodi deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur doloribus"
+      ]
+    },
+  ],
   lstRecommendations: [
-    {
+    <IRecommendationModel>{
       ...sebastienPinet,
       text: 'Au top',
     },
-    {
+    <IRecommendationModel>{
       ...michelPelgrin,
       text: 'Au top',
     },
-    {
+    <IRecommendationModel>{
       ...patrickLeprince,
       text: 'Au top',
     }
@@ -78,16 +142,53 @@ export const homeEn: IHomeModel = {
     { libelle: 'Completed Projects', value: 10 },
     { libelle: 'Honors and Awards', value: 10 },
   ],
+  lstServices: [
+    <IServiceModel>{
+      ...devBackend,
+      title: "Développement backend",
+      descriptions: [
+        "orem ipsum dolor sit amet, consectetur adipisicing elit. Delectus esse commodi deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur doloribus"
+      ]
+    },
+    <IServiceModel>{
+      ...devFrontend,
+      title: "Développement front",
+      descriptions: [
+        "orem ipsum dolor sit amet, consectetur adipisicing elit. Delectus esse commodi deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur doloribus"
+      ]
+    },
+    <IServiceModel>{
+      ...devFullStack,
+      title: "Développement fullstack",
+      descriptions: [
+        "orem ipsum dolor sit amet, consectetur adipisicing elit. Delectus esse commodi deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur doloribus"
+      ]
+    },
+    <IServiceModel>{
+      ...weddingPhotography,
+      title: "Photographe de mariage",
+      descriptions: [
+        "orem ipsum dolor sit amet, consectetur adipisicing elit. Delectus esse commodi deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur doloribus"
+      ]
+    },
+    <IServiceModel>{
+      ...famillyPhotograph,
+      title: "Photographe de famille",
+      descriptions: [
+        "orem ipsum dolor sit amet, consectetur adipisicing elit. Delectus esse commodi deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur doloribus"
+      ]
+    },
+  ],
   lstRecommendations: [
-    {
+    <IRecommendationModel>{
       ...sebastienPinet,
       text: 'Very good',
     },
-    {
+    <IRecommendationModel>{
       ...michelPelgrin,
       text: 'Au top',
     },
-    {
+    <IRecommendationModel>{
       ...patrickLeprince,
       text: 'Au top',
     }
@@ -102,16 +203,53 @@ export const homeEs: IHomeModel = {
     { libelle: 'Completed Projects', value: 10 },
     { libelle: 'Honors and Awards', value: 10 },
   ],
+  lstServices: [
+    <IServiceModel>{
+      ...devBackend,
+      title: "Développement backend",
+      descriptions: [
+        "orem ipsum dolor sit amet, consectetur adipisicing elit. Delectus esse commodi deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur doloribus"
+      ]
+    },
+    <IServiceModel>{
+      ...devFrontend,
+      title: "Développement front",
+      descriptions: [
+        "orem ipsum dolor sit amet, consectetur adipisicing elit. Delectus esse commodi deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur doloribus"
+      ]
+    },
+    <IServiceModel>{
+      ...devFullStack,
+      title: "Développement fullstack",
+      descriptions: [
+        "orem ipsum dolor sit amet, consectetur adipisicing elit. Delectus esse commodi deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur doloribus"
+      ]
+    },
+    <IServiceModel>{
+      ...weddingPhotography,
+      title: "Photographe de mariage",
+      descriptions: [
+        "orem ipsum dolor sit amet, consectetur adipisicing elit. Delectus esse commodi deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur doloribus"
+      ]
+    },
+    <IServiceModel>{
+      ...famillyPhotograph,
+      title: "Photographe de famille",
+      descriptions: [
+        "orem ipsum dolor sit amet, consectetur adipisicing elit. Delectus esse commodi deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur doloribus"
+      ]
+    },
+  ],
   lstRecommendations: [
-    {
+    <IRecommendationModel>{
       ...sebastienPinet,
       text: 'Muy Bueno',
     },
-    {
+    <IRecommendationModel>{
       ...michelPelgrin,
       text: 'Au top',
     },
-    {
+    <IRecommendationModel>{
       ...patrickLeprince,
       text: 'Au top',
     }

@@ -1,5 +1,6 @@
 export interface IHomeModel {
   lstRecap: IRecapModel[];
+  lstServices: IServiceModel[];
   lstRecommendations: IRecommendationModel[];
   lstLogos: IEnterpriseModel[];
 }
@@ -23,4 +24,9 @@ export interface IEnterpriseModel {
   name: string;
   logo: string;
   alt: string;
+}
+
+export interface IServiceModel {
+  title: string;
+  descriptions?: string[];
 }

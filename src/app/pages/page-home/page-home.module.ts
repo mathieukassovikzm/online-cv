@@ -6,10 +6,12 @@ import { LstEntreprisesModule } from './lst-enterprises/lst-enterprises.module';
 import { PageHomeRoutingModule } from './page-home-routing.module';
 import { PageHomeComponent } from './page-home.component';
 import { RecommendationsModule } from './recommendations/recommendations.module';
+import { ServicesModule } from './services/services.module';
 
 const components = [
   BannerModule,
   InfosRecapModule,
+  ServicesModule,
   LstEntreprisesModule,
   RecommendationsModule,
 ];

@@ -12,7 +12,9 @@ import {
 } from '@angular/core';
 import { fromEvent, Observable, Subscription } from 'rxjs';
 import { IRecommendationModel } from 'src/app/models/home';
+import { IUiTxtHomeModel } from 'src/app/models/uiTxt';
 import { HomeService } from 'src/app/services/home.service';
+import { UiService } from 'src/app/services/ui.service';
 import { animationMultipleCarousel } from 'src/app/shared/class/animation-carousel';
 
 @Component({
@@ -23,6 +25,9 @@ import { animationMultipleCarousel } from 'src/app/shared/class/animation-carous
 })
 export class RecommendationsComponent
   implements OnInit, AfterViewInit, OnDestroy {
+  public sUiText: Signal<IUiTxtHomeModel> = computed(() => {
+    return this.uiService.getUiTxt()()?.homeTxt;
+  });
   public sSlides: Signal<IRecommendationModel[]> = computed(() => {
     let slides = this.homeService.getHome()()?.lstRecommendations;
     slides = slides.map((slide, index) => { return { ...slide, id: index } })
@@ -59,7 +64,9 @@ export class RecommendationsComponent
 
   constructor(
     private homeService: HomeService,
-    private host: ElementRef<HTMLElement>
+    private host: ElementRef<HTMLElement>,
+    private uiService: UiService
+
   ) {
     this.resizeObservable$ = fromEvent(window, 'resize');
     var subResize = this.resizeObservable$.subscribe(() => {
@@ -146,7 +153,7 @@ export class RecommendationsComponent
       // on le rajoute a la fin
       this.evolutingLstSlide.push(first!);
     }
-     // ici on décrément
+    // ici on décrément
     else if (event.fromState > event.toState) {
       // on pop l'élément du tableau car il a disparu
       const last = this.evolutingLstSlide.pop();
