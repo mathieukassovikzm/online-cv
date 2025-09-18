@@ -48,6 +48,11 @@ export const famillyPhotograph = <IServiceModel>{
   descriptions: []
 };
 
+export const eventAnnouncement = <IServiceModel>{
+  title: "",
+  descriptions: []
+};
+
 // ------------ Recommendations ------------ 
 export const sebastienPinet = <IRecommendationModel>{
   nom: 'Sebastien Pinet',
@@ -93,7 +98,7 @@ export const homeFr: IHomeModel = {
       ...devFrontend,
       title: "Développement front",
       descriptions: [
-        "orem ipsum dolor sit amet, consectetur adipisicing elit. Delectus esse commodi deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur doloribus"
+        "Développeur front-end, je suis capable d'intervenir sur un projet vierge ou existant, pour des évolutions ou des corrections de bugs en Angular et Vue.js."
       ]
     },
     <IServiceModel>{
@@ -107,14 +112,21 @@ export const homeFr: IHomeModel = {
       ...weddingPhotography,
       title: "Photographe de mariage",
       descriptions: [
-        "orem ipsum dolor sit amet, consectetur adipisicing elit. Delectus esse commodi deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur doloribus"
+        "De la cérémonie religieuse à l'église jusqu'à la fête de noces et la soirée, je capture chaque moment marquant de votre mariage."
       ]
     },
     <IServiceModel>{
       ...famillyPhotograph,
       title: "Photographe de famille",
       descriptions: [
-        "orem ipsum dolor sit amet, consectetur adipisicing elit. Delectus esse commodi deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur doloribus"
+        "Je propose des services de photographie, notamment pour des photos de famille, de grossesse et de naissance.",
+      ]
+    },
+    <IServiceModel>{
+      ...eventAnnouncement,
+      title: "Faire-part",
+      descriptions: [
+        "Passionné de création graphique, je réalise des faire-part de mariage et de naissance sur mesure.",
       ]
     },
   ],
@@ -154,7 +166,7 @@ export const homeEn: IHomeModel = {
       ...devFrontend,
       title: "Développement front",
       descriptions: [
-        "orem ipsum dolor sit amet, consectetur adipisicing elit. Delectus esse commodi deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur doloribus"
+        "Front-end developer, I'm able to work on both new and existing projects, handling feature development and bug fixes in Angular and Vue.js."
       ]
     },
     <IServiceModel>{
@@ -168,14 +180,21 @@ export const homeEn: IHomeModel = {
       ...weddingPhotography,
       title: "Photographe de mariage",
       descriptions: [
-        "orem ipsum dolor sit amet, consectetur adipisicing elit. Delectus esse commodi deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur doloribus"
+        "From the religious ceremony at the church to the wedding reception and evening celebration, I cover every highlight of your special day."
       ]
     },
     <IServiceModel>{
       ...famillyPhotograph,
       title: "Photographe de famille",
       descriptions: [
-        "orem ipsum dolor sit amet, consectetur adipisicing elit. Delectus esse commodi deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur doloribus"
+        "I offer photography services, particularly for family, maternity and newborn photos."
+      ]
+    },
+    <IServiceModel>{
+      ...eventAnnouncement,
+      title: "Faire-part",
+      descriptions: [
+        "Passionate about graphic design, I create custom wedding and birth announcements.",
       ]
     },
   ],
@@ -215,7 +234,7 @@ export const homeEs: IHomeModel = {
       ...devFrontend,
       title: "Développement front",
       descriptions: [
-        "orem ipsum dolor sit amet, consectetur adipisicing elit. Delectus esse commodi deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur doloribus"
+        "Desarrollador front-end, soy capaz de trabajar tanto en proyectos nuevos como en existentes, realizando evoluciones y correcciones de errores en Angular y Vue.js."
       ]
     },
     <IServiceModel>{
@@ -229,7 +248,7 @@ export const homeEs: IHomeModel = {
       ...weddingPhotography,
       title: "Photographe de mariage",
       descriptions: [
-        "orem ipsum dolor sit amet, consectetur adipisicing elit. Delectus esse commodi deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur doloribus"
+        "Desde la ceremonia religiosa en la iglesia hasta el banquete de bodas y la fiesta nocturna, capturo cada momento especial de su gran día."
       ]
     },
     <IServiceModel>{
@@ -237,6 +256,13 @@ export const homeEs: IHomeModel = {
       title: "Photographe de famille",
       descriptions: [
         "orem ipsum dolor sit amet, consectetur adipisicing elit. Delectus esse commodi deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur doloribus"
+      ]
+    },
+    <IServiceModel>{
+      ...eventAnnouncement,
+      title: "Faire-part",
+      descriptions: [
+        "Apasionado por el diseño gráfico, realizo invitaciones de boda y de nacimiento a medida.",
       ]
     },
   ],

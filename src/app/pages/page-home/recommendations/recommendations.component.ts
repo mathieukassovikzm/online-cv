@@ -100,7 +100,13 @@ export class RecommendationsComponent
 
   ngOnInit() {
     this.onResize();
+
+    // // on récupère le dernier élément du tableau car il a disparu
+    // const last = this.sSlides().slice(-1).pop();
+    // // on le rajoute au début
     this.evolutingLstSlide = this.sSlides();
+    // this.evolutingLstSlide.unshift(last!);
+    // console.log(this.evolutingLstSlide)
   }
 
   ngOnDestroy() {
@@ -157,7 +163,7 @@ export class RecommendationsComponent
     else if (event.fromState > event.toState) {
       // on pop l'élément du tableau car il a disparu
       const last = this.evolutingLstSlide.pop();
-      // on le rajoute a la fin
+      // on le rajoute au début
       this.evolutingLstSlide.unshift(last!);
     }
   }
