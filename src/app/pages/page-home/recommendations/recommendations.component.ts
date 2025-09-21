@@ -12,7 +12,9 @@ import {
 } from '@angular/core';
 import { fromEvent, Observable, Subscription } from 'rxjs';
 import { IRecommendationModel } from 'src/app/models/home';
+import { IUiTxtHomeModel } from 'src/app/models/uiTxt';
 import { HomeService } from 'src/app/services/home.service';
+import { UiService } from 'src/app/services/ui.service';
 import { animationMultipleCarousel } from 'src/app/shared/class/animation-carousel';
 
 @Component({
@@ -22,11 +24,15 @@ import { animationMultipleCarousel } from 'src/app/shared/class/animation-carous
   animations: [animationMultipleCarousel],
 })
 export class RecommendationsComponent
-  implements OnInit, AfterViewInit, OnDestroy
-{
-  public sSlides: Signal<IRecommendationModel[]> = computed(
-    () => this.homeService.getHome()()?.lstRecommendations
-  );
+  implements OnInit, AfterViewInit, OnDestroy {
+  public sUiText: Signal<IUiTxtHomeModel> = computed(() => {
+    return this.uiService.getUiTxt()()?.homeTxt;
+  });
+  public sSlides: Signal<IRecommendationModel[]> = computed(() => {
+    let slides = this.homeService.getHome()()?.lstRecommendations;
+    slides = slides.map((slide, index) => { return { ...slide, id: index } })
+    return slides;
+  });
   public evolutingLstSlide: IRecommendationModel[] = [];
 
   private containerRecoWidth = signal(0);
@@ -35,51 +41,32 @@ export class RecommendationsComponent
   public slideWidth = computed(() => {
     const nbSlides = this.nbSlidesToShow();
     const containerRecoWidth = this.containerRecoWidth();
-    console.log(`containerRecoWidth : ${containerRecoWidth}`);
-    console.log(`nbSlides : ${nbSlides}`);
-    console.log(`slideWidth : ${containerRecoWidth / nbSlides}`);
     return containerRecoWidth / nbSlides;
   });
   public getSlideWidth = computed(() => {
     return `${this.slideWidth()}px`;
   });
+  public signedSlideWidth = 0; // <- new
 
-  /** Margin left and right of the slide */
-  private slideMarginLr = computed(() => {
-    const nbSlides = this.nbSlidesToShow();
-    if (nbSlides === 1) {
-      return 50;
-    } else {
-      return 0;
-    }
-  });
-  public getSlideMarginLr = computed(() => {
-    return `${this.slideMarginLr}px`;
-  });
-
-  public carouselWidth = computed(() => {
-    return (
-      (this.slideWidth() + 2 * this.slideMarginLr()) * this.nbSlidesToShow()
-    );
-  });
-  public getCarouselWidth = computed(() => {
-    return `${this.carouselWidth()}px`;
-  });
+  public carouselWidth = computed(() => this.slideWidth() * this.nbSlidesToShow());
 
   /** Does the slides change automaticaly */
   private autoSlides = false;
   /** Delay between 2 changes */
-  private delay = 5000;
+  private delay = 3000;
 
   public currentSlide = 0;
+  public navIndex = 0;     // drives active nav dot
   private nbSlidesToShow = signal(1);
   private resizeObservable$: Observable<Event>;
-  private subscription$: Subscription = new Subscription();
+  private subscription$ = new Subscription();
   private interval: any;
 
   constructor(
     private homeService: HomeService,
-    private host: ElementRef<HTMLElement>
+    private host: ElementRef<HTMLElement>,
+    private uiService: UiService
+
   ) {
     this.resizeObservable$ = fromEvent(window, 'resize');
     var subResize = this.resizeObservable$.subscribe(() => {
@@ -98,8 +85,7 @@ export class RecommendationsComponent
       const elem = document.getElementById('carousel-slide-container');
       //check if the number is even
       if (nbSlidesToShow % 2 == 0) {
-        elem!.style.left = `${this.carouselWidth() / 2}px`;
-        console.log(`left : ${elem!.style.left}`);
+        elem!.style.left = `${this.slideWidth() / 2}px`;
       } else {
         elem!.style.left = `auto`;
       }
@@ -114,7 +100,13 @@ export class RecommendationsComponent
 
   ngOnInit() {
     this.onResize();
+
+    // // on récupère le dernier élément du tableau car il a disparu
+    // const last = this.sSlides().slice(-1).pop();
+    // // on le rajoute au début
     this.evolutingLstSlide = this.sSlides();
+    // this.evolutingLstSlide.unshift(last!);
+    // console.log(this.evolutingLstSlide)
   }
 
   ngOnDestroy() {
@@ -130,12 +122,13 @@ export class RecommendationsComponent
   }
 
   private setNbSlidesToShow() {
-    let windowWidth = document.documentElement.clientWidth;
-    if (windowWidth < 900 && this.nbSlidesToShow() != 1) {
-      this.nbSlidesToShow.set(1);
-    } else if (900 < windowWidth && this.nbSlidesToShow() != 2) {
-      this.nbSlidesToShow.set(2);
-    }
+    this.nbSlidesToShow.set(1);
+    // let windowWidth = document.documentElement.clientWidth;
+    // if (windowWidth < 900 && this.nbSlidesToShow() != 1) {
+    //   this.nbSlidesToShow.set(1);
+    // } else if (900 < windowWidth && this.nbSlidesToShow() != 2) {
+    //   this.nbSlidesToShow.set(2);
+    // }
     // else if (1300 < windowWidth && this.nbSlidesToShow() != 3) {
     //   this.nbSlidesToShow.set(3);
     //   this.recenterCarousel(this.nbSlidesToShow());
@@ -143,9 +136,14 @@ export class RecommendationsComponent
   }
 
   public previousSlide(): void {
+    this.signedSlideWidth = this.carouselWidth(); // positif -> container moves right
+    this.navIndex = (this.currentSlide - 1 + this.sSlides().length) % this.sSlides().length;
     this.currentSlide--;
   }
+
   public nextSlide(): void {
+    this.signedSlideWidth = this.carouselWidth() * -1; // negative -> container moves left
+    this.navIndex = (this.currentSlide + 1) % this.sSlides().length;
     this.currentSlide++;
   }
 
@@ -156,25 +154,22 @@ export class RecommendationsComponent
   public onAnimationDoneEvent(event: AnimationEvent) {
     // ici on incrément
     if (event.fromState < event.toState) {
-      // on récupére l'élément qui disparait
-      var elt = this.evolutingLstSlide[0];
       // on pop l'élément du tableau car il a disparu
-      this.evolutingLstSlide.shift();
+      const first = this.evolutingLstSlide.shift();
       // on le rajoute a la fin
-      this.evolutingLstSlide.push(elt!);
+      this.evolutingLstSlide.push(first!);
     }
     // ici on décrément
     else if (event.fromState > event.toState) {
-      // on récupére l'élément qui disparait
-      var elt = this.evolutingLstSlide[this.evolutingLstSlide.length - 1];
       // on pop l'élément du tableau car il a disparu
-      this.evolutingLstSlide.pop();
-      // on le rajoute a la fin
-      this.evolutingLstSlide.unshift(elt!);
+      const last = this.evolutingLstSlide.pop();
+      // on le rajoute au début
+      this.evolutingLstSlide.unshift(last!);
     }
   }
 
   public onNavClick(index: number): void {
     this.currentSlide = index;
+    this.navIndex = this.sSlides().findIndex(s => s.id === index);
   }
 }

@@ -1,0 +1,12 @@
+<div class="card-container">
+  <div #divCardInfos class="card-infos">
+    <div class="title-container">
+      <h4 class="title">
+        {{item?.title}}
+      </h4>
+    </div>
+    <div class="description" *ngIf="item?.descriptions as description">
+      <p *ngFor="let dsc of description"> {{dsc}} </p>
+    </div>
+  </div>
+</div>

@@ -5,8 +5,8 @@ import {
   Input,
   Signal
 } from '@angular/core';
+import { IExperienceModel } from 'src/app/models/about';
 import { TypeExperienceEnum } from 'src/app/models/enum';
-import { IExperienceModel } from 'src/app/models/experience';
 import { IUiTxtCardModel } from 'src/app/models/uiTxt';
 import { UiService } from 'src/app/services/ui.service';
 

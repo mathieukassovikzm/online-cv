@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, ElementRef, Input, NgZone, Renderer2, ViewChild } from '@angular/core';
 import { take } from 'rxjs';
+import { IHobbyModel } from 'src/app/models/about';
 import { TypeHobbyEnum } from 'src/app/models/enum';
-import { IHobbyModel } from 'src/app/models/hobby';
 import { UiService } from 'src/app/services/ui.service';
 
 @Component({
