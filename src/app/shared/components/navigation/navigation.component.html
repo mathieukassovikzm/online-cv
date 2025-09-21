@@ -21,14 +21,14 @@
       </label>
     </li>
     <li [class.active]="itemMenuActif===3">
-      <label>
+      <label routerLink="/projets" [queryParams]="{lang: language()}" routerLinkActive="active">
         <app-svg-work (click)="switchMenu(3)"></app-svg-work>
         <span class="txt">Projets</span>
         <span class="bubble"></span>
       </label>
     </li>
     <li [class.active]="itemMenuActif===4">
-      <label>
+      <label routerLink="/contacts" [queryParams]="{lang: language()}" routerLinkActive="active">
         <app-svg-phone (click)="switchMenu(4)"></app-svg-phone>
         <span class="txt">Contacts</span>
         <span class="bubble"></span>

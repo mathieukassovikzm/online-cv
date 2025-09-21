@@ -19,6 +19,22 @@ const routes: Routes = [
         (m) => m.PageAboutModule
       ),
   },
+  {
+    path: 'projets',
+    data: { displayName: 'Projets' },
+    loadChildren: () =>
+      import('./pages/page-projects/page-projects.module').then(
+        (m) => m.PageProjectsModule
+      ),
+  },
+  {
+    path: 'contacts',
+    data: { displayName: 'Contacts' },
+    loadChildren: () =>
+      import('./pages/page-contacts/page-contacts.module').then(
+        (m) => m.PageContactsModule
+      ),
+  },
 ];
 
 @NgModule({

@@ -173,23 +173,23 @@ const cesta = <IExperienceModel>{
 // Hobbies
 const drum = <IHobbyModel>{
   type: TypeHobbyEnum.Creativity,
-  photo: './assets/hobbies/20250814-ChalokBaanKaoBay-017.jpg',
+  photo: './assets/hobbies/drum.jpg',
 };
 const guitar = <IHobbyModel>{
   type: TypeHobbyEnum.Creativity,
-  photo: './assets/hobbies/20250814-ChalokBaanKaoBay-017.jpg',
+  photo: './assets/hobbies/guitar.jpg',
 };
 const running = <IHobbyModel>{
   type: TypeHobbyEnum.Sport,
-  photo: './assets/hobbies/20250814-ChalokBaanKaoBay-017.jpg',
+  photo: './assets/hobbies/trail.jpg',
 };
 const handball = <IHobbyModel>{
   type: TypeHobbyEnum.Sport,
-  photo: './assets/hobbies/20250814-ChalokBaanKaoBay-017.jpg',
+  photo: './assets/hobbies/hand.jpg',
 };
 const photo = <IHobbyModel>{
   type: TypeHobbyEnum.Creativity,
-  photo: './assets/hobbies/20250814-ChalokBaanKaoBay-017.jpg',
+  photo: './assets/hobbies/photo.jpg',
 };
 
 export const aboutFr: IAboutModel = {

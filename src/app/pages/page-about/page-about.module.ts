@@ -10,18 +10,18 @@ import { PageAboutComponent } from './page-about.component';
 import { TravelsModule } from './travels/travels.module';
 import { WorkExperienceModule } from './work-experience/work-experience.module';
 
+const components = [
+  ArchievementsModule,
+  ExtractModule,
+  EducationModule,
+  WorkExperienceModule,
+  HobbiesModule,
+  TravelsModule,
+  LifeTimelineModule,
+];
+
 @NgModule({
-  imports: [
-    CommonModule,
-    PageAboutRoutingModule,
-    ArchievementsModule,
-    ExtractModule,
-    EducationModule,
-    WorkExperienceModule,
-    HobbiesModule,
-    TravelsModule,
-    LifeTimelineModule,
-  ],
+  imports: [CommonModule, PageAboutRoutingModule, ...components],
   exports: [PageAboutComponent],
   declarations: [PageAboutComponent],
 })
