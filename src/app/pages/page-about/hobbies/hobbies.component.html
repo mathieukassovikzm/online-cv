@@ -1,8 +1,10 @@
 <section class="section-hobbies">
   <h2>{{sUiText().hobbiesTitle}}</h2>
   <ul>
-    <li *ngFor="let item of sHobbies()">
-      <app-hobby [item]="item"></app-hobby>
-    </li>
+    @for (item of sHobbies(); track item) {
+      <li>
+        <app-hobby [item]="item"></app-hobby>
+      </li>
+    }
   </ul>
 </section>

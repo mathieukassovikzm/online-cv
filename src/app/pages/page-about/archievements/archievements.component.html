@@ -1,6 +1,8 @@
 <section class="section-education">
   <h2>{{sUiText().archivementTitle}}</h2>
   <div class="lst-cards-container">
-    <app-card [item]="archievement" *ngFor="let archievement of sArchievements()"></app-card>
+    @for (archievement of sArchievements(); track archievement) {
+      <app-card [item]="archievement"></app-card>
+    }
   </div>
 </section>

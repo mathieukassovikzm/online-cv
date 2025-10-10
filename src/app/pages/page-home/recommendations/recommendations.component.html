@@ -1,27 +1,30 @@
 <section class="section-services">
   <h2>{{sUiText().recommendationsTitle}}</h2>
   <div class="carousel-container" >
-    <ul id="carousel-slide-container" 
+    <ul id="carousel-slide-container"
       class="carousel-slide-container"
       [@slideInOut]="{
         value: currentSlide,
         params: { slideWidthTotal: signedSlideWidth }
       }"
       (@slideInOut.done)="onAnimationDoneEvent($event)">
-      <li *ngFor="let slide of evolutingLstSlide; let i = index">
-        <app-recommendation-card 
-          [person]="slide"
-          [width]="getSlideWidth()">
-        </app-recommendation-card>
-      </li>
+      @for (slide of evolutingLstSlide; track slide; let i = $index) {
+        <li>
+          <app-recommendation-card
+            [person]="slide"
+            [width]="getSlideWidth()">
+          </app-recommendation-card>
+        </li>
+      }
     </ul>
     <div class="carousel-controlers">
       <ul class="slider-navigation">
-          <li 
-            *ngFor="let slide of sSlides(); let i = index" 
+        @for (slide of sSlides(); track slide; let i = $index) {
+          <li
             (click)="onNavClick(i)"
             [class.active]="i === navIndex">
           </li>
+        }
       </ul>
       <div class="slider-btns">
         <button class="slider-btn" (click)="previousSlide()">previous</button>

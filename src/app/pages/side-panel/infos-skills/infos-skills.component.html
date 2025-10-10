@@ -1,43 +1,67 @@
 <div class="section-skills">
-  <div class="ctn-skills-front-end" *ngIf="skillsFrontEnd">
-    <h3>Front-End</h3>
-    <div class="" *ngFor="let item of skillsFrontEnd">
-      <app-skill [skill]="item"></app-skill>
+  @if (skillsFrontEnd) {
+    <div class="ctn-skills-front-end">
+      <h3>Front-End</h3>
+      @for (item of skillsFrontEnd; track item) {
+        <div class="">
+          <app-skill [skill]="item"></app-skill>
+        </div>
+      }
     </div>
-  </div>
+  }
 
-  <div class="ctn-skills-back-end" *ngIf="skillsBackEnd">
-    <h3>Back-End</h3>
-    <div class="" *ngFor="let item of skillsBackEnd">
-      <app-skill [skill]="item"></app-skill>
+  @if (skillsBackEnd) {
+    <div class="ctn-skills-back-end">
+      <h3>Back-End</h3>
+      @for (item of skillsBackEnd; track item) {
+        <div class="">
+          <app-skill [skill]="item"></app-skill>
+        </div>
+      }
     </div>
-  </div>
+  }
 
-  <div class="ctn-skills-bdd-end" *ngIf="skillsBdd">
-    <h3>{{sUiText().bddTitle}}</h3>
-    <div class="" *ngFor="let item of skillsBdd">
-      <app-skill [skill]="item"></app-skill>
+  @if (skillsBdd) {
+    <div class="ctn-skills-bdd-end">
+      <h3>{{sUiText().bddTitle}}</h3>
+      @for (item of skillsBdd; track item) {
+        <div class="">
+          <app-skill [skill]="item"></app-skill>
+        </div>
+      }
     </div>
-  </div>
+  }
 
-  <div class="ctn-skills-versionning-end" *ngIf="skillsVersionning">
-    <h3>{{sUiText().versionningTitle}}</h3>
-    <div class="" *ngFor="let item of skillsVersionning">
-      <app-skill [skill]="item"></app-skill>
+  @if (skillsVersionning) {
+    <div class="ctn-skills-versionning-end">
+      <h3>{{sUiText().versionningTitle}}</h3>
+      @for (item of skillsVersionning; track item) {
+        <div class="">
+          <app-skill [skill]="item"></app-skill>
+        </div>
+      }
     </div>
-  </div>
+  }
 
-  <div class="ctn-skills-tools-end" *ngIf="skillsTools">
-    <h3>{{sUiText().toolsTitle}}</h3>
-    <div class="" *ngFor="let item of skillsTools">
-      <app-skill [skill]="item"></app-skill>
+  @if (skillsTools) {
+    <div class="ctn-skills-tools-end">
+      <h3>{{sUiText().toolsTitle}}</h3>
+      @for (item of skillsTools; track item) {
+        <div class="">
+          <app-skill [skill]="item"></app-skill>
+        </div>
+      }
     </div>
-  </div>
+  }
 
-  <div class="ctn-skills-adobe-end" *ngIf="skillsAdobe">
-    <h3>Adobe</h3>
-    <div class="" *ngFor="let item of skillsAdobe">
-      <app-skill [skill]="item"></app-skill>
+  @if (skillsAdobe) {
+    <div class="ctn-skills-adobe-end">
+      <h3>Adobe</h3>
+      @for (item of skillsAdobe; track item) {
+        <div class="">
+          <app-skill [skill]="item"></app-skill>
+        </div>
+      }
     </div>
-  </div>
+  }
 </div>

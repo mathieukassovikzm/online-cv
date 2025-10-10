@@ -5,8 +5,12 @@
         {{item?.title}}
       </h4>
     </div>
-    <div class="description" *ngIf="item?.descriptions as description">
-      <p *ngFor="let dsc of description"> {{dsc}} </p>
-    </div>
+    @if (item?.descriptions; as description) {
+      <div class="description">
+        @for (dsc of description; track dsc) {
+          <p> {{dsc}} </p>
+        }
+      </div>
+    }
   </div>
 </div>

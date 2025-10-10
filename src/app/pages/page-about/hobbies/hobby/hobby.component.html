@@ -6,13 +6,23 @@
         {{item?.title}}
       </h4>
     </div>
-    <div #divDescription class="description" *ngIf="item?.description as description">
-      <p *ngFor="let dsc of description"> {{dsc}} </p>
-    </div>
+    @if (item?.description; as description) {
+      <div #divDescription class="description">
+        @for (dsc of description; track dsc) {
+          <p> {{dsc}} </p>
+        }
+      </div>
+    }
     <div class="card-logo">
-      <app-svg-education *ngIf="item?.type === typeCreativity"> </app-svg-education>
-      <app-svg-medal *ngIf="item?.type === typeSport"> </app-svg-medal>
-      <app-svg-work *ngIf="item?.type === typeOther"> </app-svg-work>
+      @if (item?.type === typeCreativity) {
+        <app-svg-education> </app-svg-education>
+      }
+      @if (item?.type === typeSport) {
+        <app-svg-medal> </app-svg-medal>
+      }
+      @if (item?.type === typeOther) {
+        <app-svg-work> </app-svg-work>
+      }
     </div>
   </div>
 </div>
