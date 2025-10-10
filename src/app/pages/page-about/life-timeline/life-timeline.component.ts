@@ -15,10 +15,11 @@ import { UiService } from 'src/app/services/ui.service';
 import { listFadeFadeAnimation } from './animation';
 
 @Component({
-  selector: 'app-life-timeline',
-  templateUrl: './life-timeline.component.html',
-  styleUrls: ['./life-timeline.component.scss'],
-  animations: [listFadeFadeAnimation],
+    selector: 'app-life-timeline',
+    templateUrl: './life-timeline.component.html',
+    styleUrls: ['./life-timeline.component.scss'],
+    animations: [listFadeFadeAnimation],
+    standalone: false
 })
 export class LifeTimelineComponent implements OnInit {
   public typeExpeEduc = TypeExperienceEnum.Education;

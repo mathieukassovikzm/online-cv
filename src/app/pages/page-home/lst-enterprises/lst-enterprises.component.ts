@@ -5,9 +5,10 @@ import { HomeService } from 'src/app/services/home.service';
 import { UiService } from 'src/app/services/ui.service';
 
 @Component({
-  selector: 'app-lst-enterprises',
-  templateUrl: './lst-enterprises.component.html',
-  styleUrls: ['./lst-enterprises.component.scss'],
+    selector: 'app-lst-enterprises',
+    templateUrl: './lst-enterprises.component.html',
+    styleUrls: ['./lst-enterprises.component.scss'],
+    standalone: false
 })
 export class LstEntreprisesComponent {
   private sLanguage = this.uiService.getUiLanguage();

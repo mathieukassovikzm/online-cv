@@ -5,9 +5,10 @@ import { AboutService } from 'src/app/services/about.service';
 import { UiService } from 'src/app/services/ui.service';
 
 @Component({
-  selector: 'app-hobbies',
-  templateUrl: './hobbies.component.html',
-  styleUrls: ['./hobbies.component.scss'],
+    selector: 'app-hobbies',
+    templateUrl: './hobbies.component.html',
+    styleUrls: ['./hobbies.component.scss'],
+    standalone: false
 })
 export class HobbiesComponent {
   public sUiText: Signal<IUiTxtAboutModel> = computed(() => {

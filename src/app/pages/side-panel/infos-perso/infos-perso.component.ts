@@ -5,9 +5,10 @@ import { InfosService } from 'src/app/services/infos.service';
 import { UiService } from 'src/app/services/ui.service';
 
 @Component({
-  selector: 'app-infos-perso',
-  templateUrl: './infos-perso.component.html',
-  styleUrls: ['./infos-perso.component.scss'],
+    selector: 'app-infos-perso',
+    templateUrl: './infos-perso.component.html',
+    styleUrls: ['./infos-perso.component.scss'],
+    standalone: false
 })
 export class InfosPersoComponent {
   public sUiText: Signal<IUiTxtInfosPersoModel> = computed(() => {

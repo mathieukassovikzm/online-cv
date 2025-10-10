@@ -1,9 +1,10 @@
 import { Component, HostBinding, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-svg-after-effects',
-  templateUrl: './svg-after-effects.component.html',
-  styleUrls: ['./svg-after-effects.component.scss']
+    selector: 'app-svg-after-effects',
+    templateUrl: './svg-after-effects.component.html',
+    styleUrls: ['./svg-after-effects.component.scss'],
+    standalone: false
 })
 export class SvgAfterEffectsComponent implements OnInit {
   @HostBinding('class') class = 'svg-skill';

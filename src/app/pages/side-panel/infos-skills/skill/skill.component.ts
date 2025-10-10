@@ -2,9 +2,10 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ISkillModel } from 'src/app/models/infos';
 
 @Component({
-  selector: 'app-skill',
-  templateUrl: './skill.component.html',
-  styleUrls: ['./skill.component.scss'],
+    selector: 'app-skill',
+    templateUrl: './skill.component.html',
+    styleUrls: ['./skill.component.scss'],
+    standalone: false
 })
 export class SkillComponent implements OnInit {
   @Input() skill = <ISkillModel>{};

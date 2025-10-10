@@ -1,9 +1,10 @@
 import { Component, HostBinding, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-svg-sql-oracle',
-  templateUrl: './svg-sql-oracle.component.html',
-  styleUrls: ['./svg-sql-oracle.component.scss']
+    selector: 'app-svg-sql-oracle',
+    templateUrl: './svg-sql-oracle.component.html',
+    styleUrls: ['./svg-sql-oracle.component.scss'],
+    standalone: false
 })
 export class SvgSqlOracleComponent implements OnInit {
   @HostBinding('class') class = 'svg-skill';

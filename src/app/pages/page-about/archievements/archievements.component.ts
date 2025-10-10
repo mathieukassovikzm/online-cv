@@ -5,9 +5,10 @@ import { AboutService } from 'src/app/services/about.service';
 import { UiService } from 'src/app/services/ui.service';
 
 @Component({
-  selector: 'app-archievements',
-  templateUrl: './archievements.component.html',
-  styleUrls: ['./archievements.component.scss'],
+    selector: 'app-archievements',
+    templateUrl: './archievements.component.html',
+    styleUrls: ['./archievements.component.scss'],
+    standalone: false
 })
 export class ArchievementsComponent {
   private sLanguage = this.uiService.getUiLanguage();

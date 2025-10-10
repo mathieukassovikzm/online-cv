@@ -11,9 +11,10 @@ import { IUiTxtCardModel } from 'src/app/models/uiTxt';
 import { UiService } from 'src/app/services/ui.service';
 
 @Component({
-  selector: 'app-card',
-  templateUrl: './card.component.html',
-  styleUrls: ['./card.component.scss'],
+    selector: 'app-card',
+    templateUrl: './card.component.html',
+    styleUrls: ['./card.component.scss'],
+    standalone: false
 })
 export class CardComponent {
   @HostBinding('class') class = 'card-component';

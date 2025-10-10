@@ -4,9 +4,10 @@ import { AboutService } from 'src/app/services/about.service';
 import { UiService } from 'src/app/services/ui.service';
 
 @Component({
-  selector: 'app-extract',
-  templateUrl: './extract.component.html',
-  styleUrls: ['./extract.component.scss'],
+    selector: 'app-extract',
+    templateUrl: './extract.component.html',
+    styleUrls: ['./extract.component.scss'],
+    standalone: false
 })
 export class ExtractComponent {
   public sUiText: Signal<IUiTxtAboutModel> = computed(() => {

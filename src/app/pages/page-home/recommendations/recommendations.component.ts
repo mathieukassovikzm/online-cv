@@ -18,10 +18,11 @@ import { UiService } from 'src/app/services/ui.service';
 import { animationMultipleCarousel } from 'src/app/shared/class/animation-carousel';
 
 @Component({
-  selector: 'app-recommendations',
-  templateUrl: './recommendations.component.html',
-  styleUrls: ['./recommendations.component.scss'],
-  animations: [animationMultipleCarousel],
+    selector: 'app-recommendations',
+    templateUrl: './recommendations.component.html',
+    styleUrls: ['./recommendations.component.scss'],
+    animations: [animationMultipleCarousel],
+    standalone: false
 })
 export class RecommendationsComponent
   implements OnInit, AfterViewInit, OnDestroy {

@@ -6,9 +6,10 @@ import { InfosService } from 'src/app/services/infos.service';
 import { UiService } from 'src/app/services/ui.service';
 
 @Component({
-  selector: 'app-infos-skills',
-  templateUrl: './infos-skills.component.html',
-  styleUrls: ['./infos-skills.component.scss'],
+    selector: 'app-infos-skills',
+    templateUrl: './infos-skills.component.html',
+    styleUrls: ['./infos-skills.component.scss'],
+    standalone: false
 })
 export class InfosSkillsComponent implements OnInit {
   public skillsFrontEnd = <ISkillModel[]>[];

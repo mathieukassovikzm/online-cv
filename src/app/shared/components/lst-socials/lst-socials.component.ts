@@ -4,9 +4,10 @@ import { ISocialNetwork } from 'src/app/models/infos';
 import { InfosService } from 'src/app/services/infos.service';
 
 @Component({
-  selector: 'app-lst-socials',
-  templateUrl: './lst-socials.component.html',
-  styleUrls: ['./lst-socials.component.scss'],
+    selector: 'app-lst-socials',
+    templateUrl: './lst-socials.component.html',
+    styleUrls: ['./lst-socials.component.scss'],
+    standalone: false
 })
 export class LstSocialsComponent implements OnInit {
   public lstSocials: ISocialNetwork[] = [];

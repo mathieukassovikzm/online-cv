@@ -2,9 +2,10 @@ import { Component, Input } from '@angular/core';
 import { IRecommendationModel } from 'src/app/models/home';
 
 @Component({
-  selector: 'app-recommendation-card',
-  templateUrl: './recommendation-card.component.html',
-  styleUrls: ['./recommendation-card.component.scss'],
+    selector: 'app-recommendation-card',
+    templateUrl: './recommendation-card.component.html',
+    styleUrls: ['./recommendation-card.component.scss'],
+    standalone: false
 })
 export class RecommendationCardComponent {
   @Input() person: IRecommendationModel = <IRecommendationModel>{};

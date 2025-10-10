@@ -1,9 +1,10 @@
 import { Component, HostBinding, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-svg-vuejs',
-  templateUrl: './svg-vuejs.component.html',
-  styleUrls: ['./svg-vuejs.component.scss']
+    selector: 'app-svg-vuejs',
+    templateUrl: './svg-vuejs.component.html',
+    styleUrls: ['./svg-vuejs.component.scss'],
+    standalone: false
 })
 export class SvgVuejsComponent implements OnInit {
   @HostBinding('class') class = 'svg-skill';
