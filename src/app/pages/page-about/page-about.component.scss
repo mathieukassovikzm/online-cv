@@ -1,4 +1,5 @@
-@import "helpers-dir";
+@use '../0-helpers/variables' as *;
+
 
 /* ---------------------- Media query ----------------------------*/
 @media only screen and (min-width: $min-width-xl) {

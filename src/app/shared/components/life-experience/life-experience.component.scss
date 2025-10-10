@@ -1,4 +1,5 @@
-@import "helpers-dir";
+@use '../0-helpers/variables' as *;
+
 
 $card-svg-s: 45px;
 $card-svg-top: -8px;

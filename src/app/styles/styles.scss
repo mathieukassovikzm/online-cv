@@ -1,5 +1,5 @@
 // Import Directories
-@import "./0-helpers/helpers-dir";
-@import "./1-base/base-dir";
-@import "./2-pages/pages-dir";
-@import "./3-modules/modules-dir";
+@use "./0-helpers/helpers-dir" as *;
+@use "./1-base/base-dir" as *;
+@use "./2-pages/pages-dir" as *;
+@use "./3-modules/modules-dir" as *;

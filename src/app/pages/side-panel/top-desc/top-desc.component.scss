@@ -1,4 +1,5 @@
-@import "helpers-dir";
+@use '../0-helpers/variables' as *;
+
 
 $img-s: 120px;
 $lamp-s: 17px;

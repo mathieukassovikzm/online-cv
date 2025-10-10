@@ -1,3 +1,5 @@
+@use '../0-helpers/helpers-dir' as helpers;
+
 .btn {
   font-weight: bold;
   text-transform: uppercase;
@@ -13,22 +15,22 @@
 
 .bg-dark {
   .btn {
-    border: 1px solid $light;
-    color: $light;
+    border: 1px solid helpers.$light;
+    color: helpers.$light;
     &:hover {
-      background: $light;
-      color: $primary;
+      background: helpers.$light;
+      color: helpers.$primary;
     }
   }
 }
 
 .bg-light {
   .btn {
-    border: 1px solid $dark;
-    color: $dark;
+    border: 1px solid helpers.$dark;
+    color: helpers.$dark;
     &:hover {
-      background: $dark;
-      color: $primary;
+      background: helpers.$dark;
+      color: helpers.$primary;
     }
   }
 }

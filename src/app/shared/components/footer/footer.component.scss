@@ -1,5 +1,6 @@
 @use 'sass:math';
-@import "helpers-dir";
+@use '../0-helpers/variables' as *;
+
 
 :host {
   width: 100%;

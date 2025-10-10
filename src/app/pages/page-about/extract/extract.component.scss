@@ -1,4 +1,5 @@
-@import "helpers-dir";
+@use '../0-helpers/variables' as *;
+
 $svg-quote-s: 15px;
 
 :host {
