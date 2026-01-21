@@ -57,8 +57,8 @@ const teacher = <IExperienceModel>{
 // Experiences Pro
 const freelanceBouygues = <IExperienceModel>{
   company: 'Freelance - Bouygues Telecom',
-  dateEnd: new Date('2025-12-30'),
-  date: '04/2023 - 12/2025',
+  dateEnd: new Date('2026-02-28'),
+  date: '04/2023 - 02/2026',
   address: 'Rennes, France',
   description: {
     technicalEnv: [
@@ -70,6 +70,7 @@ const freelanceBouygues = <IExperienceModel>{
       'Git',
       'Azure DevOps',
       'Bruno',
+      'Postgresql',
     ],
   },
   typeExpe: TypeExperienceEnum.ExperiencePro,
@@ -251,9 +252,12 @@ export const aboutFr: IAboutModel = {
       title: 'Développeur full stack',
       description: {
         ...freelanceBouygues.description,
-        dsc: "",
+        dsc: "Leader technique d'une équipe de 3 personnes. Développement from scratch d'un portail de suivi des incidents et changements réseaux de Bouygues Telecom dans le cadre du projet gouvernemental RRF.",
         tasks: [
-          "",
+          "Mise en place d'architectures d'une application Angular et d'APIs C#.",
+          "Développement 'from scratch' d'un portail web Angular comprenant des onglets de cartographies, KPIs, etc.",
+          "Mise en place d'un système de synchronisation de bdd Oracle/Postgresql.",
+          "Respect d'une charte de sécurité gouvernementale.",
         ],
       },
     },
@@ -262,9 +266,11 @@ export const aboutFr: IAboutModel = {
       title: 'Développeur Frontend',
       description: {
         ...freelanceSolina.description,
-        dsc: "",
+        dsc: "Mise à jour et modernisation de l'application de pricing, avec une migration d'Angular v12 vers Angular v18.",
         tasks: [
-          "",
+          "Migration du framework Angular ainsi que des composants Kendo vers leurs versions les plus récentes.",
+          "Amélioration et harmonisation du CSS sur l'ensemble de l'application.",
+          "Correction et refactorisation de certaines pages afin de respecter les bonnes pratiques front-end."
         ],
       },
     },
@@ -500,9 +506,12 @@ export const aboutEn: IAboutModel = {
       title: 'Full stack developer',
       description: {
         ...freelanceBouygues.description,
-        dsc: "",
+        dsc: "Technical lead of a 3-person team, responsible for the from-scratch development of a portal for tracking network incidents and changes for Bouygues Telecom, as part of the government RRF project.",
         tasks: [
-          "",
+          "Design and implementation of the architecture for an Angular application and C# APIs.",
+          "From-scratch development of an Angular web portal including mapping modules, KPIs, and monitoring dashboards.",
+          "Implementation of a database synchronization system between Oracle and PostgreSQL.",
+          "Compliance with and enforcement of government security guidelines and standards."
         ],
       },
     },
@@ -511,9 +520,11 @@ export const aboutEn: IAboutModel = {
       title: 'Frontend Developer',
       description: {
         ...freelanceSolina.description,
-        dsc: "",
+        dsc: "Upgrade and modernization of a pricing application, migrating from Angular v12 to Angular v18.",
         tasks: [
-          "",
+          "Migration of the Angular framework and Kendo components to their latest versions.",
+          "Improvement and harmonization of CSS across the entire application.",
+          "Fixing and refactoring specific pages to comply with front-end best practices."
         ],
       },
     },
@@ -688,9 +699,12 @@ export const aboutEs: IAboutModel = {
       title: 'Desarrollador Full Stack',
       description: {
         ...freelanceBouygues.description,
-        dsc: "",
+        dsc: "Líder técnico de un equipo de 3 personas, responsable del desarrollo desde cero de un portal de seguimiento de incidencias y cambios de red para Bouygues Telecom, en el marco del proyecto gubernamental RRF.",
         tasks: [
-          "",
+          "Diseño e implementación de la arquitectura de una aplicación Angular y APIs en C#.",
+          "Desarrollo desde cero de un portal web en Angular que incluye módulos de cartografía, KPIs y paneles de seguimiento.",
+          "Implementación de un sistema de sincronización de bases de datos Oracle y PostgreSQL.",
+          "Cumplimiento y aplicación de una normativa de seguridad conforme a los requisitos gubernamentales."
         ],
       },
     },
@@ -699,9 +713,11 @@ export const aboutEs: IAboutModel = {
       title: 'Desarrollador Frontend',
       description: {
         ...freelanceSolina.description,
-        dsc: "",
+        dsc: "Actualización y modernización de la aplicación de pricing, con una migración de Angular v12 a Angular v18.",
         tasks: [
-          "",
+          "Migración del framework Angular y de los componentes Kendo a sus versiones más recientes.",
+          "Mejora y armonización del CSS en toda la aplicación.",
+          "Corrección y refactorización de algunas páginas para cumplir con las buenas prácticas de front-end."
         ],
       },
     },

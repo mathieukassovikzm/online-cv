@@ -1,14 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, computed, OnInit, Signal } from '@angular/core';
+import { UiService } from 'src/app/services/ui.service';
 
 @Component({
-    selector: 'app-banner',
-    templateUrl: './banner.component.html',
-    styleUrls: ['./banner.component.scss'],
-    standalone: false
+  selector: 'app-banner',
+  templateUrl: './banner.component.html',
+  styleUrls: ['./banner.component.scss'],
+  standalone: false
 })
 export class BannerComponent implements OnInit {
   public text: string = '';
-  public phrases = ['web applications', 'backend applications'];
+
+  public sBannerTxt: Signal<string> = computed(() => {
+    return this.uiService.getUiTxt()().homeTxt.bannerTxt;
+  });
+  public sBannerPhrases: Signal<string[]> = computed(() => {
+    return this.uiService.getUiTxt()()?.homeTxt.bannerPhrases;
+  });
+
   public typeSpeed: number = 100; // ms per character
   public deleteSpeed: number = 50; // ms per character
   public delayBetween: number = 2000; // pause before deleting
@@ -18,14 +26,14 @@ export class BannerComponent implements OnInit {
   private charIndex: number = 0;
   private deleting: boolean = false;
 
-  constructor() {}
+  constructor(private uiService: UiService) { }
 
   ngOnInit() {
     this.typeLoop();
   }
 
   private typeLoop(): void {
-    const currentPhrase = this.phrases[this.phraseIndex];
+    const currentPhrase = this.sBannerPhrases()[this.phraseIndex];
 
     if (!this.deleting) {
       // typing
@@ -47,7 +55,7 @@ export class BannerComponent implements OnInit {
       } else {
         // move to next phrase
         this.deleting = false;
-        this.phraseIndex = (this.phraseIndex + 1) % this.phrases.length;
+        this.phraseIndex = (this.phraseIndex + 1) % this.sBannerPhrases().length;
         setTimeout(() => this.typeLoop(), this.typeSpeed);
       }
     }

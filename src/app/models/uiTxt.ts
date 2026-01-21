@@ -31,6 +31,8 @@ export interface IUiTxtSkillsModel {
 }
 
 export interface IUiTxtHomeModel {
+  bannerTxt: string;
+  bannerPhrases: string[];
   servicesTitle: string;
   recommendationsTitle: string;
 }
