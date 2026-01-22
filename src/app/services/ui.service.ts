@@ -30,7 +30,35 @@ export class UiService {
   }
 
   setUiLanguage(lang: CodeLanguageEnum): void {
+    if (lang === undefined || lang === null) {
+      lang = this.getUsersLocale(CodeLanguageEnum.FR);
+    }
     this.uiLanguage.set(lang);
+  }
+
+  getUsersLocale(defaultValue: CodeLanguageEnum): CodeLanguageEnum {
+    if (typeof window === 'undefined' || typeof window.navigator === 'undefined') {
+      return defaultValue;
+    }
+    const wn = window.navigator as any;
+    let lang = wn.languages ? wn.languages[0] : defaultValue;
+    lang = lang || wn.language || wn.browserLanguage || wn.userLanguage;
+    switch (lang) {
+      case 'fr':
+      case 'fr-FR':
+      case 'fr-CA':
+        return CodeLanguageEnum.FR;
+      case 'en':
+      case 'en-US':
+      case 'en-GB':
+        return CodeLanguageEnum.EN;
+      case 'es':
+      case 'es-ES':
+      case 'es-MX':
+        return CodeLanguageEnum.ES;
+      default:
+        return defaultValue;
+    }
   }
 
   setUiLanguageAndNavigate(lang: CodeLanguageEnum): void {

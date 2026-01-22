@@ -6,10 +6,10 @@ import { InfosService } from 'src/app/services/infos.service';
 import { UiService } from 'src/app/services/ui.service';
 
 @Component({
-    selector: 'app-top-desc',
-    templateUrl: './top-desc.component.html',
-    styleUrls: ['./top-desc.component.scss'],
-    standalone: false
+  selector: 'app-top-desc',
+  templateUrl: './top-desc.component.html',
+  styleUrls: ['./top-desc.component.scss'],
+  standalone: false
 })
 export class TopDescComponent implements OnInit {
   public sUiText: Signal<IUiTxtModel> = this.uiService.getUiTxt();
@@ -18,7 +18,7 @@ export class TopDescComponent implements OnInit {
   public codeFR = CodeLanguageEnum.FR;
   public codeEN = CodeLanguageEnum.EN;
   public codeES = CodeLanguageEnum.ES;
-  
+
   constructor(
     private infosService: InfosService,
     private uiService: UiService
