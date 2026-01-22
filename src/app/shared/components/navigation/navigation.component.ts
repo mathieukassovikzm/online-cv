@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, computed, OnInit, Signal } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { filter, Subscription, tap } from 'rxjs';
+import { IUiTxtNavModel } from 'src/app/models/uiTxt';
 import { UiService } from 'src/app/services/ui.service';
 
 @Component({
@@ -16,6 +17,9 @@ export class NavigationComponent implements OnInit {
   private sub = new Subscription();
   // public photo = require('./../../../../assets/images/PhotoCv.jpg');
 
+  public sUiText: Signal<IUiTxtNavModel> = computed(() => {
+    return this.uiService.getUiTxt()()?.navTxt;
+  });
   public language = this.uiService.getUiLanguage();
 
   constructor(
@@ -33,8 +37,8 @@ export class NavigationComponent implements OnInit {
         tap(() => this.uiService.closeNav())
       )
       .forEach(() => {
-        this.pageActiveName =
-          this.route?.root?.firstChild?.snapshot.data['displayName'];
+        const pageName = this.route?.root?.firstChild?.snapshot.data['pageName'];
+        this.pageActiveName = this.uiService.getUiPageName(pageName)();
       });
   }
 

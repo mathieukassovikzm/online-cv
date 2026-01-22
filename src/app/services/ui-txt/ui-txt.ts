@@ -6,6 +6,7 @@ import {
   uiTxtSidePanelEs,
   uiTxtSidePanelFr,
 } from './ui-txt-side-panel';
+import { uiTxtNavEn, uiTxtNavEs, uiTxtNavFr } from './ui-txt-nav';
 
 export const uiTxtCardFr: IUiTxtCardModel = {
   tasksTitle: 'Responsabilités / Tâches :',
@@ -23,6 +24,7 @@ export const uiTxtCardEs: IUiTxtCardModel = {
 };
 
 export const uiTxtFr: IUiTxtModel = {
+  navTxt: uiTxtNavFr,
   sidePanelTxt: uiTxtSidePanelFr,
   homeTxt: uiTxtHomeFr,
   aboutTxt: uiTxtAboutFr,
@@ -30,6 +32,7 @@ export const uiTxtFr: IUiTxtModel = {
 };
 
 export const uiTxtEn: IUiTxtModel = {
+  navTxt: uiTxtNavEn,
   sidePanelTxt: uiTxtSidePanelEn,
   homeTxt: uiTxtHomeEn,
   aboutTxt: uiTxtAboutEn,
@@ -37,6 +40,7 @@ export const uiTxtEn: IUiTxtModel = {
 };
 
 export const uiTxtEs: IUiTxtModel = {
+  navTxt: uiTxtNavEs,
   sidePanelTxt: uiTxtSidePanelEs,
   homeTxt: uiTxtHomeEs,
   aboutTxt: uiTxtAboutEs,

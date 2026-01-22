@@ -1,8 +1,16 @@
 export interface IUiTxtModel {
+  navTxt: IUiTxtNavModel;
   sidePanelTxt: IUiTxtSidePanelModel;
   homeTxt: IUiTxtHomeModel;
   aboutTxt: IUiTxtAboutModel;
   cardTxt: IUiTxtCardModel;
+}
+
+export interface IUiTxtNavModel {
+  homeTitle: string;
+  aboutTitle: string;
+  projectsTitle: string;
+  contactTitle: string;
 }
 
 export interface IUiTxtSidePanelModel {
