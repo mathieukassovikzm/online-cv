@@ -1,9 +1,10 @@
 import { Component, HostBinding, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-svg-phone',
-  templateUrl: './svg-phone.component.html',
-  styleUrls: ['./svg-phone.component.scss'],
+    selector: 'app-svg-phone',
+    templateUrl: './svg-phone.component.html',
+    styleUrls: ['./svg-phone.component.scss'],
+    standalone: false
 })
 export class SvgPhoneComponent implements OnInit {
   @HostBinding('class') class = 'icon';

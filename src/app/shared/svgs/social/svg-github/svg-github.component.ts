@@ -1,8 +1,9 @@
 import { Component, HostBinding, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-svg-github',
-  templateUrl: './svg-github.component.html',
+    selector: 'app-svg-github',
+    templateUrl: './svg-github.component.html',
+    standalone: false
 })
 export class SvgGithubComponent implements OnInit {
   @HostBinding('class') class = 'icon';

@@ -1,8 +1,10 @@
 <section class="section-services">
   <h2>{{sUiText().servicesTitle}}</h2>
   <ul>
-    <li *ngFor="let item of sServices()">
-      <app-service [item]="item"></app-service>
-    </li>
+    @for (item of sServices(); track item) {
+      <li>
+        <app-service [item]="item"></app-service>
+      </li>
+    }
   </ul>
 </section>

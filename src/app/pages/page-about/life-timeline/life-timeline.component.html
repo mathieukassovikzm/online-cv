@@ -8,20 +8,22 @@
         </li>
         <li>
           <a (click)="filterTimelineEvents(typeExpeEduc)"
-            [class.active]="isActif(typeExpeEduc)">{{sUiText().educationTitle}}</a>
-          </li>
+          [class.active]="isActif(typeExpeEduc)">{{sUiText().educationTitle}}</a>
+        </li>
         <li>
           <a (click)="filterTimelineEvents(typeExpeExpePro)"
-            [class.active]="isActif(typeExpeExpePro)">{{sUiText().expeProTitle}}</a>
-          </li>
+          [class.active]="isActif(typeExpeExpePro)">{{sUiText().expeProTitle}}</a>
+        </li>
         <li>
           <a (click)="filterTimelineEvents(typeExpeArchi)"
-            [class.active]="isActif(typeExpeArchi)">{{sUiText().archivementTitle}}</a>
-          </li>
+          [class.active]="isActif(typeExpeArchi)">{{sUiText().archivementTitle}}</a>
+        </li>
       </ul>
     </nav>
   </div>
   <div class="lst-cards-container" [@filterAnimation]="timelineEventsFilteredTotal()">
-    <app-life-experience [item]="event" *ngFor="let event of sTimelineEventsFiltered()"></app-life-experience>
+    @for (event of sTimelineEventsFiltered(); track event) {
+      <app-life-experience [item]="event"></app-life-experience>
+    }
   </div>
 </section>

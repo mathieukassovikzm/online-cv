@@ -4,6 +4,13 @@ export enum CodeLanguageEnum {
   ES = 'ES',
 }
 
+export enum PagesEnum {
+  HOME,
+  ABOUT,
+  PROJECTS,
+  CONTACTS
+}
+
 export enum CodeSocialNetworkEnum {
   FB,
   IS,

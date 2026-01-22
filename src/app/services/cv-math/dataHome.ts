@@ -57,8 +57,7 @@ export const eventAnnouncement = <IServiceModel>{
 export const sebastienPinet = <IRecommendationModel>{
   nom: 'Sebastien Pinet',
   enterprise: 'Véonum',
-  text: '',
-  email: 'seb.pinet35@gmail.com ',
+  email: 'seb.pinet35@gmail.com',
   phone: '+33 6 16 10 73 42',
   photo: './assets/recommendations/Sebastien.jpeg',
 };
@@ -66,17 +65,15 @@ export const sebastienPinet = <IRecommendationModel>{
 export const patrickLeprince = <IRecommendationModel>{
   nom: 'Patrick Lepince',
   enterprise: 'Véonum',
-  text: '',
-  email: 'seb.pinet35@gmail.com ',
-  phone: '+33 6 16 10 73 42',
+  email: 'patrick.leprince@veonum.com',
+  phone: '+33 7 67 70 66 53',
+  photo: './assets/recommendations/Patrick.jpeg',
 };
 
 export const michelPelgrin = <IRecommendationModel>{
   nom: 'Michel Pelgrin',
   enterprise: 'Freelance',
-  text: '',
-  email: 'seb.pinet35@gmail.com ',
-  phone: '+33 6 16 10 73 42',
+  email: 'copernicus_13@hotmail.com',
 };
 
 export const homeFr: IHomeModel = {
@@ -91,7 +88,7 @@ export const homeFr: IHomeModel = {
       ...devBackend,
       title: "Développement backend",
       descriptions: [
-        "orem ipsum dolor sit amet, consectetur adipisicing elit. Delectus esse commodi deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur doloribus"
+        "Développeur backend, je conçois et maintiens des API robustes, performantes et sécurisées. J'interviens sur la conception d'architectures, la gestion de bases de données et l'optimisation des performances."
       ]
     },
     <IServiceModel>{
@@ -105,7 +102,7 @@ export const homeFr: IHomeModel = {
       ...devFullStack,
       title: "Développement fullstack",
       descriptions: [
-        "orem ipsum dolor sit amet, consectetur adipisicing elit. Delectus esse commodi deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur doloribus"
+        "Développeur fullstack, je prends en charge un projet de bout en bout, du backend au frontend, en assurant la cohérence technique, la performance et la qualité de l'FFOexpérience utilisateur."
       ]
     },
     <IServiceModel>{
@@ -119,21 +116,21 @@ export const homeFr: IHomeModel = {
       ...famillyPhotograph,
       title: "Photographe de famille",
       descriptions: [
-        "Je propose des services de photographie, notamment pour des photos de famille, de grossesse et de naissance.",
+        "Je propose des services de photographie, notamment pour des photos de famille, de grossesse et de naissance."
       ]
     },
     <IServiceModel>{
       ...eventAnnouncement,
       title: "Faire-part",
       descriptions: [
-        "Passionné de création graphique, je réalise des faire-part de mariage et de naissance sur mesure.",
+        "Passionné de création graphique, je réalise des faire-part de mariage et de naissance sur mesure."
       ]
     },
   ],
   lstRecommendations: [
     <IRecommendationModel>{
       ...sebastienPinet,
-      text: 'Au top',
+      text: "J'ai eu la chance de travailler avec Mathieu quelques années et suivre ses autres aventures professionnelles par la suite. En complément d'une solide formation au sein d'une très bonne école d'ingénieur Rennaise, j'ai apprécié tant ses qualités humaines que ses compétences techniques. Enthousiaste, flexible, disponible pour accompagner les autres, impliqué dans son travail, le sens des responsabilités, brillant techniquement, ouvert d'esprit, ... en résumé le collaborateur que l'on souhaite tous embarquer dans son équipe.",
     },
     <IRecommendationModel>{
       ...michelPelgrin,
@@ -157,44 +154,44 @@ export const homeEn: IHomeModel = {
   lstServices: [
     <IServiceModel>{
       ...devBackend,
-      title: "Développement backend",
+      title: "Backend development",
       descriptions: [
-        "orem ipsum dolor sit amet, consectetur adipisicing elit. Delectus esse commodi deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur doloribus"
+        "As a backend developer, I design and maintain robust, high-performance, and secure APIs. I work on architecture design, database management, and performance optimization."
       ]
     },
     <IServiceModel>{
       ...devFrontend,
-      title: "Développement front",
+      title: "Frontend development",
       descriptions: [
-        "Front-end developer, I'm able to work on both new and existing projects, handling feature development and bug fixes in Angular and Vue.js."
+        "As a frontend developer, I can work on new or existing projects, handling feature development or bug fixes using Angular and Vue.js."
       ]
     },
     <IServiceModel>{
       ...devFullStack,
-      title: "Développement fullstack",
+      title: "Fullstack development",
       descriptions: [
-        "orem ipsum dolor sit amet, consectetur adipisicing elit. Delectus esse commodi deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur doloribus"
+        "As a fullstack developer, I manage projects end to end, from backend to frontend, ensuring technical consistency, performance, and a high-quality user experience."
       ]
     },
     <IServiceModel>{
       ...weddingPhotography,
-      title: "Photographe de mariage",
+      title: "Wedding photographer",
       descriptions: [
-        "From the religious ceremony at the church to the wedding reception and evening celebration, I cover every highlight of your special day."
+        "From the religious ceremony at the church to the wedding reception and evening celebration, I capture every meaningful moment of your wedding day."
       ]
     },
     <IServiceModel>{
       ...famillyPhotograph,
-      title: "Photographe de famille",
+      title: "Family photographer",
       descriptions: [
-        "I offer photography services, particularly for family, maternity and newborn photos."
+        "I offer photography services for family portraits, maternity sessions, and newborn photography."
       ]
     },
     <IServiceModel>{
       ...eventAnnouncement,
-      title: "Faire-part",
+      title: "Invitations",
       descriptions: [
-        "Passionate about graphic design, I create custom wedding and birth announcements.",
+        "Passionate about graphic design, I create custom-made wedding and birth announcements."
       ]
     },
   ],
@@ -225,44 +222,44 @@ export const homeEs: IHomeModel = {
   lstServices: [
     <IServiceModel>{
       ...devBackend,
-      title: "Développement backend",
+      title: "Desarrollo backend",
       descriptions: [
-        "orem ipsum dolor sit amet, consectetur adipisicing elit. Delectus esse commodi deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur doloribus"
+        "Como desarrollador backend, diseño y mantengo APIs sólidas, seguras y de alto rendimiento. Trabajo en el diseño de arquitecturas, la gestión de bases de datos y la optimización del rendimiento."
       ]
     },
     <IServiceModel>{
       ...devFrontend,
-      title: "Développement front",
+      title: "Desarrollo frontend",
       descriptions: [
-        "Desarrollador front-end, soy capaz de trabajar tanto en proyectos nuevos como en existentes, realizando evoluciones y correcciones de errores en Angular y Vue.js."
+        "Como desarrollador frontend, puedo intervenir en proyectos nuevos o existentes, realizando evoluciones o correcciones de errores con Angular y Vue.js."
       ]
     },
     <IServiceModel>{
       ...devFullStack,
-      title: "Développement fullstack",
+      title: "Desarrollo fullstack",
       descriptions: [
-        "orem ipsum dolor sit amet, consectetur adipisicing elit. Delectus esse commodi deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur doloribus"
+        "Como desarrollador fullstack, me encargo de proyectos de principio a fin, desde el backend hasta el frontend, garantizando coherencia técnica, rendimiento y una excelente experiencia de usuario."
       ]
     },
     <IServiceModel>{
       ...weddingPhotography,
-      title: "Photographe de mariage",
+      title: "Fotógrafo de bodas",
       descriptions: [
-        "Desde la ceremonia religiosa en la iglesia hasta el banquete de bodas y la fiesta nocturna, capturo cada momento especial de su gran día."
+        "Desde la ceremonia religiosa en la iglesia hasta la celebración y la fiesta, capturo cada momento especial de su boda."
       ]
     },
     <IServiceModel>{
       ...famillyPhotograph,
-      title: "Photographe de famille",
+      title: "Fotógrafo familiar",
       descriptions: [
-        "orem ipsum dolor sit amet, consectetur adipisicing elit. Delectus esse commodi deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur doloribus"
+        "Ofrezco servicios de fotografía, incluyendo sesiones familiares, de embarazo y de recién nacidos."
       ]
     },
     <IServiceModel>{
       ...eventAnnouncement,
-      title: "Faire-part",
+      title: "Invitaciones",
       descriptions: [
-        "Apasionado por el diseño gráfico, realizo invitaciones de boda y de nacimiento a medida.",
+        "Apasionado por el diseño gráfico, realizo invitaciones personalizadas para bodas y nacimientos."
       ]
     },
   ],

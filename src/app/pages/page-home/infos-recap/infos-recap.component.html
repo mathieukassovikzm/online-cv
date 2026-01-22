@@ -1,6 +1,8 @@
 <ul>
-    <li *ngFor="let item of sLstRecap()">
-        <h5>{{item.value}}</h5>
-        <h6>{{item.libelle}}</h6>
+  @for (item of sLstRecap(); track item) {
+    <li>
+      <h5>{{item.value}}</h5>
+      <h6>{{item.libelle}}</h6>
     </li>
+  }
 </ul>

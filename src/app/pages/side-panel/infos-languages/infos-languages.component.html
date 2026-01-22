@@ -1,10 +1,18 @@
 <ul>
-  <li *ngFor="let item of sLstLanguages()">
-    <div class="logo">
-      <app-svg-fr *ngIf="item.code === codeFr"></app-svg-fr>
-      <app-svg-en *ngIf="item.code === codeEn"></app-svg-en>
-      <app-svg-es *ngIf="item.code === codeEs"></app-svg-es>
-    </div>
-    <h6>{{ item.name }} : {{ item.power }}</h6>
-  </li>
+  @for (item of sLstLanguages(); track item) {
+    <li>
+      <div class="logo">
+        @if (item.code === codeFr) {
+          <app-svg-fr></app-svg-fr>
+        }
+        @if (item.code === codeEn) {
+          <app-svg-en></app-svg-en>
+        }
+        @if (item.code === codeEs) {
+          <app-svg-es></app-svg-es>
+        }
+      </div>
+      <h6>{{ item.name }} : {{ item.power }}</h6>
+    </li>
+  }
 </ul>

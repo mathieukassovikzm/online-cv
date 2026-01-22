@@ -5,9 +5,10 @@ import { AboutService } from 'src/app/services/about.service';
 import { UiService } from 'src/app/services/ui.service';
 
 @Component({
-  selector: 'app-work-experience',
-  templateUrl: './work-experience.component.html',
-  styleUrls: ['./work-experience.component.scss'],
+    selector: 'app-work-experience',
+    templateUrl: './work-experience.component.html',
+    styleUrls: ['./work-experience.component.scss'],
+    standalone: false
 })
 export class WorkExperienceComponent {
   public sUiText: Signal<IUiTxtAboutModel> = computed(() => {

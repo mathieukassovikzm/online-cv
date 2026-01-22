@@ -1,6 +1,8 @@
 <section class="section-education">
   <h2>{{sUiText().expeProTitle}}</h2>
   <div class="lst-cards-container">
-    <app-card [item]="expericePro" *ngFor="let expericePro of sExpericesPro()"></app-card>
+    @for (expericePro of sExpericesPro(); track expericePro) {
+      <app-card [item]="expericePro"></app-card>
+    }
   </div>
 </section>

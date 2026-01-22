@@ -1,11 +1,23 @@
 <ul>
-  <li *ngFor="let item of lstSocials">
-    <a class="logo" [href]="item.url" target="_blank">
-      <app-svg-facebook *ngIf="item.code === codeFB"></app-svg-facebook>
-      <app-svg-instagram *ngIf="item.code === codeIS"></app-svg-instagram>
-      <app-svg-linkedin *ngIf="item.code === codeLK"></app-svg-linkedin>
-      <app-svg-github *ngIf="item.code === codeGH"></app-svg-github>
-      <app-svg-bitbucket *ngIf="item.code === codeBI"></app-svg-bitbucket>
-    </a>
-  </li>
+  @for (item of lstSocials; track item) {
+    <li>
+      <a class="logo" [href]="item.url" target="_blank">
+        @if (item.code === codeFB) {
+          <app-svg-facebook></app-svg-facebook>
+        }
+        @if (item.code === codeIS) {
+          <app-svg-instagram></app-svg-instagram>
+        }
+        @if (item.code === codeLK) {
+          <app-svg-linkedin></app-svg-linkedin>
+        }
+        @if (item.code === codeGH) {
+          <app-svg-github></app-svg-github>
+        }
+        @if (item.code === codeBI) {
+          <app-svg-bitbucket></app-svg-bitbucket>
+        }
+      </a>
+    </li>
+  }
 </ul>

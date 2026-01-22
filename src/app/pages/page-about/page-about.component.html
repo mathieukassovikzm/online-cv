@@ -1,6 +1,8 @@
-<app-extract *ngIf="sAbout()?.extract"></app-extract>
+@if (sAbout().extract) {
+  <app-extract></app-extract>
+}
 <!-- <app-education *ngIf="sAbout()?.educations"></app-education>
-<app-work-experience *ngIf="sAbout()?.experiencesPro" ></app-work-experience> 
+<app-work-experience *ngIf="sAbout()?.experiencesPro" ></app-work-experience>
 <app-archievements *ngIf="sAbout()?.archievements"></app-archievements>-->
 <!-- <app-travels></app-travels> -->
 <app-life-timeline></app-life-timeline>

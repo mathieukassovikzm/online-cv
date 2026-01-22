@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { PagesEnum } from './models/enum';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   {
     path: 'home',
-    data: { displayName: 'Home' },
+    data: { pageName: PagesEnum.HOME },
     loadChildren: () =>
       import('./pages/page-home/page-home.module').then(
         (m) => m.PageHomeModule
@@ -13,10 +14,26 @@ const routes: Routes = [
   },
   {
     path: 'about',
-    data: { displayName: 'About' },
+    data: { pageName: PagesEnum.ABOUT },
     loadChildren: () =>
       import('./pages/page-about/page-about.module').then(
         (m) => m.PageAboutModule
+      ),
+  },
+  {
+    path: 'projets',
+    data: { pageName: PagesEnum.PROJECTS },
+    loadChildren: () =>
+      import('./pages/page-projects/page-projects.module').then(
+        (m) => m.PageProjectsModule
+      ),
+  },
+  {
+    path: 'contacts',
+    data: { pageName: PagesEnum.CONTACTS },
+    loadChildren: () =>
+      import('./pages/page-contacts/page-contacts.module').then(
+        (m) => m.PageContactsModule
       ),
   },
 ];
@@ -25,4 +42,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

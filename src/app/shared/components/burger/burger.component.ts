@@ -2,9 +2,10 @@ import { Component, HostBinding, OnInit } from '@angular/core';
 import { UiService } from 'src/app/services/ui.service';
 
 @Component({
-  selector: 'app-burger',
-  templateUrl: './burger.component.html',
-  styleUrls: ['./burger.component.scss'],
+    selector: 'app-burger',
+    templateUrl: './burger.component.html',
+    styleUrls: ['./burger.component.scss'],
+    standalone: false
 })
 export class BurgerComponent implements OnInit {
   @HostBinding('class') class = 'component-burger';

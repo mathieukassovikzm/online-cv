@@ -1,6 +1,8 @@
+@use '../0-helpers/helpers-dir' as helpers;
+
 /* ------------- STYLE GENERAL ------------- */
 body {
-  color: $txt-dark;
+  color: helpers.$txt-dark;
   font-size: 13px;
   line-height: 1.7;
   font-family: "Poppins", sans-serif;
@@ -24,7 +26,7 @@ h4,
 h5,
 h6 {
   font-weight: 700;
-  color: $txt-dark;
+  color: helpers.$txt-dark;
   margin-bottom: 0;
   font-family: "Poppins", sans-serif;
   -ms-word-wrap: break-word;
@@ -53,7 +55,7 @@ h6 {
   font-size: 13px;
   font-weight: 400;
 }
-@media only screen and (min-width: $min-width-m) {
+@media only screen and (min-width: helpers.$min-width-m) {
   h1 {
     font-size: 46px;
   }

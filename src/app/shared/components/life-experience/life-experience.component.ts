@@ -5,9 +5,10 @@ import { IUiTxtCardModel } from 'src/app/models/uiTxt';
 import { UiService } from 'src/app/services/ui.service';
 
 @Component({
-  selector: 'app-life-experience',
-  templateUrl: './life-experience.component.html',
-  styleUrls: ['./life-experience.component.scss'],
+    selector: 'app-life-experience',
+    templateUrl: './life-experience.component.html',
+    styleUrls: ['./life-experience.component.scss'],
+    standalone: false
 })
 export class LifeExperienceComponent {
   @HostBinding('class') class = 'life-experience-component';

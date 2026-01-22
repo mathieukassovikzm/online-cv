@@ -5,9 +5,10 @@ import { TypeHobbyEnum } from 'src/app/models/enum';
 import { UiService } from 'src/app/services/ui.service';
 
 @Component({
-  selector: 'app-hobby',
-  templateUrl: './hobby.component.html',
-  styleUrls: ['./hobby.component.scss'],
+    selector: 'app-hobby',
+    templateUrl: './hobby.component.html',
+    styleUrls: ['./hobby.component.scss'],
+    standalone: false
 })
 export class HobbyComponent implements AfterViewInit {
   @Input() item: IHobbyModel | undefined;
