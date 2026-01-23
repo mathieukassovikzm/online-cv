@@ -1,8 +1,9 @@
-import { Component, computed, OnInit, Signal } from '@angular/core';
+import { Component, computed, inject, OnInit, Signal } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { filter, Subscription, tap } from 'rxjs';
 import { IUiTxtNavModel } from 'src/app/models/uiTxt';
 import { UiService } from 'src/app/services/ui.service';
+import { UiStore } from 'src/app/store/ui.store';
 
 @Component({
     selector: 'app-navigation',
@@ -11,6 +12,8 @@ import { UiService } from 'src/app/services/ui.service';
     standalone: false
 })
 export class NavigationComponent implements OnInit {
+  readonly uiStore = inject(UiStore);
+
   public itemMenuActif = 1;
   public pageActiveName = '';
 
@@ -34,7 +37,7 @@ export class NavigationComponent implements OnInit {
         // On filtre que sur les NavigationEnd pour ne pas être full spammé par le router
         filter((event) => event instanceof NavigationEnd),
         // A la fin de la naviagation on veut automatiquement fermé l'app-curtain
-        tap(() => this.uiService.closeNav())
+        tap(() => this.uiStore.closeNav())
       )
       .forEach(() => {
         const pageName = this.route?.root?.firstChild?.snapshot.data['pageName'];

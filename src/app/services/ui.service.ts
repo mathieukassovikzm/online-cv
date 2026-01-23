@@ -8,22 +8,9 @@ import { uiTxtEn, uiTxtEs, uiTxtFr } from './ui-txt/ui-txt';
   providedIn: 'root',
 })
 export class UiService {
-  private isNavOpen = false;
   private uiLanguage = signal(CodeLanguageEnum.FR);
 
   constructor(private router: Router, private route: ActivatedRoute) { }
-
-  toggleNav(): void {
-    this.isNavOpen = !this.isNavOpen;
-  }
-
-  closeNav(): void {
-    this.isNavOpen = false;
-  }
-
-  getIsNavOpen(): boolean {
-    return this.isNavOpen;
-  }
 
   getUiLanguage(): Signal<CodeLanguageEnum> {
     return this.uiLanguage;

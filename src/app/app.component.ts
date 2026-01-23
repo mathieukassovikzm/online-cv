@@ -1,8 +1,9 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, inject, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { CodeLanguageEnum } from './models/enum';
 import { UiService } from './services/ui.service';
 import { ActivatedRoute } from '@angular/router';
+import { UiStore } from './store/ui.store';
 
 @Component({
     selector: 'app-root',
@@ -11,6 +12,8 @@ import { ActivatedRoute } from '@angular/router';
     standalone: false
 })
 export class AppComponent implements OnInit, OnDestroy {
+  readonly uiStore = inject(UiStore);
+
   title = 'online-cv-math';
   private sLanguage = this.uiService.getUiLanguage();
 
@@ -29,10 +32,6 @@ export class AppComponent implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
 
-  isOpen(): boolean {
-    return this.uiService.getIsNavOpen();
-  }
-
   onLang(): string {
     switch (this.sLanguage()) {
       case CodeLanguageEnum.FR:
@@ -47,6 +46,6 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   curtainClicked(): void {
-    this.uiService.toggleNav();
+    this.uiStore.toggleNav();
   }
 }
