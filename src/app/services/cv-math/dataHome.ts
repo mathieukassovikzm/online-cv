@@ -134,7 +134,7 @@ export const homeFr: IHomeModel = {
     },
     <IRecommendationModel>{
       ...michelPelgrin,
-      text: 'Au top',
+      text: "J'ai eu le plaisir de recruter et d'encadrer Mathieu pendant deux ans lors d'une mission chez Bouygues Telecom, où il a rejoint mon équipe en tant que développeur .NET. Son intégration et sa prise de poste furent remarquablement rapides. Dès les premières semaines, il avait assimilé nos standards de code et nos conventions spécifiques, qu'il appliquait avec une rigueur exemplaire. Ce qui m'a particulièrement marqué, c'est sa capacité à monter en compétence sur de nouvelles technologies (Blazor et PL/SQL notamment) en un temps record, sans jamais sacrifier la qualité de son travail. Mais au-delà de ses compétences techniques, c'est son état d'esprit qui le distingue. Sans qu'on le lui demande, il a par la suite pris l'initiative de documenter ses travaux et de créer des guides pour faciliter la vie de ses collègues. Cette générosité dans le partage de connaissances est une qualité rare que j'ai profondément appréciée. Lorsque j'ai quitté la mission, il m'a succédé en tant que lead développeur. Il a repris ce rôle avec brio, en faisant preuve d'un leadership naturel tout en conservant cette attitude bienveillante et ouverte qui le caractérise. Je recommande Mathieu sans la moindre réserve. Toute équipe qui l'accueillera aura la chance d'avoir non seulement un excellent lead développeur, mais aussi quelqu'un qui élève ceux qui l'entourent.",
     },
     <IRecommendationModel>{
       ...patrickLeprince,
@@ -198,15 +198,15 @@ export const homeEn: IHomeModel = {
   lstRecommendations: [
     <IRecommendationModel>{
       ...sebastienPinet,
-      text: 'Very good',
+      text: "I had the opportunity to work with Mathieu for several years and to follow his professional journey thereafter. In addition to a strong academic background from an excellent engineering school in Rennes, I truly appreciated both his human qualities and his technical skills. Enthusiastic, flexible, always willing to support others, deeply committed to his work, with a strong sense of responsibility, technically outstanding and open-minded — in short, the kind of colleague everyone would want on their team.",
     },
     <IRecommendationModel>{
       ...michelPelgrin,
-      text: 'Au top',
+      text: "I had the pleasure of recruiting and managing Mathieu for two years during a mission at Bouygues Telecom, where he joined my team as a .NET developer. His onboarding and ramp-up were remarkably fast. Within the first few weeks, he had fully mastered our coding standards and specific conventions, applying them with exemplary rigor. What impressed me most was his ability to quickly upskill on new technologies (notably Blazor and PL/SQL) without ever compromising on quality. Beyond his technical expertise, his mindset truly sets him apart. On his own initiative, he documented his work and created guides to make his colleagues’ lives easier. This generosity in knowledge sharing is a rare quality that I greatly appreciated. When I left the mission, he succeeded me as lead developer and took on the role brilliantly, demonstrating natural leadership while maintaining a kind and open attitude. I recommend Mathieu without hesitation: any team would be fortunate to have not only an excellent lead developer, but also someone who elevates those around him.",
     },
     <IRecommendationModel>{
       ...patrickLeprince,
-      text: 'Au top',
+      text: "Outstanding.",
     }
   ],
   lstLogos: lstLogosEntreprises,
@@ -266,15 +266,15 @@ export const homeEs: IHomeModel = {
   lstRecommendations: [
     <IRecommendationModel>{
       ...sebastienPinet,
-      text: 'Muy Bueno',
+      text: "Tuve la oportunidad de trabajar con Mathieu durante varios años y de seguir posteriormente su trayectoria profesional. Además de contar con una sólida formación en una excelente escuela de ingeniería de Rennes, pude apreciar tanto sus cualidades humanas como sus competencias técnicas. Entusiasta, flexible, siempre dispuesto a apoyar a los demás, muy comprometido con su trabajo, con un fuerte sentido de la responsabilidad, técnicamente brillante y de mente abierta; en resumen, el tipo de colaborador que todos querríamos tener en nuestro equipo.",
     },
     <IRecommendationModel>{
       ...michelPelgrin,
-      text: 'Au top',
+      text: "Tuve el placer de contratar y supervisar a Mathieu durante dos años en una misión en Bouygues Telecom, donde se incorporó a mi equipo como desarrollador .NET. Su integración y adaptación al puesto fueron extraordinariamente rápidas. En pocas semanas, ya dominaba nuestros estándares de código y convenciones específicas, aplicándolos con un rigor ejemplar. Lo que más me impresionó fue su capacidad para adquirir rápidamente nuevas competencias tecnológicas (especialmente Blazor y PL/SQL) sin comprometer nunca la calidad de su trabajo. Más allá de sus habilidades técnicas, destaca especialmente por su actitud. Por iniciativa propia, documentó su trabajo y creó guías para facilitar el día a día de sus compañeros. Esta generosidad en el intercambio de conocimientos es una cualidad poco común que valoré enormemente. Cuando dejé la misión, me sucedió como lead developer y asumió el rol con gran éxito, demostrando un liderazgo natural sin perder su carácter cercano y abierto. Recomiendo a Mathieu sin ninguna reserva: cualquier equipo tendrá la suerte de contar no solo con un excelente lead developer, sino también con una persona que impulsa a quienes lo rodean.",
     },
     <IRecommendationModel>{
       ...patrickLeprince,
-      text: 'Au top',
+      text: "Excelente.",
     }
   ],
   lstLogos: lstLogosEntreprises,
