@@ -1,17 +1,17 @@
-import { Component, computed, inject, OnInit, Signal } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { filter, Subscription, tap } from 'rxjs';
-import { IUiTxtNavModel } from 'src/app/models/uiTxt';
-import { UiService } from 'src/app/services/ui.service';
+import { LanguageStore } from 'src/app/store/language.store';
 import { UiStore } from 'src/app/store/ui.store';
 
 @Component({
-    selector: 'app-navigation',
-    templateUrl: './navigation.component.html',
-    styleUrls: ['./navigation.component.scss'],
-    standalone: false
+  selector: 'app-navigation',
+  templateUrl: './navigation.component.html',
+  styleUrls: ['./navigation.component.scss'],
+  standalone: false
 })
 export class NavigationComponent implements OnInit {
+  readonly languageStore = inject(LanguageStore);
   readonly uiStore = inject(UiStore);
 
   public itemMenuActif = 1;
@@ -20,16 +20,12 @@ export class NavigationComponent implements OnInit {
   private sub = new Subscription();
   // public photo = require('./../../../../assets/images/PhotoCv.jpg');
 
-  public sUiText: Signal<IUiTxtNavModel> = computed(() => {
-    return this.uiService.getUiTxt()()?.navTxt;
-  });
-  public language = this.uiService.getUiLanguage();
+  public language = this.languageStore.uiLanguage;
 
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private uiService: UiService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.router.events
@@ -41,7 +37,7 @@ export class NavigationComponent implements OnInit {
       )
       .forEach(() => {
         const pageName = this.route?.root?.firstChild?.snapshot.data['pageName'];
-        this.pageActiveName = this.uiService.getUiPageName(pageName)();
+        this.pageActiveName = this.languageStore.getUiPageName(pageName);
       });
   }
 

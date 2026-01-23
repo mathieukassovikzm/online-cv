@@ -1,5 +1,5 @@
 <ul>
-  @for (item of sLstRecap(); track item) {
+  @for (item of languageStore.getHomeTxt().lstRecap; track item) {
     <li>
       <h5>{{item.value}}</h5>
       <h6>{{item.libelle}}</h6>

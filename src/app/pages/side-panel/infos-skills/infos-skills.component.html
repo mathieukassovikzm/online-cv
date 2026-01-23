@@ -23,7 +23,7 @@
 
   @if (skillsBdd) {
     <div class="ctn-skills-bdd-end">
-      <h3>{{sUiText().bddTitle}}</h3>
+      <h3>{{languageStore.getUiTxt().sidePanelTxt.skillsTitles.bddTitle}}</h3>
       @for (item of skillsBdd; track item) {
         <div class="">
           <app-skill [skill]="item"></app-skill>
@@ -34,7 +34,7 @@
 
   @if (skillsVersionning) {
     <div class="ctn-skills-versionning-end">
-      <h3>{{sUiText().versionningTitle}}</h3>
+      <h3>{{languageStore.getUiTxt().sidePanelTxt.skillsTitles.versionningTitle}}</h3>
       @for (item of skillsVersionning; track item) {
         <div class="">
           <app-skill [skill]="item"></app-skill>
@@ -45,7 +45,7 @@
 
   @if (skillsTools) {
     <div class="ctn-skills-tools-end">
-      <h3>{{sUiText().toolsTitle}}</h3>
+      <h3>{{languageStore.getUiTxt().sidePanelTxt.skillsTitles.toolsTitle}}</h3>
       @for (item of skillsTools; track item) {
         <div class="">
           <app-skill [skill]="item"></app-skill>

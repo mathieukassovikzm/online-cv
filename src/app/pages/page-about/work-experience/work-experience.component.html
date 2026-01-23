@@ -1,7 +1,7 @@
 <section class="section-education">
-  <h2>{{sUiText().expeProTitle}}</h2>
+  <h2>{{languageStore.getUiTxt().aboutTxt.expeProTitle }}</h2>
   <div class="lst-cards-container">
-    @for (expericePro of sExpericesPro(); track expericePro) {
+    @for (expericePro of languageStore.getAboutTxt().experiencesPro; track expericePro) {
       <app-card [item]="expericePro"></app-card>
     }
   </div>

@@ -1,5 +1,5 @@
 <ul>
-  @for (item of sLstLanguages(); track item) {
+  @for (item of languageStore.getLanguages(); track item) {
     <li>
       <div class="logo">
         @if (item.code === codeFr) {

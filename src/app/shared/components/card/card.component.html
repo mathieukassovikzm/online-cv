@@ -17,13 +17,13 @@
         <p class="dsc">{{item?.description?.dsc}}</p>
         @if (item?.description?.tasks) {
           <div class="subtitle tasks">
-            <h5>{{sUiText().tasksTitle}}</h5>
+            <h5>{{languageStore.getUiTxt().cardTxt.tasksTitle}}</h5>
             <p>{{item?.description?.tasks}}</p>
           </div>
         }
         @if (item?.description?.technicalEnv) {
           <div class="subtitle technicalEnv">
-            <h5>{{sUiText().technicalEnvTitle}}</h5>
+            <h5>{{languageStore.getUiTxt().cardTxt.technicalEnvTitle}}</h5>
             <p>{{item?.description?.technicalEnv}}</p>
           </div>
         }

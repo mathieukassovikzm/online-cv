@@ -1,26 +1,17 @@
-import { Component, computed, Signal } from '@angular/core';
-import { IExperienceModel } from 'src/app/models/about';
-import { IUiTxtAboutModel } from 'src/app/models/uiTxt';
-import { AboutService } from 'src/app/services/about.service';
-import { UiService } from 'src/app/services/ui.service';
+import { Component, inject } from '@angular/core';
+import { LanguageStore } from 'src/app/store/language.store';
 
 @Component({
-    selector: 'app-education',
-    templateUrl: './education.component.html',
-    styleUrls: ['./education.component.scss'],
-    standalone: false
+  selector: 'app-education',
+  templateUrl: './education.component.html',
+  styleUrls: ['./education.component.scss'],
+  standalone: false
 })
 export class EducationComponent {
-  private sLanguage = this.uiService.getUiLanguage();
-  public sUiText: Signal<IUiTxtAboutModel> = computed(() => {
-    return this.uiService.getUiTxt()()?.aboutTxt;
-  });
-  public sEducations: Signal<IExperienceModel[]> = computed(() => {
-    return this.aboutService.getAbout()().educations || [];
-  });
+  readonly languageStore = inject(LanguageStore);
 
-  constructor(
-    private aboutService: AboutService,
-    private uiService: UiService
-  ) { }
+  public uiText = this.languageStore.getUiTxt().aboutTxt;
+  public educations = this.languageStore.getAboutTxt().educations || [];
+
+  constructor() { }
 }

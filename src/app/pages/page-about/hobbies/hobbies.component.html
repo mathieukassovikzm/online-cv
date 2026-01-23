@@ -1,7 +1,7 @@
 <section class="section-hobbies">
-  <h2>{{sUiText().hobbiesTitle}}</h2>
+  <h2>{{uiText.hobbiesTitle}}</h2>
   <ul>
-    @for (item of sHobbies(); track item) {
+    @for (item of hobbies; track item) {
       <li>
         <app-hobby [item]="item"></app-hobby>
       </li>

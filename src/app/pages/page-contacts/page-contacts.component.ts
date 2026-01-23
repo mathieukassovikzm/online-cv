@@ -1,15 +1,11 @@
-import { Component, Signal } from '@angular/core';
-import { IAboutModel } from 'src/app/models/about';
-import { AboutService } from 'src/app/services/about.service';
+import { Component } from '@angular/core';
 
 @Component({
-    selector: 'app-page-contacts',
-    templateUrl: './page-contacts.component.html',
-    styleUrls: ['./page-contacts.component.scss'],
-    standalone: false
+  selector: 'app-page-contacts',
+  templateUrl: './page-contacts.component.html',
+  styleUrls: ['./page-contacts.component.scss'],
+  standalone: false
 })
 export class PageContactsComponent {
-  public sAbout: Signal<IAboutModel> = this.aboutService.getAbout();
-
-  constructor(private aboutService: AboutService) {}
+  constructor() { }
 }

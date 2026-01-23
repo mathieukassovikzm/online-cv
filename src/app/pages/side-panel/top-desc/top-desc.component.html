@@ -7,23 +7,23 @@
     </div>
   </div>
   <div class="item heading">
-    <h1>{{sInfos().name}} <span class="family-name">{{sInfos().famillyName}}</span> </h1>
-    <h3>{{sInfos().title}}</h3>
+    <h1>{{sInfos.name}} <span class="family-name">{{sInfos.famillyName}}</span> </h1>
+    <h3>{{sInfos.title}}</h3>
     <!-- <a href="docs/Mathieu_Le_Bellec_Cv_En.pdf" class="btn btn-light">Download Curriculum</a> -->
   </div>
   <div class="divider"></div>
   <div class="languages">
-    <p>{{sUiText().sidePanelTxt.topDescTitles.languageTitle}}</p>
+    <p>{{sUiText.sidePanelTxt.topDescTitles.languageTitle}}</p>
     <div class="lst-languages">
-      <app-svg-fr [class.is-active]="sLanguage() === codeFR" (click)="switchToFrench()"></app-svg-fr>
-      <app-svg-en [class.is-active]="sLanguage() === codeEN" (click)="switchToEnglish()"></app-svg-en>
-      <app-svg-es [class.is-active]="sLanguage() === codeES" (click)="switchToSpanish()"></app-svg-es>
+      <app-svg-fr [class.is-active]="this.languageStore.uiLanguage() === codeFR" (click)="switchToFrench()"></app-svg-fr>
+      <app-svg-en [class.is-active]="this.languageStore.uiLanguage() === codeEN" (click)="switchToEnglish()"></app-svg-en>
+      <app-svg-es [class.is-active]="this.languageStore.uiLanguage() === codeES" (click)="switchToSpanish()"></app-svg-es>
     </div>
   </div>
   <div class="divider"></div>
   <div class="curriculum">
-    <a [href]="sInfos().curriculum" target="_blank">
-      <p>{{sUiText().sidePanelTxt.topDescTitles.cvTitle}}</p>
+    <a [href]="sInfos.curriculum" target="_blank">
+      <p>{{sUiText.sidePanelTxt.topDescTitles.cvTitle}}</p>
       <app-svg-download></app-svg-download>
     </a>
   </div>

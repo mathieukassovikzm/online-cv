@@ -1,15 +1,14 @@
-import { Component, Signal } from '@angular/core';
-import { IAboutModel } from 'src/app/models/about';
-import { AboutService } from 'src/app/services/about.service';
+import { Component, inject } from '@angular/core';
+import { LanguageStore } from 'src/app/store/language.store';
 
 @Component({
-    selector: 'app-page-projects',
-    templateUrl: './page-projects.component.html',
-    styleUrls: ['./page-projects.component.scss'],
-    standalone: false
+  selector: 'app-page-projects',
+  templateUrl: './page-projects.component.html',
+  styleUrls: ['./page-projects.component.scss'],
+  standalone: false
 })
 export class PageProjectsComponent {
-  public sAbout: Signal<IAboutModel> = this.aboutService.getAbout();
+  readonly languageStore = inject(LanguageStore);
 
-  constructor(private aboutService: AboutService) {}
+  constructor() { }
 }

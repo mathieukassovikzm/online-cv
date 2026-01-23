@@ -1,5 +1,5 @@
 <section class="section-services">
-  <h2>{{sUiText().recommendationsTitle}}</h2>
+  <h2>{{uiText.recommendationsTitle}}</h2>
   <div class="carousel-container" >
     <ul id="carousel-slide-container"
       class="carousel-slide-container"
@@ -19,7 +19,7 @@
     </ul>
     <div class="carousel-controlers">
       <ul class="slider-navigation">
-        @for (slide of sSlides(); track slide; let i = $index) {
+        @for (slide of slides; track slide; let i = $index) {
           <li
             (click)="onNavClick(i)"
             [class.active]="i === navIndex">

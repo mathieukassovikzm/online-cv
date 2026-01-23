@@ -1,25 +1,21 @@
-import { Component, computed, Signal } from '@angular/core';
-import { IServiceModel } from 'src/app/models/home';
-import { IUiTxtHomeModel } from 'src/app/models/uiTxt';
-import { HomeService } from 'src/app/services/home.service';
-import { UiService } from 'src/app/services/ui.service';
+import { Component, inject } from '@angular/core';
+import { LanguageStore } from 'src/app/store/language.store';
 
 @Component({
-    selector: 'app-services',
-    templateUrl: './services.component.html',
-    styleUrls: ['./services.component.scss'],
-    standalone: false
+  selector: 'app-services',
+  templateUrl: './services.component.html',
+  styleUrls: ['./services.component.scss'],
+  standalone: false
 })
 export class ServicesComponent {
-  public sUiText: Signal<IUiTxtHomeModel> = computed(() => {
-    return this.uiService.getUiTxt()()?.homeTxt;
-  });
-  public sServices: Signal<IServiceModel[]> = computed(() => {
-    return this.homeService.getHome()().lstServices || [];
-  });
+  readonly languageStore = inject(LanguageStore);
 
-  constructor(
-    private homeService: HomeService,
-    private uiService: UiService
-  ) { }
+  // public sUiText: Signal<IUiTxtHomeModel> = computed(() => {
+  //   return this.uiStore.getUiTxt()?.homeTxt;
+  // });
+  // public sServices: Signal<IServiceModel[]> = computed(() => {
+  //   return this.homeService.getHome()().lstServices || [];
+  // });
+
+  constructor() { }
 }

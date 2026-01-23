@@ -1,9 +1,8 @@
-import { Component, OnInit, Signal } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { CodeLanguageEnum } from 'src/app/models/enum';
 import { IInfosModel } from 'src/app/models/infos';
 import { IUiTxtModel } from 'src/app/models/uiTxt';
-import { InfosService } from 'src/app/services/infos.service';
-import { UiService } from 'src/app/services/ui.service';
+import { LanguageStore } from 'src/app/store/language.store';
 
 @Component({
   selector: 'app-top-desc',
@@ -12,30 +11,28 @@ import { UiService } from 'src/app/services/ui.service';
   standalone: false
 })
 export class TopDescComponent implements OnInit {
-  public sUiText: Signal<IUiTxtModel> = this.uiService.getUiTxt();
-  public sInfos: Signal<IInfosModel> = this.infosService.getInfos();
-  public sLanguage = this.uiService.getUiLanguage();
+  readonly languageStore = inject(LanguageStore);
+
+  public sUiText: IUiTxtModel = this.languageStore.getUiTxt();
+  public sInfos: IInfosModel = this.languageStore.getInfosTxt();
   public codeFR = CodeLanguageEnum.FR;
   public codeEN = CodeLanguageEnum.EN;
   public codeES = CodeLanguageEnum.ES;
 
-  constructor(
-    private infosService: InfosService,
-    private uiService: UiService
-  ) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
 
   switchToFrench(): void {
-    this.uiService.setUiLanguageAndNavigate(CodeLanguageEnum.FR);
+    this.languageStore.setUiLanguageAndNavigate(CodeLanguageEnum.FR);
   }
 
   switchToEnglish(): void {
-    this.uiService.setUiLanguageAndNavigate(CodeLanguageEnum.EN);
+    this.languageStore.setUiLanguageAndNavigate(CodeLanguageEnum.EN);
   }
 
   switchToSpanish(): void {
-    this.uiService.setUiLanguageAndNavigate(CodeLanguageEnum.ES);
+    this.languageStore.setUiLanguageAndNavigate(CodeLanguageEnum.ES);
   }
 }

@@ -5,6 +5,7 @@ import {
   computed,
   effect,
   ElementRef,
+  inject,
   OnDestroy,
   OnInit,
   signal,
@@ -13,27 +14,25 @@ import {
 import { fromEvent, Observable, Subscription } from 'rxjs';
 import { IRecommendationModel } from 'src/app/models/home';
 import { IUiTxtHomeModel } from 'src/app/models/uiTxt';
-import { HomeService } from 'src/app/services/home.service';
-import { UiService } from 'src/app/services/ui.service';
 import { animationMultipleCarousel } from 'src/app/shared/class/animation-carousel';
+import { LanguageStore } from 'src/app/store/language.store';
 
 @Component({
-    selector: 'app-recommendations',
-    templateUrl: './recommendations.component.html',
-    styleUrls: ['./recommendations.component.scss'],
-    animations: [animationMultipleCarousel],
-    standalone: false
+  selector: 'app-recommendations',
+  templateUrl: './recommendations.component.html',
+  styleUrls: ['./recommendations.component.scss'],
+  animations: [animationMultipleCarousel],
+  standalone: false
 })
 export class RecommendationsComponent
   implements OnInit, AfterViewInit, OnDestroy {
-  public sUiText: Signal<IUiTxtHomeModel> = computed(() => {
-    return this.uiService.getUiTxt()()?.homeTxt;
-  });
-  public sSlides: Signal<IRecommendationModel[]> = computed(() => {
-    let slides = this.homeService.getHome()()?.lstRecommendations;
-    slides = slides.map((slide, index) => { return { ...slide, id: index } })
-    return slides;
-  });
+
+  readonly languageStore = inject(LanguageStore);
+
+  public uiText: IUiTxtHomeModel = this.languageStore.getUiTxt().homeTxt;
+
+  public slides : IRecommendationModel[]= this.languageStore.getHomeTxt()!.lstRecommendations.map((slide, index) => { return { ...slide, id: index } });
+
   public evolutingLstSlide: IRecommendationModel[] = [];
 
   private containerRecoWidth = signal(0);
@@ -63,12 +62,7 @@ export class RecommendationsComponent
   private subscription$ = new Subscription();
   private interval: any;
 
-  constructor(
-    private homeService: HomeService,
-    private host: ElementRef<HTMLElement>,
-    private uiService: UiService
-
-  ) {
+  constructor(private host: ElementRef<HTMLElement>) {
     this.resizeObservable$ = fromEvent(window, 'resize');
     var subResize = this.resizeObservable$.subscribe(() => {
       this.onResize();
@@ -105,7 +99,7 @@ export class RecommendationsComponent
     // // on récupère le dernier élément du tableau car il a disparu
     // const last = this.sSlides().slice(-1).pop();
     // // on le rajoute au début
-    this.evolutingLstSlide = this.sSlides();
+    this.evolutingLstSlide = this.slides;
     // this.evolutingLstSlide.unshift(last!);
     // console.log(this.evolutingLstSlide)
   }
@@ -138,13 +132,13 @@ export class RecommendationsComponent
 
   public previousSlide(): void {
     this.signedSlideWidth = this.carouselWidth(); // positif -> container moves right
-    this.navIndex = (this.currentSlide - 1 + this.sSlides().length) % this.sSlides().length;
+    this.navIndex = (this.currentSlide - 1 + this.slides.length) % this.slides.length;
     this.currentSlide--;
   }
 
   public nextSlide(): void {
     this.signedSlideWidth = this.carouselWidth() * -1; // negative -> container moves left
-    this.navIndex = (this.currentSlide + 1) % this.sSlides().length;
+    this.navIndex = (this.currentSlide + 1) % this.slides.length;
     this.currentSlide++;
   }
 
@@ -171,6 +165,6 @@ export class RecommendationsComponent
 
   public onNavClick(index: number): void {
     this.currentSlide = index;
-    this.navIndex = this.sSlides().findIndex(s => s.id === index);
+    this.navIndex = this.slides.findIndex(s => s.id === index);
   }
 }
