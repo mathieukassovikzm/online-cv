@@ -1,5 +1,5 @@
 <ul>
-  @for (item of sLstEntreprises(); track item) {
+  @for (item of languageStore.getHomeTxt().lstLogos; track item) {
     <li>
       <img [src]="item.logo" [alt]="item.alt">
     </li>

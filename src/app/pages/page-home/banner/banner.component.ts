@@ -1,5 +1,6 @@
-import { Component, computed, OnInit, Signal } from '@angular/core';
-import { UiService } from 'src/app/services/ui.service';
+import { Component, inject, OnInit } from '@angular/core';
+import { IUiTxtHomeModel } from 'src/app/models/uiTxt';
+import { LanguageStore } from 'src/app/store/language.store';
 
 @Component({
   selector: 'app-banner',
@@ -8,14 +9,10 @@ import { UiService } from 'src/app/services/ui.service';
   standalone: false
 })
 export class BannerComponent implements OnInit {
-  public text: string = '';
+  readonly languageStore = inject(LanguageStore);
+  public uiText: IUiTxtHomeModel = this.languageStore.getUiTxt().homeTxt;
 
-  public sBannerTxt: Signal<string> = computed(() => {
-    return this.uiService.getUiTxt()().homeTxt.bannerTxt;
-  });
-  public sBannerPhrases: Signal<string[]> = computed(() => {
-    return this.uiService.getUiTxt()()?.homeTxt.bannerPhrases;
-  });
+  public text: string = '';
 
   public typeSpeed: number = 100; // ms per character
   public deleteSpeed: number = 50; // ms per character
@@ -26,14 +23,14 @@ export class BannerComponent implements OnInit {
   private charIndex: number = 0;
   private deleting: boolean = false;
 
-  constructor(private uiService: UiService) { }
+  constructor() { }
 
   ngOnInit() {
     this.typeLoop();
   }
 
   private typeLoop(): void {
-    const currentPhrase = this.sBannerPhrases()[this.phraseIndex];
+    const currentPhrase = this.languageStore.getUiTxt().homeTxt.bannerPhrases[this.phraseIndex];
 
     if (!this.deleting) {
       // typing
@@ -55,7 +52,7 @@ export class BannerComponent implements OnInit {
       } else {
         // move to next phrase
         this.deleting = false;
-        this.phraseIndex = (this.phraseIndex + 1) % this.sBannerPhrases().length;
+        this.phraseIndex = (this.phraseIndex + 1) % this.languageStore.getUiTxt().homeTxt.bannerPhrases.length;
         setTimeout(() => this.typeLoop(), this.typeSpeed);
       }
     }

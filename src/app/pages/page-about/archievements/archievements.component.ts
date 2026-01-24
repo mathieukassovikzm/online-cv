@@ -1,26 +1,19 @@
-import { Component, computed, Signal } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { IExperienceModel } from 'src/app/models/about';
 import { IUiTxtAboutModel } from 'src/app/models/uiTxt';
-import { AboutService } from 'src/app/services/about.service';
-import { UiService } from 'src/app/services/ui.service';
+import { LanguageStore } from 'src/app/store/language.store';
 
 @Component({
-    selector: 'app-archievements',
-    templateUrl: './archievements.component.html',
-    styleUrls: ['./archievements.component.scss'],
-    standalone: false
+  selector: 'app-archievements',
+  templateUrl: './archievements.component.html',
+  styleUrls: ['./archievements.component.scss'],
+  standalone: false
 })
 export class ArchievementsComponent {
-  private sLanguage = this.uiService.getUiLanguage();
-  public sUiText: Signal<IUiTxtAboutModel> = computed(() => {
-    return this.uiService.getUiTxt()()?.aboutTxt;
-  });
-  public sArchievements: Signal<IExperienceModel[]> = computed(() => {
-    return this.aboutService.getAbout()().archievements || [];
-  });
+  readonly languageStore = inject(LanguageStore);
 
-  constructor(
-    private aboutService: AboutService,
-    private uiService: UiService
-  ) { }
+  public uiText: IUiTxtAboutModel = this.languageStore.getUiTxt().aboutTxt;
+  public archievements: IExperienceModel[] = this.languageStore.getAboutTxt().archievements || [];
+
+  constructor() { }
 }

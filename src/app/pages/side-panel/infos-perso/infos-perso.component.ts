@@ -1,27 +1,16 @@
-import { Component, computed, Signal } from '@angular/core';
-import { IInfosPersonalModel } from 'src/app/models/infos';
-import { IUiTxtInfosPersoModel } from 'src/app/models/uiTxt';
-import { InfosService } from 'src/app/services/infos.service';
-import { UiService } from 'src/app/services/ui.service';
+import { Component, inject } from '@angular/core';
+import { LanguageStore } from 'src/app/store/language.store';
 
 @Component({
-    selector: 'app-infos-perso',
-    templateUrl: './infos-perso.component.html',
-    styleUrls: ['./infos-perso.component.scss'],
-    standalone: false
+  selector: 'app-infos-perso',
+  templateUrl: './infos-perso.component.html',
+  styleUrls: ['./infos-perso.component.scss'],
+  standalone: false
 })
 export class InfosPersoComponent {
-  public sUiText: Signal<IUiTxtInfosPersoModel> = computed(() => {
-    return this.uiService.getUiTxt()().sidePanelTxt.infosPersoTitles;
-  });
-  public sInfosPerso: Signal<IInfosPersonalModel> = computed(() => {
-    return this.infosService.getInfos()().infosPersonnal;
-  });
+  readonly languageStore = inject(LanguageStore);
+  public uiText = this.languageStore.getUiTxt().sidePanelTxt.infosPersoTitles;
+  public infosPersonnal = this.languageStore.getInfosTxt().infosPersonnal;
 
-  constructor(
-    private uiService: UiService,
-    private infosService: InfosService
-  ) {}
-
-  ngOnInit() {}
+  constructor() { }
 }

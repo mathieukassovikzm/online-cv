@@ -1,23 +1,22 @@
-import { Component, HostBinding, OnInit } from '@angular/core';
-import { UiService } from 'src/app/services/ui.service';
+import { Component, HostBinding, inject, OnInit } from '@angular/core';
+import { UiStore } from 'src/app/store/ui.store';
 
 @Component({
-    selector: 'app-burger',
-    templateUrl: './burger.component.html',
-    styleUrls: ['./burger.component.scss'],
-    standalone: false
+  selector: 'app-burger',
+  templateUrl: './burger.component.html',
+  styleUrls: ['./burger.component.scss'],
+  standalone: false
 })
 export class BurgerComponent implements OnInit {
   @HostBinding('class') class = 'component-burger';
-  constructor(public uiService: UiService) {}
 
-  ngOnInit() {}
+  readonly uiStore = inject(UiStore);
+
+  constructor() { }
+
+  ngOnInit() { }
 
   burgerClicked(): void {
-    this.uiService.toggleNav();
-  }
-
-  isOpen(): boolean {
-    return this.uiService.getIsNavOpen();
+    this.uiStore.toggleNav();
   }
 }

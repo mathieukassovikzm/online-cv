@@ -1,17 +1,19 @@
-import { Component, computed, OnInit, Signal } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { TypeSkillEnum } from 'src/app/models/enum';
 import { ISkillModel } from 'src/app/models/infos';
-import { IUiTxtSkillsModel } from 'src/app/models/uiTxt';
 import { InfosService } from 'src/app/services/infos.service';
-import { UiService } from 'src/app/services/ui.service';
+import { LanguageStore } from 'src/app/store/language.store';
 
 @Component({
-    selector: 'app-infos-skills',
-    templateUrl: './infos-skills.component.html',
-    styleUrls: ['./infos-skills.component.scss'],
-    standalone: false
+  selector: 'app-infos-skills',
+  templateUrl: './infos-skills.component.html',
+  styleUrls: ['./infos-skills.component.scss'],
+  standalone: false
 })
 export class InfosSkillsComponent implements OnInit {
+  readonly languageStore = inject(LanguageStore);
+  public uiText = this.languageStore.getUiTxt().sidePanelTxt.skillsTitles;
+
   public skillsFrontEnd = <ISkillModel[]>[];
   public skillsBackEnd = <ISkillModel[]>[];
   public skillsBdd = <ISkillModel[]>[];
@@ -19,14 +21,7 @@ export class InfosSkillsComponent implements OnInit {
   public skillsTools = <ISkillModel[]>[];
   public skillsAdobe = <ISkillModel[]>[];
 
-  public sUiText: Signal<IUiTxtSkillsModel> = computed(() => {
-    return this.uiService.getUiTxt()()?.sidePanelTxt.skillsTitles;
-  });
-
-  constructor(
-    private infosService: InfosService,
-    private uiService: UiService
-  ) {}
+  constructor(private infosService: InfosService) { }
 
   ngOnInit(): void {
     this.skillsFrontEnd = this.infosService.getLstSkillsByType(
