@@ -13,8 +13,8 @@ import { LanguageStore } from 'src/app/store/language.store';
 export class TopDescComponent implements OnInit {
   readonly languageStore = inject(LanguageStore);
 
-  public sUiText: IUiTxtModel = this.languageStore.getUiTxt();
-  public sInfos: IInfosModel = this.languageStore.getInfosTxt();
+  public uiText = this.languageStore.getUiTxt().sidePanelTxt.topDescTitles;
+  public infos: IInfosModel = this.languageStore.getInfosTxt();
   public codeFR = CodeLanguageEnum.FR;
   public codeEN = CodeLanguageEnum.EN;
   public codeES = CodeLanguageEnum.ES;

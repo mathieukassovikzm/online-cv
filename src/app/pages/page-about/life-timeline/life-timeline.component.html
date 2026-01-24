@@ -1,22 +1,22 @@
 <section class="section-life-timeline">
-  <h2>{{languageStore.getUiTxt().aboutTxt.lifeTimelineTitle}}</h2>
+  <h2>{{uiText.lifeTimelineTitle}}</h2>
   <div class="categories-grid">
     <nav class="categories">
       <ul class="life-timeline-filter">
         <li>
-          <a (click)="filterTimelineEvents()" [class.active]="isActif()">{{languageStore.getUiTxt().aboutTxt.allExpeTitle}}</a>
+          <a (click)="filterTimelineEvents()" [class.active]="isActif()">{{uiText.allExpeTitle}}</a>
         </li>
         <li>
           <a (click)="filterTimelineEvents(typeExpeEduc)"
-          [class.active]="isActif(typeExpeEduc)">{{languageStore.getUiTxt().aboutTxt.educationTitle}}</a>
+          [class.active]="isActif(typeExpeEduc)">{{uiText.educationTitle}}</a>
         </li>
         <li>
           <a (click)="filterTimelineEvents(typeExpeExpePro)"
-          [class.active]="isActif(typeExpeExpePro)">{{languageStore.getUiTxt().aboutTxt.expeProTitle}}</a>
+          [class.active]="isActif(typeExpeExpePro)">{{uiText.expeProTitle}}</a>
         </li>
         <li>
           <a (click)="filterTimelineEvents(typeExpeArchi)"
-          [class.active]="isActif(typeExpeArchi)">{{languageStore.getUiTxt().aboutTxt.archivementTitle}}</a>
+          [class.active]="isActif(typeExpeArchi)">{{uiText.archivementTitle}}</a>
         </li>
       </ul>
     </nav>

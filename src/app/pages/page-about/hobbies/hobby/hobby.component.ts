@@ -2,13 +2,12 @@ import { AfterViewInit, Component, ElementRef, Input, NgZone, Renderer2, ViewChi
 import { take } from 'rxjs';
 import { IHobbyModel } from 'src/app/models/about';
 import { TypeHobbyEnum } from 'src/app/models/enum';
-import { UiService } from 'src/app/services/ui.service';
 
 @Component({
-    selector: 'app-hobby',
-    templateUrl: './hobby.component.html',
-    styleUrls: ['./hobby.component.scss'],
-    standalone: false
+  selector: 'app-hobby',
+  templateUrl: './hobby.component.html',
+  styleUrls: ['./hobby.component.scss'],
+  standalone: false
 })
 export class HobbyComponent implements AfterViewInit {
   @Input() item: IHobbyModel | undefined;
@@ -21,7 +20,6 @@ export class HobbyComponent implements AfterViewInit {
   typeOther = TypeHobbyEnum.Other;
 
   constructor(
-    private uiService: UiService,
     private renderer: Renderer2,
     private zone: NgZone
   ) { }

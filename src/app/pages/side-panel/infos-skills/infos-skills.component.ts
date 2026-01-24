@@ -1,10 +1,8 @@
-import { Component, computed, inject, OnInit, Signal } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { TypeSkillEnum } from 'src/app/models/enum';
 import { ISkillModel } from 'src/app/models/infos';
-import { IUiTxtSkillsModel } from 'src/app/models/uiTxt';
 import { InfosService } from 'src/app/services/infos.service';
 import { LanguageStore } from 'src/app/store/language.store';
-import { UiStore } from 'src/app/store/ui.store';
 
 @Component({
   selector: 'app-infos-skills',
@@ -14,7 +12,8 @@ import { UiStore } from 'src/app/store/ui.store';
 })
 export class InfosSkillsComponent implements OnInit {
   readonly languageStore = inject(LanguageStore);
-  
+  public uiText = this.languageStore.getUiTxt().sidePanelTxt.skillsTitles;
+
   public skillsFrontEnd = <ISkillModel[]>[];
   public skillsBackEnd = <ISkillModel[]>[];
   public skillsBdd = <ISkillModel[]>[];

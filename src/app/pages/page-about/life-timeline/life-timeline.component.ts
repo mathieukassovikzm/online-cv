@@ -22,6 +22,7 @@ import { listFadeFadeAnimation } from './animation';
 })
 export class LifeTimelineComponent implements OnInit {
   readonly languageStore = inject(LanguageStore);
+  public uiText = this.languageStore.getUiTxt().aboutTxt;
 
   public typeExpeEduc = TypeExperienceEnum.Education;
   public typeExpeArchi = TypeExperienceEnum.Archievement;

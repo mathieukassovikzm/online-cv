@@ -9,6 +9,7 @@ import { LanguageStore } from 'src/app/store/language.store';
 })
 export class InfosRecapComponent {
   readonly languageStore = inject(LanguageStore);
+  public homeText = this.languageStore.getHomeTxt();
 
   constructor() { }
 }

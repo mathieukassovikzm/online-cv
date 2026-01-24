@@ -1,5 +1,5 @@
-import { Component, computed, inject, OnInit, Signal } from '@angular/core';
-import { UiService } from 'src/app/services/ui.service';
+import { Component, inject, OnInit } from '@angular/core';
+import { IUiTxtHomeModel } from 'src/app/models/uiTxt';
 import { LanguageStore } from 'src/app/store/language.store';
 
 @Component({
@@ -10,6 +10,7 @@ import { LanguageStore } from 'src/app/store/language.store';
 })
 export class BannerComponent implements OnInit {
   readonly languageStore = inject(LanguageStore);
+  public uiText: IUiTxtHomeModel = this.languageStore.getUiTxt().homeTxt;
 
   public text: string = '';
 
@@ -22,7 +23,7 @@ export class BannerComponent implements OnInit {
   private charIndex: number = 0;
   private deleting: boolean = false;
 
-  constructor(private uiService: UiService) { }
+  constructor() { }
 
   ngOnInit() {
     this.typeLoop();
