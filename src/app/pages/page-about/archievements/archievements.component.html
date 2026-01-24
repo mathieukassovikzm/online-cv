@@ -1,7 +1,7 @@
 <section class="section-education">
   <h2>{{uiText.archivementTitle}}</h2>
   <div class="lst-cards-container">
-    @for (archievement of archievements; track archievement) {
+    @for (archievement of archievements; track $index) {
       <app-card [item]="archievement"></app-card>
     }
   </div>

@@ -1,14 +1,24 @@
+import { CommonModule } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
-import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router, RouterModule } from '@angular/router';
 import { filter, Subscription, tap } from 'rxjs';
 import { LanguageStore } from 'src/app/store/language.store';
 import { UiStore } from 'src/app/store/ui.store';
+import { SvgInfoComponent } from '../../svgs/ui/svg-info/svg-info.component';
+import { SvgPhoneComponent } from '../../svgs/ui/svg-phone/svg-phone.component';
+import { SvgWorkComponent } from '../../svgs/ui/svg-work/svg-work.component';
+import { BurgerComponent } from '../burger/burger.component';
+
+const modules = [CommonModule, RouterModule];
+const svgs = [SvgInfoComponent, SvgPhoneComponent, SvgWorkComponent];
+const components = [BurgerComponent];
 
 @Component({
   selector: 'app-navigation',
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.scss'],
-  standalone: false
+  imports: [...modules, ...svgs, ...components],
+  standalone: true
 })
 export class NavigationComponent implements OnInit {
   readonly languageStore = inject(LanguageStore);

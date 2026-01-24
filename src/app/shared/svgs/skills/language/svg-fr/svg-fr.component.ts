@@ -1,17 +1,13 @@
-import { Component, HostBinding, OnInit } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
 
 @Component({
-    selector: 'app-svg-fr',
-    templateUrl: './svg-fr.component.html',
-    styleUrls: ['./svg-fr.component.scss'],
-    standalone: false
+  selector: 'app-svg-fr',
+  templateUrl: './svg-fr.component.html',
+  styleUrls: ['./svg-fr.component.scss'],
+  standalone: true
 })
-export class SvgFrComponent implements OnInit {
+export class SvgFrComponent {
   @HostBinding('class') class = 'svg-lang lang-fr';
 
   constructor() { }
-
-  ngOnInit() {
-  }
-
 }

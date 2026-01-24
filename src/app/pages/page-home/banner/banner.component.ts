@@ -1,12 +1,16 @@
+import { CommonModule } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
 import { IUiTxtHomeModel } from 'src/app/models/uiTxt';
 import { LanguageStore } from 'src/app/store/language.store';
+
+const modules = [CommonModule];
 
 @Component({
   selector: 'app-banner',
   templateUrl: './banner.component.html',
   styleUrls: ['./banner.component.scss'],
-  standalone: false
+  imports: [...modules],
+  standalone: true
 })
 export class BannerComponent implements OnInit {
   readonly languageStore = inject(LanguageStore);

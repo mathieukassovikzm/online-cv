@@ -1,17 +1,13 @@
-import { Component, HostBinding, OnInit } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
 
 @Component({
-    selector: 'app-svg-c-sharp',
-    templateUrl: './svg-c-sharp.component.html',
-    styleUrls: ['./svg-c-sharp.component.scss'],
-    standalone: false
+  selector: 'app-svg-c-sharp',
+  templateUrl: './svg-c-sharp.component.html',
+  styleUrls: ['./svg-c-sharp.component.scss'],
+  standalone: true
 })
-export class SvgCSharpComponent implements OnInit {
+export class SvgCSharpComponent {
   @HostBinding('class') class = 'svg-skill';
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }

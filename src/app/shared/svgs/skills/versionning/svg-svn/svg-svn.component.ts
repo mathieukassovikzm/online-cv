@@ -1,17 +1,13 @@
-import { Component, HostBinding, OnInit } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
 
 @Component({
-    selector: 'app-svg-svn',
-    templateUrl: './svg-svn.component.html',
-    styleUrls: ['./svg-svn.component.scss'],
-    standalone: false
+  selector: 'app-svg-svn',
+  templateUrl: './svg-svn.component.html',
+  styleUrls: ['./svg-svn.component.scss'],
+  standalone: true,
 })
-export class SvgSvnComponent implements OnInit {
+export class SvgSvnComponent {
   @HostBinding('class') class = 'svg-skill';
 
   constructor() { }
-
-  ngOnInit() {
-  }
-
 }

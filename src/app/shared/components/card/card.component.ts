@@ -1,22 +1,25 @@
+import { CommonModule } from '@angular/common';
 import {
   Component,
-  computed,
   HostBinding,
   inject,
-  Input,
-  Signal
+  Input
 } from '@angular/core';
 import { IExperienceModel } from 'src/app/models/about';
 import { TypeExperienceEnum } from 'src/app/models/enum';
-import { IUiTxtCardModel } from 'src/app/models/uiTxt';
+import { SvgEducationComponent } from 'src/app/shared/svgs/ui/svg-education/svg-education.component';
+import { SvgMedalComponent } from 'src/app/shared/svgs/ui/svg-medal/svg-medal.component';
+import { SvgWorkComponent } from 'src/app/shared/svgs/ui/svg-work/svg-work.component';
 import { LanguageStore } from 'src/app/store/language.store';
-import { UiStore } from 'src/app/store/ui.store';
+
+const svgs = [SvgMedalComponent, SvgWorkComponent, SvgEducationComponent];
 
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss'],
-  standalone: false
+  imports: [CommonModule, ...svgs],
+  standalone: true
 })
 export class CardComponent {
   @HostBinding('class') class = 'card-component';

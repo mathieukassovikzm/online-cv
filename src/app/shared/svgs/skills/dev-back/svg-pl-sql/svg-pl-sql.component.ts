@@ -1,16 +1,13 @@
-import { Component, HostBinding, OnInit } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
 
 @Component({
   selector: 'app-svg-pl-sql',
   templateUrl: './svg-pl-sql.component.html',
-  styleUrls: ['./svg-pl-sql.component.scss']
+  styleUrls: ['./svg-pl-sql.component.scss'],
+  standalone: true
 })
-export class SvgPlSqlComponent implements OnInit {
+export class SvgPlSqlComponent {
   @HostBinding('class') class = 'svg-skill';
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }

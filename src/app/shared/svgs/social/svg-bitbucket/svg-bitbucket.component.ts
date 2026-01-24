@@ -1,13 +1,11 @@
-import { Component, HostBinding, OnInit } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
 
 @Component({
-    selector: 'app-svg-bitbucket',
-    templateUrl: './svg-bitbucket.component.html',
-    standalone: false
+  selector: 'app-svg-bitbucket',
+  templateUrl: './svg-bitbucket.component.html',
+  standalone: true
 })
-export class SvgBitbucketComponent implements OnInit {
+export class SvgBitbucketComponent {
   @HostBinding('class') class = 'icon';
-  constructor() {}
-
-  ngOnInit(): void {}
+  constructor() { }
 }

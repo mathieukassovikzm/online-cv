@@ -1,14 +1,20 @@
+import { CommonModule } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
 import { TypeSkillEnum } from 'src/app/models/enum';
 import { ISkillModel } from 'src/app/models/infos';
 import { InfosService } from 'src/app/services/infos.service';
 import { LanguageStore } from 'src/app/store/language.store';
+import { SkillComponent } from './skill/skill.component';
+
+const modules = [CommonModule];
+const components = [SkillComponent];
 
 @Component({
   selector: 'app-infos-skills',
   templateUrl: './infos-skills.component.html',
   styleUrls: ['./infos-skills.component.scss'],
-  standalone: false
+  imports: [...modules, ...components],
+  standalone: true
 })
 export class InfosSkillsComponent implements OnInit {
   readonly languageStore = inject(LanguageStore);

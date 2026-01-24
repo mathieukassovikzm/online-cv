@@ -1,14 +1,12 @@
-import { Component, HostBinding, OnInit } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
 
 @Component({
-    selector: 'app-svg-download',
-    templateUrl: './svg-download.component.html',
-    standalone: false
+  selector: 'app-svg-download',
+  templateUrl: './svg-download.component.html',
+  standalone: true,
 })
-export class SvgDownloadComponent implements OnInit {
+export class SvgDownloadComponent {
   @HostBinding('class') class = 'icon';
 
-  constructor() {}
-
-  ngOnInit(): void {}
+  constructor() { }
 }

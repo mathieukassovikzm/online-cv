@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import {
   Component,
   computed,
@@ -10,15 +11,20 @@ import {
 import _ from 'lodash';
 import { IExperienceModel } from 'src/app/models/about';
 import { TypeExperienceEnum } from 'src/app/models/enum';
+import { LifeExperienceComponent } from 'src/app/shared/components/life-experience/life-experience.component';
 import { LanguageStore } from 'src/app/store/language.store';
 import { listFadeFadeAnimation } from './animation';
+
+const modules = [CommonModule];
+const components = [LifeExperienceComponent];
 
 @Component({
   selector: 'app-life-timeline',
   templateUrl: './life-timeline.component.html',
   styleUrls: ['./life-timeline.component.scss'],
   animations: [listFadeFadeAnimation],
-  standalone: false
+  imports: [...modules, ...components],
+  standalone: true
 })
 export class LifeTimelineComponent implements OnInit {
   readonly languageStore = inject(LanguageStore);

@@ -1,4 +1,5 @@
 import { AnimationEvent } from '@angular/animations';
+import { CommonModule } from '@angular/common';
 import {
   AfterViewInit,
   Component,
@@ -8,21 +9,25 @@ import {
   inject,
   OnDestroy,
   OnInit,
-  signal,
-  Signal,
+  signal
 } from '@angular/core';
 import { fromEvent, Observable, Subscription } from 'rxjs';
 import { IRecommendationModel } from 'src/app/models/home';
 import { IUiTxtHomeModel } from 'src/app/models/uiTxt';
 import { animationMultipleCarousel } from 'src/app/shared/class/animation-carousel';
 import { LanguageStore } from 'src/app/store/language.store';
+import { RecommendationCardComponent } from './recommendation-card/recommendation-card.component';
+
+const modules = [CommonModule];
+const components = [RecommendationCardComponent];
 
 @Component({
   selector: 'app-recommendations',
   templateUrl: './recommendations.component.html',
   styleUrls: ['./recommendations.component.scss'],
   animations: [animationMultipleCarousel],
-  standalone: false
+  imports: [...modules, ...components],
+  standalone: true
 })
 export class RecommendationsComponent
   implements OnInit, AfterViewInit, OnDestroy {
@@ -31,7 +36,7 @@ export class RecommendationsComponent
 
   public uiText: IUiTxtHomeModel = this.languageStore.getUiTxt().homeTxt;
 
-  public slides : IRecommendationModel[]= this.languageStore.getHomeTxt()!.lstRecommendations.map((slide, index) => { return { ...slide, id: index } });
+  public slides: IRecommendationModel[] = this.languageStore.getHomeTxt()!.lstRecommendations.map((slide, index) => { return { ...slide, id: index } });
 
   public evolutingLstSlide: IRecommendationModel[] = [];
 

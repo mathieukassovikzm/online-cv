@@ -1,17 +1,12 @@
-import { Component, HostBinding, OnInit } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
 
 @Component({
-    selector: 'app-svg-work',
-    templateUrl: './svg-work.component.html',
-    styleUrls: ['./svg-work.component.scss'],
-    standalone: false
+  selector: 'app-svg-work',
+  templateUrl: './svg-work.component.html',
+  standalone: true
 })
-export class SvgWorkComponent implements OnInit {
+export class SvgWorkComponent {
   @HostBinding('class') class = 'icon';
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }

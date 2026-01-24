@@ -3,11 +3,9 @@ import { Component, HostBinding, OnInit } from '@angular/core';
 @Component({
     selector: 'app-svg-linkedin',
     templateUrl: './svg-linkedin.component.html',
-    standalone: false
+    standalone: true
 })
-export class SvgLinkedinComponent implements OnInit {
+export class SvgLinkedinComponent {
   @HostBinding('class') class = 'icon';
   constructor() {}
-
-  ngOnInit(): void {}
 }

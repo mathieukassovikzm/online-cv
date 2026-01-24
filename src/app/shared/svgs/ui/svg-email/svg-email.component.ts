@@ -1,16 +1,11 @@
-import { Component, HostBinding, OnInit } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
 
 @Component({
-    selector: 'app-svg-email',
-    templateUrl: './svg-email.component.html',
-    styleUrls: ['./svg-email.component.scss'],
-    standalone: false
+  selector: 'app-svg-email',
+  templateUrl: './svg-email.component.html',
+  standalone: true
 })
-export class SvgEmailComponent implements OnInit {
+export class SvgEmailComponent {
   @HostBinding('class') class = 'icon';
   constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }

@@ -8,7 +8,7 @@
     </div>
     @if (item?.description; as description) {
       <div #divDescription class="description">
-        @for (dsc of description; track dsc) {
+        @for (dsc of description; track $index) {
           <p> {{dsc}} </p>
         }
       </div>

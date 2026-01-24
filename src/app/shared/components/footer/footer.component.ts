@@ -7,7 +7,7 @@ import { LanguageStore } from 'src/app/store/language.store';
     selector: 'app-footer',
     templateUrl: './footer.component.html',
     styleUrls: ['./footer.component.scss'],
-    standalone: false
+    standalone: true
 })
 export class FooterComponent {
   readonly languageStore = inject(LanguageStore);

@@ -1,17 +1,15 @@
-import { Component, HostBinding, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, HostBinding } from '@angular/core';
 
 @Component({
-    selector: 'app-svg-lightroom',
-    templateUrl: './svg-lightroom.component.html',
-    styleUrls: ['./svg-lightroom.component.scss'],
-    standalone: false
+  selector: 'app-svg-lightroom',
+  templateUrl: './svg-lightroom.component.html',
+  styleUrls: ['./svg-lightroom.component.scss'],
+  imports: [CommonModule],
+  standalone: true,
 })
-export class SvgLightroomComponent implements OnInit {
+export class SvgLightroomComponent {
   @HostBinding('class') class = 'svg-skill';
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }
