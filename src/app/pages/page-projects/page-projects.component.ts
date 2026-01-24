@@ -5,7 +5,7 @@ import { LanguageStore } from 'src/app/store/language.store';
   selector: 'app-page-projects',
   templateUrl: './page-projects.component.html',
   styleUrls: ['./page-projects.component.scss'],
-  standalone: false
+  standalone: true
 })
 export class PageProjectsComponent {
   readonly languageStore = inject(LanguageStore);

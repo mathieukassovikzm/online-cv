@@ -1,17 +1,13 @@
-import { Component, HostBinding, OnInit } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
 
 @Component({
-    selector: 'app-svg-git',
-    templateUrl: './svg-git.component.html',
-    styleUrls: ['./svg-git.component.scss'],
-    standalone: false
+  selector: 'app-svg-git',
+  templateUrl: './svg-git.component.html',
+  styleUrls: ['./svg-git.component.scss'],
+  standalone: true,
 })
-export class SvgGitComponent implements OnInit {
+export class SvgGitComponent {
   @HostBinding('class') class = 'svg-skill';
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }

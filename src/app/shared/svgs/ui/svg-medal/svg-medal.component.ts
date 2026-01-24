@@ -1,14 +1,12 @@
-import { Component, HostBinding, OnInit } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
 
 @Component({
-    selector: 'app-svg-medal',
-    templateUrl: './svg-medal.component.html',
-    standalone: false
+  selector: 'app-svg-medal',
+  templateUrl: './svg-medal.component.html',
+  standalone: true
 })
-export class SvgMedalComponent implements OnInit {
+export class SvgMedalComponent {
   @HostBinding('class') class = 'icon';
 
-  constructor() {}
-
-  ngOnInit(): void {}
+  constructor() { }
 }

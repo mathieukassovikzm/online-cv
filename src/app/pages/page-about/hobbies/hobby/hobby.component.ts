@@ -1,13 +1,21 @@
+import { CommonModule } from '@angular/common';
 import { AfterViewInit, Component, ElementRef, Input, NgZone, Renderer2, ViewChild } from '@angular/core';
 import { take } from 'rxjs';
 import { IHobbyModel } from 'src/app/models/about';
 import { TypeHobbyEnum } from 'src/app/models/enum';
+import { SvgEducationComponent } from 'src/app/shared/svgs/ui/svg-education/svg-education.component';
+import { SvgMedalComponent } from 'src/app/shared/svgs/ui/svg-medal/svg-medal.component';
+import { SvgWorkComponent } from 'src/app/shared/svgs/ui/svg-work/svg-work.component';
+
+const modules = [CommonModule];
+const svgs = [SvgEducationComponent, SvgMedalComponent, SvgWorkComponent];
 
 @Component({
   selector: 'app-hobby',
   templateUrl: './hobby.component.html',
   styleUrls: ['./hobby.component.scss'],
-  standalone: false
+  imports: [...modules, ...svgs],
+  standalone: true
 })
 export class HobbyComponent implements AfterViewInit {
   @Input() item: IHobbyModel | undefined;

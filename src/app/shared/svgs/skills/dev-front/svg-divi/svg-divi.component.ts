@@ -4,7 +4,7 @@ import { Component, HostBinding, OnInit } from '@angular/core';
     selector: 'app-svg-divi',
     templateUrl: './svg-divi.component.html',
     styleUrls: ['./svg-divi.component.scss'],
-    standalone: false
+    standalone: true
 })
 export class SvgDiviComponent implements OnInit {
   @HostBinding('class') class = 'svg-skill';

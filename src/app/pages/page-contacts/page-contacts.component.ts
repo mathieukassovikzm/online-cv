@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-page-contacts',
   templateUrl: './page-contacts.component.html',
   styleUrls: ['./page-contacts.component.scss'],
-  standalone: false
+  standalone: true
 })
 export class PageContactsComponent {
   constructor() { }

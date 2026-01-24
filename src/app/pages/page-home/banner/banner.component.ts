@@ -1,12 +1,16 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { IUiTxtHomeModel } from 'src/app/models/uiTxt';
 import { LanguageStore } from 'src/app/store/language.store';
+
+const modules = [CommonModule];
 
 @Component({
   selector: 'app-banner',
   templateUrl: './banner.component.html',
   styleUrls: ['./banner.component.scss'],
-  standalone: false
+  imports: [...modules],
+  standalone: true
 })
 export class BannerComponent implements OnInit {
   readonly languageStore = inject(LanguageStore);
@@ -18,7 +22,7 @@ export class BannerComponent implements OnInit {
   public deleteSpeed: number = 50; // ms per character
   public delayBetween: number = 2000; // pause before deleting
 
-  public displayedText: string = '';
+  public displayedText = signal('');
   private phraseIndex: number = 0;
   private charIndex: number = 0;
   private deleting: boolean = false;
@@ -35,7 +39,8 @@ export class BannerComponent implements OnInit {
     if (!this.deleting) {
       // typing
       if (this.charIndex < currentPhrase.length) {
-        this.displayedText += currentPhrase.charAt(this.charIndex);
+        this.displayedText.set(this.displayedText() + currentPhrase.charAt(this.charIndex));
+        console.log(this.displayedText);
         this.charIndex++;
         setTimeout(() => this.typeLoop(), this.typeSpeed);
       } else {
@@ -46,7 +51,7 @@ export class BannerComponent implements OnInit {
     } else {
       // deleting
       if (this.charIndex > 0) {
-        this.displayedText = currentPhrase.substring(0, this.charIndex - 1);
+        this.displayedText.set(currentPhrase.substring(0, this.charIndex - 1));
         this.charIndex--;
         setTimeout(() => this.typeLoop(), this.deleteSpeed);
       } else {

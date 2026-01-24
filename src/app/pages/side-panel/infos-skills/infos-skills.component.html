@@ -2,7 +2,7 @@
   @if (skillsFrontEnd) {
     <div class="ctn-skills-front-end">
       <h3>Front-End</h3>
-      @for (item of skillsFrontEnd; track item) {
+      @for (item of skillsFrontEnd; track $index) {
         <div class="">
           <app-skill [skill]="item"></app-skill>
         </div>
@@ -13,7 +13,7 @@
   @if (skillsBackEnd) {
     <div class="ctn-skills-back-end">
       <h3>Back-End</h3>
-      @for (item of skillsBackEnd; track item) {
+      @for (item of skillsBackEnd; track $index) {
         <div class="">
           <app-skill [skill]="item"></app-skill>
         </div>
@@ -24,7 +24,7 @@
   @if (skillsBdd) {
     <div class="ctn-skills-bdd-end">
       <h3>{{uiText.bddTitle}}</h3>
-      @for (item of skillsBdd; track item) {
+      @for (item of skillsBdd; track $index) {
         <div class="">
           <app-skill [skill]="item"></app-skill>
         </div>
@@ -35,7 +35,7 @@
   @if (skillsVersionning) {
     <div class="ctn-skills-versionning-end">
       <h3>{{uiText.versionningTitle}}</h3>
-      @for (item of skillsVersionning; track item) {
+      @for (item of skillsVersionning; track $index) {
         <div class="">
           <app-skill [skill]="item"></app-skill>
         </div>
@@ -46,7 +46,7 @@
   @if (skillsTools) {
     <div class="ctn-skills-tools-end">
       <h3>{{uiText.toolsTitle}}</h3>
-      @for (item of skillsTools; track item) {
+      @for (item of skillsTools; track $index) {
         <div class="">
           <app-skill [skill]="item"></app-skill>
         </div>
@@ -57,7 +57,7 @@
   @if (skillsAdobe) {
     <div class="ctn-skills-adobe-end">
       <h3>Adobe</h3>
-      @for (item of skillsAdobe; track item) {
+      @for (item of skillsAdobe; track $index) {
         <div class="">
           <app-skill [skill]="item"></app-skill>
         </div>

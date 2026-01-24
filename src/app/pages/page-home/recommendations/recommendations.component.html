@@ -8,7 +8,7 @@
         params: { slideWidthTotal: signedSlideWidth }
       }"
       (@slideInOut.done)="onAnimationDoneEvent($event)">
-      @for (slide of evolutingLstSlide; track slide; let i = $index) {
+      @for (slide of evolutingLstSlide; track slide.id; let i = $index) {
         <li>
           <app-recommendation-card
             [person]="slide"

@@ -1,7 +1,7 @@
 <section class="section-hobbies">
   <h2>{{uiText.hobbiesTitle}}</h2>
   <ul>
-    @for (item of hobbies; track item) {
+    @for (item of hobbies; track $index) {
       <li>
         <app-hobby [item]="item"></app-hobby>
       </li>

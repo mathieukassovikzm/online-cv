@@ -1,15 +1,30 @@
+import { CommonModule } from '@angular/common';
 import { Component, inject, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterOutlet } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { CodeLanguageEnum } from './models/enum';
+import { SidePanelComponent } from './pages/side-panel/side-panel.component';
+import { FooterComponent } from './shared/components/footer/footer.component';
+import { NavigationComponent } from './shared/components/navigation/navigation.component';
 import { LanguageStore } from './store/language.store';
 import { UiStore } from './store/ui.store';
+
+const modules = [
+  CommonModule,
+  RouterOutlet
+];
+const components = [
+  NavigationComponent,
+  SidePanelComponent,
+  FooterComponent,
+];
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  standalone: false
+  imports: [...modules, ...components],
+  standalone: true
 })
 export class AppComponent implements OnInit, OnDestroy {
   readonly uiStore = inject(UiStore);

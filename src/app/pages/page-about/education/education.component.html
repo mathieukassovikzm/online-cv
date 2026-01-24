@@ -1,7 +1,7 @@
 <section class="section-education">
   <h2>{{uiText.educationTitle}}</h2>
   <div class="lst-cards-container">
-    @for (education of educations; track education) {
+    @for (education of educations; track $index) {
       <app-card [item]="education"></app-card>
     }
   </div>

@@ -1,17 +1,13 @@
-import { Component, HostBinding, OnInit } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
 
 @Component({
-    selector: 'app-svg-gitkraken',
-    templateUrl: './svg-gitkraken.component.html',
-    styleUrls: ['./svg-gitkraken.component.scss'],
-    standalone: false
+  selector: 'app-svg-gitkraken',
+  templateUrl: './svg-gitkraken.component.html',
+  styleUrls: ['./svg-gitkraken.component.scss'],
+  standalone: true
 })
-export class SvgGitkrakenComponent implements OnInit {
+export class SvgGitkrakenComponent {
   @HostBinding('class') class = 'svg-skill';
 
   constructor() { }
-
-  ngOnInit() {
-  }
-
 }

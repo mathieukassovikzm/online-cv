@@ -1,13 +1,11 @@
-import { Component, HostBinding, OnInit } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
 
 @Component({
-    selector: 'app-svg-facebook',
-    templateUrl: './svg-facebook.component.html',
-    standalone: false
+  selector: 'app-svg-facebook',
+  templateUrl: './svg-facebook.component.html',
+  standalone: true
 })
-export class SvgFacebookComponent implements OnInit {
+export class SvgFacebookComponent {
   @HostBinding('class') class = 'icon';
-  constructor() {}
-
-  ngOnInit(): void {}
+  constructor() { }
 }

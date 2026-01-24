@@ -1,17 +1,13 @@
-import { Component, HostBinding, OnInit } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
 
 @Component({
-    selector: 'app-svg-wordpress',
-    templateUrl: './svg-wordpress.component.html',
-    styleUrls: ['./svg-wordpress.component.scss'],
-    standalone: false
+  selector: 'app-svg-wordpress',
+  templateUrl: './svg-wordpress.component.html',
+  styleUrls: ['./svg-wordpress.component.scss'],
+  standalone: true
 })
-export class SvgWordpressComponent implements OnInit {
+export class SvgWordpressComponent {
   @HostBinding('class') class = 'svg-skill';
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }

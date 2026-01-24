@@ -22,7 +22,7 @@
     </nav>
   </div>
   <div class="lst-cards-container" [@filterAnimation]="timelineEventsFilteredTotal()">
-    @for (event of sTimelineEventsFiltered(); track event) {
+    @for (event of sTimelineEventsFiltered(); track $index) {
       <app-life-experience [item]="event"></app-life-experience>
     }
   </div>

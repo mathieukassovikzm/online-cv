@@ -1,17 +1,12 @@
-import { Component, HostBinding, OnInit } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
 
 @Component({
-    selector: 'app-svg-blazor',
-    templateUrl: './svg-blazor.component.html',
-    styleUrls: ['./svg-blazor.component.scss'],
-    standalone: false
+  selector: 'app-svg-blazor',
+  templateUrl: './svg-blazor.component.html',
+  styleUrls: ['./svg-blazor.component.scss'],
+  standalone: true
 })
-export class SvgBlazorComponent implements OnInit {
+export class SvgBlazorComponent {
   @HostBinding('class') class = 'svg-skill';
-
   constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }

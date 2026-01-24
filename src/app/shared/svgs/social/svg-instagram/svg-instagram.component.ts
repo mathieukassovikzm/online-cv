@@ -1,13 +1,11 @@
-import { Component, HostBinding, OnInit } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
 
 @Component({
-    selector: 'app-svg-instagram',
-    templateUrl: './svg-instagram.component.html',
-    standalone: false
+  selector: 'app-svg-instagram',
+  templateUrl: './svg-instagram.component.html',
+  standalone: true
 })
-export class SvgInstagramComponent implements OnInit {
+export class SvgInstagramComponent {
   @HostBinding('class') class = 'icon';
-  constructor() {}
-
-  ngOnInit(): void {}
+  constructor() { }
 }
