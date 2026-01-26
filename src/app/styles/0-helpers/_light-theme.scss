@@ -1,0 +1,9 @@
+@mixin color-mixin() {
+  $light: #fff;
+  $dark: #202733;
+
+  $main-bg-color: $light !global;
+  $main-txt-color: $dark !global;
+
+  $primary: #f60c00 !global;
+}

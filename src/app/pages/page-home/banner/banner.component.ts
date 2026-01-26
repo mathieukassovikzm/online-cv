@@ -40,7 +40,6 @@ export class BannerComponent implements OnInit {
       // typing
       if (this.charIndex < currentPhrase.length) {
         this.displayedText.set(this.displayedText() + currentPhrase.charAt(this.charIndex));
-        console.log(this.displayedText);
         this.charIndex++;
         setTimeout(() => this.typeLoop(), this.typeSpeed);
       } else {

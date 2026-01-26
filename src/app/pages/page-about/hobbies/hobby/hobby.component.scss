@@ -23,7 +23,7 @@ $card-svg-top: -22px;
   .card-infos {
     position: relative;
     width: 100%;
-    background-color: $background;
+    background-color: var(--main-bg-color);
     padding: 30px 20px;
     transform: translateY(0px);
   }

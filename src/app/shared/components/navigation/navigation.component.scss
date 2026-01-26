@@ -2,10 +2,10 @@
 @use '../0-helpers/variables' as *;
 
 $nav-c: $grey-light;
-$nav-text-c: $txt-dark;
+$nav-text-c: var(--main-txt-color);
 $nav-label-h: 52px;
-$nav-icon-c-active: $txt-dark;
-$nav-icon-c-inactive: rgba($txt-dark, .5);
+$nav-icon-c-active: var(--main-txt-color);
+$nav-icon-c-inactive: rgba(var(--main-txt-color), .5);
 $nav-icon-c-hover: $secondary-dark;
 $nav-circle-c: $nav-c;
 $nav-burger-s: $nav-w;
@@ -253,7 +253,7 @@ $n: 10;
 
     .tabbar ul li.active label .txt,
     .tabbar ul li label .txt:hover {
-      color: $txt-dark;
+      color: var(--main-txt-color);
     }
 
     .tabbar ul li label span.bubble {

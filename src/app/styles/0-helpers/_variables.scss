@@ -13,13 +13,8 @@ $grey: #a2a29d;
 $grey-light: #f4f4f6;
 $grey-dark: #7b7b71;
 
-$light: #fff;
-$dark: #202733;
-
-$txt-light: $light;
-$txt-dark: $dark;
-
-$background: $light;
+$light: #fff !default;
+$dark: #202733 !default;
 
 $fr-blue: #2158a6;
 $fr-red: #da202b;

@@ -1,85 +1,100 @@
 @use '../0-helpers/variables' as *;
 
+$size-ratio: 0.4;
 
-/******* Variables *******/
-$burger-anim-duration: $animation-duration;
-$burger-color: $txt-dark;
+.toggle_checkbox {
+  display: none;
+}
 
+label {
+  display: block;
+  width: 116px * $size-ratio;
+  height: 58px * $size-ratio;
+  margin: 0 auto;
+  // border: 1px solid $primary;
+  background-color: $light;
+  border-radius: 56px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  transition: 0.3s ease background-color;
+  overflow: hidden;
+}
 
-:host {
-  .icon-burger {
-    z-index: 10;
-    position: relative;
-    width: $burger-w;
-    height: 100%;
-    cursor: pointer;
+.star-ctn {
+  position: absolute;
+  top: 13px * $size-ratio;
+  left: 16px * $size-ratio;
+  width: 28px * $size-ratio;
+  height: 28px * $size-ratio;
+  background-color: $primary;
+  transform: scale(1);
+  border-radius: 50%;
+  transition: 0.3s ease top, 0.3s ease left, 0.3s ease transform,
+    0.3s ease background-color;
+  z-index: 1;
+}
 
-    transition: transform $burger-anim-duration;
+.star {
+  top: -1px * $size-ratio;
+  left: -8px * $size-ratio;
+  font-size: 45px * $size-ratio;
+  line-height: 28px * $size-ratio;
+  color: $primary;
+  transition: 0.3s ease color;
+}
 
-    span {
-      position: absolute;
-      top: 50%;
-      bottom: 50%;
+.star-1 {
+  position: relative;
+}
 
-      display: block;
-      width: 25px;
-      height: 2px;
+.star-2 {
+  position: absolute;
+  transform: rotateZ(36deg);
+}
 
-      background-color: $burger-color;
-      transform: translateX(50%) translateY(-50%);
+.moon {
+  position: absolute;
+  bottom: -52px * $size-ratio;
+  right: 8px * $size-ratio;
+  width: 40px * $size-ratio;
+  height: 40px * $size-ratio;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: 0.3s ease bottom;
+}
 
-      &::before,
-      &::after {
-        content: '';
+.moon:before {
+  content: '';
+  position: absolute;
+  top: -12px * $size-ratio;
+  left: -17px * $size-ratio;
+  width: 40px * $size-ratio;
+  height: 40px * $size-ratio;
+  background-color: $light;
+  border-radius: 50%;
+  transition: 0.3s ease background-color;
+}
 
-        position: absolute;
-        top: 0;
-        left: 0;
+.toggle_checkbox:checked+label {
+  background-color: $dark;
+}
 
-        display: block;
-        width: 25px;
-        height: 2px;
+.toggle_checkbox:checked+label .star-ctn {
+  top: 6px * $size-ratio;
+  left: 64px * $size-ratio;
+  // left: 58px * $size-ratio;
+  transform: scale(0.3);
+  background-color: $primary;
+}
 
-        background-color: $burger-color;
+.toggle_checkbox:checked+label .star {
+  color: $primary;
+}
 
-        transform: translateY(-6px);
-        transition: transform $burger-anim-duration;
-      }
+.toggle_checkbox:checked+label .moon {
+  bottom: 8px * $size-ratio;
+}
 
-      &::after {
-        transform: translateY(6px);
-      }
-    }
-
-    &:hover {
-      span::before {
-        transform: translateY(-8px);
-      }
-
-      span::after {
-        transform: translateY(8px);
-      }
-    }
-
-    span::before,
-    span::after {
-      transform-origin: 50% 50%;
-    }
-
-    &.is-opened {
-      transform: rotate(180deg);
-
-      span {
-        background: transparent;
-
-        &::before {
-          transform: translateY(0) rotate(45deg);
-        }
-
-        &::after {
-          transform: translateY(0) rotate(-45deg);
-        }
-      }
-    }
-  }
+.toggle_checkbox:checked+label .moon:before {
+  background-color: $dark;
 }

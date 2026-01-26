@@ -9,7 +9,7 @@
 
   .card {
     position: relative;
-    background: $background;
+    background: var(--main-bg-color);
     box-shadow: $box-shadow;
     padding: 30px;
   }

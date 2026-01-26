@@ -64,7 +64,6 @@ export class LifeTimelineComponent implements OnInit {
   }
 
   filterTimelineEvents(filter?: TypeExperienceEnum): void {
-    console.log(filter);
     if (filter != undefined) {
       // On set le filtre actif pour la navigation
       this.sFilterActif.set(filter);

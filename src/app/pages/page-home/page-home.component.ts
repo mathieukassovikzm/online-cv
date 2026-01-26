@@ -5,6 +5,7 @@ import { InfosRecapComponent } from './infos-recap/infos-recap.component';
 import { LstEntreprisesComponent } from './lst-enterprises/lst-enterprises.component';
 import { RecommendationsComponent } from './recommendations/recommendations.component';
 import { ServicesComponent } from './services/services.component';
+import { BtnDarkModeComponent } from 'src/app/shared/components/btn-dark-mode/btn-dark-mode.component';
 
 const modules = [CommonModule];
 const components = [
@@ -13,6 +14,7 @@ const components = [
   ServicesComponent,
   LstEntreprisesComponent,
   RecommendationsComponent,
+  BtnDarkModeComponent
 ];
 
 @Component({

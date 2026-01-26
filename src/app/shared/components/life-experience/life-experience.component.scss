@@ -39,7 +39,7 @@ $card-svg-top: -8px;
 
   .timeline-event-thumbnail {
     transition: box-shadow $animation-duration ease-in 0.1s;
-    color: $txt-light;
+    color: var(--main-txt-color);
     font-size: 12px;
     font-weight: bold;
     background-color: $dark;

@@ -13,12 +13,12 @@
   padding: 10px;
 
   h1 {
-    color: $txt-light;
+    color: var(--main-txt-color);
     font-weight: 800;
     margin-bottom: 15px;
   }
   .subtitle {
-    color: $txt-light;
+    color: var(--main-txt-color);
     font-size: 18px;
   }
   .code {
@@ -46,7 +46,7 @@
     padding: 20px;
 
     h1 {
-      color: $txt-light;
+      color: var(--main-txt-color);
       font-weight: 800;
       margin-bottom: 15px;
     }

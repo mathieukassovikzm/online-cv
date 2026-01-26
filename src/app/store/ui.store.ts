@@ -9,7 +9,7 @@ type UiState = {
 
 const initialState: UiState = {
 	isNavOpen: false,
-	darkMode: false
+	darkMode: true
 };
 
 export const UiStore = signalStore(
@@ -22,17 +22,26 @@ export const UiStore = signalStore(
 	) => ({
 
 		//#region Navigation
+
 		toggleNav(): void {
 			patchState(store, { isNavOpen: !store.isNavOpen() });
 		},
 		closeNav(): void {
 			patchState(store, { isNavOpen: false });
 		},
+
 		//#endregion
 
-		// setDarkMode(state, isDarkMode: boolean) {
-		// 	state.darkMode = isDarkMode;
-		// }
+		//#region Dark Mode
 
+		setDarkMode(isDarkMode: boolean): void {
+			patchState(store, { darkMode: isDarkMode });
+		},
+
+		toggleDarkMode(): void {
+			patchState(store, { darkMode: !store.darkMode() });
+		},
+
+		//#endregion
 	}))
 );
