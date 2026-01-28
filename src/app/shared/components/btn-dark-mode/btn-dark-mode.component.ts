@@ -13,7 +13,7 @@ export class BtnDarkModeComponent {
   @HostBinding('class') class = 'component-btn-dark-mode';
 
   readonly uiStore = inject(UiStore);
-  isChecked = this.uiStore.darkMode();
+  isChecked = !this.uiStore.darkMode();
 
   constructor() { }
 

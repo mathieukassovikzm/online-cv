@@ -17,11 +17,12 @@
           padding: 5px 10px;
           margin: 0 14px;
           transition: all .2s ease-in-out .1s;
+          color: var(--inverse-main-color);
 
           &.active {
-            background-color: $primary;
+            background-color: var(--primary-color);
             padding: 5px 20px;
-            color: var(--main-txt-color);
+            color: var(--inverse-main-color);
             text-decoration: none;
           }
         }
@@ -32,7 +33,7 @@
       position: relative;
 
       &:before {
-        background-color: $dark;
+        background: var(--main-color-light);
         content: '';
         margin-left: -4px;
         position: absolute;

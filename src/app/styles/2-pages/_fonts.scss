@@ -9,6 +9,11 @@ body {
   letter-spacing: 0.25px;
 }
 
+span,
+p {
+  color: var(--inverse-main-color);
+}
+
 h1,
 h2,
 h3,
@@ -16,6 +21,7 @@ h4,
 h5,
 h6 {
   font-weight: bold;
+  color: var(--inverse-main-color);
 }
 
 h1,
@@ -53,6 +59,7 @@ h6 {
   font-size: 13px;
   font-weight: 400;
 }
+
 @media only screen and (min-width: helpers.$min-width-m) {
   h1 {
     font-size: 46px;

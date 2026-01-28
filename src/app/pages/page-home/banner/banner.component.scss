@@ -1,5 +1,6 @@
 @use '../0-helpers/variables' as *;
 
+$banner-txt-color: #fff;
 
 :host {
   position: relative;
@@ -13,17 +14,23 @@
   padding: 10px;
 
   h1 {
-    color: var(--main-txt-color);
+    color: $banner-txt-color;
     font-weight: 800;
     margin-bottom: 15px;
   }
+
   .subtitle {
-    color: var(--main-txt-color);
+    color: $banner-txt-color;
     font-size: 18px;
   }
+
+  span {
+    color: $banner-txt-color;
+  }
+
   .code {
-    color: $primary;
-    text-shadow: 0.5px 0.5px 0px $light;
+    color: var(--primary-color);
+    text-shadow: 0.5px 0.5px 0px $dark;
   }
 
   /* typing effect */
@@ -46,7 +53,6 @@
     padding: 20px;
 
     h1 {
-      color: var(--main-txt-color);
       font-weight: 800;
       margin-bottom: 15px;
     }

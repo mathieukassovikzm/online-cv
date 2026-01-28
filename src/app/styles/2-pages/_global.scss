@@ -84,7 +84,7 @@ section .heading {
 }
 
 .divider {
-  background: helpers.$primary-dark;
+  background: var(--primary-color);
   width: 80%;
   height: 1px;
   opacity: 0.3;
@@ -98,45 +98,93 @@ section .heading {
   }
 }
 
-$color-lightness: 70%;
+/* ------------- LANGUAGE SVG ICONS ------------- */
+.dark-mode {
+  $color-blackness: 50%;
 
-.lst-languages .svg-lang.lang-fr:not(.is-active) path {
-  &.cls-2 {
-    fill: color.scale(helpers.$fr-white, $lightness: $color-lightness);
+  .lst-languages .svg-lang.lang-fr:not(.is-active) path {
+    &.cls-2 {
+      fill: color.scale(helpers.$fr-white, $blackness: $color-blackness);
+    }
+
+    &.cls-2 {
+      fill: color.scale(helpers.$fr-red, $blackness: $color-blackness);
+    }
+
+    &.cls-3 {
+      fill: color.scale(helpers.$fr-blue, $blackness: $color-blackness);
+    }
   }
 
-  &.cls-2 {
-    fill: color.scale(helpers.$fr-red, $lightness: $color-lightness);
+  .lst-languages .svg-lang.lang-en:not(.is-active) path {
+    &.cls-2 {
+      fill: color.scale(helpers.$en-white, $blackness: $color-blackness);
+    }
+
+    &.cls-3,
+    &.cls-4 {
+      fill: color.scale(helpers.$en-red, $blackness: $color-blackness);
+    }
   }
 
-  &.cls-3 {
-    fill: color.scale(helpers.$fr-blue, $lightness: $color-lightness);
+  .lst-languages .svg-lang.lang-en:not(.is-active) circle {
+    &.cls-1 {
+      fill: color.scale(helpers.$en-blue, $blackness: $color-blackness);
+    }
+  }
+
+  .lst-languages .svg-lang.lang-es:not(.is-active) path {
+    &.cls-1 {
+      fill: color.scale(helpers.$es-red, $blackness: $color-blackness);
+    }
+
+    &.cls-2 {
+      fill: color.scale(helpers.$es-yellow, $blackness: $color-blackness);
+    }
   }
 }
 
-.lst-languages .svg-lang.lang-en:not(.is-active) path {
-  &.cls-2 {
-    fill: color.scale(helpers.$en-white, $lightness: $color-lightness);
+.light-mode {
+  $color-lightness: 70%;
+
+  .lst-languages .svg-lang.lang-fr:not(.is-active) path {
+    &.cls-2 {
+      fill: color.scale(helpers.$fr-white, $lightness: $color-lightness);
+    }
+
+    &.cls-2 {
+      fill: color.scale(helpers.$fr-red, $lightness: $color-lightness);
+    }
+
+    &.cls-3 {
+      fill: color.scale(helpers.$fr-blue, $lightness: $color-lightness);
+    }
   }
 
-  &.cls-3,
-  &.cls-4 {
-    fill: color.scale(helpers.$en-red, $lightness: $color-lightness);
-  }
-}
+  .lst-languages .svg-lang.lang-en:not(.is-active) path {
+    &.cls-2 {
+      fill: color.scale(helpers.$en-white, $lightness: $color-lightness);
+    }
 
-.lst-languages .svg-lang.lang-en:not(.is-active) circle {
-  &.cls-1 {
-    fill: color.scale(helpers.$en-blue, $lightness: $color-lightness);
-  }
-}
-
-.lst-languages .svg-lang.lang-es:not(.is-active) path {
-  &.cls-1 {
-    fill: color.scale(helpers.$es-red, $lightness: $color-lightness);
+    &.cls-3,
+    &.cls-4 {
+      fill: color.scale(helpers.$en-red, $lightness: $color-lightness);
+    }
   }
 
-  &.cls-2 {
-    fill: color.scale(helpers.$es-yellow, $lightness: $color-lightness);
+  .lst-languages .svg-lang.lang-en:not(.is-active) circle {
+    &.cls-1 {
+      fill: color.scale(helpers.$en-blue, $lightness: $color-lightness);
+    }
+  }
+
+  .lst-languages .svg-lang.lang-es:not(.is-active) path {
+    &.cls-1 {
+      fill: color.scale(helpers.$es-red, $lightness: $color-lightness);
+    }
+
+    &.cls-2 {
+      fill: color.scale(helpers.$es-yellow, $lightness: $color-lightness);
+    }
   }
 }

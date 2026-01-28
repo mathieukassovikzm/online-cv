@@ -7,7 +7,7 @@
 
   .card-container {
     position: relative;
-    box-shadow: $box-shadow;
+    box-shadow: var(--box-shadow);
     overflow-y: hidden;
     height: 100%;
   }
@@ -15,7 +15,8 @@
   .card-infos {
     position: relative;
     width: 100%;
-    background-color: var(--main-bg-color);
+    height: 100%;
+    background: var(--main-color-light);
     padding: 30px 20px;
   }
 

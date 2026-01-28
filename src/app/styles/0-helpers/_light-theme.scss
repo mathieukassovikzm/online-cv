@@ -1,9 +1,15 @@
 @mixin color-mixin() {
-  $light: #fff;
-  $dark: #202733;
+  $main-color-light: #fff !global;
+  $main-color: #f4f4f6 !global;
+  $main-color-dark: #e0e0e6 !global;
 
-  $main-bg-color: $light !global;
-  $main-txt-color: $dark !global;
+  $inverse-main-color-light: linear-gradient(159deg,#2d2d3a 0%,#2b2b35 100%) !global;
+  $inverse-main-color: #20202a !global;
+  $inverse-main-color-dark: #191923 !global;
 
-  $primary: #f60c00 !global;
+  $box-shadow: 0 3px 8px 0 rgb(15 15 20 / 20%) !global;
+
+  $primary-color-light: #ff3f35 !global;
+  $primary-color: #f60c00 !global;
+  $primary-color-dark: #980800 !global;
 }

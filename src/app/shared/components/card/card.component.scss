@@ -9,7 +9,7 @@ $card-svg-top: -22px;
   .card-container {
     position: relative;
     padding: $content-p;
-    box-shadow: $box-shadow;
+    box-shadow: var(--box-shadow);
 
     .card-infos {}
 
@@ -33,7 +33,7 @@ $card-svg-top: -22px;
       height: $card-svg-s;
       border-radius: 50%;
       background-color: $light;
-      box-shadow: $box-shadow;
+      box-shadow: var(--box-shadow);
 
       .icon {
         display: block;

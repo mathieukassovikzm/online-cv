@@ -19,7 +19,7 @@
     color: helpers.$light;
     &:hover {
       background: helpers.$light;
-      color: helpers.$primary;
+      color: var(--primary-color);
     }
   }
 }
@@ -30,7 +30,7 @@
     color: helpers.$dark;
     &:hover {
       background: helpers.$dark;
-      color: helpers.$primary;
+      color: var(--primary-color);
     }
   }
 }

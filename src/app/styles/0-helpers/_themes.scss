@@ -23,12 +23,34 @@
 
 :root {
   .dark-mode {
-    --main-bg-color: #{dark.$main-bg-color};
-    --main-txt-color: #{dark.$main-txt-color};
+    --main-color-light: #{dark.$main-color-light};
+    --main-color: #{dark.$main-color};
+    --main-color-dark: #{dark.$main-color-dark};
+
+    --inverse-main-color-light: #{dark.$inverse-main-color-light};
+    --inverse-main-color: #{dark.$inverse-main-color};
+    --inverse-main-color-dark: #{dark.$inverse-main-color-dark};
+    
+    --box-shadow: #{dark.$box-shadow};
+    
+    --primary-color-light: #{dark.$primary-color-light};
+    --primary-color: #{dark.$primary-color};
+    --primary-color-dark: #{dark.$primary-color-dark};
   }
 
   .light-mode {
-    --main-bg-color: #{light.$main-bg-color};
-    --main-txt-color: #{light.$main-txt-color};
+    --main-color-light: #{light.$main-color-light};
+    --main-color: #{light.$main-color};
+    --main-color-dark: #{light.$main-color-dark};
+
+    --inverse-main-color-light: #{light.$inverse-main-color-light};
+    --inverse-main-color: #{light.$inverse-main-color};
+    --inverse-main-color-dark: #{light.$inverse-main-color-dark};
+
+    --box-shadow: #{light.$box-shadow};
+
+    --primary-color-light: #{light.$primary-color-light};
+    --primary-color: #{light.$primary-color};
+    --primary-color-dark: #{light.$primary-color-dark};
   }
 }

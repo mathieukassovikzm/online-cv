@@ -1,6 +1,7 @@
 @use '../0-helpers/variables' as *;
 
 $size-ratio: 0.4;
+$sun-color: #ffc107;
 
 .toggle_checkbox {
   display: none;
@@ -22,11 +23,11 @@ label {
 
 .star-ctn {
   position: absolute;
-  top: 13px * $size-ratio;
+  top: 15px * $size-ratio;
   left: 16px * $size-ratio;
   width: 28px * $size-ratio;
   height: 28px * $size-ratio;
-  background-color: $primary;
+  background-color: $sun-color;
   transform: scale(1);
   border-radius: 50%;
   transition: 0.3s ease top, 0.3s ease left, 0.3s ease transform,
@@ -39,7 +40,7 @@ label {
   left: -8px * $size-ratio;
   font-size: 45px * $size-ratio;
   line-height: 28px * $size-ratio;
-  color: $primary;
+  color: $sun-color;
   transition: 0.3s ease color;
 }
 
@@ -84,11 +85,11 @@ label {
   left: 64px * $size-ratio;
   // left: 58px * $size-ratio;
   transform: scale(0.3);
-  background-color: $primary;
+  background-color: $sun-color;
 }
 
 .toggle_checkbox:checked+label .star {
-  color: $primary;
+  color: $sun-color;
 }
 
 .toggle_checkbox:checked+label .moon {
