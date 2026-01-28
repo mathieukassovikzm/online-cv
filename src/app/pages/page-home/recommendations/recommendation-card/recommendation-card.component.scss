@@ -9,15 +9,15 @@
 
   .card {
     position: relative;
-    background: $background;
-    box-shadow: $box-shadow;
+    background: var(--main-color-light);
+    box-shadow: var(--box-shadow);
     padding: 30px;
   }
 
   h5 {
     font-weight: 600;
     font-size: 22px;
-    color: $primary;
+    color: var(--primary-color);
   }
 
   h6 {

@@ -1,6 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { AfterViewInit, Component, ElementRef, Input, NgZone, Renderer2, ViewChild } from '@angular/core';
-import { take } from 'rxjs';
+import { afterNextRender, Component, ElementRef, Input, Renderer2, ViewChild } from '@angular/core';
 import { IHobbyModel } from 'src/app/models/about';
 import { TypeHobbyEnum } from 'src/app/models/enum';
 import { SvgEducationComponent } from 'src/app/shared/svgs/ui/svg-education/svg-education.component';
@@ -17,7 +16,7 @@ const svgs = [SvgEducationComponent, SvgMedalComponent, SvgWorkComponent];
   imports: [...modules, ...svgs],
   standalone: true
 })
-export class HobbyComponent implements AfterViewInit {
+export class HobbyComponent {
   @Input() item: IHobbyModel | undefined;
 
   @ViewChild('divCardInfos') divCardInfos?: ElementRef<HTMLInputElement>;
@@ -28,29 +27,31 @@ export class HobbyComponent implements AfterViewInit {
   typeOther = TypeHobbyEnum.Other;
 
   constructor(
-    private renderer: Renderer2,
-    private zone: NgZone
-  ) { }
+    private renderer: Renderer2
+  ) {
+    // Use afterNextRender for zoneless change detection compatibility
+    afterNextRender(() => {
+      this.setupMediaQueryLogic();
+    });
+  }
 
-  ngAfterViewInit() {
+  private setupMediaQueryLogic(): void {
     const mediaQuery = window.matchMedia('(min-width: 1445px)');
 
-    this.zone.onStable.pipe(take(1)).subscribe(() => {
-      if (mediaQuery.matches) {
+    if (mediaQuery.matches) {
+      this.calculateTransformY();
+    } else {
+      this.renderer.setStyle(this.divCardInfos?.nativeElement, 'transform', `translateY(0px)`);
+    }
+
+    // Optional: re-run if the user resizes the window
+    mediaQuery.addEventListener('change', (event) => {
+      if (event.matches) {
         this.calculateTransformY();
-      } else {
+      }
+      else {
         this.renderer.setStyle(this.divCardInfos?.nativeElement, 'transform', `translateY(0px)`);
       }
-
-      // Optional: re-run if the user resizes the window
-      mediaQuery.addEventListener('change', (event) => {
-        if (event.matches) {
-          this.calculateTransformY();
-        }
-        else {
-          this.renderer.setStyle(this.divCardInfos?.nativeElement, 'transform', `translateY(0px)`);
-        }
-      });
     });
   }
 

@@ -7,11 +7,12 @@ import { UiStore } from 'src/app/store/ui.store';
 import { SvgInfoComponent } from '../../svgs/ui/svg-info/svg-info.component';
 import { SvgPhoneComponent } from '../../svgs/ui/svg-phone/svg-phone.component';
 import { SvgWorkComponent } from '../../svgs/ui/svg-work/svg-work.component';
+import { BtnDarkModeComponent } from '../btn-dark-mode/btn-dark-mode.component';
 import { BurgerComponent } from '../burger/burger.component';
 
 const modules = [CommonModule, RouterModule];
 const svgs = [SvgInfoComponent, SvgPhoneComponent, SvgWorkComponent];
-const components = [BurgerComponent];
+const components = [BurgerComponent, BtnDarkModeComponent];
 
 @Component({
   selector: 'app-navigation',

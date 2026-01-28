@@ -1,0 +1,15 @@
+@mixin color-mixin() {
+	$main-color-light: linear-gradient(159deg,#2d2d3a 0%,#2b2b35 100%) !global;
+  $main-color: #20202a !global;
+  $main-color-dark: #191923 !global;
+	
+  $inverse-main-color-light: #fff !global;
+  $inverse-main-color: #f4f4f6 !global;
+  $inverse-main-color-dark: #e0e0e6 !global;
+
+  $box-shadow: 0 1px 4px 0 rgba(255, 255, 255,  0.1) !global;
+
+  $primary-color-light: #ecf011 !global;
+  $primary-color: #ffc107 !global;
+  $primary-color-dark: #c1a669 !global;
+}

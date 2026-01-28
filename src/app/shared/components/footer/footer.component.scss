@@ -10,7 +10,7 @@
 
   .section-footer {
     width: 100%;
-    background: $grey-light;
+    background: var(--main-color-light);
     padding: math.div($content-p, 2);
 
     display: flex;

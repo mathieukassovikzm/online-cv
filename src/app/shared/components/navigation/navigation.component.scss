@@ -1,13 +1,7 @@
 @use 'sass:math';
 @use '../0-helpers/variables' as *;
 
-$nav-c: $grey-light;
-$nav-text-c: $txt-dark;
 $nav-label-h: 52px;
-$nav-icon-c-active: $txt-dark;
-$nav-icon-c-inactive: rgba($txt-dark, .5);
-$nav-icon-c-hover: $secondary-dark;
-$nav-circle-c: $nav-c;
 $nav-burger-s: $nav-w;
 $nav-t-duration: 0.05s;
 $nav-nb-elt: 4;
@@ -20,7 +14,7 @@ $n: 10;
   z-index: 11;
 
   .tabbar {
-    background: $nav-c;
+    background: var(--main-color-light);
     width: 100%;
     height: $nav-h;
     padding: 0 12px;
@@ -39,36 +33,34 @@ $n: 10;
     align-items: center;
     position: relative;
     z-index: 51;
+  }
 
-    &:hover {
-      ::ng-deep svg path {
-        fill: $nav-icon-c-hover;
-      }
-    }
+  // .tabbar ul li:hover ::ng-deep svg path {
+  //   fill: $nav-icon-c-hover;
+  // }
 
-    &.active {
-      label.home {
+  .tabbar ul li.active {
+    label {
+      transform: translateY(-14px) scale(1);
+
+      &.home {
         transform: none;
       }
 
-      label {
-        transform: translateY(-14px) scale(1);
+      ::ng-deep svg {
+        top: -10px;
 
-        ::ng-deep svg {
-          top: -3px;
-
-          path {
-            fill: $nav-icon-c-active;
-          }
+        path {
+          fill: var(--main-color);
         }
+      }
 
-        .txt {
-          opacity: 1;
-        }
+      .txt {
+        opacity: 1;
+      }
 
-        span.bubble {
-          opacity: 1;
-        }
+      span.bubble {
+        opacity: 1;
       }
     }
   }
@@ -86,30 +78,13 @@ $n: 10;
     align-items: center;
     transition: all ease 0.2s;
 
-    ::ng-deep {
-      svg {
-        position: relative;
-        z-index: 52;
-        width: 24px;
-        height: 24px;
-        margin: auto;
-        transform-origin: 50% 50%;
-        transform: translateY(6px);
-        cursor: pointer;
-
-        path {
-          fill: $nav-icon-c-inactive;
-        }
-      }
-    }
-
     .txt {
       position: relative;
       font-size: 10px;
       font-weight: 500;
       text-align: center;
       opacity: 0;
-      color: $nav-text-c;
+      color: var(--inverse-main-color);
       transform-origin: 50% 0;
       transition: transform .4s cubic-bezier(.2, .64, .48, 1.12), opacity .4s ease, color .4s ease;
       top: 8px;
@@ -125,7 +100,7 @@ $n: 10;
         height: 44px;
         display: block;
         border-radius: 50%;
-        background: $nav-circle-c;
+        background: $grey-light;
         position: absolute;
         left: 50%;
         top: 0;
@@ -133,11 +108,23 @@ $n: 10;
       }
     }
 
-    &.home {
+    &.home .txt {
+      display: none;
+    }
+  }
 
-      .txt {
-        display: none;
-      }
+  .tabbar ul li label ::ng-deep svg {
+    position: relative;
+    z-index: 52;
+    width: 24px;
+    height: 24px;
+    margin: auto;
+    transform-origin: 50% 50%;
+    transform: translateY(6px);
+    cursor: pointer;
+
+    path {
+      fill: var(--inverse-main-color);
     }
   }
 }
@@ -147,8 +134,8 @@ $n: 10;
     display: none;
     width: 100%;
     height: $nav-burger-s;
-    background-color: $light;
-    box-shadow: $box-shadow;
+    background-color: var(--main-color-light);
+    box-shadow: var(--box-shadow);
   }
 
   .tabbar .container-burger .component-burger {
@@ -191,7 +178,8 @@ $n: 10;
       width: $nav-w;
       height: 100%;
       padding: 0;
-      box-shadow: $box-shadow;
+      box-shadow: var(--box-shadow);
+      background: var(--main-color);
       transition: $animation-duration ease-in-out;
       overflow: hidden;
     }
@@ -201,7 +189,7 @@ $n: 10;
       align-items: center;
       flex: inherit;
       min-width: $nav-w-opened;
-      height: calc(100vh - $nav-w - $app-p*2);
+      height: calc(100vh - $nav-w - $app-p*2 - 125px);
       margin: 0 0 $nav-w;
       overflow-x: hidden;
       top: 10%;
@@ -253,7 +241,7 @@ $n: 10;
 
     .tabbar ul li.active label .txt,
     .tabbar ul li label .txt:hover {
-      color: $txt-dark;
+      color: var(--inverse-main-color);
     }
 
     .tabbar ul li label span.bubble {
@@ -271,6 +259,7 @@ $n: 10;
   :host {
     .tabbar .container-burger {
       display: block;
+      background: var(--main-color-light);
     }
 
     .tabbar .current-page {

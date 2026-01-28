@@ -3,7 +3,7 @@
 
 /******* Variables *******/
 $burger-anim-duration: $animation-duration;
-$burger-color: $txt-dark;
+$burger-color: var(--inverse-main-color);
 
 
 :host {

@@ -6,9 +6,15 @@ $banner-w: 290px;
 :host {
   position: relative;
 
+  .banner-desc {
+    box-shadow: var(--box-shadow);
+    background-color: var(--main-color);
+  }
+
   .banner-infos {
     display: none;
   }
+
   .banner-infos.extended {
     display: block;
   }
@@ -36,9 +42,7 @@ $banner-w: 290px;
       width: $banner-w;
       min-width: $banner-w;
       height: calc(100vh - $app-p * 2);
-      box-shadow: $box-shadow;
-      background-color: $grey-light;
-      transition: $animation-duration ease-in-out;
+      transition: height $animation-duration ease-in-out;
       z-index: 999;
       overflow-y: auto;
 
@@ -46,9 +50,11 @@ $banner-w: 290px;
         display: none;
       }
     }
+
     .banner-infos {
       display: block;
     }
+
     .btn-extend {
       display: none;
     }

@@ -48,7 +48,7 @@
 
   ul.slider-navigation li.active {
     width: 20px;
-    background-color: $primary;
+    background-color: var(--primary-color);
   }
 
   ul.slider-navigation li:hover {

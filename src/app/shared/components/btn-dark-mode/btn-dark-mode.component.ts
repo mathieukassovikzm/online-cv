@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, HostBinding, inject, OnInit } from '@angular/core';
+import { Component, HostBinding, inject } from '@angular/core';
 import { UiStore } from 'src/app/store/ui.store';
 
 @Component({
@@ -9,15 +9,15 @@ import { UiStore } from 'src/app/store/ui.store';
   imports: [CommonModule],
   standalone: true
 })
-export class BtnDarkModeComponent implements OnInit {
+export class BtnDarkModeComponent {
   @HostBinding('class') class = 'component-btn-dark-mode';
 
   readonly uiStore = inject(UiStore);
+  isChecked = !this.uiStore.darkMode();
 
   constructor() { }
 
-  ngOnInit() { }
-
   btnClicked(): void {
+    this.uiStore.toggleDarkMode();
   }
 }

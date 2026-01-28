@@ -17,6 +17,15 @@ $social-logo-s: 16px;
       }
     }
   }
+
+  .logo ::ng-deep svg path {
+    transition: all $animation-duration-short ease;
+    fill: var(--inverse-main-color);
+  }
+
+  .logo:hover ::ng-deep svg path {
+    fill: var(--primary-color);
+  }
 }
 
 /* ---------------------- Media query ----------------------------*/

@@ -11,7 +11,7 @@ $card-svg-top: -22px;
 
   .card-container {
     position: relative;
-    box-shadow: $box-shadow;
+    box-shadow: var(--box-shadow);
     overflow-y: hidden;
     height: 100%;
   }
@@ -23,7 +23,7 @@ $card-svg-top: -22px;
   .card-infos {
     position: relative;
     width: 100%;
-    background-color: $background;
+    background: var(--main-color-light);
     padding: 30px 20px;
     transform: translateY(0px);
   }
@@ -50,7 +50,7 @@ $card-svg-top: -22px;
     height: $card-svg-s;
     border-radius: 50%;
     background-color: $light;
-    box-shadow: $box-shadow;
+    box-shadow: var(--box-shadow);
 
     .icon {
       display: block;
@@ -73,7 +73,7 @@ $card-svg-top: -22px;
       width: 100%;
       bottom: 0;
       transition: transform 0.5s ease-in-out;
-      transform: auto;
+      transform: none;
     }
 
     .card-infos:hover {

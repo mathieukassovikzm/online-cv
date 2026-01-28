@@ -2,8 +2,8 @@
 
 
 $skill-logo-s: 40px;
-$skill-bar-outside-c: $secondary-light;
-$skill-bar-inside-c: $primary;
+$skill-bar-outside-c: var(--main-color-dark);
+$skill-bar-inside-c: var(--primary-color);
 
 .skill {
   display: flex;

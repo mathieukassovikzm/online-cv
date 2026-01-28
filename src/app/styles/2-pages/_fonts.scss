@@ -2,12 +2,16 @@
 
 /* ------------- STYLE GENERAL ------------- */
 body {
-  color: helpers.$txt-dark;
   font-size: 13px;
   line-height: 1.7;
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   letter-spacing: 0.25px;
+}
+
+span,
+p {
+  color: var(--inverse-main-color);
 }
 
 h1,
@@ -17,6 +21,7 @@ h4,
 h5,
 h6 {
   font-weight: bold;
+  color: var(--inverse-main-color);
 }
 
 h1,
@@ -26,7 +31,6 @@ h4,
 h5,
 h6 {
   font-weight: 700;
-  color: helpers.$txt-dark;
   margin-bottom: 0;
   font-family: "Poppins", sans-serif;
   -ms-word-wrap: break-word;
@@ -55,6 +59,7 @@ h6 {
   font-size: 13px;
   font-weight: 400;
 }
+
 @media only screen and (min-width: helpers.$min-width-m) {
   h1 {
     font-size: 46px;
