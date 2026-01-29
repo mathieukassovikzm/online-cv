@@ -101,7 +101,7 @@ export const LanguageStore = signalStore(
     route = inject(ActivatedRoute)
   ) => ({
 
-		//#region UI Language
+    //#region UI Language
 
     setUiLanguage(lang: CodeLanguageEnum): void {
       if (lang === undefined || lang === null) {
