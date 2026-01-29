@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
-import { LanguageStore } from 'src/app/store/language.store';
+import { AboutStore } from 'src/app/store/about.store';
 import { ExtractComponent } from './extract/extract.component';
 import { HobbiesComponent } from './hobbies/hobbies.component';
 import { LifeTimelineComponent } from './life-timeline/life-timeline.component';
@@ -24,9 +24,9 @@ const components = [
   standalone: true
 })
 export class PageAboutComponent {
-  readonly languageStore = inject(LanguageStore);
+  readonly aboutStore = inject(AboutStore);
 
-  public about = this.languageStore.getAboutTxt();
+  public about = this.aboutStore.getAboutTxt();
 
   constructor() { }
 }

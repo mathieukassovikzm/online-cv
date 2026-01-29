@@ -32,6 +32,7 @@ export class NavigationComponent implements OnInit {
   // public photo = require('./../../../../assets/images/PhotoCv.jpg');
 
   public language = this.languageStore.uiLanguage;
+  public uiText = this.uiStore.getUiTxt();
 
   constructor(
     private router: Router,
@@ -48,7 +49,7 @@ export class NavigationComponent implements OnInit {
       )
       .forEach(() => {
         const pageName = this.route?.root?.firstChild?.snapshot.data['pageName'];
-        this.pageActiveName = this.languageStore.getUiPageName(pageName);
+        this.pageActiveName = this.uiStore.getUiPageName(pageName);
       });
   }
 

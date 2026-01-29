@@ -8,6 +8,7 @@ import { SvgEsComponent } from 'src/app/shared/svgs/skills/language/svg-es/svg-e
 import { SvgFrComponent } from 'src/app/shared/svgs/skills/language/svg-fr/svg-fr.component';
 import { SvgDownloadComponent } from 'src/app/shared/svgs/ui/svg-download/svg-download.component';
 import { LanguageStore } from 'src/app/store/language.store';
+import { UiStore } from 'src/app/store/ui.store';
 
 const modules = [CommonModule];
 const svgs = [SvgDownloadComponent, SvgFrComponent, SvgEnComponent, SvgEsComponent];
@@ -22,9 +23,10 @@ const components = [LstSocialsComponent];
 })
 export class TopDescComponent implements OnInit {
   readonly languageStore = inject(LanguageStore);
+  readonly uiStore = inject(UiStore);
 
-  public uiText = this.languageStore.getUiTxt().sidePanelTxt.topDescTitles;
-  public infos: IInfosModel = this.languageStore.getInfosTxt();
+  public uiText = this.uiStore.getUiTxt().sidePanelTxt.topDescTitles;
+  public infos: IInfosModel = this.uiStore.getInfosTxt();
   public codeFR = CodeLanguageEnum.FR;
   public codeEN = CodeLanguageEnum.EN;
   public codeES = CodeLanguageEnum.ES;

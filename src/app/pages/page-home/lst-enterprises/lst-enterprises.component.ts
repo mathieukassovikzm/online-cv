@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { LanguageStore } from 'src/app/store/language.store';
+import { HomeStore } from 'src/app/store/home.store';
 
 const modules = [CommonModule, FormsModule];
 
@@ -13,7 +13,9 @@ const modules = [CommonModule, FormsModule];
   standalone: true
 })
 export class LstEntreprisesComponent {
-  readonly languageStore = inject(LanguageStore);
+  readonly homeStore = inject(HomeStore);
+
+  public homeTxt = this.homeStore.getHomeTxt();
 
   constructor() { }
 }

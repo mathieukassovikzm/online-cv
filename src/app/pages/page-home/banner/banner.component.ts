@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { IUiTxtHomeModel } from 'src/app/models/uiTxt';
-import { LanguageStore } from 'src/app/store/language.store';
+import { UiStore } from 'src/app/store/ui.store';
 
 const modules = [CommonModule];
 
@@ -13,8 +13,9 @@ const modules = [CommonModule];
   standalone: true
 })
 export class BannerComponent implements OnInit {
-  readonly languageStore = inject(LanguageStore);
-  public uiText: IUiTxtHomeModel = this.languageStore.getUiTxt().homeTxt;
+  readonly uiStore = inject(UiStore);
+
+  public uiText: IUiTxtHomeModel = this.uiStore.getUiTxt().homeTxt;
 
   public text: string = '';
 
@@ -34,7 +35,7 @@ export class BannerComponent implements OnInit {
   }
 
   private typeLoop(): void {
-    const currentPhrase = this.languageStore.getUiTxt().homeTxt.bannerPhrases[this.phraseIndex];
+    const currentPhrase = this.uiStore.getUiTxt().homeTxt.bannerPhrases[this.phraseIndex];
 
     if (!this.deleting) {
       // typing
@@ -56,7 +57,7 @@ export class BannerComponent implements OnInit {
       } else {
         // move to next phrase
         this.deleting = false;
-        this.phraseIndex = (this.phraseIndex + 1) % this.languageStore.getUiTxt().homeTxt.bannerPhrases.length;
+        this.phraseIndex = (this.phraseIndex + 1) % this.uiStore.getUiTxt().homeTxt.bannerPhrases.length;
         setTimeout(() => this.typeLoop(), this.typeSpeed);
       }
     }

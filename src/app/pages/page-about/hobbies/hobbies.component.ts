@@ -2,6 +2,8 @@ import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { LanguageStore } from 'src/app/store/language.store';
 import { HobbyComponent } from './hobby/hobby.component';
+import { AboutStore } from 'src/app/store/about.store';
+import { UiStore } from 'src/app/store/ui.store';
 
 const modules = [CommonModule];
 const components = [HobbyComponent];
@@ -14,10 +16,11 @@ const components = [HobbyComponent];
   standalone: true
 })
 export class HobbiesComponent {
-  readonly languageStore = inject(LanguageStore);
+  readonly aboutStore = inject(AboutStore);
+  readonly uiStore = inject(UiStore);
 
-  public uiText = this.languageStore.getUiTxt().aboutTxt;
-  public hobbies = this.languageStore.getAboutTxt().hobbies || [];
+  public uiText = this.uiStore.getUiTxt().aboutTxt;
+  public hobbies = this.aboutStore.getAboutTxt().hobbies || [];
 
   constructor() { }
 }

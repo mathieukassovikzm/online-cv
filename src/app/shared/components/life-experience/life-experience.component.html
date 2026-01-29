@@ -19,7 +19,7 @@
         <p class="dsc">{{item?.description?.dsc}}</p>
         @if (item?.description?.tasks) {
           <div class="subtitle tasks">
-            <h5>{{languageStore.getUiTxt().cardTxt.tasksTitle}}</h5>
+            <h5>{{uiText.cardTxt.tasksTitle}}</h5>
             @for (task of item?.description?.tasks; track task) {
               <div>
                 <p>{{task}}</p>
@@ -29,7 +29,7 @@
         }
         @if (item?.description?.technicalEnv) {
           <div class="subtitle technical-env">
-            <h5>{{languageStore.getUiTxt().cardTxt.technicalEnvTitle}}</h5>
+            <h5>{{uiText.cardTxt.technicalEnvTitle}}</h5>
             <p>{{item?.description?.technicalEnv}}</p>
           </div>
         }

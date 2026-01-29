@@ -15,7 +15,8 @@ import { fromEvent, Observable, Subscription } from 'rxjs';
 import { IRecommendationModel } from 'src/app/models/home';
 import { IUiTxtHomeModel } from 'src/app/models/uiTxt';
 import { animationMultipleCarousel } from 'src/app/shared/class/animation-carousel';
-import { LanguageStore } from 'src/app/store/language.store';
+import { HomeStore } from 'src/app/store/home.store';
+import { UiStore } from 'src/app/store/ui.store';
 import { RecommendationCardComponent } from './recommendation-card/recommendation-card.component';
 
 const modules = [CommonModule];
@@ -32,12 +33,12 @@ const components = [RecommendationCardComponent];
 export class RecommendationsComponent
   implements OnInit, AfterViewInit, OnDestroy {
 
-  readonly languageStore = inject(LanguageStore);
+  readonly uiStore = inject(UiStore);
+  readonly homeStore = inject(HomeStore);
 
-  public uiText: IUiTxtHomeModel = this.languageStore.getUiTxt().homeTxt;
+  public uiText: IUiTxtHomeModel = this.uiStore.getUiTxt().homeTxt;
 
-  public slides: IRecommendationModel[] = this.languageStore.getHomeTxt()!.lstRecommendations.map((slide, index) => { return { ...slide, id: index } });
-
+  public slides: IRecommendationModel[] = this.homeStore.getHomeTxt()!.lstRecommendations.map((slide, index) => { return { ...slide, id: index } });
   public evolutingLstSlide: IRecommendationModel[] = [];
 
   private containerRecoWidth = signal(0);

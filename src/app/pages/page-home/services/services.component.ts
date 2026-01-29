@@ -1,6 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject } from '@angular/core';
-import { LanguageStore } from 'src/app/store/language.store';
+import { Component, computed, inject, Signal } from '@angular/core';
+import { IServiceModel } from 'src/app/models/home';
+import { IUiTxtHomeModel } from 'src/app/models/uiTxt';
+import { HomeStore } from 'src/app/store/home.store';
+import { UiStore } from 'src/app/store/ui.store';
 import { ServiceComponent } from './service/service.component';
 
 const modules = [CommonModule];
@@ -14,14 +17,15 @@ const components = [ServiceComponent];
   standalone: true
 })
 export class ServicesComponent {
-  readonly languageStore = inject(LanguageStore);
+  readonly uiStore = inject(UiStore);
+  readonly homeStore = inject(HomeStore);
 
-  // public sUiText: Signal<IUiTxtHomeModel> = computed(() => {
-  //   return this.uiStore.getUiTxt()?.homeTxt;
-  // });
-  // public sServices: Signal<IServiceModel[]> = computed(() => {
-  //   return this.homeService.getHome()().lstServices || [];
-  // });
+  public uiText: Signal<IUiTxtHomeModel> = computed(() => {
+    return this.uiStore.getUiTxt()?.homeTxt;
+  });
+  public services: Signal<IServiceModel[]> = computed(() => {
+    return this.homeStore.getHomeTxt().lstServices || [];
+  });
 
   constructor() { }
 }

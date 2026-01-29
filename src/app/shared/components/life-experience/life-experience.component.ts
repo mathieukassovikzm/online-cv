@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, HostBinding, inject, Input } from '@angular/core';
 import { IExperienceModel } from 'src/app/models/about';
 import { TypeExperienceEnum } from 'src/app/models/enum';
-import { LanguageStore } from 'src/app/store/language.store';
+import { UiStore } from 'src/app/store/ui.store';
 import { SvgEducationComponent } from '../../svgs/ui/svg-education/svg-education.component';
 import { SvgMedalComponent } from '../../svgs/ui/svg-medal/svg-medal.component';
 import { SvgWorkComponent } from '../../svgs/ui/svg-work/svg-work.component';
@@ -21,7 +21,9 @@ export class LifeExperienceComponent {
   @HostBinding('class') class = 'life-experience-component';
   @Input() item: IExperienceModel | undefined;
 
-  readonly languageStore = inject(LanguageStore);
+  readonly uiStore = inject(UiStore);
+
+  public uiText = this.uiStore.getUiTxt();
 
   public typeExpeEduc = TypeExperienceEnum.Education;
   public typeExpeArchi = TypeExperienceEnum.Archievement;

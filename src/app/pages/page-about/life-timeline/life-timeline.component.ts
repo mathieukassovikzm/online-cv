@@ -12,7 +12,8 @@ import _ from 'lodash';
 import { IExperienceModel } from 'src/app/models/about';
 import { TypeExperienceEnum } from 'src/app/models/enum';
 import { LifeExperienceComponent } from 'src/app/shared/components/life-experience/life-experience.component';
-import { LanguageStore } from 'src/app/store/language.store';
+import { AboutStore } from 'src/app/store/about.store';
+import { UiStore } from 'src/app/store/ui.store';
 import { listFadeFadeAnimation } from './animation';
 
 const modules = [CommonModule];
@@ -27,15 +28,17 @@ const components = [LifeExperienceComponent];
   standalone: true
 })
 export class LifeTimelineComponent implements OnInit {
-  readonly languageStore = inject(LanguageStore);
-  public uiText = this.languageStore.getUiTxt().aboutTxt;
+  readonly aboutStore = inject(AboutStore);
+  readonly uiStore = inject(UiStore);
+
+  public uiText = this.uiStore.getUiTxt().aboutTxt;
 
   public typeExpeEduc = TypeExperienceEnum.Education;
   public typeExpeArchi = TypeExperienceEnum.Archievement;
   public typeExpeExpePro = TypeExperienceEnum.ExperiencePro;
 
   public sTimelineEvents: IExperienceModel[] =
-    this.languageStore.getLifeTimeline();
+    this.aboutStore.getLifeTimeline();
 
   public sFilterActif: WritableSignal<TypeExperienceEnum | undefined> =
     signal(undefined);
