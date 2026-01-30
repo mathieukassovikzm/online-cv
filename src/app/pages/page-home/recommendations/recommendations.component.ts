@@ -9,11 +9,11 @@ import {
   inject,
   OnDestroy,
   OnInit,
+  Signal,
   signal
 } from '@angular/core';
 import { fromEvent, Observable, Subscription } from 'rxjs';
 import { IRecommendationModel } from 'src/app/models/home';
-import { IUiTxtHomeModel } from 'src/app/models/uiTxt';
 import { animationMultipleCarousel } from 'src/app/shared/class/animation-carousel';
 import { HomeStore } from 'src/app/store/home.store';
 import { UiStore } from 'src/app/store/ui.store';
@@ -36,10 +36,12 @@ export class RecommendationsComponent
   readonly uiStore = inject(UiStore);
   readonly homeStore = inject(HomeStore);
 
-  public uiText: IUiTxtHomeModel = this.uiStore.getUiTxt().homeTxt;
+  public uiText = computed(() => this.uiStore.getUiTxt()?.homeTxt);
 
-  public slides: IRecommendationModel[] = this.homeStore.getHomeTxt()!.lstRecommendations.map((slide, index) => { return { ...slide, id: index } });
-  public evolutingLstSlide: IRecommendationModel[] = [];
+  public slides: Signal<IRecommendationModel[]> = computed(() =>
+    this.homeStore.getHomeTxt()!.lstRecommendations.map((slide, index) => { return { ...slide, id: index } })
+  );
+  public evolutingLstSlide: Signal<IRecommendationModel[]> = computed(() => [...this.slides()]);
 
   private containerRecoWidth = signal(0);
 
@@ -101,13 +103,6 @@ export class RecommendationsComponent
 
   ngOnInit() {
     this.onResize();
-
-    // // on récupère le dernier élément du tableau car il a disparu
-    // const last = this.sSlides().slice(-1).pop();
-    // // on le rajoute au début
-    this.evolutingLstSlide = this.slides;
-    // this.evolutingLstSlide.unshift(last!);
-    // console.log(this.evolutingLstSlide)
   }
 
   ngOnDestroy() {
@@ -156,21 +151,21 @@ export class RecommendationsComponent
     // ici on incrément
     if (event.fromState < event.toState) {
       // on pop l'élément du tableau car il a disparu
-      const first = this.evolutingLstSlide.shift();
+      const first = this.evolutingLstSlide().shift();
       // on le rajoute a la fin
-      this.evolutingLstSlide.push(first!);
+      this.evolutingLstSlide().push(first!);
     }
     // ici on décrément
     else if (event.fromState > event.toState) {
       // on pop l'élément du tableau car il a disparu
-      const last = this.evolutingLstSlide.pop();
+      const last = this.evolutingLstSlide().pop();
       // on le rajoute au début
-      this.evolutingLstSlide.unshift(last!);
+      this.evolutingLstSlide().unshift(last!);
     }
   }
 
   public onNavClick(index: number): void {
     this.currentSlide = index;
-    this.navIndex = this.slides.findIndex(s => s.id === index);
+    this.navIndex = this.slides().findIndex(s => s.id === index);
   }
 }

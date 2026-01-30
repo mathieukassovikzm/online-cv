@@ -1,8 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HomeStore } from 'src/app/store/home.store';
-import { LanguageStore } from 'src/app/store/language.store';
 
 const modules = [CommonModule, FormsModule];
 
@@ -16,7 +15,7 @@ const modules = [CommonModule, FormsModule];
 export class InfosRecapComponent {
   readonly homeStore = inject(HomeStore);
 
-  public homeText = this.homeStore.getHomeTxt();
+  public homeText = computed(() => this.homeStore.getHomeTxt());
 
   constructor() { }
 }

@@ -1,5 +1,5 @@
 <ul>
-  @for (item of homeText.lstRecap; track $index) {
+  @for (item of homeText().lstRecap; track $index) {
     <li>
       <h5>{{item.value}}</h5>
       <h6>{{item.libelle}}</h6>

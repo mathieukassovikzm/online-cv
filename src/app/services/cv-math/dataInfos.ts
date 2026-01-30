@@ -4,16 +4,15 @@ import { IInfosModel, ISocialNetwork } from 'src/app/models/infos';
 const infosCommon = {
   name: 'Mathieu',
   famillyName: 'Le Bellec',
-  title: 'Full Stack Developper',
   available: false,
   email: 'mathieu.lebellec.pro@gmail.com',
-  address: '5 rue Jean Brulelou',
+  address: '11 Boulevard de Strasbourg, 35000 Rennes, France',
 };
 
 export const infosFr: IInfosModel = {
   name: infosCommon.name,
   famillyName: infosCommon.famillyName,
-  title: infosCommon.title,
+  title: 'Développeur Full Stack',
   available: infosCommon.available,
   email: infosCommon.email,
   address: infosCommon.address,
@@ -30,7 +29,7 @@ export const infosFr: IInfosModel = {
 export const infosEn: IInfosModel = {
   name: infosCommon.name,
   famillyName: infosCommon.famillyName,
-  title: infosCommon.title,
+  title: 'Full Stack Developer',
   available: infosCommon.available,
   email: infosCommon.email,
   address: infosCommon.address,
@@ -47,14 +46,14 @@ export const infosEn: IInfosModel = {
 export const infosEs: IInfosModel = {
   name: infosCommon.name,
   famillyName: infosCommon.famillyName,
-  title: infosCommon.title,
+  title: 'Desarrollador Full Stack',
   available: infosCommon.available,
   email: infosCommon.email,
   address: infosCommon.address,
   infosPersonnal: {
     birth: '10 Dic 1989',
     nationality: 'Francés',
-    status: 'En unión de hecho sin hijos',
+    status: 'En unión de hecho',
     drivingLiscence: 'Si',
     car: 'Si',
   },

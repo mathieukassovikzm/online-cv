@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject, OnInit, signal } from '@angular/core';
+import { Component, computed, inject, OnInit, Signal, signal } from '@angular/core';
+import { IInfosModel } from 'src/app/models/infos';
 import { IUiTxtHomeModel } from 'src/app/models/uiTxt';
 import { UiStore } from 'src/app/store/ui.store';
 
@@ -15,7 +16,8 @@ const modules = [CommonModule];
 export class BannerComponent implements OnInit {
   readonly uiStore = inject(UiStore);
 
-  public uiText: IUiTxtHomeModel = this.uiStore.getUiTxt().homeTxt;
+  public uiText: Signal<IUiTxtHomeModel> = computed(() => this.uiStore.getUiTxt()?.homeTxt);
+  public infos: Signal<IInfosModel> = computed(() => this.uiStore.getInfosTxt());
 
   public text: string = '';
 

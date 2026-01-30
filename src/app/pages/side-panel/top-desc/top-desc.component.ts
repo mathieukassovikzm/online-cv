@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, computed, inject, OnInit, Signal } from '@angular/core';
 import { CodeLanguageEnum } from 'src/app/models/enum';
 import { IInfosModel } from 'src/app/models/infos';
 import { LstSocialsComponent } from 'src/app/shared/components/lst-socials/lst-socials.component';
@@ -25,8 +25,9 @@ export class TopDescComponent implements OnInit {
   readonly languageStore = inject(LanguageStore);
   readonly uiStore = inject(UiStore);
 
-  public uiText = this.uiStore.getUiTxt().sidePanelTxt.topDescTitles;
-  public infos: IInfosModel = this.uiStore.getInfosTxt();
+  public uiText = computed(() => this.uiStore.getUiTxt()?.sidePanelTxt.topDescTitles);
+  public infos = computed(() => this.uiStore.getInfosTxt());
+
   public codeFR = CodeLanguageEnum.FR;
   public codeEN = CodeLanguageEnum.EN;
   public codeES = CodeLanguageEnum.ES;

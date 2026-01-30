@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
 import { LanguageStore } from 'src/app/store/language.store';
 import { UiStore } from 'src/app/store/ui.store';
 
@@ -16,8 +16,8 @@ export class InfosPersoComponent {
   readonly languageStore = inject(LanguageStore);
   readonly uiStore = inject(UiStore);
 
-  public uiText = this.uiStore.getUiTxt().sidePanelTxt.infosPersoTitles;
-  public infosPersonnal = this.uiStore.getInfosTxt().infosPersonnal;
+  public uiText = computed(() => this.uiStore.getUiTxt()?.sidePanelTxt.infosPersoTitles);
+  public infosPersonnal = computed(() => this.uiStore.getInfosTxt().infosPersonnal);
 
   constructor() { }
 }
