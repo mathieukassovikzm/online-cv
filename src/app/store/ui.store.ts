@@ -14,7 +14,7 @@ type UiState = {
 
 const initialState: UiState = {
   isNavOpen: false,
-  darkMode: true
+  darkMode: false
 };
 
 export const UiStore = signalStore(

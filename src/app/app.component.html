@@ -1,8 +1,6 @@
 <div class="app" 
   [class]="onLang()" 
-  [class.is-opened]="uiStore.isNavOpen()"
-  [class.dark-mode]="uiStore.darkMode()"
-  [class.light-mode]="!uiStore.darkMode()">
+  [class.is-opened]="uiStore.isNavOpen()">
   <div class="site-content">
     <app-side-panel></app-side-panel>
     <div class="main-content">

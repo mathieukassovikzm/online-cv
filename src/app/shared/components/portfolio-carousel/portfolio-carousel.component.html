@@ -1,0 +1,63 @@
+<div class="carousel-backdrop" (click)="onBackdropClick($event)" (keydown)="onKeyDown($event)" tabindex="0">
+  <div class="carousel-container">
+    <!-- Close Button -->
+    <button class="carousel-close carousel-btn" (click)="closeCarousel()" aria-label="Close carousel" type="button">
+      <svg viewBox="0 0 24 24">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+
+    <!-- Main Content -->
+    <div class="carousel-content" *ngIf="currentProject">
+      <!-- Navigation Buttons -->
+      <button class="carousel-nav carousel-btn carousel-nav--prev" (click)="previousProject()" [disabled]="projects.length <= 1"
+        aria-label="Previous project" type="button">
+        <svg viewBox="0 0 24 24">
+          <polyline points="15,18 9,12 15,6"></polyline>
+        </svg>
+      </button>
+
+      <button class="carousel-nav carousel-btn carousel-nav--next" (click)="nextProject()" [disabled]="projects.length <= 1"
+        aria-label="Next project" type="button">
+        <svg viewBox="0 0 24 24">
+          <polyline points="9,18 15,12 9,6"></polyline>
+        </svg>
+      </button>
+
+      <!-- Image -->
+      <div class="carousel-image-container">
+        <img [src]="currentProject.photo" [alt]="currentProject.title" class="carousel-image"
+          *ngIf="currentProject.photo">
+        <div class="carousel-no-image" *ngIf="!currentProject.photo">
+          <p>No image available</p>
+        </div>
+      </div>
+
+      <!-- Project Info -->
+      <div class="carousel-info">
+        <h2 class="carousel-title">{{ currentProject.title }}</h2>
+        <p class="carousel-description" *ngIf="currentProject.description">
+          {{ currentProject.description }}
+        </p>
+        <a *ngIf="currentProject.link" [href]="currentProject.link" target="_blank" class="carousel-link"
+          rel="noopener noreferrer">
+          View Project
+        </a>
+      </div>
+    </div>
+
+    <!-- Dots Navigation -->
+    <div class="carousel-dots" *ngIf="projects.length > 1">
+      @for (project of projects; track $index) {
+      <button class="carousel-dot" [class.active]="$index === currentIndex()" (click)="goToProject($index)"
+        [attr.aria-label]="'Go to project ' + ($index + 1)" type="button"></button>
+      }
+    </div>
+
+    <!-- Counter -->
+    <div class="carousel-counter" *ngIf="projects.length > 1">
+      {{ currentIndex() + 1 }} / {{ projects.length }}
+    </div>
+  </div>
+</div>

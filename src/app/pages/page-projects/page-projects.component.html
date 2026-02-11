@@ -1,1 +1,12 @@
-<h1>Projects</h1>
+<h2>{{ uiText().portfolioTxt?.portfolioTitle }}</h2>
+
+@if (isCarouselVisible()) {
+<!-- Portfolio Carousel -->
+<app-portfolio-carousel [projects]="lstPortfolio()" [currentItemOpen]="currentItemOpen()" (close)="closeCarousel()"></app-portfolio-carousel>
+}
+
+<div class="projects-grid">
+  @for (portfolio of lstPortfolio(); track $index) {
+  <app-portfolio-item [project]="portfolio" (openCarouselEvent)="openCarousel($event)"></app-portfolio-item>
+  }
+</div>

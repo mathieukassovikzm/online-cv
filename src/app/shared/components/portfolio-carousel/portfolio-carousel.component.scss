@@ -1,0 +1,276 @@
+.carousel-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.90);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  outline: none;
+  z-index: 100;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+}
+
+.carousel-container {
+  position: relative;
+  width: 90%;
+  height: 90%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--main-color-dark);
+}
+
+.carousel-btn {
+  position: absolute;
+  background: var(--main-color-light);
+  color: var(--inverse-main-color);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  
+  &:hover:not(:disabled) {
+    background: var(--main-color);
+  }
+}
+
+.carousel-btn svg {
+  width: 24px;
+  height: 24px;
+}
+
+.carousel-btn svg polyline,
+.carousel-btn svg line,
+.carousel-btn svg path {
+  fill: none;
+  stroke: var(--inverse-main-color);
+  stroke-width: 2;
+  width: 24px;
+  height: 24px;
+}
+
+.carousel-close {
+  top: 20px;
+  right: 20px;
+  z-index: 1001;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.carousel-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1001;
+
+  &:hover:not(:disabled) {
+    transform: translateY(-50%) scale(1.1);
+  }
+
+  &:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+
+  &--prev {
+    left: 20px;
+  }
+
+  &--next {
+    right: 20px;
+  }
+}
+
+.carousel-image-container {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  position: relative;
+  max-height: 70%;
+}
+
+.carousel-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 2px;
+}
+
+.carousel-no-image {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--main-color-dark);
+  border-radius: 2px;
+  color: var(--inverse-main-color);
+
+  p {
+    margin: 0;
+    font-size: 1.2rem;
+    opacity: 0.7;
+  }
+}
+
+.carousel-info {
+  text-align: center;
+  color: var(--inverse-main-color);
+  max-width: 600px;
+  padding: 0 20px;
+}
+
+.carousel-title {
+  font-size: 2rem;
+  margin: 0 0 1rem 0;
+  font-weight: 600;
+}
+
+.carousel-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 0 0 1.5rem 0;
+  opacity: 0.9;
+}
+
+.carousel-link {
+  display: inline-block;
+  padding: 12px 24px;
+  background: var(--primary-color, #007bff);
+  color: var(--inverse-main-color);
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background: var(--primary-color-dark, #0056b3);
+  }
+}
+
+.carousel-dots {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.carousel-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--inverse-main-color-dark);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+
+  &:hover {
+    background-color: var(--inverse-main-color-light);
+    transform: scale(1.2);
+  }
+
+  &.active {
+    background-color: var(--inverse-main-color-light);
+    transform: scale(1.2);
+  }
+}
+
+.carousel-counter {
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+  color: var(--inverse-main-color-light);
+  font-size: 0.9rem;
+}
+
+// Responsive design
+@media (max-width: 768px) {
+  .carousel-container {
+    width: 95%;
+    height: 95%;
+  }
+
+  .carousel-close {
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  .carousel-nav {
+    width: 50px;
+    height: 50px;
+
+    &--prev {
+      left: 10px;
+    }
+
+    &--next {
+      right: 10px;
+    }
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  .carousel-title {
+    font-size: 1.5rem;
+  }
+
+  .carousel-description {
+    font-size: 1rem;
+  }
+
+  .carousel-info {
+    padding: 0 10px;
+  }
+
+  .carousel-dots {
+    bottom: 20px;
+  }
+
+  .carousel-counter {
+    bottom: 5px;
+    right: 10px;
+    font-size: 0.8rem;
+  }
+}
