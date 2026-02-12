@@ -4,6 +4,7 @@ import { UiStore } from 'src/app/store/ui.store';
 import { PortfolioItemComponent } from 'src/app/pages/page-projects/portfolio-item/portfolio-item.component';
 import { PortfolioCarouselComponent } from 'src/app/shared/components/portfolio-carousel/portfolio-carousel.component';
 import { IProjectModel } from 'src/app/models/project';
+import { TypeProjectEnum } from 'src/app/models/enum';
 
 @Component({
   selector: 'app-page-projects',
@@ -17,18 +18,40 @@ export class PageProjectsComponent {
   readonly portfolioStore = inject(PortfolioStore);
 
   public uiText = computed(() => this.uiStore.getUiTxt());
+  public sFilterActif = signal<TypeProjectEnum | undefined>(undefined);
   public lstPortfolio = computed(() => this.portfolioStore.getPortfolio());
+  public lstPortfolioFiltered = computed(() => {
+    const filter = this.sFilterActif();
+    const lstPortfolio = this.lstPortfolio();
+    if (filter != undefined) {
+      return lstPortfolio.filter(project => project.type === filter);
+    }
+    return lstPortfolio;
+  });
   public isCarouselVisible = signal(false);
   public currentItemOpen = signal<IProjectModel | undefined>(undefined);
 
+  public typeLogo = TypeProjectEnum.Logo;
+  public typeWebsite = TypeProjectEnum.Website;
+  public typeVideos = TypeProjectEnum.Videos;
+  public typeFairePart = TypeProjectEnum.FairePart;
+
   constructor() { }
 
-  openCarousel(item: IProjectModel | undefined): void {
+  public openCarousel(item: IProjectModel | undefined): void {
     this.isCarouselVisible.set(true);
     this.currentItemOpen.set(item);
   }
 
-  closeCarousel(): void {
+  public closeCarousel(): void {
     this.isCarouselVisible.set(false);
+  }
+
+  public isActif(filter?: TypeProjectEnum): boolean {
+    return this.sFilterActif() == filter;
+  }
+
+  public setFilter(currentFilter?: TypeProjectEnum): void {
+    this.sFilterActif.set(currentFilter);
   }
 }

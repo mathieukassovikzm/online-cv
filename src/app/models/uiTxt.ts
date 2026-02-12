@@ -63,4 +63,9 @@ export interface IUiTxtCardModel {
 
 export interface IUiTxtPortfolioModel {
   portfolioTitle: string;
+  typeProjectAllTitle: string;
+  typeProjectLogoTitle: string;
+  typeProjectVideoTitle: string;
+  typeProjectFairePartTitle: string;
+  typeProjectWebsiteTitle: string;
 }

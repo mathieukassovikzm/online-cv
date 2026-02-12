@@ -1,12 +1,40 @@
 <h2>{{ uiText().portfolioTxt?.portfolioTitle }}</h2>
-
-@if (isCarouselVisible()) {
-<!-- Portfolio Carousel -->
-<app-portfolio-carousel [projects]="lstPortfolio()" [currentItemOpen]="currentItemOpen()" (close)="closeCarousel()"></app-portfolio-carousel>
-}
-
+<nav>
+  <ul class="filter">
+    <li>
+      <a (click)="setFilter(undefined)" [class.active]="isActif()">
+        {{uiText().portfolioTxt?.typeProjectAllTitle}}
+      </a>
+    </li>
+    <li>
+      <a (click)="setFilter(typeLogo)" [class.active]="isActif(typeLogo)">
+        {{uiText().portfolioTxt?.typeProjectLogoTitle}}
+      </a>
+    </li>
+    <li>
+      <a (click)="setFilter(typeVideos)" [class.active]="isActif(typeVideos)">
+        {{uiText().portfolioTxt?.typeProjectVideoTitle}}
+      </a>
+    </li>
+    <li>
+      <a (click)="setFilter(typeFairePart)" [class.active]="isActif(typeFairePart)">
+        {{uiText().portfolioTxt?.typeProjectFairePartTitle}}
+      </a>
+    </li>
+    <li>
+      <a (click)="setFilter(typeWebsite)" [class.active]="isActif(typeWebsite)">
+        {{uiText().portfolioTxt?.typeProjectWebsiteTitle}}
+      </a>
+    </li>
+  </ul>
+</nav>
 <div class="projects-grid">
-  @for (portfolio of lstPortfolio(); track $index) {
+  @for (portfolio of lstPortfolioFiltered(); track $index) {
   <app-portfolio-item [project]="portfolio" (openCarouselEvent)="openCarousel($event)"></app-portfolio-item>
   }
 </div>
+
+@if (isCarouselVisible()) {
+<app-portfolio-carousel [projects]="lstPortfolioFiltered()" [currentItemOpen]="currentItemOpen()"
+  (close)="closeCarousel()"></app-portfolio-carousel>
+}
