@@ -1,7 +1,7 @@
 import { computed, inject } from '@angular/core';
 import { signalStore, withComputed, withMethods, withState } from '@ngrx/signals';
 import { CodeLanguageEnum } from '../models/enum';
-import { projectsEn, projectsEs, projectsFr } from '../services/cv-math/dataPorfolio';
+import { projectsEn, projectsEs, projectsFr } from '../services/cv-math/dataPortfolio';
 import { LanguageStore } from './language.store';
 
 type PortfolioState = {
@@ -16,16 +16,31 @@ export const PortfolioStore = signalStore(
   withComputed((store, languageStore = inject(LanguageStore)) => ({
     getPortfolio: computed(() => {
       const language = languageStore.uiLanguage();
+      let lstProjects = [];
+
       switch (language) {
         case CodeLanguageEnum.FR:
-          return projectsFr;
+          lstProjects = projectsFr;
+          break;
         case CodeLanguageEnum.EN:
-          return projectsEn;
+          lstProjects = projectsEn;
+          break;
         case CodeLanguageEnum.ES:
-          return projectsEs;
+          lstProjects = projectsEs;
+          break;
         default:
-          return projectsFr;
+          lstProjects = projectsFr;
+          break;
       }
+
+      let index = 1;
+      lstProjects = lstProjects.map(project => {
+        return {
+          ...project,
+          id: index++,
+        };
+      });
+      return lstProjects;
     }),
   })),
   withMethods((store, languageStore = inject(LanguageStore)) => ({
