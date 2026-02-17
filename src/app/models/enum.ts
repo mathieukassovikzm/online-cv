@@ -42,3 +42,10 @@ export enum TypeHobbyEnum {
   Creativity,
   Other,
 }
+
+export enum TypeProjectEnum {
+  Logo,
+  Website,
+  Videos,
+  FairePart, 
+}

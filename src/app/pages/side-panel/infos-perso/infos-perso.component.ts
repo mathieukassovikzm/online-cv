@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
 import { LanguageStore } from 'src/app/store/language.store';
+import { UiStore } from 'src/app/store/ui.store';
 
 const modules = [CommonModule];
 
@@ -13,8 +14,10 @@ const modules = [CommonModule];
 })
 export class InfosPersoComponent {
   readonly languageStore = inject(LanguageStore);
-  public uiText = this.languageStore.getUiTxt().sidePanelTxt.infosPersoTitles;
-  public infosPersonnal = this.languageStore.getInfosTxt().infosPersonnal;
+  readonly uiStore = inject(UiStore);
+
+  public uiText = computed(() => this.uiStore.getUiTxt()?.sidePanelTxt.infosPersoTitles);
+  public infosPersonnal = computed(() => this.uiStore.getInfosTxt().infosPersonnal);
 
   constructor() { }
 }

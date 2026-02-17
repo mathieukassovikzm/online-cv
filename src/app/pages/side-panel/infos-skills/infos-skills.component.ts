@@ -4,6 +4,7 @@ import { TypeSkillEnum } from 'src/app/models/enum';
 import { ISkillModel } from 'src/app/models/infos';
 import { InfosService } from 'src/app/services/infos.service';
 import { LanguageStore } from 'src/app/store/language.store';
+import { UiStore } from 'src/app/store/ui.store';
 import { SkillComponent } from './skill/skill.component';
 
 const modules = [CommonModule];
@@ -18,7 +19,9 @@ const components = [SkillComponent];
 })
 export class InfosSkillsComponent implements OnInit {
   readonly languageStore = inject(LanguageStore);
-  public uiText = this.languageStore.getUiTxt().sidePanelTxt.skillsTitles;
+  readonly uiStore = inject(UiStore);
+
+  public uiText = this.uiStore.getUiTxt().sidePanelTxt.skillsTitles;
 
   public skillsFrontEnd = <ISkillModel[]>[];
   public skillsBackEnd = <ISkillModel[]>[];

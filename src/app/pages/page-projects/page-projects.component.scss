@@ -1,7 +1,26 @@
 @use '../0-helpers/variables' as *;
 
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  padding: 0.5rem;
+  margin: 0 auto;
+}
 
 /* ---------------------- Media query ----------------------------*/
 @media only screen and (min-width: $min-width-xl) {
-  :host {}
+  .projects-grid {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+  }
 }
+
+// @media only screen and (max-width: $min-width-m) {
+//   .projects-grid {
+//     grid-template-columns: 1fr;
+//     gap: 1.5rem;
+//     padding: 0.5rem;
+//   }
+// }

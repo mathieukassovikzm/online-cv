@@ -1,0 +1,37 @@
+@use '../0-helpers/helpers-dir' as helpers;
+
+.filter {
+  padding-left: 0;
+  display: flex;
+  margin: 0 auto;
+  overflow-x: scroll;
+  padding: 20px 20px 0 0;
+  transition: all helpers.$animation-duration;
+}
+
+.filter li {
+  margin: 20px 0;
+  min-width: fit-content;
+}
+
+.filter li a {
+  padding: 5px 10px;
+  margin: 0 14px;
+  transition: all helpers.$animation-duration-short ease-in-out .1s;
+  color: var(--inverse-main-color);
+}
+
+.filter li a.active {
+  background-color: var(--primary-color);
+  padding: 5px 20px;
+  color: var(--main-color-light);
+  text-decoration: none;
+}
+
+/* ---------------------- Media query ----------------------------*/
+@media only screen and (min-width: helpers.$min-width-xl) {
+  .filter {
+    overflow-x: visible;
+    padding: 20px 20px 20px 0;
+  }
+}

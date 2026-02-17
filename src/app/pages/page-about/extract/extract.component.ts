@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { SvgQuoteComponent } from 'src/app/shared/svgs/ui/svg-quote/svg-quote.component';
-import { LanguageStore } from 'src/app/store/language.store';
+import { AboutStore } from 'src/app/store/about.store';
+import { UiStore } from 'src/app/store/ui.store';
 
 const modules = [CommonModule];
 const svgs = [SvgQuoteComponent];
@@ -14,10 +15,11 @@ const svgs = [SvgQuoteComponent];
   standalone: true
 })
 export class ExtractComponent {
-  readonly languageStore = inject(LanguageStore);
+  readonly aboutStore = inject(AboutStore);
+  readonly uiStore = inject(UiStore);
 
-  public uiText = this.languageStore.getUiTxt().aboutTxt;
-  public extract = this.languageStore.getAboutTxt().extract || '';
+  public uiText = this.uiStore.getUiTxt().aboutTxt;
+  public extract = this.aboutStore.getAboutTxt().extract || '';
 
   constructor() { }
 }

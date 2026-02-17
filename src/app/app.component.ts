@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject, OnDestroy, OnInit } from '@angular/core';
+import { Component, effect, inject, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterOutlet } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { CodeLanguageEnum } from './models/enum';
@@ -35,6 +35,19 @@ export class AppComponent implements OnInit, OnDestroy {
   private subscription = new Subscription();
 
   constructor(private route: ActivatedRoute) {
+    effect(() => {
+      const isDarkmode = this.uiStore.darkMode();
+      // Récupération de la balise <html> et manipulation de sa classe via Renderer2
+      const htmlElement = document.documentElement;
+      if (isDarkmode) {
+        htmlElement.classList.add('dark-mode');
+        htmlElement.classList.remove('light-mode');
+      } else {
+        htmlElement.classList.remove('dark-mode');
+        htmlElement.classList.add('light-mode');
+      }
+    });
+
     this.route.queryParams.subscribe((params) => {
       const lang = params['lang'];
       this.languageStore.setUiLanguage(lang);

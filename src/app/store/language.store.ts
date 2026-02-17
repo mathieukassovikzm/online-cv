@@ -1,17 +1,7 @@
-import { computed, inject } from '@angular/core';
+import { inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { patchState, signalStore, withComputed, withMethods, withState } from '@ngrx/signals';
-import _ from 'lodash';
-import { IAboutModel, IExperienceModel } from '../models/about';
-import { CodeLanguageEnum, PagesEnum } from '../models/enum';
-import { IHomeModel } from '../models/home';
-import { IInfosModel, ILanguageModel } from '../models/infos';
-import { IUiTxtModel } from '../models/uiTxt';
-import { aboutEn, aboutEs, aboutFr } from '../services/cv-math/dataAbout';
-import { homeEn, homeEs, homeFr } from '../services/cv-math/dataHome';
-import { infosEn, infosEs, infosFr } from '../services/cv-math/dataInfos';
-import { languagesEn, languagesEs, languagesFr } from '../services/cv-math/dataLanguages';
-import { uiTxtEn, uiTxtEs, uiTxtFr } from '../services/ui-txt/ui-txt';
+import { patchState, signalStore, withMethods, withState } from '@ngrx/signals';
+import { CodeLanguageEnum } from '../models/enum';
 
 type LanguageState = {
   uiLanguage: CodeLanguageEnum;
@@ -24,85 +14,11 @@ const initialState: LanguageState = {
 export const LanguageStore = signalStore(
   { providedIn: 'root' },
   withState<LanguageState>(initialState),
-  withComputed((store) => ({
-    getLanguages: computed(() => {
-      const language = store.uiLanguage();
-      switch (language) {
-        case CodeLanguageEnum.FR:
-          return languagesFr;
-        case CodeLanguageEnum.EN:
-          return languagesEn;
-        case CodeLanguageEnum.ES:
-          return languagesEs;
-        default:
-          return languagesFr;
-      }
-    }),
-
-    getUiTxt: computed(() => {
-      const language = store.uiLanguage();
-      switch (language) {
-        case CodeLanguageEnum.FR:
-          return uiTxtFr;
-        case CodeLanguageEnum.EN:
-          return uiTxtEn;
-        case CodeLanguageEnum.ES:
-          return uiTxtEs;
-        default:
-          return uiTxtFr;
-      }
-    }),
-
-    getHomeTxt: computed(() => {
-      const language = store.uiLanguage();
-      switch (language) {
-        case CodeLanguageEnum.FR:
-          return homeFr;
-        case CodeLanguageEnum.EN:
-          return homeEn;
-        case CodeLanguageEnum.ES:
-          return homeEs;
-        default:
-          return homeFr;
-      }
-    }),
-
-    getInfosTxt: computed(() => {
-      const language = store.uiLanguage();
-      switch (language) {
-        case CodeLanguageEnum.FR:
-          return infosFr;
-        case CodeLanguageEnum.EN:
-          return infosEn;
-        case CodeLanguageEnum.ES:
-          return infosEs;
-        default:
-          return infosFr;
-      }
-    }),
-
-    getAboutTxt: computed(() => {
-      const language = store.uiLanguage();
-      switch (language) {
-        case CodeLanguageEnum.FR:
-          return aboutFr;
-        case CodeLanguageEnum.EN:
-          return aboutEn;
-        case CodeLanguageEnum.ES:
-          return aboutEs;
-        default:
-          return aboutFr;
-      }
-    }),
-  })),
   withMethods((
     store,
     router = inject(Router),
     route = inject(ActivatedRoute)
   ) => ({
-
-		//#region UI Language
-
     setUiLanguage(lang: CodeLanguageEnum): void {
       if (lang === undefined || lang === null) {
         lang = this.getUsersLocale(CodeLanguageEnum.FR);
@@ -143,36 +59,6 @@ export const LanguageStore = signalStore(
         default:
           return defaultValue;
       }
-    },
-    
-		//#endregion
-
-    getUiPageName(page: PagesEnum): string {
-      const navTxt = store.getUiTxt().navTxt;
-
-      switch (page) {
-        case PagesEnum.HOME:
-          return navTxt.homeTitle;
-        case PagesEnum.ABOUT:
-          return navTxt.aboutTitle;
-        case PagesEnum.PROJECTS:
-          return navTxt.projectsTitle;
-        case PagesEnum.CONTACTS:
-          return navTxt.contactTitle;
-        default:
-          return '';
-      }
-    },
-
-    getLifeTimeline(): IExperienceModel[] {
-      const about = store.getAboutTxt();
-      let timeline: IExperienceModel[] = _.union(
-        about?.educations,
-        about?.archievements,
-        about?.experiencesPro
-      );
-      timeline = _.orderBy(timeline, (i) => i.dateEnd, ['desc']);
-      return timeline;
     },
   }))
 );

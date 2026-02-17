@@ -1,5 +1,5 @@
 @mixin color-mixin() {
-	$main-color-light: linear-gradient(159deg,#2d2d3a 0%,#2b2b35 100%) !global;
+  $main-color-light: #2b2b35 !global;
   $main-color: #20202a !global;
   $main-color-dark: #191923 !global;
 	

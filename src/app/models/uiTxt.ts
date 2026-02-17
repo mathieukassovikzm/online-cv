@@ -4,6 +4,7 @@ export interface IUiTxtModel {
   homeTxt: IUiTxtHomeModel;
   aboutTxt: IUiTxtAboutModel;
   cardTxt: IUiTxtCardModel;
+  portfolioTxt?: IUiTxtPortfolioModel;
 }
 
 export interface IUiTxtNavModel {
@@ -58,4 +59,13 @@ export interface IUiTxtAboutModel {
 export interface IUiTxtCardModel {
   tasksTitle: string;
   technicalEnvTitle: string;
+}
+
+export interface IUiTxtPortfolioModel {
+  portfolioTitle: string;
+  typeProjectAllTitle: string;
+  typeProjectLogoTitle: string;
+  typeProjectVideoTitle: string;
+  typeProjectFairePartTitle: string;
+  typeProjectWebsiteTitle: string;
 }

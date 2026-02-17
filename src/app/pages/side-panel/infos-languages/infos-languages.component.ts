@@ -4,7 +4,7 @@ import { CodeLanguageEnum } from 'src/app/models/enum';
 import { SvgEnComponent } from 'src/app/shared/svgs/skills/language/svg-en/svg-en.component';
 import { SvgEsComponent } from 'src/app/shared/svgs/skills/language/svg-es/svg-es.component';
 import { SvgFrComponent } from 'src/app/shared/svgs/skills/language/svg-fr/svg-fr.component';
-import { LanguageStore } from 'src/app/store/language.store';
+import { UiStore } from 'src/app/store/ui.store';
 
 const modules = [CommonModule];
 const svgs = [SvgFrComponent, SvgEnComponent, SvgEsComponent];
@@ -17,7 +17,7 @@ const svgs = [SvgFrComponent, SvgEnComponent, SvgEsComponent];
   standalone: true
 })
 export class InfosLanguagesComponent {
-  readonly languageStore = inject(LanguageStore);
+  readonly uiStore = inject(UiStore);
 
   public codeFr = CodeLanguageEnum.FR;
   public codeEn = CodeLanguageEnum.EN;

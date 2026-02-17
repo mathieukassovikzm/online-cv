@@ -1,29 +1,27 @@
 <section class="section-life-timeline">
   <h2>{{uiText.lifeTimelineTitle}}</h2>
-  <div class="categories-grid">
-    <nav class="categories">
-      <ul class="life-timeline-filter">
-        <li>
-          <a (click)="filterTimelineEvents()" [class.active]="isActif()">{{uiText.allExpeTitle}}</a>
-        </li>
-        <li>
-          <a (click)="filterTimelineEvents(typeExpeEduc)"
+  <nav>
+    <ul class="filter">
+      <li>
+        <a (click)="filterTimelineEvents()" [class.active]="isActif()">{{uiText.allExpeTitle}}</a>
+      </li>
+      <li>
+        <a (click)="filterTimelineEvents(typeExpeEduc)"
           [class.active]="isActif(typeExpeEduc)">{{uiText.educationTitle}}</a>
-        </li>
-        <li>
-          <a (click)="filterTimelineEvents(typeExpeExpePro)"
+      </li>
+      <li>
+        <a (click)="filterTimelineEvents(typeExpeExpePro)"
           [class.active]="isActif(typeExpeExpePro)">{{uiText.expeProTitle}}</a>
-        </li>
-        <li>
-          <a (click)="filterTimelineEvents(typeExpeArchi)"
+      </li>
+      <li>
+        <a (click)="filterTimelineEvents(typeExpeArchi)"
           [class.active]="isActif(typeExpeArchi)">{{uiText.archivementTitle}}</a>
-        </li>
-      </ul>
-    </nav>
-  </div>
+      </li>
+    </ul>
+  </nav>
   <div class="lst-cards-container" [@filterAnimation]="timelineEventsFilteredTotal()">
     @for (event of sTimelineEventsFiltered(); track $index) {
-      <app-life-experience [item]="event"></app-life-experience>
+    <app-life-experience [item]="event"></app-life-experience>
     }
   </div>
 </section>

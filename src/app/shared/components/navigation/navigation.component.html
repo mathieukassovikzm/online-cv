@@ -10,27 +10,27 @@
       <label class="home" routerLink="/home" [queryParams]="{lang: language()}" routerLinkActive="active">
         <img class="photo" src="./../../../../assets/images/PhotoCv.jpg" alt="Mathieu LE BELLEC"
           (click)="switchMenu(1)">
-        <span class="txt">{{ languageStore.getUiTxt().navTxt.homeTitle }}</span>
+        <span class="txt">{{ uiText.navTxt.homeTitle }}</span>
       </label>
     </li>
     <li [class.active]="itemMenuActif===2">
       <label routerLink="/about" [queryParams]="{lang: language()}" routerLinkActive="active">
         <app-svg-info (click)="switchMenu(2)"></app-svg-info>
-        <span class="txt">{{ languageStore.getUiTxt().navTxt.aboutTitle }}</span>
+        <span class="txt">{{ uiText.navTxt.aboutTitle }}</span>
         <span class="bubble"></span>
       </label>
     </li>
     <li [class.active]="itemMenuActif===3">
       <label routerLink="/projets" [queryParams]="{lang: language()}" routerLinkActive="active">
         <app-svg-work (click)="switchMenu(3)"></app-svg-work>
-        <span class="txt">{{ languageStore.getUiTxt().navTxt.projectsTitle }}</span>
+        <span class="txt">{{ uiText.navTxt.projectsTitle }}</span>
         <span class="bubble"></span>
       </label>
     </li>
     <li [class.active]="itemMenuActif===4">
       <label routerLink="/contacts" [queryParams]="{lang: language()}" routerLinkActive="active">
         <app-svg-phone (click)="switchMenu(4)"></app-svg-phone>
-        <span class="txt">{{ languageStore.getUiTxt().navTxt.contactTitle }}</span>
+        <span class="txt">{{ uiText.navTxt.contactTitle }}</span>
         <span class="bubble"></span>
       </label>
     </li>

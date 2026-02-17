@@ -43,7 +43,7 @@ $banner-w: 290px;
       min-width: $banner-w;
       height: calc(100vh - $app-p * 2);
       transition: height $animation-duration ease-in-out;
-      z-index: 999;
+      z-index: 99;
       overflow-y: auto;
 
       &::-webkit-scrollbar {

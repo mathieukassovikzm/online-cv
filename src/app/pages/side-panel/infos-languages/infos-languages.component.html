@@ -1,5 +1,5 @@
 <ul>
-  @for (item of languageStore.getLanguages(); track $index) {
+  @for (item of uiStore.getLanguages(); track $index) {
     <li>
       <div class="logo">
         @if (item.code === codeFr) {

@@ -1,7 +1,7 @@
 <section class="section-services">
-  <h2>{{languageStore.getUiTxt().homeTxt.servicesTitle}}</h2>
+  <h2>{{uiText().servicesTitle }}</h2>
   <ul>
-    @for (item of languageStore.getHomeTxt().lstServices; track $index) {
+    @for (item of services(); track $index) {
       <li>
         <app-service [item]="item"></app-service>
       </li>
