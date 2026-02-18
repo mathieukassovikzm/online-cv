@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, EventEmitter, HostBinding, Input, OnInit, Output, signal } from '@angular/core';
 import { IProjectModel } from 'src/app/models/project';
 
@@ -6,7 +6,7 @@ import { IProjectModel } from 'src/app/models/project';
   selector: 'app-portfolio-carousel',
   templateUrl: './portfolio-carousel.component.html',
   styleUrls: ['./portfolio-carousel.component.scss'],
-  imports: [CommonModule],
+  imports: [],
   standalone: true
 })
 export class PortfolioCarouselComponent implements OnInit {

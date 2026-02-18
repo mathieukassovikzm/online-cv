@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import {
   Component,
   HostBinding,
@@ -18,7 +18,7 @@ const svgs = [SvgMedalComponent, SvgWorkComponent, SvgEducationComponent];
   selector: 'app-card',
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss'],
-  imports: [CommonModule, ...svgs],
+  imports: [...svgs],
   standalone: true
 })
 export class CardComponent {

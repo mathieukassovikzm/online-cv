@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { afterNextRender, Component, ElementRef, HostBinding, Input, output, Renderer2, ViewChild } from '@angular/core';
 import { IProjectModel } from 'src/app/models/project';
 
@@ -6,7 +6,7 @@ import { IProjectModel } from 'src/app/models/project';
   selector: 'app-portfolio-item',
   templateUrl: './portfolio-item.component.html',
   styleUrls: ['./portfolio-item.component.scss'],
-  imports: [CommonModule],
+  imports: [],
   standalone: true
 })
 export class PortfolioItemComponent {

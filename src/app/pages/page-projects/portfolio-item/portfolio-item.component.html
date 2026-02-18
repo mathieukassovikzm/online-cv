@@ -1,14 +1,20 @@
-<div class="portfolio-item" *ngIf="project" (click)="onItemClicked()">
-  <div class="portfolio-item-photo" *ngIf="project.photo">
-    <img [src]="project.photo" [alt]="project.title" class="portfolio-item-image">
-  </div>
-  <div #portfolioItemContent class="portfolio-item-content">
-    <!-- <a [href]="project.link" target="_blank" rel="noopener noreferrer" class="title-container">
+@if (project) {
+  <div class="portfolio-item" (click)="onItemClicked()">
+    @if (project.photo) {
+      <div class="portfolio-item-photo">
+        <img [src]="project.photo" [alt]="project.title" class="portfolio-item-image">
+      </div>
+    }
+    <div #portfolioItemContent class="portfolio-item-content">
+      <!-- <a [href]="project.link" target="_blank" rel="noopener noreferrer" class="title-container">
       <h4 class="portfolio-item__title">{{ project.title }}</h4>
     </a> -->
     <h4 class="title"> {{project.title}} </h4>
-    <p class="portfolio-item__description" *ngIf="project.description">
-      {{ project.description }}
-    </p>
+    @if (project.description) {
+      <p class="portfolio-item__description">
+        {{ project.description }}
+      </p>
+    }
   </div>
 </div>
+}
