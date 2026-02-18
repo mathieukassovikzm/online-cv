@@ -1,5 +1,5 @@
 
-import { afterNextRender, Component, ElementRef, HostBinding, Input, output, Renderer2, ViewChild, inject } from '@angular/core';
+import { afterNextRender, Component, ElementRef, HostBinding, output, Renderer2, ViewChild, inject, input } from '@angular/core';
 import { IProjectModel } from 'src/app/models/project';
 
 @Component({
@@ -13,7 +13,7 @@ export class PortfolioItemComponent {
   private renderer = inject(Renderer2);
 
   @HostBinding('class') class = 'portfolio-item-component';
-  @Input() project: IProjectModel | undefined;
+  readonly project = input<IProjectModel>();
   readonly openCarouselEvent = output<IProjectModel | undefined>();
 
   @ViewChild('portfolioItemContent') portfolioItemContent?: ElementRef<HTMLDivElement>;
@@ -55,6 +55,6 @@ export class PortfolioItemComponent {
   }
 
   public onItemClicked(): void {
-    this.openCarouselEvent.emit(this.project);
+    this.openCarouselEvent.emit(this.project());
   }
 }

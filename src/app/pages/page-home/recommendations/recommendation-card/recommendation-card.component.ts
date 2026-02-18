@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { IRecommendationModel } from 'src/app/models/home';
 
 const modules = [CommonModule];
@@ -12,13 +12,13 @@ const modules = [CommonModule];
   standalone: true
 })
 export class RecommendationCardComponent {
-  @Input() person: IRecommendationModel = <IRecommendationModel>{};
+  readonly person = input<IRecommendationModel>(<IRecommendationModel>{});
   /** Width of the card */
-  @Input() width: string = '';
+  readonly width = input<string>('');
 
   constructor() { }
 
   public getPhoto(): string {
-    return this.person.photo ?? './assets/recommendations/avatar.webp';
+    return this.person().photo ?? './assets/recommendations/avatar.webp';
   }
 }

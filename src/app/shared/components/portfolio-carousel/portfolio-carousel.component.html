@@ -12,13 +12,13 @@
     @if (currentProject) {
       <div class="carousel-content">
         <!-- Navigation Buttons -->
-        <button class="carousel-nav carousel-btn carousel-nav--prev" (click)="previousProject()" [disabled]="projects.length <= 1"
+        <button class="carousel-nav carousel-btn carousel-nav--prev" (click)="previousProject()" [disabled]="projects().length <= 1"
           aria-label="Previous project" type="button">
           <svg viewBox="0 0 24 24">
             <polyline points="15,18 9,12 15,6"></polyline>
           </svg>
         </button>
-        <button class="carousel-nav carousel-btn carousel-nav--next" (click)="nextProject()" [disabled]="projects.length <= 1"
+        <button class="carousel-nav carousel-btn carousel-nav--next" (click)="nextProject()" [disabled]="projects().length <= 1"
           aria-label="Next project" type="button">
           <svg viewBox="0 0 24 24">
             <polyline points="9,18 15,12 9,6"></polyline>
@@ -55,9 +55,9 @@
     }
 
     <!-- Dots Navigation -->
-    @if (projects.length > 1) {
+    @if (projects().length > 1) {
       <div class="carousel-dots">
-        @for (project of projects; track $index) {
+        @for (project of projects(); track $index) {
           <button class="carousel-dot" [class.active]="$index === currentIndex()" (click)="goToProject($index)"
           [attr.aria-label]="'Go to project ' + ($index + 1)" type="button"></button>
         }
@@ -65,9 +65,9 @@
     }
 
     <!-- Counter -->
-    @if (projects.length > 1) {
+    @if (projects().length > 1) {
       <div class="carousel-counter">
-        {{ currentIndex() + 1 }} / {{ projects.length }}
+        {{ currentIndex() + 1 }} / {{ projects().length }}
       </div>
     }
   </div>

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { afterNextRender, Component, ElementRef, Input, Renderer2, ViewChild, inject } from '@angular/core';
+import { afterNextRender, Component, ElementRef, Renderer2, ViewChild, inject, input } from '@angular/core';
 import { IHobbyModel } from 'src/app/models/about';
 import { TypeHobbyEnum } from 'src/app/models/enum';
 import { SvgEducationComponent } from 'src/app/shared/svgs/ui/svg-education/svg-education.component';
@@ -19,7 +19,7 @@ const svgs = [SvgEducationComponent, SvgMedalComponent, SvgWorkComponent];
 export class HobbyComponent {
   private renderer = inject(Renderer2);
 
-  @Input() item: IHobbyModel | undefined;
+  readonly item = input<IHobbyModel>();
 
   @ViewChild('divCardInfos') divCardInfos?: ElementRef<HTMLInputElement>;
   @ViewChild('divDescription') divDescription?: ElementRef<HTMLInputElement>;

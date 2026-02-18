@@ -1,5 +1,5 @@
 
-import { Component, EventEmitter, HostBinding, Input, OnInit, Output, signal } from '@angular/core';
+import { Component, EventEmitter, HostBinding, OnInit, Output, signal, input } from '@angular/core';
 import { IProjectModel } from 'src/app/models/project';
 
 @Component({
@@ -11,8 +11,8 @@ import { IProjectModel } from 'src/app/models/project';
 })
 export class PortfolioCarouselComponent implements OnInit {
   @HostBinding('class') class = 'portfolio-carousel-component';
-  @Input() projects: IProjectModel[] = [];
-  @Input() currentItemOpen: IProjectModel | undefined;
+  readonly projects = input<IProjectModel[]>([]);
+  readonly currentItemOpen = input<IProjectModel>();
   @Output() close = new EventEmitter<void>();
 
   currentIndex = signal(0);
@@ -20,28 +20,28 @@ export class PortfolioCarouselComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    const findIndex = this.projects.findIndex(p => p.id === this.currentItemOpen?.id);
+    const findIndex = this.projects().findIndex(p => p.id === this.currentItemOpen()?.id);
     this.currentIndex.set(findIndex !== -1 ? findIndex : 0);
   }
 
   get currentProject(): IProjectModel | undefined {
-    return this.projects[this.currentIndex()];
+    return this.projects()[this.currentIndex()];
   }
 
   previousProject(): void {
     const newIndex = this.currentIndex() === 0
-      ? this.projects.length - 1
+      ? this.projects().length - 1
       : this.currentIndex() - 1;
     this.currentIndex.set(newIndex);
   }
 
   nextProject(): void {
-    const newIndex = (this.currentIndex() + 1) % this.projects.length;
+    const newIndex = (this.currentIndex() + 1) % this.projects().length;
     this.currentIndex.set(newIndex);
   }
 
   goToProject(index: number): void {
-    if (index >= 0 && index < this.projects.length) {
+    if (index >= 0 && index < this.projects().length) {
       this.currentIndex.set(index);
     }
   }
