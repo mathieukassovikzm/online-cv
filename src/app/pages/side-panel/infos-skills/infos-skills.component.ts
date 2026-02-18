@@ -18,6 +18,8 @@ const components = [SkillComponent];
   standalone: true
 })
 export class InfosSkillsComponent implements OnInit {
+  private infosService = inject(InfosService);
+
   readonly languageStore = inject(LanguageStore);
   readonly uiStore = inject(UiStore);
 
@@ -30,7 +32,7 @@ export class InfosSkillsComponent implements OnInit {
   public skillsTools = <ISkillModel[]>[];
   public skillsAdobe = <ISkillModel[]>[];
 
-  constructor(private infosService: InfosService) { }
+  constructor() { }
 
   ngOnInit(): void {
     this.skillsFrontEnd = this.infosService.getLstSkillsByType(

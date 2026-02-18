@@ -1,5 +1,5 @@
 
-import { afterNextRender, Component, ElementRef, HostBinding, Input, output, Renderer2, ViewChild } from '@angular/core';
+import { afterNextRender, Component, ElementRef, HostBinding, Input, output, Renderer2, ViewChild, inject } from '@angular/core';
 import { IProjectModel } from 'src/app/models/project';
 
 @Component({
@@ -10,15 +10,15 @@ import { IProjectModel } from 'src/app/models/project';
   standalone: true
 })
 export class PortfolioItemComponent {
+  private renderer = inject(Renderer2);
+
   @HostBinding('class') class = 'portfolio-item-component';
   @Input() project: IProjectModel | undefined;
   readonly openCarouselEvent = output<IProjectModel | undefined>();
 
   @ViewChild('portfolioItemContent') portfolioItemContent?: ElementRef<HTMLDivElement>;
 
-  constructor(
-    private renderer: Renderer2
-  ) {
+  constructor() {
     // Use afterNextRender for zoneless change detection compatibility
     afterNextRender(() => {
       this.setupMediaQueryLogic();

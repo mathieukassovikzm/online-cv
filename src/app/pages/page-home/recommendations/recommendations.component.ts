@@ -32,6 +32,8 @@ const components = [RecommendationCardComponent];
 })
 export class RecommendationsComponent
   implements OnInit, AfterViewInit, OnDestroy {
+  private host = inject<ElementRef<HTMLElement>>(ElementRef);
+
 
   readonly uiStore = inject(UiStore);
   readonly homeStore = inject(HomeStore);
@@ -70,7 +72,7 @@ export class RecommendationsComponent
   private subscription$ = new Subscription();
   private interval: any;
 
-  constructor(private host: ElementRef<HTMLElement>) {
+  constructor() {
     this.resizeObservable$ = fromEvent(window, 'resize');
     var subResize = this.resizeObservable$.subscribe(() => {
       this.onResize();

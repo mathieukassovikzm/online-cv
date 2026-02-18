@@ -27,12 +27,14 @@ const components = [
   standalone: true
 })
 export class AppComponent {
+  private route = inject(ActivatedRoute);
+
   readonly uiStore = inject(UiStore);
   readonly languageStore = inject(LanguageStore);
 
   title = 'online-cv-math';
 
-  constructor(private route: ActivatedRoute) {
+  constructor() {
     effect(() => {
       const isDarkmode = this.uiStore.darkMode();
       // Récupération de la balise <html> et manipulation de sa classe via Renderer2

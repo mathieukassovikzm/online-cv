@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CodeSocialNetworkEnum } from 'src/app/models/enum';
 import { ISocialNetwork } from 'src/app/models/infos';
 import { InfosService } from 'src/app/services/infos.service';
@@ -20,6 +20,8 @@ const svgs = [SvgFacebookComponent, SvgInstagramComponent, SvgGithubComponent, S
   standalone: true
 })
 export class LstSocialsComponent implements OnInit {
+  private infosService = inject(InfosService);
+
   public lstSocials: ISocialNetwork[] = [];
   public codeFB = CodeSocialNetworkEnum.FB;
   public codeIS = CodeSocialNetworkEnum.IS;
@@ -27,7 +29,7 @@ export class LstSocialsComponent implements OnInit {
   public codeGH = CodeSocialNetworkEnum.GH;
   public codeBI = CodeSocialNetworkEnum.BI;
 
-  constructor(private infosService: InfosService) { }
+  constructor() { }
 
   ngOnInit() {
     this.lstSocials = this.infosService.getLstSocialNetwork();

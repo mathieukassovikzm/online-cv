@@ -10,9 +10,11 @@ import { UiStore } from 'src/app/store/ui.store';
   standalone: true
 })
 export class FooterComponent {
+  private infosService = inject(InfosService);
+
   readonly uiStore = inject(UiStore);
 
   public infosPerso: IInfosModel = this.uiStore.getInfosTxt();
 
-  constructor(private infosService: InfosService) { }
+  constructor() { }
 }
