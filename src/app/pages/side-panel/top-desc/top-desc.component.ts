@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component, computed, inject, OnInit, Signal } from '@angular/core';
+import { Component, computed, inject, OnInit } from '@angular/core';
 import { CodeLanguageEnum } from 'src/app/models/enum';
-import { IInfosModel } from 'src/app/models/infos';
+import { BtnDarkModeComponent } from 'src/app/shared/components/btn-dark-mode/btn-dark-mode.component';
 import { LstSocialsComponent } from 'src/app/shared/components/lst-socials/lst-socials.component';
 import { SvgEnComponent } from 'src/app/shared/svgs/skills/language/svg-en/svg-en.component';
 import { SvgEsComponent } from 'src/app/shared/svgs/skills/language/svg-es/svg-es.component';
@@ -12,7 +12,7 @@ import { UiStore } from 'src/app/store/ui.store';
 
 const modules = [CommonModule];
 const svgs = [SvgDownloadComponent, SvgFrComponent, SvgEnComponent, SvgEsComponent];
-const components = [LstSocialsComponent];
+const components = [LstSocialsComponent, BtnDarkModeComponent];
 
 @Component({
   selector: 'app-top-desc',
