@@ -3,10 +3,9 @@
 
 $img-s: 120px;
 $lamp-s: 17px;
-$lamp-c: var(--primary-color);
 $svg-dowload-s: 16px;
 $scale-from: 0.95;
-$lamp-pulse-c: $light;
+$lamp-pulse-c: #11c535;
 
 /*------------- ABOUT -------------*/
 .about {
@@ -28,21 +27,41 @@ $lamp-pulse-c: $light;
     border-radius: 50%;
   }
 
-  .lamp-glow {
-    .lamp {
-      position: absolute;
-      bottom: -1px;
-      right: 1px;
-      background: $lamp-c;
-      border-radius: 50%;
-      margin: 10px;
-      height: $lamp-s;
-      width: $lamp-s;
+  .lamp-glow .lamp {
+    position: absolute;
+    bottom: -1px;
+    right: 1px;
+    background: #da202b;
+    border-radius: 50%;
+    margin: 10px;
+    height: $lamp-s;
+    width: $lamp-s;
+    box-shadow: 0 0 0 0 rgba($lamp-pulse-c, 1);
+    transform: scale(1);
+  }
 
-      box-shadow: 0 0 0 0 rgba($lamp-pulse-c, 1);
-      transform: scale(1);
+  .lamp-glow.is-available {
+    .lamp {
+      background: #11c535;
       animation: pulse 2s infinite;
     }
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale($scale-from);
+    box-shadow: 0 0 0 0 rgba($lamp-pulse-c, 0.7);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 5px rgba($lamp-pulse-c, 0);
+  }
+
+  100% {
+    transform: scale($scale-from);
+    box-shadow: 0 0 0 0 rgba($lamp-pulse-c , 0);
   }
 }
 
@@ -123,23 +142,6 @@ $lamp-pulse-c: $light;
   display: block;
   position: relative;
   top: 30px;
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale($scale-from);
-    box-shadow: 0 0 0 0 rgba($lamp-pulse-c, 0.7);
-  }
-
-  70% {
-    transform: scale(1);
-    box-shadow: 0 0 0 5px rgba($lamp-pulse-c, 0);
-  }
-
-  100% {
-    transform: scale($scale-from);
-    box-shadow: 0 0 0 0 rgba($lamp-pulse-c , 0);
-  }
 }
 
 /* ---------------------- Media query ----------------------------*/

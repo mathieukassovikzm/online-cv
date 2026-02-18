@@ -1,22 +1,32 @@
 <ul>
-  <li>
+  @if (infosPersonnal()?.birth) {
+    <li>
     <h6>{{ uiText().birthTitle}}</h6>
-    <span>{{ infosPersonnal().birth }}</span>
+    <span>{{ infosPersonnal()?.birth }}</span>
   </li>
-  <li>
+  }
+  @if (infosPersonnal()?.nationality) {
+    <li>
     <h6>{{ uiText().nationalityTitle}}</h6>
-    <span>{{ infosPersonnal().nationality }}</span>
+    <span>{{ infosPersonnal()?.nationality }}</span>
   </li>
-  <li>
+  }
+  @if (infosPersonnal()?.status) {
+    <li>
     <h6>{{ uiText().statusTitle}}</h6>
-    <span>{{ infosPersonnal().status }}</span>
+    <span>{{ infosPersonnal()?.status }}</span>
   </li>
-  <li>
+  }
+  @if (infosPersonnal()?.drivingLiscence) {
+    <li>
     <h6>{{ uiText().drivingLiscenceTitle}}</h6>
-    <span>{{ infosPersonnal().drivingLiscence }}</span>
+    <span>{{ infosPersonnal()?.drivingLiscence }}</span>
   </li>
-  <li>
+  }
+  @if (infosPersonnal()?.car) {
+    <li>
     <h6>{{ uiText().carTitle}}</h6>
-    <span>{{ infosPersonnal().car }}</span>
+    <span>{{ infosPersonnal()?.car }}</span>
   </li>
+  }
 </ul>

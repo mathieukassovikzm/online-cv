@@ -3,6 +3,7 @@ import { Component, computed, inject, OnInit } from '@angular/core';
 import { CodeLanguageEnum } from 'src/app/models/enum';
 import { BtnDarkModeComponent } from 'src/app/shared/components/btn-dark-mode/btn-dark-mode.component';
 import { LstSocialsComponent } from 'src/app/shared/components/lst-socials/lst-socials.component';
+import { AvailableTitlePipe } from 'src/app/shared/pipes';
 import { SvgEnComponent } from 'src/app/shared/svgs/skills/language/svg-en/svg-en.component';
 import { SvgEsComponent } from 'src/app/shared/svgs/skills/language/svg-es/svg-es.component';
 import { SvgFrComponent } from 'src/app/shared/svgs/skills/language/svg-fr/svg-fr.component';
@@ -18,7 +19,7 @@ const components = [LstSocialsComponent, BtnDarkModeComponent];
   selector: 'app-top-desc',
   templateUrl: './top-desc.component.html',
   styleUrls: ['./top-desc.component.scss'],
-  imports: [...modules, ...svgs, ...components],
+  imports: [...modules, ...svgs, ...components, AvailableTitlePipe],
   standalone: true
 })
 export class TopDescComponent implements OnInit {
