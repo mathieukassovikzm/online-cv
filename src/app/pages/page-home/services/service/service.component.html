@@ -2,10 +2,10 @@
   <div #divCardInfos class="card-infos">
     <div class="title-container">
       <h4 class="title">
-        {{item?.title}}
+        {{item()?.title}}
       </h4>
     </div>
-    @if (item?.descriptions; as description) {
+    @if (item()?.descriptions; as description) {
       <div class="description">
         @for (dsc of description; track $index) {
           <p> {{dsc}} </p>

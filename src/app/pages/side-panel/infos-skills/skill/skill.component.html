@@ -1,108 +1,108 @@
 <div class="skill">
 
   <div class="logo">
-    @if (skill.name === 'Angular') {
+    @if (skill().name === 'Angular') {
       <app-svg-angular></app-svg-angular>
     }
-    @if (skill.name === 'VueJs') {
+    @if (skill().name === 'VueJs') {
       <app-svg-vuejs></app-svg-vuejs>
     }
-    @if (skill.name === 'Blazor') {
+    @if (skill().name === 'Blazor') {
       <app-svg-blazor></app-svg-blazor>
     }
-    @if (skill.name === 'HTML5') {
+    @if (skill().name === 'HTML5') {
       <app-svg-html></app-svg-html>
     }
-    @if (skill.name === 'CSS3') {
+    @if (skill().name === 'CSS3') {
       <app-svg-css></app-svg-css>
     }
-    @if (skill.name === 'SCSS') {
+    @if (skill().name === 'SCSS') {
       <app-svg-sass></app-svg-sass>
     }
-    @if (skill.name === 'TypeScript') {
+    @if (skill().name === 'TypeScript') {
       <app-svg-typescript></app-svg-typescript>
     }
-    @if (skill.name === 'Javascript') {
+    @if (skill().name === 'Javascript') {
       <app-svg-javascript></app-svg-javascript>
     }
-    @if (skill.name === 'Wordpress') {
+    @if (skill().name === 'Wordpress') {
       <app-svg-wordpress></app-svg-wordpress>
     }
-    @if (skill.name === 'Divi') {
+    @if (skill().name === 'Divi') {
       <app-svg-divi></app-svg-divi>
     }
 
-    @if (skill.name === 'C#') {
+    @if (skill().name === 'C#') {
       <app-svg-c-sharp></app-svg-c-sharp>
     }
-    @if (skill.name === 'Java') {
+    @if (skill().name === 'Java') {
       <app-svg-java></app-svg-java>
     }
-    @if (skill.name === 'C++') {
+    @if (skill().name === 'C++') {
       <app-svg-c-plus-plus></app-svg-c-plus-plus>
     }
 
-    @if (skill.name === 'Oracle') {
+    @if (skill().name === 'Oracle') {
       <app-svg-sql-oracle></app-svg-sql-oracle>
     }
-    @if (skill.name === 'MySql') {
+    @if (skill().name === 'MySql') {
       <app-svg-mysql></app-svg-mysql>
     }
 
-    @if (skill.name === 'Git') {
+    @if (skill().name === 'Git') {
       <app-svg-git></app-svg-git>
     }
-    @if (skill.name === 'Svn') {
+    @if (skill().name === 'Svn') {
       <app-svg-svn></app-svg-svn>
     }
 
-    @if (skill.name === 'Visual Studio') {
+    @if (skill().name === 'Visual Studio') {
       <app-svg-visual-studio></app-svg-visual-studio>
     }
-    @if (skill.name === 'Visual Studio Code') {
+    @if (skill().name === 'Visual Studio Code') {
       <app-svg-visual-studio-code></app-svg-visual-studio-code>
     }
-    @if (skill.name === 'Atom') {
+    @if (skill().name === 'Atom') {
       <app-svg-atom></app-svg-atom>
     }
-    @if (skill.name === 'GitKraken') {
+    @if (skill().name === 'GitKraken') {
       <app-svg-gitkraken></app-svg-gitkraken>
     }
-    @if (skill.name === 'SourceTree') {
+    @if (skill().name === 'SourceTree') {
       <app-svg-sourcetree></app-svg-sourcetree>
     }
 
-    @if (skill.name === 'Premiere') {
+    @if (skill().name === 'Premiere') {
       <app-svg-premiere-pro></app-svg-premiere-pro>
     }
-    @if (skill.name === 'After Effects') {
+    @if (skill().name === 'After Effects') {
       <app-svg-after-effects></app-svg-after-effects>
     }
-    @if (skill.name === 'Illustrator') {
+    @if (skill().name === 'Illustrator') {
       <app-svg-illustrator></app-svg-illustrator>
     }
-    @if (skill.name === 'Lightroom') {
+    @if (skill().name === 'Lightroom') {
       <app-svg-lightroom></app-svg-lightroom>
     }
-    @if (skill.name === 'Photoshop') {
+    @if (skill().name === 'Photoshop') {
       <app-svg-photoshop></app-svg-photoshop>
     }
 
-    @if (skill.name === 'French') {
+    @if (skill().name === 'French') {
       <app-svg-fr></app-svg-fr>
     }
-    @if (skill.name === 'English') {
+    @if (skill().name === 'English') {
       <app-svg-en></app-svg-en>
     }
-    @if (skill.name === 'Spanish') {
+    @if (skill().name === 'Spanish') {
       <app-svg-es></app-svg-es>
     }
 
   </div>
   <div class="skill-infos">
     <div class="desc">
-      <h5>{{skill.name}}</h5>
-      <h5>{{skill.power}}%</h5>
+      <h5>{{skill().name}}</h5>
+      <h5>{{skill().power}}%</h5>
     </div>
 
     <svg viewBox="0 0 100 1.72" preserveAspectRatio="none">

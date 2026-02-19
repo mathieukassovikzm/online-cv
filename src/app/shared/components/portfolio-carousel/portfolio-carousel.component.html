@@ -9,55 +9,66 @@
     </button>
 
     <!-- Main Content -->
-    <div class="carousel-content" *ngIf="currentProject">
-      <!-- Navigation Buttons -->
-      <button class="carousel-nav carousel-btn carousel-nav--prev" (click)="previousProject()" [disabled]="projects.length <= 1"
-        aria-label="Previous project" type="button">
-        <svg viewBox="0 0 24 24">
-          <polyline points="15,18 9,12 15,6"></polyline>
-        </svg>
-      </button>
-
-      <button class="carousel-nav carousel-btn carousel-nav--next" (click)="nextProject()" [disabled]="projects.length <= 1"
-        aria-label="Next project" type="button">
-        <svg viewBox="0 0 24 24">
-          <polyline points="9,18 15,12 9,6"></polyline>
-        </svg>
-      </button>
-
-      <!-- Image -->
-      <div class="carousel-image-container">
-        <img [src]="currentProject.photo" [alt]="currentProject.title" class="carousel-image"
-          *ngIf="currentProject.photo">
-        <div class="carousel-no-image" *ngIf="!currentProject.photo">
-          <p>No image available</p>
+    @if (currentProject) {
+      <div class="carousel-content">
+        <!-- Navigation Buttons -->
+        <button class="carousel-nav carousel-btn carousel-nav--prev" (click)="previousProject()" [disabled]="projects().length <= 1"
+          aria-label="Previous project" type="button">
+          <svg viewBox="0 0 24 24">
+            <polyline points="15,18 9,12 15,6"></polyline>
+          </svg>
+        </button>
+        <button class="carousel-nav carousel-btn carousel-nav--next" (click)="nextProject()" [disabled]="projects().length <= 1"
+          aria-label="Next project" type="button">
+          <svg viewBox="0 0 24 24">
+            <polyline points="9,18 15,12 9,6"></polyline>
+          </svg>
+        </button>
+        <!-- Image -->
+        <div class="carousel-image-container">
+          @if (currentProject.photo) {
+            <img [src]="currentProject.photo" [alt]="currentProject.title" class="carousel-image"
+              >
+          }
+          @if (!currentProject.photo) {
+            <div class="carousel-no-image">
+              <p>No image available</p>
+            </div>
+          }
+        </div>
+        <!-- Project Info -->
+        <div class="carousel-info">
+          <h2 class="carousel-title">{{ currentProject.title }}</h2>
+          @if (currentProject.description) {
+            <p class="carousel-description">
+              {{ currentProject.description }}
+            </p>
+          }
+          @if (currentProject.link) {
+            <a [href]="currentProject.link" target="_blank" class="carousel-link"
+              rel="noopener noreferrer">
+              View Project
+            </a>
+          }
         </div>
       </div>
-
-      <!-- Project Info -->
-      <div class="carousel-info">
-        <h2 class="carousel-title">{{ currentProject.title }}</h2>
-        <p class="carousel-description" *ngIf="currentProject.description">
-          {{ currentProject.description }}
-        </p>
-        <a *ngIf="currentProject.link" [href]="currentProject.link" target="_blank" class="carousel-link"
-          rel="noopener noreferrer">
-          View Project
-        </a>
-      </div>
-    </div>
+    }
 
     <!-- Dots Navigation -->
-    <div class="carousel-dots" *ngIf="projects.length > 1">
-      @for (project of projects; track $index) {
-      <button class="carousel-dot" [class.active]="$index === currentIndex()" (click)="goToProject($index)"
-        [attr.aria-label]="'Go to project ' + ($index + 1)" type="button"></button>
-      }
-    </div>
+    @if (projects().length > 1) {
+      <div class="carousel-dots">
+        @for (project of projects(); track $index) {
+          <button class="carousel-dot" [class.active]="$index === currentIndex()" (click)="goToProject($index)"
+          [attr.aria-label]="'Go to project ' + ($index + 1)" type="button"></button>
+        }
+      </div>
+    }
 
     <!-- Counter -->
-    <div class="carousel-counter" *ngIf="projects.length > 1">
-      {{ currentIndex() + 1 }} / {{ projects.length }}
-    </div>
+    @if (projects().length > 1) {
+      <div class="carousel-counter">
+        {{ currentIndex() + 1 }} / {{ projects().length }}
+      </div>
+    }
   </div>
 </div>

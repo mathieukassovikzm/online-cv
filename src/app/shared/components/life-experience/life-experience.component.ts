@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, HostBinding, inject, Input } from '@angular/core';
+import { Component, HostBinding, inject, input } from '@angular/core';
 import { IExperienceModel } from 'src/app/models/about';
 import { TypeExperienceEnum } from 'src/app/models/enum';
 import { UiStore } from 'src/app/store/ui.store';
@@ -19,7 +19,7 @@ const svgs = [SvgMedalComponent, SvgWorkComponent, SvgEducationComponent];
 })
 export class LifeExperienceComponent {
   @HostBinding('class') class = 'life-experience-component';
-  @Input() item: IExperienceModel | undefined;
+  readonly item = input<IExperienceModel>();
 
   readonly uiStore = inject(UiStore);
 

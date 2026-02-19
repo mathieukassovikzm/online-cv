@@ -1,12 +1,12 @@
 <div class="card-container">
-  <img [src]="item?.photo" alt="">
+  <img [src]="item()?.photo" alt="">
   <div #divCardInfos class="card-infos">
     <div class="title-container">
       <h4 class="title">
-        {{item?.title}}
+        {{item()?.title}}
       </h4>
     </div>
-    @if (item?.description; as description) {
+    @if (item()?.description; as description) {
       <div #divDescription class="description">
         @for (dsc of description; track $index) {
           <p> {{dsc}} </p>
@@ -14,13 +14,13 @@
       </div>
     }
     <div class="card-logo">
-      @if (item?.type === typeCreativity) {
+      @if (item()?.type === typeCreativity) {
         <app-svg-education> </app-svg-education>
       }
-      @if (item?.type === typeSport) {
+      @if (item()?.type === typeSport) {
         <app-svg-medal> </app-svg-medal>
       }
-      @if (item?.type === typeOther) {
+      @if (item()?.type === typeOther) {
         <app-svg-work> </app-svg-work>
       }
     </div>

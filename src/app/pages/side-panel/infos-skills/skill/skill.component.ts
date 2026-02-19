@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { ISkillModel } from 'src/app/models/infos';
 import { SvgAfterEffectsComponent } from 'src/app/shared/svgs/skills/adobe/svg-after-effects/svg-after-effects.component';
 import { SvgIllustratorComponent } from 'src/app/shared/svgs/skills/adobe/svg-illustrator/svg-illustrator.component';
@@ -79,11 +79,11 @@ const svgs = [
   standalone: true
 })
 export class SkillComponent {
-  @Input() skill = <ISkillModel>{};
+  readonly skill = input(<ISkillModel>{});
 
   constructor() { }
 
   getBarWidth(): string {
-    return `stroke-dashoffset:${100 - this.skill.power}`;
+    return `stroke-dashoffset:${100 - this.skill().power}`;
   }
 }

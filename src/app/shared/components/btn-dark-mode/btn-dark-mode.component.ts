@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, HostBinding, inject } from '@angular/core';
 import { UiStore } from 'src/app/store/ui.store';
 
@@ -6,7 +6,7 @@ import { UiStore } from 'src/app/store/ui.store';
   selector: 'app-btn-dark-mode',
   templateUrl: './btn-dark-mode.component.html',
   styleUrls: ['./btn-dark-mode.component.scss'],
-  imports: [CommonModule],
+  imports: [],
   standalone: true
 })
 export class BtnDarkModeComponent {

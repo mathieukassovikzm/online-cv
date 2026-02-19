@@ -1,24 +1,24 @@
-import { CommonModule } from '@angular/common';
-import { afterNextRender, Component, ElementRef, HostBinding, Input, output, Renderer2, ViewChild } from '@angular/core';
+
+import { afterNextRender, Component, ElementRef, HostBinding, output, Renderer2, ViewChild, inject, input } from '@angular/core';
 import { IProjectModel } from 'src/app/models/project';
 
 @Component({
   selector: 'app-portfolio-item',
   templateUrl: './portfolio-item.component.html',
   styleUrls: ['./portfolio-item.component.scss'],
-  imports: [CommonModule],
+  imports: [],
   standalone: true
 })
 export class PortfolioItemComponent {
+  private renderer = inject(Renderer2);
+
   @HostBinding('class') class = 'portfolio-item-component';
-  @Input() project: IProjectModel | undefined;
+  readonly project = input<IProjectModel>();
   readonly openCarouselEvent = output<IProjectModel | undefined>();
 
   @ViewChild('portfolioItemContent') portfolioItemContent?: ElementRef<HTMLDivElement>;
 
-  constructor(
-    private renderer: Renderer2
-  ) {
+  constructor() {
     // Use afterNextRender for zoneless change detection compatibility
     afterNextRender(() => {
       this.setupMediaQueryLogic();
@@ -55,6 +55,6 @@ export class PortfolioItemComponent {
   }
 
   public onItemClicked(): void {
-    this.openCarouselEvent.emit(this.project);
+    this.openCarouselEvent.emit(this.project());
   }
 }

@@ -20,7 +20,7 @@ export const routes: Routes = [
       ),
   },
   {
-    path: 'projets',
+    path: 'projects',
     data: { pageName: PagesEnum.PROJECTS },
     loadComponent: () =>
       import('./pages/page-projects/page-projects.component').then(

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { afterNextRender, Component, ElementRef, Input, Renderer2, ViewChild } from '@angular/core';
+import { afterNextRender, Component, ElementRef, Renderer2, ViewChild, inject, input } from '@angular/core';
 import { IHobbyModel } from 'src/app/models/about';
 import { TypeHobbyEnum } from 'src/app/models/enum';
 import { SvgEducationComponent } from 'src/app/shared/svgs/ui/svg-education/svg-education.component';
@@ -17,7 +17,9 @@ const svgs = [SvgEducationComponent, SvgMedalComponent, SvgWorkComponent];
   standalone: true
 })
 export class HobbyComponent {
-  @Input() item: IHobbyModel | undefined;
+  private renderer = inject(Renderer2);
+
+  readonly item = input<IHobbyModel>();
 
   @ViewChild('divCardInfos') divCardInfos?: ElementRef<HTMLInputElement>;
   @ViewChild('divDescription') divDescription?: ElementRef<HTMLInputElement>;
@@ -26,9 +28,7 @@ export class HobbyComponent {
   typeSport = TypeHobbyEnum.Sport;
   typeOther = TypeHobbyEnum.Other;
 
-  constructor(
-    private renderer: Renderer2
-  ) {
+  constructor() {
     // Use afterNextRender for zoneless change detection compatibility
     afterNextRender(() => {
       this.setupMediaQueryLogic();

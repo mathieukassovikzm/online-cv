@@ -3,121 +3,50 @@
 
 $img-s: 120px;
 $lamp-s: 17px;
-$lamp-c: var(--primary-color);
 $svg-dowload-s: 16px;
 $scale-from: 0.95;
-$lamp-pulse-c: $light;
+$lamp-pulse-c: #11c535;
 
 /*------------- ABOUT -------------*/
-:host .about {
+.about {
   padding: 30px;
   box-shadow: var(--box-shadow);
   background: var(--main-color-light);
-
-  .profile-picture {
-    position: relative;
-    text-align: center;
-    margin: 0 auto;
-    margin-bottom: 15px;
-    float: none !important;
-    width: $img-s;
-    height: $img-s;
-
-    img {
-      border-radius: 50%;
-    }
-
-    .lamp-glow {
-      .lamp {
-        position: absolute;
-        bottom: -1px;
-        right: 1px;
-        background: $lamp-c;
-        border-radius: 50%;
-        margin: 10px;
-        height: $lamp-s;
-        width: $lamp-s;
-
-        box-shadow: 0 0 0 0 rgba($lamp-pulse-c, 1);
-        transform: scale(1);
-        animation: pulse 2s infinite;
-      }
-    }
-  }
-
-  .heading {
-    text-align: center;
-
-    h1 {
-      font-size: 18px;
-
-      .family-name {
-        text-transform: uppercase;
-      }
-    }
-  }
-
-  .divider {
-    margin-top: 15px;
-    margin-bottom: 15px;
-  }
 }
 
-:host .about {
+.about .profile-picture {
+  position: relative;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 15px;
+  float: none !important;
+  width: $img-s;
+  height: $img-s;
 
-  .languages p,
-  .curriculum p {
-    text-transform: uppercase;
-    font-size: 12px;
-    letter-spacing: 1.5px;
-    font-weight: 600;
+  img {
+    border-radius: 50%;
   }
 
-  .languages p {
-    text-align: center;
-    margin-bottom: 10px;
+  .lamp-glow .lamp {
+    position: absolute;
+    bottom: -1px;
+    right: 1px;
+    background: #da202b;
+    border-radius: 50%;
+    margin: 10px;
+    height: $lamp-s;
+    width: $lamp-s;
+    box-shadow: 0 0 0 0 rgba($lamp-pulse-c, 1);
+    transform: scale(1);
   }
 
-  .languages .svg-lang:hover {
-    cursor: pointer;
-  }
-
-  .lst-languages {
-    display: flex;
-    justify-content: space-evenly;
-  }
-
-  .languages .svg-lang ::ng-deep svg {
-    width: 30px;
-  }
-
-  .curriculum {
-    position: relative;
-    width: 80%;
-    margin: auto;
-
-    a {
-      display: flex;
-      justify-content: space-between;
-    }
-
-    ::ng-deep svg {
-      width: $svg-dowload-s;
-    }
-
-    ::ng-deep svg path,
-    ::ng-deep svg rect {
-      transition: all $animation-duration-short ease;
-      fill: var(--inverse-main-color);
-    }
-
-    &:hover ::ng-deep svg path,
-    &:hover ::ng-deep svg rect {
-      fill: var(--primary-color);
+  .lamp-glow.is-available {
+    .lamp {
+      background: #11c535;
+      animation: pulse 2s infinite;
     }
   }
 }
-
 
 @keyframes pulse {
   0% {
@@ -136,7 +65,88 @@ $lamp-pulse-c: $light;
   }
 }
 
+.about .heading {
+  text-align: center;
+
+  h1 {
+    font-size: 18px;
+
+    .family-name {
+      text-transform: uppercase;
+    }
+  }
+}
+
+.about .divider {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.about .languages p,
+.about .curriculum p {
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+}
+
+.about .languages p {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.about .languages .svg-lang:hover {
+  cursor: pointer;
+}
+
+.about .languages .lst-languages {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.about .languages .svg-lang ::ng-deep svg {
+  width: 30px;
+}
+
+.about .curriculum {
+  position: relative;
+  width: 80%;
+  margin: auto;
+
+  a {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  ::ng-deep svg {
+    width: $svg-dowload-s;
+  }
+
+  ::ng-deep svg path,
+  ::ng-deep svg rect {
+    transition: all $animation-duration-short ease;
+    fill: var(--inverse-main-color);
+  }
+
+  &:hover ::ng-deep svg path,
+  &:hover ::ng-deep svg rect {
+    fill: var(--primary-color);
+  }
+}
+
+.about .container-btn {
+  display: none;
+}
+
+.about .container-btn {
+  display: block;
+  position: relative;
+  top: 30px;
+}
+
 /* ---------------------- Media query ----------------------------*/
 @media only screen and (min-width: $min-width-xl) {
-  :host {}
+  .about .container-btn {
+    display: none;
+  }
 }

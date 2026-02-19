@@ -1,8 +1,20 @@
-<div class="card-container" [style.width]="width">
-    <div class="card">
-        <img [src]="getPhoto()">
-        <h5>{{person.nom}}</h5>
-        <h6>{{person.enterprise}}</h6>
-        <p>{{person.text}}</p>
+<div class="card-container" [style.width]="width()">
+  <div class="card">
+    <img [src]="getPhoto()">
+    <h5>{{person().nom}}</h5>
+    <h6>{{person().enterprise}}</h6>
+    <p #textEllipsis class="text-ellipsis" [class.is-text-full]="!isTextTruncated()">
+      {{person().text}}
+    </p>
+    <div class="container-btn">
+      <button [class.is-truncated]="isTextTruncated()" (click)="toggleTextTruncation()">
+        <svg viewBox="0 0 10 20">
+          <path d="M 0 0 L 10 10 L 0 20"></path>
+        </svg>
+      </button>
     </div>
+  </div>
+</div>
+<div class="text-hidden-container">
+  <p #textFull>{{person().text}}</p>
 </div>

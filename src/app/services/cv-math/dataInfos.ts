@@ -1,21 +1,17 @@
 import { CodeSocialNetworkEnum } from 'src/app/models/enum';
 import { IInfosModel, ISocialNetwork } from 'src/app/models/infos';
 
-const infosCommon = {
+const infosCommon: IInfosModel = {
   name: 'Mathieu',
   famillyName: 'Le Bellec',
-  available: false,
+  available: true,
   email: 'mathieu.lebellec.pro@gmail.com',
   address: '11 Boulevard de Strasbourg, 35000 Rennes, France',
 };
 
 export const infosFr: IInfosModel = {
-  name: infosCommon.name,
-  famillyName: infosCommon.famillyName,
+  ...infosCommon,
   title: 'Développeur Full Stack',
-  available: infosCommon.available,
-  email: infosCommon.email,
-  address: infosCommon.address,
   infosPersonnal: {
     birth: '10 Dec 1989',
     nationality: 'Française',
@@ -27,12 +23,8 @@ export const infosFr: IInfosModel = {
 };
 
 export const infosEn: IInfosModel = {
-  name: infosCommon.name,
-  famillyName: infosCommon.famillyName,
+  ...infosCommon,
   title: 'Full Stack Developer',
-  available: infosCommon.available,
-  email: infosCommon.email,
-  address: infosCommon.address,
   infosPersonnal: {
     birth: '10 Dec 1989',
     nationality: 'French',
@@ -44,12 +36,8 @@ export const infosEn: IInfosModel = {
 };
 
 export const infosEs: IInfosModel = {
-  name: infosCommon.name,
-  famillyName: infosCommon.famillyName,
+  ...infosCommon,
   title: 'Desarrollador Full Stack',
-  available: infosCommon.available,
-  email: infosCommon.email,
-  address: infosCommon.address,
   infosPersonnal: {
     birth: '10 Dic 1989',
     nationality: 'Francés',

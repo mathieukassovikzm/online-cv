@@ -1,36 +1,36 @@
 <li class="timeline-event">
   <label class="timeline-event-icon">
-    @if (item?.typeExpe === typeExpeEduc) {
+    @if (item()?.typeExpe === typeExpeEduc) {
       <app-svg-education> </app-svg-education>
     }
-    @if (item?.typeExpe === typeExpeArchi) {
+    @if (item()?.typeExpe === typeExpeArchi) {
       <app-svg-medal> </app-svg-medal>
     }
-    @if (item?.typeExpe === typeExpeExpePro) {
+    @if (item()?.typeExpe === typeExpeExpePro) {
       <app-svg-work> </app-svg-work>
     }
   </label>
   <div class="timeline-event-ctn">
-    <p class="timeline-event-thumbnail">{{item?.date}}</p>
-    <h3>{{item?.title}}</h3>
-    <h4>{{item?.company}} - {{item?.address}}</h4>
-    @if (!!item?.description) {
+    <p class="timeline-event-thumbnail">{{item()?.date}}</p>
+    <h3>{{item()?.title}}</h3>
+    <h4>{{item()?.company}} - {{item()?.address}}</h4>
+    @if (!!item()?.description) {
       <div class="description">
-        <p class="dsc">{{item?.description?.dsc}}</p>
-        @if (item?.description?.tasks) {
+        <p class="dsc">{{item()?.description?.dsc}}</p>
+        @if (item()?.description?.tasks) {
           <div class="subtitle tasks">
             <h5>{{uiText.cardTxt.tasksTitle}}</h5>
-            @for (task of item?.description?.tasks; track task) {
+            @for (task of item()?.description?.tasks; track task) {
               <div>
                 <p>{{task}}</p>
               </div>
             }
           </div>
         }
-        @if (item?.description?.technicalEnv) {
+        @if (item()?.description?.technicalEnv) {
           <div class="subtitle technical-env">
             <h5>{{uiText.cardTxt.technicalEnvTitle}}</h5>
-            <p>{{item?.description?.technicalEnv}}</p>
+            <p>{{item()?.description?.technicalEnv}}</p>
           </div>
         }
       </div>

@@ -1,4 +1,3 @@
-import { AnimationEvent } from '@angular/animations';
 import { CommonModule } from '@angular/common';
 import {
   AfterViewInit,
@@ -14,7 +13,6 @@ import {
 } from '@angular/core';
 import { fromEvent, Observable, Subscription } from 'rxjs';
 import { IRecommendationModel } from 'src/app/models/home';
-import { animationMultipleCarousel } from 'src/app/shared/class/animation-carousel';
 import { HomeStore } from 'src/app/store/home.store';
 import { UiStore } from 'src/app/store/ui.store';
 import { RecommendationCardComponent } from './recommendation-card/recommendation-card.component';
@@ -26,13 +24,11 @@ const components = [RecommendationCardComponent];
   selector: 'app-recommendations',
   templateUrl: './recommendations.component.html',
   styleUrls: ['./recommendations.component.scss'],
-  animations: [animationMultipleCarousel],
   imports: [...modules, ...components],
   standalone: true
 })
-export class RecommendationsComponent
-  implements OnInit, AfterViewInit, OnDestroy {
-
+export class RecommendationsComponent implements OnInit, AfterViewInit, OnDestroy {
+  readonly host = inject<ElementRef<HTMLElement>>(ElementRef);
   readonly uiStore = inject(UiStore);
   readonly homeStore = inject(HomeStore);
 
@@ -41,7 +37,6 @@ export class RecommendationsComponent
   public slides: Signal<IRecommendationModel[]> = computed(() =>
     this.homeStore.getHomeTxt()!.lstRecommendations.map((slide, index) => { return { ...slide, id: index } })
   );
-  public evolutingLstSlide: Signal<IRecommendationModel[]> = computed(() => [...this.slides()]);
 
   private containerRecoWidth = signal(0);
 
@@ -54,7 +49,6 @@ export class RecommendationsComponent
   public getSlideWidth = computed(() => {
     return `${this.slideWidth()}px`;
   });
-  public signedSlideWidth = 0; // <- new
 
   public carouselWidth = computed(() => this.slideWidth() * this.nbSlidesToShow());
 
@@ -63,14 +57,13 @@ export class RecommendationsComponent
   /** Delay between 2 changes */
   private delay = 3000;
 
-  public currentSlide = 0;
-  public navIndex = 0;     // drives active nav dot
+  public currentSlideIndex = 0;
   private nbSlidesToShow = signal(1);
   private resizeObservable$: Observable<Event>;
   private subscription$ = new Subscription();
   private interval: any;
 
-  constructor(private host: ElementRef<HTMLElement>) {
+  constructor() {
     this.resizeObservable$ = fromEvent(window, 'resize');
     var subResize = this.resizeObservable$.subscribe(() => {
       this.onResize();
@@ -132,40 +125,27 @@ export class RecommendationsComponent
   }
 
   public previousSlide(): void {
-    this.signedSlideWidth = this.carouselWidth(); // positif -> container moves right
-    this.navIndex = (this.currentSlide - 1 + this.slides.length) % this.slides.length;
-    this.currentSlide--;
+    if (this.currentSlideIndex > 0) {
+      this.currentSlideIndex--;
+    }
   }
 
   public nextSlide(): void {
-    this.signedSlideWidth = this.carouselWidth() * -1; // negative -> container moves left
-    this.navIndex = (this.currentSlide + 1) % this.slides.length;
-    this.currentSlide++;
+    if (this.currentSlideIndex < this.slides().length - 1) {
+      this.currentSlideIndex++;
+    }
+  }
+
+  public getTransform(): string {
+    const translateX = -this.currentSlideIndex * this.carouselWidth();
+    return `translateX(${translateX}px)`;
   }
 
   public isVisibleSlide(): boolean {
     return true;
   }
 
-  public onAnimationDoneEvent(event: AnimationEvent) {
-    // ici on incrément
-    if (event.fromState < event.toState) {
-      // on pop l'élément du tableau car il a disparu
-      const first = this.evolutingLstSlide().shift();
-      // on le rajoute a la fin
-      this.evolutingLstSlide().push(first!);
-    }
-    // ici on décrément
-    else if (event.fromState > event.toState) {
-      // on pop l'élément du tableau car il a disparu
-      const last = this.evolutingLstSlide().pop();
-      // on le rajoute au début
-      this.evolutingLstSlide().unshift(last!);
-    }
-  }
-
   public onNavClick(index: number): void {
-    this.currentSlide = index;
-    this.navIndex = this.slides().findIndex(s => s.id === index);
+    this.currentSlideIndex = index;
   }
 }

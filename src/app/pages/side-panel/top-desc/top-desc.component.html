@@ -1,7 +1,7 @@
 <div class="about">
   <div class="item profile-picture">
     <img src='./assets/images/PhotoCv.jpg' alt="Math" class="img-circle">
-    <div class="lamp-glow">
+    <div class="lamp-glow" [class.is-available]="infos().available" [title]="infos().available | availableTitle">
       <div class="lamp">
       </div>
     </div>
@@ -15,9 +15,9 @@
   <div class="languages">
     <p>{{uiText().languageTitle}}</p>
     <div class="lst-languages">
-      <app-svg-fr [class.is-active]="this.languageStore.uiLanguage() === codeFR" (click)="switchToFrench()"></app-svg-fr>
-      <app-svg-en [class.is-active]="this.languageStore.uiLanguage() === codeEN" (click)="switchToEnglish()"></app-svg-en>
-      <app-svg-es [class.is-active]="this.languageStore.uiLanguage() === codeES" (click)="switchToSpanish()"></app-svg-es>
+      <app-svg-fr [class.is-active]="languageStore.uiLanguage() === codeFR" (click)="switchToFrench()"></app-svg-fr>
+      <app-svg-en [class.is-active]="languageStore.uiLanguage() === codeEN" (click)="switchToEnglish()"></app-svg-en>
+      <app-svg-es [class.is-active]="languageStore.uiLanguage() === codeES" (click)="switchToSpanish()"></app-svg-es>
     </div>
   </div>
   <div class="divider"></div>
@@ -29,4 +29,7 @@
   </div>
   <div class="divider"></div>
   <app-lst-socials></app-lst-socials>
+  <div class="container-btn">
+    <app-btn-dark-mode></app-btn-dark-mode>
+  </div>
 </div>

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { IServiceModel } from 'src/app/models/home';
 
 const modules = [CommonModule];
@@ -12,7 +12,7 @@ const modules = [CommonModule];
   standalone: true
 })
 export class ServiceComponent {
-  @Input() item: IServiceModel | undefined;
+  readonly item = input<IServiceModel>();
 
   constructor(
   ) { }

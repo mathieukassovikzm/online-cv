@@ -6,30 +6,29 @@
     <p>{{pageActiveName}}</p>
   </div>
   <ul>
-    <li [class.active]="itemMenuActif===1">
-      <label class="home" routerLink="/home" [queryParams]="{lang: language()}" routerLinkActive="active">
-        <img class="photo" src="./../../../../assets/images/PhotoCv.jpg" alt="Mathieu LE BELLEC"
-          (click)="switchMenu(1)">
+    <li class="home" [class.active]="itemMenuActif()===routerLinkHome">
+      <label class="home" [routerLink]="routerLinkHome" [queryParams]="{lang: language()}" routerLinkActive="active">
+        <img class="photo" src="./../../../../assets/images/PhotoCv.jpg" alt="Mathieu LE BELLEC">
         <span class="txt">{{ uiText.navTxt.homeTitle }}</span>
       </label>
     </li>
-    <li [class.active]="itemMenuActif===2">
-      <label routerLink="/about" [queryParams]="{lang: language()}" routerLinkActive="active">
-        <app-svg-info (click)="switchMenu(2)"></app-svg-info>
+    <li [class.active]="itemMenuActif()===routerLinkAbout">
+      <label [routerLink]="routerLinkAbout" [queryParams]="{lang: language()}" routerLinkActive="active">
+        <app-svg-info></app-svg-info>
         <span class="txt">{{ uiText.navTxt.aboutTitle }}</span>
         <span class="bubble"></span>
       </label>
     </li>
-    <li [class.active]="itemMenuActif===3">
-      <label routerLink="/projets" [queryParams]="{lang: language()}" routerLinkActive="active">
-        <app-svg-work (click)="switchMenu(3)"></app-svg-work>
+    <li [class.active]="itemMenuActif()===routerLinkProjects">
+      <label [routerLink]="routerLinkProjects" [queryParams]="{lang: language()}" routerLinkActive="active">
+        <app-svg-work></app-svg-work>
         <span class="txt">{{ uiText.navTxt.projectsTitle }}</span>
         <span class="bubble"></span>
       </label>
     </li>
-    <li [class.active]="itemMenuActif===4">
-      <label routerLink="/contacts" [queryParams]="{lang: language()}" routerLinkActive="active">
-        <app-svg-phone (click)="switchMenu(4)"></app-svg-phone>
+    <li [class.active]="itemMenuActif()===routerLinkContacts">
+      <label [routerLink]="routerLinkContacts" [queryParams]="{lang: language()}" routerLinkActive="active">
+        <app-svg-phone></app-svg-phone>
         <span class="txt">{{ uiText.navTxt.contactTitle }}</span>
         <span class="bubble"></span>
       </label>

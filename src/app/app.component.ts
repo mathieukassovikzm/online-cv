@@ -26,15 +26,15 @@ const components = [
   imports: [...modules, ...components],
   standalone: true
 })
-export class AppComponent implements OnInit, OnDestroy {
+export class AppComponent {
+  private route = inject(ActivatedRoute);
+
   readonly uiStore = inject(UiStore);
   readonly languageStore = inject(LanguageStore);
 
   title = 'online-cv-math';
 
-  private subscription = new Subscription();
-
-  constructor(private route: ActivatedRoute) {
+  constructor() {
     effect(() => {
       const isDarkmode = this.uiStore.darkMode();
       // Récupération de la balise <html> et manipulation de sa classe via Renderer2
@@ -52,12 +52,6 @@ export class AppComponent implements OnInit, OnDestroy {
       const lang = params['lang'];
       this.languageStore.setUiLanguage(lang);
     });
-  }
-
-  ngOnInit() { }
-
-  ngOnDestroy() {
-    this.subscription.unsubscribe();
   }
 
   onLang(): string {

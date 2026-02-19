@@ -1,36 +1,36 @@
 <section class="section-services">
   <h2>{{uiText().recommendationsTitle}}</h2>
-  <div class="carousel-container" >
-    <ul id="carousel-slide-container"
-      class="carousel-slide-container"
-      [@slideInOut]="{
-        value: currentSlide,
-        params: { slideWidthTotal: signedSlideWidth }
-      }"
-      (@slideInOut.done)="onAnimationDoneEvent($event)">
-      @for (slide of evolutingLstSlide(); track slide.id; let i = $index) {
-        <li>
-          <app-recommendation-card
-            [person]="slide"
-            [width]="getSlideWidth()">
-          </app-recommendation-card>
-        </li>
+  <div class="carousel-container">
+    <ul id="carousel-slide-container" class="carousel-slide-container" [style.transform]="getTransform()">
+      @for (slide of slides(); track slide.id; let i = $index) {
+      <li>
+        <app-recommendation-card 
+          [person]="slide" 
+          [width]="getSlideWidth()"
+          [isDisplayed]="i == currentSlideIndex">
+        </app-recommendation-card>
+      </li>
       }
     </ul>
     <div class="carousel-controlers">
       <ul class="slider-navigation">
         @for (slide of slides(); track slide; let i = $index) {
-          <li
-            (click)="onNavClick(i)"
-            [class.active]="i === navIndex">
-          </li>
+        <li (click)="onNavClick(i)" [class.active]="i == currentSlideIndex">
+        </li>
         }
       </ul>
       <div class="slider-btns">
-        <button class="slider-btn" (click)="previousSlide()">previous</button>
-        <button class="slider-btn" (click)="nextSlide()">next</button>
+        <button class="slider-btn previous" (click)="previousSlide()" [disabled]="currentSlideIndex<=0">
+          <svg viewBox="0 0 10 20">
+            <path d="M 0 0 L 10 10 L 0 20"></path>
+          </svg>
+        </button>
+        <button class="slider-btn next" (click)="nextSlide()" [disabled]="slides().length-1<=currentSlideIndex">
+          <svg viewBox="0 0 10 20">
+            <path d="M 0 0 L 10 10 L 0 20"></path>
+          </svg>
+        </button>
       </div>
     </div>
   </div>
 </section>
-

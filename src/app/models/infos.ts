@@ -3,20 +3,20 @@ import { CodeLanguageEnum, CodeSocialNetworkEnum, TypeSkillEnum } from './enum';
 export interface IInfosModel {
   name: string;
   famillyName: string;
-  title: string;
+  title?: string;
   email: string;
   address: string;
   available: boolean;
-  infosPersonnal: IInfosPersonalModel;
-  curriculum: string;
+  infosPersonnal?: IInfosPersonalModel;
+  curriculum?: string;
 }
 
 export interface IInfosPersonalModel {
-  birth: string;
-  nationality: string;
-  status: string;
-  drivingLiscence: string;
-  car: string;
+  birth?: string;
+  nationality?: string;
+  status?: string;
+  drivingLiscence?: string;
+  car?: string;
 }
 
 export interface ISkillModel {

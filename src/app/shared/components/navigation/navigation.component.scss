@@ -13,141 +13,143 @@ $n: 10;
   width: 100%;
   z-index: 11;
 
-  .tabbar {
-    background: var(--main-color-light);
-    width: 100%;
-    height: $nav-h;
-    padding: 0 12px;
+}
+
+.tabbar {
+  background: var(--main-color-light);
+  width: 100%;
+  height: $nav-h;
+  padding: 0 12px;
+}
+
+.tabbar ul {
+  display: flex;
+  height: 100%;
+  position: relative;
+}
+
+.tabbar ul li.home {
+  top: -16px;
+}
+
+.tabbar ul li {
+  flex: 0 0 math.div(100%, $nav-nb-elt);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 51;
+}
+
+// .tabbar ul li:hover ::ng-deep svg path {
+//   fill: $nav-icon-c-hover;
+// }
+
+.tabbar ul li.active label {
+  transform: translateY(-14px) scale(1);
+
+  &.home {
+    transform: none;
   }
 
-  .tabbar ul {
-    display: flex;
-    height: 100%;
-    position: relative;
-  }
-
-  .tabbar ul li {
-    flex: 0 0 math.div(100%, $nav-nb-elt);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    z-index: 51;
-  }
-
-  // .tabbar ul li:hover ::ng-deep svg path {
-  //   fill: $nav-icon-c-hover;
-  // }
-
-  .tabbar ul li.active {
-    label {
-      transform: translateY(-14px) scale(1);
-
-      &.home {
-        transform: none;
-      }
-
-      ::ng-deep svg {
-        top: -10px;
-
-        path {
-          fill: var(--main-color);
-        }
-      }
-
-      .txt {
-        opacity: 1;
-      }
-
-      span.bubble {
-        opacity: 1;
-      }
-    }
-  }
-
-  .tabbar ul li img {
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-  }
-
-  .tabbar ul li label {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    transition: all ease 0.2s;
-
-    .txt {
-      position: relative;
-      font-size: 10px;
-      font-weight: 500;
-      text-align: center;
-      opacity: 0;
-      color: var(--inverse-main-color);
-      transform-origin: 50% 0;
-      transition: transform .4s cubic-bezier(.2, .64, .48, 1.12), opacity .4s ease, color .4s ease;
-      top: 8px;
-    }
-
-    span.bubble {
-      z-index: 51;
-      opacity: 0;
-
-      &:after {
-        content: '';
-        width: 44px;
-        height: 44px;
-        display: block;
-        border-radius: 50%;
-        background: $grey-light;
-        position: absolute;
-        left: 50%;
-        top: 0;
-        margin: -14px 0 0 -22px;
-      }
-    }
-
-    &.home .txt {
-      display: none;
-    }
-  }
-
-  .tabbar ul li label ::ng-deep svg {
-    position: relative;
-    z-index: 52;
-    width: 24px;
-    height: 24px;
-    margin: auto;
-    transform-origin: 50% 50%;
-    transform: translateY(6px);
-    cursor: pointer;
+  ::ng-deep svg {
+    top: -10px;
 
     path {
       fill: var(--inverse-main-color);
     }
   }
+
+  .txt {
+    opacity: 1;
+  }
+
+  span.bubble {
+    opacity: 1;
+  }
 }
 
-:host {
-  .tabbar .container-burger {
+.tabbar ul li img {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+
+.tabbar ul li label {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  transition: all ease 0.2s;
+
+  &.home .txt {
     display: none;
-    width: 100%;
-    height: $nav-burger-s;
-    background-color: var(--main-color-light);
-    box-shadow: var(--box-shadow);
-  }
-
-  .tabbar .container-burger .component-burger {
-    position: absolute;
-    left: math.div($nav-w - $burger-w, 2);
-    top: math.div($nav-w - $burger-w, 2);
-    width: $burger-w;
-    height: $burger-w;
   }
 }
 
-:host .tabbar .current-page {
+.tabbar ul li label .txt {
+  position: relative;
+  font-size: 10px;
+  font-weight: 500;
+  text-align: center;
+  opacity: 0;
+  color: var(--inverse-main-color);
+  transform-origin: 50% 0;
+  transition: transform .4s cubic-bezier(.2, .64, .48, 1.12), opacity .4s ease, color .4s ease;
+  top: 8px;
+}
+
+.tabbar ul li label span.bubble {
+  z-index: 51;
+  opacity: 0;
+
+  &:after {
+    content: '';
+    width: 44px;
+    height: 44px;
+    display: block;
+    border-radius: 50%;
+    background: var(--main-color-light);
+    box-shadow: var(--box-shadow);
+    position: absolute;
+    left: 50%;
+    top: 0;
+    margin: -14px 0 0 -22px;
+  }
+}
+
+.tabbar ul li label ::ng-deep svg {
+  position: relative;
+  z-index: 52;
+  width: 24px;
+  height: 24px;
+  margin: auto;
+  transform-origin: 50% 50%;
+  transform: translateY(6px);
+  cursor: pointer;
+
+  path {
+    fill: var(--inverse-main-color);
+  }
+}
+
+.tabbar .container-burger {
+  display: none;
+  width: 100%;
+  height: $nav-burger-s;
+  background-color: var(--main-color-light);
+  box-shadow: var(--box-shadow);
+}
+
+.tabbar .container-burger .component-burger {
+  position: absolute;
+  left: math.div($nav-w - $burger-w, 2);
+  top: math.div($nav-w - $burger-w, 2);
+  width: $burger-w;
+  height: $burger-w;
+}
+
+.tabbar .current-page {
   display: none;
 
   width: 200px;
@@ -163,6 +165,10 @@ $n: 10;
   transition: .4s ease-in-out;
 }
 
+.tabbar .container-btn {
+  display: none;
+}
+
 /* ---------------------- Media query ----------------------------*/
 @media only screen and (min-width: $min-width-xl) {
   :host {
@@ -170,102 +176,109 @@ $n: 10;
     display: flex;
     width: 0;
     height: calc(100vh - $app-p*2);
+  }
 
-    .tabbar {
-      position: absolute;
-      right: 0;
+  .tabbar {
+    position: absolute;
+    right: 0;
 
-      width: $nav-w;
-      height: 100%;
-      padding: 0;
-      box-shadow: var(--box-shadow);
-      background: var(--main-color);
-      transition: width $animation-duration ease-in-out;
-      overflow: hidden;
-    }
+    width: $nav-w;
+    height: 100%;
+    padding: 0;
+    box-shadow: var(--box-shadow);
+    background: var(--main-color);
+    transition: width $animation-duration ease-in-out;
+    overflow: hidden;
+  }
 
-    .tabbar ul {
-      flex-direction: column;
-      align-items: center;
-      flex: inherit;
-      min-width: $nav-w-opened;
-      height: calc(100vh - $nav-w - $app-p*2 - 125px);
-      margin: 0 0 $nav-w;
-      overflow-x: hidden;
-      top: 10%;
-    }
+  .tabbar ul {
+    flex-direction: column;
+    align-items: center;
+    flex: inherit;
+    min-width: $nav-w-opened;
+    height: calc(100vh - $nav-w - $app-p*2 - 125px);
+    margin: 0 0 $nav-w;
+    overflow-x: hidden;
+    top: 10%;
+  }
 
-    .tabbar ul li {
-      width: 100%;
-      flex: inherit;
-      transform: translateX(60px);
-      transition: $animation-duration ease-in-out;
+  .tabbar ul li.home {
+    top: 0px;
+  }
 
-      @for $i from 1 through $n {
-        &:nth-child(#{$i}) {
-          transition-delay: $i*$nav-t-duration;
-        }
-      }
-    }
+  .tabbar ul li {
+    width: 100%;
+    flex: inherit;
+    transform: translateX(60px);
+    transition: $animation-duration ease-in-out;
 
-    .tabbar ul li img {
-      display: none;
-    }
-
-    .tabbar ul li label {
-      width: 100%;
-      justify-content: flex-start;
-
-      ::ng-deep {
-        svg {
-          display: none;
-        }
-      }
-    }
-
-    .tabbar ul li label .txt {
-      color: $grey;
-      display: block;
-      width: 100%;
-      top: 0;
-      padding: 10px 30px;
-      cursor: pointer;
-      text-align: left;
-      font-size: inherit;
-      font-weight: inherit;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      opacity: 0;
-      transition: $animation-duration ease-in-out;
-    }
-
-    .tabbar ul li.active label .txt,
-    .tabbar ul li label .txt:hover {
-      color: var(--inverse-main-color);
-    }
-
-    .tabbar ul li label span.bubble {
-      display: none;
-    }
-
-    .tabbar ul li label.home {
-      .txt {
-        display: block;
-        opacity: 0;
+    @for $i from 1 through $n {
+      &:nth-child(#{$i}) {
+        transition-delay: $i*$nav-t-duration;
       }
     }
   }
 
-  :host {
-    .tabbar .container-burger {
-      display: block;
-      background: var(--main-color-light);
-    }
+  .tabbar ul li.active label {
+    transform: scale(1);
+    font-weight: bold;
+  }
 
-    .tabbar .current-page {
-      display: block;
-      opacity: 1;
+  .tabbar ul li img {
+    display: none;
+  }
+
+  .tabbar ul li label {
+    width: 100%;
+    justify-content: flex-start;
+
+    ::ng-deep {
+      svg {
+        display: none;
+      }
     }
+  }
+
+  .tabbar ul li label .txt {
+    color: $grey;
+    display: block;
+    width: 100%;
+    top: 0;
+    padding: 10px 30px;
+    cursor: pointer;
+    text-align: left;
+    font-size: inherit;
+    font-weight: inherit;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0;
+    transition: $animation-duration ease-in-out;
+  }
+
+  .tabbar ul li.active label .txt,
+  .tabbar ul li label .txt:hover {
+    color: var(--inverse-main-color);
+  }
+
+  .tabbar ul li label span.bubble {
+    display: none;
+  }
+
+  .tabbar ul li label.home {
+    .txt {
+      display: block;
+      opacity: 0;
+    }
+  }
+
+  .tabbar .container-burger {
+    display: block;
+    background: var(--main-color-light);
+  }
+
+  .tabbar .current-page {
+    display: block;
+    opacity: 1;
   }
 
   .is-opened :host .tabbar ul li {
