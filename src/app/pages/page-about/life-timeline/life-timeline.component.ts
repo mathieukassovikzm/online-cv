@@ -14,7 +14,6 @@ import { TypeExperienceEnum } from 'src/app/models/enum';
 import { LifeExperienceComponent } from 'src/app/shared/components/life-experience/life-experience.component';
 import { AboutStore } from 'src/app/store/about.store';
 import { UiStore } from 'src/app/store/ui.store';
-import { listFadeFadeAnimation } from './animation';
 
 const modules = [CommonModule];
 const components = [LifeExperienceComponent];
@@ -23,7 +22,6 @@ const components = [LifeExperienceComponent];
   selector: 'app-life-timeline',
   templateUrl: './life-timeline.component.html',
   styleUrls: ['./life-timeline.component.scss'],
-  animations: [listFadeFadeAnimation],
   imports: [...modules, ...components],
   standalone: true
 })
@@ -42,6 +40,9 @@ export class LifeTimelineComponent implements OnInit {
 
   public sFilterActif: WritableSignal<TypeExperienceEnum | undefined> =
     signal(undefined);
+
+  // Animation state to control CSS transitions
+  public isAnimating = signal(false);
 
   public sTimelineEventsFiltered: Signal<IExperienceModel[]> = computed(() => {
     const filter = this.sFilterActif();
@@ -67,11 +68,21 @@ export class LifeTimelineComponent implements OnInit {
   }
 
   filterTimelineEvents(filter?: TypeExperienceEnum): void {
-    if (filter != undefined) {
-      // On set le filtre actif pour la navigation
-      this.sFilterActif.set(filter);
-    } else {
-      this.sFilterActif.set(undefined);
-    }
+    // Start fade out animation
+    this.isAnimating.set(true);
+    
+    // Wait for fade out, then update filter and fade in
+    setTimeout(() => {
+      if (filter != undefined) {
+        this.sFilterActif.set(filter);
+      } else {
+        this.sFilterActif.set(undefined);
+      }
+      
+      // Reset animation state to trigger fade in
+      setTimeout(() => {
+        this.isAnimating.set(false);
+      }, 50);
+    }, 300);
   }
 }

@@ -11,6 +11,7 @@ import { SvgEducationComponent } from 'src/app/shared/svgs/ui/svg-education/svg-
 import { SvgMedalComponent } from 'src/app/shared/svgs/ui/svg-medal/svg-medal.component';
 import { SvgWorkComponent } from 'src/app/shared/svgs/ui/svg-work/svg-work.component';
 import { LanguageStore } from 'src/app/store/language.store';
+import { UiStore } from 'src/app/store/ui.store';
 
 const svgs = [SvgMedalComponent, SvgWorkComponent, SvgEducationComponent];
 
@@ -26,6 +27,9 @@ export class CardComponent {
   @Input() item: IExperienceModel | undefined;
 
   readonly languageStore = inject(LanguageStore);
+  readonly uiStore = inject(UiStore);
+
+  public uiText = () => this.uiStore.getUiTxt()?.contactTxt;
 
   public typeExpeEduc = TypeExperienceEnum.Education;
   public typeExpeArchi = TypeExperienceEnum.Archievement;
