@@ -1,57 +1,99 @@
 @use '../0-helpers/variables' as *;
 
+.carousel-container {
+  overflow-y: hidden;
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
+}
 
-:host {
-  .carousel-container {
-    overflow-x: hidden;
-    position: relative;
-    width: 100%;
-  }
+.carousel-container ul.carousel-slide-container {
+  position: relative;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  transition: transform 0.5s ease-in-out;
+  will-change: transform;
+}
 
-  ul.carousel-slide-container {
-    position: relative;
-    margin: auto;
-    display: flex;
-    flex-direction: row;
-  }
+.carousel-container ul.carousel-slide-container li {
+  width: 100%;
+  position: relative;
+  padding: 20px 0;
+}
 
-  ul.carousel-slide-container li {
-    width: 100%;
-    position: relative;
-    padding: 20px 0;
-  }
+.carousel-container .carousel-controlers {
+  padding: 0 $slide-padding-lr;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+}
 
-  .carousel-controlers {
-    padding: 0 $slide-padding-lr;
-    margin-bottom: 30px;
-    display: flex;
-    justify-content: space-between;
-  }
+.carousel-container ul.slider-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 60px;
+}
 
-  ul.slider-navigation {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 60px;
-  }
+.carousel-container ul.slider-navigation li {
+  margin-right: 10px !important;
+  width: 8px;
+  height: 4px;
+  margin-left: 0 !important;
+  background-color: $grey;
+  border-radius: 5px;
+  opacity: 0.5;
+  transition: 0.4s ease-in-out;
+}
 
-  ul.slider-navigation li {
-    margin-right: 10px !important;
-    width: 8px;
-    height: 4px;
-    margin-left: 0 !important;
-    background-color: $grey;
-    border-radius: 5px;
-    opacity: 0.5;
-    transition: 0.4s ease-in-out;
-  }
+.carousel-container ul.slider-navigation li.active {
+  width: 20px;
+  background-color: var(--primary-color);
+}
 
-  ul.slider-navigation li.active {
-    width: 20px;
-    background-color: var(--primary-color);
-  }
+.carousel-container ul.slider-navigation li:hover {
+  cursor: pointer;
+}
 
-  ul.slider-navigation li:hover {
-    cursor: pointer;
-  }
+$svg-size: 12px;
+
+.carousel-container .slider-btns .slider-btn {
+  background-color: transparent;
+  width: $svg-size;
+  height: $svg-size;
+}
+
+.carousel-container .slider-btns .slider-btn.previous {
+  transform: rotate(180deg);
+}
+
+.carousel-container .slider-btns .slider-btn svg {
+  width: $svg-size;
+  height: $svg-size;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.carousel-container .slider-btns .slider-btn svg path {
+  fill: none;
+  stroke: var(--primary-color);
+  stroke-width: 4px;
+  stroke-linecap: round;
+  opacity: 0.5;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.carousel-container .slider-btns .slider-btn:hover svg path {
+  opacity: 1;
+}
+
+.carousel-container .slider-btns .slider-btn:disabled {
+  cursor: not-allowed;
+}
+
+.carousel-container .slider-btns .slider-btn:disabled svg path {
+  stroke: $grey;
 }

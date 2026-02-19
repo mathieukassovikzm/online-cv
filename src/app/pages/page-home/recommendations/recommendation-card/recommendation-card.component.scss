@@ -1,38 +1,110 @@
 @use '../0-helpers/variables' as *;
 
+.card-container {
+  position: relative;
+  padding: $slide-padding-lr;
+}
 
-:host {
-  .card-container {
-    position: relative;
-    padding: $slide-padding-lr;
-  }
+$card-padding: 30px;
 
-  .card {
-    position: relative;
-    background: var(--main-color-light);
-    box-shadow: var(--box-shadow);
-    padding: 30px;
-  }
+.card {
+  position: relative;
+  background: var(--main-color-light);
+  box-shadow: var(--box-shadow);
+  padding: $card-padding;
+}
 
-  h5 {
-    font-weight: 600;
-    font-size: 22px;
-    color: var(--primary-color);
-  }
+.card h5 {
+  font-weight: 600;
+  font-size: 22px;
+  color: var(--primary-color);
+}
 
-  h6 {
-    color: $grey;
-    font-style: italic;
-    margin-top: 5px;
-    margin-bottom: 15px;
-  }
+.card h6 {
+  color: $grey;
+  font-style: italic;
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
 
-  img {
-    position: absolute;
-    right: 30px;
-    top: -15px;
-    width: 65px;
-    height: 65px;
-    border-radius: 50%;
+.card img {
+  position: absolute;
+  right: 30px;
+  top: -15px;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+}
+
+.card p.text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  line-clamp: 10;
+  -webkit-line-clamp: 10;
+  transition: all 0.5s ease-in-out;
+}
+
+.card p.text-ellipsis.is-text-full {
+  overflow: visible;
+  text-overflow: inherit;
+}
+
+.text-hidden-container {
+  padding: $card-padding + $slide-padding-lr;
+  visibility: hidden;
+  position: absolute;
+}
+
+.container-btn {
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  margin-top: 15px;
+}
+
+$svg-size: 12px;
+
+.card button {
+  width: $svg-size+10px;
+  height: $svg-size+10px;
+  transition: transform $animation-duration-short ease-in-out;
+  transform: rotate(-90deg);
+}
+
+.card button.is-truncated {
+  transform: rotate(90deg);
+}
+
+.card button svg {
+  width: $svg-size;
+  height: $svg-size;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.card button svg path {
+  fill: none;
+  stroke: var(--primary-color);
+  stroke-width: 4px;
+  stroke-linecap: round;
+  opacity: 0.5;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.card button:hover svg path {
+  opacity: 1;
+}
+
+/* ---------------------- Media query ----------------------------*/
+@media only screen and (min-width: $min-width-xl) {
+  .card p.text-ellipsis {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    line-clamp: 5;
+    -webkit-line-clamp: 5;
   }
 }
