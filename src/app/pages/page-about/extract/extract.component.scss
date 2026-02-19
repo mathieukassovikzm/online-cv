@@ -2,32 +2,18 @@
 
 $svg-quote-s: 15px;
 
-:host {
-  .card-container {
-    position: relative;
-    background-size: cover;
-    padding: $content-p;
-    box-shadow: var(--box-shadow);
-    background: var(--main-color-light);
+.quote-in ::ng-deep svg {
+  transform: scaleX(-1);
+}
+
+.icon ::ng-deep svg {
+  width: $svg-quote-s;
+  height: $svg-quote-s;
+
+  path {
+    fill: var(--primary-color);
   }
-
-  .quote-in ::ng-deep svg {
-    transform: scaleX(-1);
-  }
-
-  .icon ::ng-deep svg {
-    width: $svg-quote-s;
-    height: $svg-quote-s;
-
-    path {
-      fill: var(--primary-color);
-    }
-  }
-
 }
 
 /* ---------------------- Media query ----------------------------*/
-@media only screen and (min-width: $min-width-xl) {
-  :host {}
-
-}
+@media only screen and (min-width: $min-width-xl) {}

@@ -1,0 +1,19 @@
+@use '../0-helpers/helpers-dir' as helpers;
+
+.card-container {
+  position: relative;
+  box-shadow: var(--box-shadow);
+  height: 100%;
+}
+
+.card-container .card-infos {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: var(--main-color-light);
+  padding: 30px 20px;
+}
+
+.card-container .card-infos .title-container {
+  margin-bottom: 20px;
+}

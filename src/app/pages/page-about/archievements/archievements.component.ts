@@ -3,7 +3,8 @@ import { Component, inject } from '@angular/core';
 import { IExperienceModel } from 'src/app/models/about';
 import { IUiTxtAboutModel } from 'src/app/models/uiTxt';
 import { CardComponent } from 'src/app/shared/components/card/card.component';
-import { LanguageStore } from 'src/app/store/language.store';
+import { AboutStore } from 'src/app/store/about.store';
+import { UiStore } from 'src/app/store/ui.store';
 
 const modules = [CommonModule];
 const components = [CardComponent];
@@ -16,10 +17,11 @@ const components = [CardComponent];
   standalone: true
 })
 export class ArchievementsComponent {
-  readonly languageStore = inject(LanguageStore);
+  readonly uiStore = inject(UiStore);
+  readonly aboutStore = inject(AboutStore);
 
-  public uiText: IUiTxtAboutModel = this.languageStore.getUiTxt().aboutTxt;
-  public archievements: IExperienceModel[] = this.languageStore.getAboutTxt().archievements || [];
+  public uiText: IUiTxtAboutModel = this.uiStore.getUiTxt().aboutTxt;
+  public archievements: IExperienceModel[] = this.aboutStore.getAboutTxt().archievements || [];
 
   constructor() { }
 }
