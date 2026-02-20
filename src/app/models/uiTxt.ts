@@ -5,6 +5,7 @@ export interface IUiTxtModel {
   aboutTxt: IUiTxtAboutModel;
   cardTxt: IUiTxtCardModel;
   portfolioTxt?: IUiTxtPortfolioModel;
+  contactTxt?: IUiTxtContactModel;
 }
 
 export interface IUiTxtNavModel {
@@ -68,4 +69,32 @@ export interface IUiTxtPortfolioModel {
   typeProjectVideoTitle: string;
   typeProjectFairePartTitle: string;
   typeProjectWebsiteTitle: string;
+}
+
+export interface IUiTxtContactModel {
+  contactTitle: string;
+  countryLabel: string;
+  townLabel: string;
+  streetLabel: string;
+  postalCodeLabel: string;
+  phoneLabel: string;
+  workStatusLabel: string;
+  disponibilityLabel: string;
+
+  formTitle: string;
+  nameLabel: string;
+  namePlaceholder: string;
+  emailLabel: string;
+  emailPlaceholder: string;
+  sujetLabel: string;
+  sujetPlaceholder: string;
+  messageLabel: string;
+  messagePlaceholder: string;
+  submitBtn: string;
+  successMessageTitle?: string;
+  successMessageBody?: string;
+  resetBtn?: string;
+  requiredFieldError?: string;
+  emailInvalidError?: string;
+  minLengthError?: string;
 }
