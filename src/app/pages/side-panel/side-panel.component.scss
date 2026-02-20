@@ -13,11 +13,19 @@ $banner-w: 290px;
 }
 
 .banner-desc .banner-infos {
-  display: none;
+  visibility: hidden;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transform: translateY(-20px);
+  transition: all $animation-duration ease-in-out;
 }
 
 .banner-desc .banner-infos.extended {
-  display: block;
+  visibility: visible;
+  opacity: 1;
+  max-height: 100%;
+  transform: translateY(0);
 }
 
 .banner-desc .btn-extend {
@@ -66,7 +74,10 @@ $svg-size: 15px;
   }
 
   .banner-desc .banner-infos {
-    display: block;
+    visibility: visible;
+    opacity: 1;
+    max-height: 100%;
+    transform: translateY(0);
   }
 
   .banner-desc .btn-extend {
