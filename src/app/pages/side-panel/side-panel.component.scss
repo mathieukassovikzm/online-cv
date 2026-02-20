@@ -76,7 +76,7 @@ $svg-size: 15px;
   .banner-desc .banner-infos {
     visibility: visible;
     opacity: 1;
-    max-height: 100%;
+    max-height: none;
     transform: translateY(0);
   }
 

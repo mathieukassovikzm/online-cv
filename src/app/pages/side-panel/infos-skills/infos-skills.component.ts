@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
 import { TypeSkillEnum } from 'src/app/models/enum';
 import { ISkillModel } from 'src/app/models/infos';
-import { InfosService } from 'src/app/services/infos.service';
+import { AboutStore } from 'src/app/store/about.store';
 import { LanguageStore } from 'src/app/store/language.store';
 import { UiStore } from 'src/app/store/ui.store';
 import { SkillComponent } from './skill/skill.component';
@@ -18,7 +18,7 @@ const components = [SkillComponent];
   standalone: true
 })
 export class InfosSkillsComponent implements OnInit {
-  private infosService = inject(InfosService);
+  private aboutStore = inject(AboutStore);
 
   readonly languageStore = inject(LanguageStore);
   readonly uiStore = inject(UiStore);
@@ -35,20 +35,20 @@ export class InfosSkillsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.skillsFrontEnd = this.infosService.getLstSkillsByType(
+    this.skillsFrontEnd = this.aboutStore.getLstSkillsByType(
       TypeSkillEnum.FrontEnd
     );
-    this.skillsBackEnd = this.infosService.getLstSkillsByType(
+    this.skillsBackEnd = this.aboutStore.getLstSkillsByType(
       TypeSkillEnum.BackEnd
     );
-    this.skillsBdd = this.infosService.getLstSkillsByType(TypeSkillEnum.Bdd);
-    this.skillsVersionning = this.infosService.getLstSkillsByType(
+    this.skillsBdd = this.aboutStore.getLstSkillsByType(TypeSkillEnum.Bdd);
+    this.skillsVersionning = this.aboutStore.getLstSkillsByType(
       TypeSkillEnum.Versionning
     );
-    this.skillsTools = this.infosService.getLstSkillsByType(
+    this.skillsTools = this.aboutStore.getLstSkillsByType(
       TypeSkillEnum.Tools
     );
-    this.skillsAdobe = this.infosService.getLstSkillsByType(
+    this.skillsAdobe = this.aboutStore.getLstSkillsByType(
       TypeSkillEnum.Adobe
     );
   }

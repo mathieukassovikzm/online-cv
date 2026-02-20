@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit, inject } from '@angular/core';
 import { CodeSocialNetworkEnum } from 'src/app/models/enum';
 import { ISocialNetwork } from 'src/app/models/infos';
-import { InfosService } from 'src/app/services/infos.service';
+import { AboutStore } from 'src/app/store/about.store';
 import { SvgBitbucketComponent } from '../../svgs/social/svg-bitbucket/svg-bitbucket.component';
 import { SvgFacebookComponent } from '../../svgs/social/svg-facebook/svg-facebook.component';
 import { SvgGithubComponent } from '../../svgs/social/svg-github/svg-github.component';
@@ -20,7 +20,7 @@ const svgs = [SvgFacebookComponent, SvgInstagramComponent, SvgGithubComponent, S
   standalone: true
 })
 export class LstSocialsComponent implements OnInit {
-  private infosService = inject(InfosService);
+  private aboutStore = inject(AboutStore);
 
   public lstSocials: ISocialNetwork[] = [];
   public codeFB = CodeSocialNetworkEnum.FB;
@@ -32,6 +32,6 @@ export class LstSocialsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.lstSocials = this.infosService.getLstSocialNetwork();
+    this.lstSocials = this.aboutStore.getLstSocialNetwork();
   }
 }

@@ -1,10 +1,12 @@
 import { computed, inject } from '@angular/core';
 import { signalStore, withComputed, withMethods, withState } from '@ngrx/signals';
-import _ from 'lodash';
 import { IExperienceModel } from '../models/about';
-import { CodeLanguageEnum } from '../models/enum';
+import { CodeLanguageEnum, TypeSkillEnum } from '../models/enum';
 import { aboutEn, aboutEs, aboutFr } from '../services/cv-math/dataAbout';
 import { LanguageStore } from './language.store';
+import { ISocialNetwork, ISkillModel } from '../models/infos';
+import { lstSocialNetwork } from '../services/cv-math/dataInfos';
+import { skills } from '../services/cv-math/dataSkills';
 
 type AboutState = {
 };
@@ -33,13 +35,36 @@ export const AboutStore = signalStore(
   withMethods((store, languageStore = inject(LanguageStore)) => ({
     getLifeTimeline(): IExperienceModel[] {
       const about = store.getAboutTxt();
-      let timeline: IExperienceModel[] = _.union(
-        about?.educations,
-        about?.archievements,
-        about?.experiencesPro
-      );
-      timeline = _.orderBy(timeline, (i) => i.dateEnd, ['desc']);
+      // Combine all timeline events using Set to avoid duplicates
+      let timeline: IExperienceModel[] = [
+        ...new Set([
+          ...about?.educations || [],
+          ...about?.archievements || [],
+          ...about?.experiencesPro || []
+        ])
+      ];
+      // Sort by dateEnd in descending order
+      timeline = timeline.sort((a, b) => new Date(b.dateEnd).getTime() - new Date(a.dateEnd).getTime());
       return timeline;
     },
+
+    getLstSocialNetwork(): ISocialNetwork[] {
+      return lstSocialNetwork.filter(network => network.display === true);
+    },
+
+    getTypesSkills(): Array<Object> {
+      return Object.keys(TypeSkillEnum).filter((item) => {
+        return isNaN(Number(item));
+      });
+    },
+
+    /** GET SKILLS */
+    getLstSkills(): ISkillModel[] {
+      return skills;
+    },
+
+    getLstSkillsByType(typeSkill: TypeSkillEnum): ISkillModel[] {
+      return skills.filter(skill => skill.type === typeSkill && skill.display === true);
+    }
   }))
 );

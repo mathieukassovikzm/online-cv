@@ -1,6 +1,5 @@
 import { Component, inject } from '@angular/core';
 import { IInfosModel } from 'src/app/models/infos';
-import { InfosService } from 'src/app/services/infos.service';
 import { UiStore } from 'src/app/store/ui.store';
 
 @Component({
@@ -10,8 +9,6 @@ import { UiStore } from 'src/app/store/ui.store';
   standalone: true
 })
 export class FooterComponent {
-  private infosService = inject(InfosService);
-
   readonly uiStore = inject(UiStore);
 
   public infosPerso: IInfosModel = this.uiStore.getInfosTxt();
