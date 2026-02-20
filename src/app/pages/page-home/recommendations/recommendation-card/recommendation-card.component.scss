@@ -72,6 +72,7 @@ $svg-size: 12px;
   height: $svg-size+10px;
   transition: transform $animation-duration-short ease-in-out;
   transform: rotate(-90deg);
+  background: transparent;
 }
 
 .card-infos button.is-truncated {
