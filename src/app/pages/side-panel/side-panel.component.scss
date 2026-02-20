@@ -13,25 +13,48 @@ $banner-w: 290px;
 }
 
 .banner-desc .banner-infos {
-  display: none;
+  visibility: hidden;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transform: translateY(-20px);
+  transition: all $animation-duration ease-in-out;
 }
 
 .banner-desc .banner-infos.extended {
-  display: block;
+  visibility: visible;
+  opacity: 1;
+  max-height: 100%;
+  transform: translateY(0);
 }
 
 .banner-desc .btn-extend {
   position: relative;
   display: block;
   width: 100%;
+  background: var(--main-color-light);
+  box-shadow: var(--box-shadow);
 }
 
-.banner-desc .btn-extend .icon.extended ::ng-deep svg {
-  transform: rotate(180deg);
+$svg-size: 15px;
+
+.banner-desc .btn-extend svg {
+  width: $svg-size;
+  height: $svg-size;
+  position: relative;
+  transform: rotate(90deg);
+  transition: transform $animation-duration-short ease-in-out;
 }
 
-.banner-desc .btn-extend .icon ::ng-deep svg {
-  width: 15px;
+.banner-desc .btn-extend.extended svg {
+  transform: rotate(-90deg);
+}
+
+.banner-desc .btn-extend svg path {
+  fill: none;
+  stroke: var(--primary-color);
+  stroke-width: 4px;
+  stroke-linecap: round;
 }
 
 /* ---------------------- Media query ----------------------------*/
@@ -51,7 +74,10 @@ $banner-w: 290px;
   }
 
   .banner-desc .banner-infos {
-    display: block;
+    visibility: visible;
+    opacity: 1;
+    max-height: none;
+    transform: translateY(0);
   }
 
   .banner-desc .btn-extend {

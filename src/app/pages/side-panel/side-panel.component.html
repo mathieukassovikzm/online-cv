@@ -1,11 +1,13 @@
 <div class="banner-desc">
   <app-top-desc></app-top-desc>
 
-  <button class ='btn-extend' (click)="extendBannerInfos()">
-    <app-svg-download [class.extended]="isBannerInfosExtended"></app-svg-download>
+  <button class="btn-extend" (click)="extendBannerInfos()" [class.extended]="isBannerInfosExtended()">
+    <svg viewBox="0 0 10 20">
+      <path d="M 0 0 L 10 10 L 0 20"></path>
+    </svg>
   </button>
 
-  <div class="banner-infos" [class.extended]="isBannerInfosExtended">
+  <div class="banner-infos" [class.extended]="isBannerInfosExtended()">
     <app-infos-perso></app-infos-perso>
     <div class="divider"></div>
     <app-infos-languages></app-infos-languages>

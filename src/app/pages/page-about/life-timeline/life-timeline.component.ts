@@ -8,7 +8,6 @@ import {
   Signal,
   WritableSignal,
 } from '@angular/core';
-import _ from 'lodash';
 import { IExperienceModel } from 'src/app/models/about';
 import { TypeExperienceEnum } from 'src/app/models/enum';
 import { LifeExperienceComponent } from 'src/app/shared/components/life-experience/life-experience.component';
@@ -48,9 +47,7 @@ export class LifeTimelineComponent implements OnInit {
     const filter = this.sFilterActif();
     let timelineEvents = this.sTimelineEvents;
     if (filter != undefined) {
-      return _.filter(timelineEvents, {
-        typeExpe: filter,
-      });
+      return timelineEvents.filter(event => event.typeExpe === filter);
     }
     return timelineEvents;
   });
