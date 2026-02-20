@@ -1,6 +1,5 @@
 @use '../0-helpers/variables' as *;
 
-
 $card-svg-s: 45px;
 $card-svg-right: 20px;
 $card-svg-top: -22px;
@@ -10,10 +9,7 @@ $card-svg-top: -22px;
   display: block;
 
   .card-container {
-    position: relative;
-    box-shadow: var(--box-shadow);
     overflow-y: hidden;
-    height: 100%;
   }
 
   .card-container img {
@@ -21,15 +17,7 @@ $card-svg-top: -22px;
   }
 
   .card-infos {
-    position: relative;
-    width: 100%;
-    background: var(--main-color-light);
-    padding: 30px 20px;
     transform: translateY(0px);
-  }
-
-  .title-container {
-    margin-bottom: 20px;
   }
 
   .subtitle h5 {

@@ -293,4 +293,9 @@ $n: 10;
   .is-opened :host .tabbar .current-page {
     opacity: 0;
   }
+
+  .tabbar .container-btn {
+    display: block;
+  }
+
 }

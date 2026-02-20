@@ -1,0 +1,85 @@
+import { IUiTxtContactModel } from 'src/app/models/uiTxt';
+
+export const uiTxtContactFr: IUiTxtContactModel = {
+  contactTitle: 'Contact',
+  countryLabel: 'Pays',
+  townLabel: 'Ville',
+  streetLabel: 'Rue',
+  postalCodeLabel: 'Code Postal',
+  phoneLabel: 'Téléphone',
+  workStatusLabel: 'Situation professionnelle',
+  disponibilityLabel: 'Disponibilité',
+
+  formTitle: 'Formulaire',
+  nameLabel: 'Nom',
+  namePlaceholder: 'Votre nom complet',
+  emailLabel: 'Email',
+  emailPlaceholder: 'Votre email',
+  sujetLabel: 'Sujet',
+  sujetPlaceholder: 'Sujet de votre message',
+  messageLabel: 'Message',
+  messagePlaceholder: 'Votre message',
+  submitBtn: 'Envoyer',
+  successMessageTitle: 'Message envoyé avec succès !',
+  successMessageBody: 'Merci pour votre message. Je vous répondrai dans les plus brefs délais.',
+  resetBtn: 'Nouveau message',
+  requiredFieldError: 'Ce champ est requis.',
+  emailInvalidError: 'Veuillez entrer une adresse email valide.',
+  minLengthError: 'Minimum {min} caractères requis.'
+};
+
+export const uiTxtContactEn: IUiTxtContactModel = {
+  contactTitle: 'Contact',
+  countryLabel: 'Country',
+  townLabel: 'City',
+  streetLabel: 'Street',
+  postalCodeLabel: 'Postal Code',
+  phoneLabel: 'Phone',
+  workStatusLabel: 'Work Status',
+  disponibilityLabel: 'Disponibility',
+
+  formTitle: 'Form',
+  nameLabel: 'Name',
+  namePlaceholder: 'Your full name',
+  emailLabel: 'Email',
+  emailPlaceholder: 'Your email',
+  sujetLabel: 'Subject',
+  sujetPlaceholder: 'Subject of your message',
+  messageLabel: 'Message',
+  messagePlaceholder: 'Your message',
+  submitBtn: 'Send',
+  successMessageTitle: 'Message sent successfully!',
+  successMessageBody: 'Thank you for your message. I will get back to you as soon as possible.',
+  resetBtn: 'New message',
+  requiredFieldError: 'This field is required.',
+  emailInvalidError: 'Please enter a valid email address.',
+  minLengthError: 'Minimum {min} characters required.'
+};
+
+export const uiTxtContactEs: IUiTxtContactModel = {
+  contactTitle: 'Contacto',
+  countryLabel: 'País',
+  townLabel: 'Ciudad',
+  streetLabel: 'Calle',
+  postalCodeLabel: 'Código Postal',
+  phoneLabel: 'Teléfono',
+  workStatusLabel: 'Situación laboral',
+  disponibilityLabel: 'Disponibilidad',
+
+  formTitle: 'Formulario',
+  nameLabel: 'Nombre',
+  namePlaceholder: 'Tu nombre completo',
+  emailLabel: 'Correo electrónico',
+  emailPlaceholder: 'Tu correo electrónico',
+  sujetLabel: 'Asunto',
+  sujetPlaceholder: 'Asunto de tu mensaje',
+  messageLabel: 'Mensaje',
+  messagePlaceholder: 'Tu mensaje',
+  submitBtn: 'Enviar',
+  successMessageTitle: '¡Mensaje enviado con éxito!',
+  successMessageBody: 'Gracias por tu mensaje. Te responderé lo antes posible.',
+  resetBtn: 'Nuevo mensaje',
+  requiredFieldError: 'Este campo es obligatorio.',
+  emailInvalidError: 'Por favor, introduce una dirección de correo electrónico válida.',
+  minLengthError: 'Se requieren al menos {min} caracteres.'
+};

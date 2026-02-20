@@ -1,20 +1,20 @@
-import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { CardComponent } from 'src/app/shared/components/card/card.component';
-import { LanguageStore } from 'src/app/store/language.store';
+import { AboutStore } from 'src/app/store/about.store';
+import { UiStore } from 'src/app/store/ui.store';
 
-const modules = [CommonModule];
 const components = [CardComponent];
 
 @Component({
   selector: 'app-work-experience',
   templateUrl: './work-experience.component.html',
   styleUrls: ['./work-experience.component.scss'],
-  imports: [...modules, ...components],
+  imports: [...components],
   standalone: true
 })
 export class WorkExperienceComponent {
-  readonly languageStore = inject(LanguageStore);
+  readonly uiStore = inject(UiStore);
+  readonly aboutStore = inject(AboutStore);
 
   constructor() { }
 }

@@ -1,5 +1,5 @@
 
-import { Component, HostBinding, inject } from '@angular/core';
+import { Component, computed, HostBinding, inject } from '@angular/core';
 import { UiStore } from 'src/app/store/ui.store';
 
 @Component({
@@ -13,7 +13,7 @@ export class BtnDarkModeComponent {
   @HostBinding('class') class = 'component-btn-dark-mode';
 
   readonly uiStore = inject(UiStore);
-  isChecked = !this.uiStore.darkMode();
+  public isChecked = computed(() => !this.uiStore.darkMode());
 
   constructor() { }
 

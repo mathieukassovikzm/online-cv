@@ -21,7 +21,7 @@ export const uiTxtSidePanelFr: IUiTxtSidePanelModel = {
 
 export const uiTxtSidePanelEn: IUiTxtSidePanelModel = {
   topDescTitles: {
-    languageTitle : 'Pic the language',
+    languageTitle : 'Pick the language',
     cvTitle: 'Download CV:'
   },
   infosPersoTitles: {

@@ -19,9 +19,13 @@
       </li>
     </ul>
   </nav>
-  <div class="lst-cards-container" [@filterAnimation]="timelineEventsFilteredTotal()">
-    @for (event of sTimelineEventsFiltered(); track $index) {
-    <app-life-experience [item]="event"></app-life-experience>
+  <div class="lst-cards-container" [class.animating]="isAnimating()">
+    @for (event of sTimelineEventsFiltered(); track $index; let i = $index) {
+    <div class="timeline-item-wrapper" 
+         [class.fade-in]="!isAnimating()" 
+         [style.transition-delay.ms]="i * 50">
+      <app-life-experience [item]="event"></app-life-experience>
+    </div>
     }
   </div>
 </section>

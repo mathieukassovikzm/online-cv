@@ -3,31 +3,32 @@
 .card-container {
   position: relative;
   padding: $slide-padding-lr;
+  box-shadow: none;
 }
 
 $card-padding: 30px;
 
-.card {
+.card-infos {
   position: relative;
   background: var(--main-color-light);
   box-shadow: var(--box-shadow);
   padding: $card-padding;
 }
 
-.card h5 {
+.card-infos h5 {
   font-weight: 600;
   font-size: 22px;
   color: var(--primary-color);
 }
 
-.card h6 {
+.card-infos h6 {
   color: $grey;
   font-style: italic;
   margin-top: 5px;
   margin-bottom: 15px;
 }
 
-.card img {
+.card-infos img {
   position: absolute;
   right: 30px;
   top: -15px;
@@ -36,7 +37,7 @@ $card-padding: 30px;
   border-radius: 50%;
 }
 
-.card p.text-ellipsis {
+.card-infos p.text-ellipsis {
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -46,7 +47,7 @@ $card-padding: 30px;
   transition: all 0.5s ease-in-out;
 }
 
-.card p.text-ellipsis.is-text-full {
+.card-infos p.text-ellipsis.is-text-full {
   overflow: visible;
   text-overflow: inherit;
 }
@@ -66,18 +67,19 @@ $card-padding: 30px;
 
 $svg-size: 12px;
 
-.card button {
+.card-infos button {
   width: $svg-size+10px;
   height: $svg-size+10px;
   transition: transform $animation-duration-short ease-in-out;
   transform: rotate(-90deg);
+  background: transparent;
 }
 
-.card button.is-truncated {
+.card-infos button.is-truncated {
   transform: rotate(90deg);
 }
 
-.card button svg {
+.card-infos button svg {
   width: $svg-size;
   height: $svg-size;
   position: relative;
@@ -86,7 +88,7 @@ $svg-size: 12px;
   transform: translate(-50%, -50%);
 }
 
-.card button svg path {
+.card-infos button svg path {
   fill: none;
   stroke: var(--primary-color);
   stroke-width: 4px;
@@ -95,13 +97,13 @@ $svg-size: 12px;
   transition: opacity 0.4s ease-in-out;
 }
 
-.card button:hover svg path {
+.card-infos button:hover svg path {
   opacity: 1;
 }
 
 /* ---------------------- Media query ----------------------------*/
 @media only screen and (min-width: $min-width-xl) {
-  .card p.text-ellipsis {
+  .card-infos p.text-ellipsis {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     line-clamp: 5;

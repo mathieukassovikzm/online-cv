@@ -1,0 +1,85 @@
+<h2>{{ uiText()?.formTitle }}</h2>
+
+<!-- Contact Form -->
+<div class="card-container">
+  @if (!isSubmitted) {
+  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="card-infos contact-form">
+    <!-- Name Field -->
+    @if (isFieldInvalid('name')) {
+    <span class="error-message">{{ getFieldError('name') }}</span>
+    }
+    <div class="form-group" [class.error]="isFieldInvalid('name')">
+      <input type="text" id="name" formControlName="name" class="form-input"
+        [placeholder]="uiText()?.namePlaceholder" />
+      <label for="name" class="form-label">
+        <app-svg-person></app-svg-person>
+      </label>
+    </div>
+
+    <!-- Email Field -->
+    @if (isFieldInvalid('email')) {
+    <span class="error-message">{{ getFieldError('email') }}</span>
+    }
+    <div class="form-group" [class.error]="isFieldInvalid('email')">
+      <input type="email" id="email" formControlName="email" class="form-input"
+        [placeholder]="uiText()?.emailPlaceholder" />
+      <label for="email" class="form-label">
+        <app-svg-arobase></app-svg-arobase>
+      </label>
+    </div>
+
+    <!-- Subject Field -->
+    @if (isFieldInvalid('subject')) {
+    <span class="error-message">{{ getFieldError('subject') }}</span>
+    }
+    <div class="form-group" [class.error]="isFieldInvalid('subject')">
+      <input type="text" id="subject" formControlName="subject" class="form-input"
+        [placeholder]="uiText()?.sujetPlaceholder" />
+      <label for="subject" class="form-label">
+        <app-svg-info></app-svg-info>
+      </label>
+    </div>
+
+    <!-- Message Field -->
+    @if (isFieldInvalid('message')) {
+    <span class="error-message">{{ getFieldError('message') }}</span>
+    }
+    <div class="form-group text-area" [class.error]="isFieldInvalid('message')">
+      <textarea id="message" formControlName="message" class="form-textarea" rows="6"
+        [placeholder]="uiText()?.messagePlaceholder"></textarea>
+      <label for="message" class="form-label">
+        <app-svg-email></app-svg-email>
+      </label>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="form-actions">
+      <button type="submit" class="action-btn submit-btn" [class.loading]="isSubmitting" [disabled]="isSubmitting">
+        @if (isSubmitting) {
+        <div class="loading-spinner"></div>
+        <span>{{ uiText()?.submitBtn }}...</span>
+        } @else {
+        <span>{{ uiText()?.submitBtn }}</span>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="send-icon">
+          <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
+        </svg>
+        }
+      </button>
+    </div>
+  </form>
+  } @else {
+  <!-- Success Message -->
+  <div class="card-infos success-message">
+    <div class="success-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+      </svg>
+    </div>
+    <h3>{{ uiText()?.successMessageTitle }}</h3>
+    <p>{{ uiText()?.successMessageBody }}</p>
+    <button (click)="resetForm()" class="action-btn reset-btn">
+      {{ uiText()?.resetBtn }}
+    </button>
+  </div>
+  }
+</div>

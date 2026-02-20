@@ -1,10 +1,10 @@
-import { Component, computed, inject, Signal, signal } from '@angular/core';
-import { PortfolioStore } from 'src/app/store/portfolio.store';
-import { UiStore } from 'src/app/store/ui.store';
+import { Component, computed, inject, signal } from '@angular/core';
+import { TypeProjectEnum } from 'src/app/models/enum';
+import { IProjectModel } from 'src/app/models/project';
 import { PortfolioItemComponent } from 'src/app/pages/page-projects/portfolio-item/portfolio-item.component';
 import { PortfolioCarouselComponent } from 'src/app/shared/components/portfolio-carousel/portfolio-carousel.component';
-import { IProjectModel } from 'src/app/models/project';
-import { TypeProjectEnum } from 'src/app/models/enum';
+import { PortfolioStore } from 'src/app/store/portfolio.store';
+import { UiStore } from 'src/app/store/ui.store';
 
 @Component({
   selector: 'app-page-projects',

@@ -1,0 +1,69 @@
+<h2>{{ uiText()?.contactTitle }}</h2>
+<ul class="section-contact-informations">
+  @if (contactInfos().contactBox1) {
+  <li class="card-container">
+    <div class="card-infos">
+      @if (contactInfos().contactBox1?.country) {
+      <div class="contact-info country">
+        <p class="label">{{ uiText()?.countryLabel }}:</p>
+        <p class="value">{{ contactInfos().contactBox1?.country }}</p>
+      </div>
+      }
+      @if (contactInfos().contactBox1?.town) {
+      <div class="contact-info town">
+        <p class="label">{{ uiText()?.townLabel }}:</p>
+        <p class="value">{{ contactInfos().contactBox1?.town }}</p>
+      </div>
+      }
+      @if (contactInfos().contactBox1?.street) {
+      <div class="contact-info street">
+        <p class="label">{{ uiText()?.streetLabel }}:</p>
+        <p class="value">{{ contactInfos().contactBox1?.street }}</p>
+      </div>
+      }
+      @if (contactInfos().contactBox1?.postalCode) {
+      <div class="contact-info postal-code">
+        <p class="label">{{ uiText()?.postalCodeLabel }}:</p>
+        <p class="value">{{ contactInfos().contactBox1?.postalCode }}</p>
+      </div>
+      }
+    </div>
+  </li>
+  }
+  @if (contactInfos().contactBox2) {
+  <li class="card-container">
+    <div class="card-infos">
+      @if (contactInfos().contactBox2?.email) {
+      <div class="contact-info email">
+        <p class="label">{{ uiText()?.emailLabel }}:</p>
+        <p class="value">{{ contactInfos().contactBox2?.email }}</p>
+      </div>
+      }
+      @if (contactInfos().contactBox2?.phone) {
+      <div class="contact-info phone">
+        <p class="label">{{ uiText()?.phoneLabel }}:</p>
+        <p class="value">{{ contactInfos().contactBox2?.phone }}</p>
+      </div>
+      }
+    </div>
+  </li>
+  }
+  @if (contactInfos().contactBox3) {
+  <li class="card-container">
+    <div class="card-infos contact-box-3">
+      @if (contactInfos().contactBox3?.workStatus) {
+      <div class="contact-info work-status">
+        <p class="label">{{ uiText()?.workStatusLabel }}:</p>
+        <p class="value">{{ contactInfos().contactBox3?.workStatus }}</p>
+      </div>
+      }
+      @if (contactInfos().contactBox3?.disponibility) {
+      <div class="contact-info disponibility">
+        <p class="label">{{ uiText()?.disponibilityLabel }}:</p>
+        <p class="value">{{ contactInfos().contactBox3?.disponibility }}</p>
+      </div>
+      }
+    </div>
+  </li>
+  }
+</ul>

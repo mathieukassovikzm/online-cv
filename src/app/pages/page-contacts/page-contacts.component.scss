@@ -1,5 +1,9 @@
 @use '../0-helpers/variables' as *;
 
+app-contact-form {
+  display: block;
+  margin-top: 30px;
+}
 
 /* ---------------------- Media query ----------------------------*/
 @media only screen and (min-width: $min-width-xl) {

@@ -15,6 +15,26 @@
   width: 2px;
   height: 100%;
 }
+$scale-start: 0.98;
+$translateY-start: 5px;
+
+// Timeline item animation
+.timeline-item-wrapper {
+  opacity: 0;
+  transform: translateY($translateY-start) scale($scale-start);
+  transition: all $animation-duration-short ease-out;
+}
+
+.timeline-item-wrapper.fade-in {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+// Container animation state
+.lst-cards-container.animating .timeline-item-wrapper {
+  opacity: 0;
+  transform: translateY(-$translateY-start) scale($scale-start);
+}
 
 /* ---------------------- Media query ----------------------------*/
 @media only screen and (min-width: $min-width-xl) {
