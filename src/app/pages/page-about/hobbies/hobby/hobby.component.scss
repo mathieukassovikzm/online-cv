@@ -7,65 +7,64 @@ $card-svg-top: -22px;
 :host {
   height: 100%;
   display: block;
+}
 
-  .card-container {
-    overflow-y: hidden;
-  }
+.card-container {
+  overflow-y: hidden;
+}
 
-  .card-container img {
-    width: 100%;
-  }
+.card-container img {
+  width: 100%;
+}
 
-  .card-infos {
-    transform: translateY(0px);
-  }
+.card-infos {
+  transform: translateY(0px);
+  height: auto;
+}
 
-  .subtitle h5 {
-    color: $grey;
-    font-style: italic;
-    font-size: 12px;
-  }
+.subtitle h5 {
+  color: $grey;
+  font-style: italic;
+  font-size: 12px;
+}
 
-  .dsc {
-    margin: 10px 0;
-  }
+.dsc {
+  margin: 10px 0;
+}
 
-  .card-logo {
-    position: absolute;
-    top: $card-svg-top;
-    right: $card-svg-right;
+.card-logo {
+  position: absolute;
+  top: $card-svg-top;
+  right: $card-svg-right;
+  width: $card-svg-s;
+  height: $card-svg-s;
+  border-radius: 50%;
+  background-color: $light;
+  box-shadow: var(--box-shadow);
+
+  .icon {
+    display: block;
     width: $card-svg-s;
     height: $card-svg-s;
-    border-radius: 50%;
-    background-color: $light;
-    box-shadow: var(--box-shadow);
+  }
 
-    .icon {
-      display: block;
-      width: $card-svg-s;
-      height: $card-svg-s;
-    }
-
-    ::ng-deep svg {
-      transform: scale(.7);
-    }
+  ::ng-deep svg {
+    transform: scale(.7);
   }
 }
 
 /* ---------------------- Media query ----------------------------*/
 @media only screen and (min-width: $min-width-xxl) {
-  :host {
-    .card-infos {
-      cursor: pointer;
-      position: absolute;
-      width: 100%;
-      bottom: 0;
-      transition: transform 0.5s ease-in-out;
-      transform: none;
-    }
+  .card-infos {
+    cursor: pointer;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    transition: transform 0.5s ease-in-out;
+    transform: none;
+  }
 
-    .card-infos:hover {
-      transform: translateY(0px) !important;
-    }
+  .card-infos:hover {
+    transform: translateY(0px) !important;
   }
 }
