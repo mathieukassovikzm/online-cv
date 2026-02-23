@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { afterNextRender, Component, ElementRef, Renderer2, ViewChild, inject, input } from '@angular/core';
+import { afterNextRender, Component, ElementRef, inject, input, Renderer2, ViewChild } from '@angular/core';
 import { IHobbyModel } from 'src/app/models/about';
 import { TypeHobbyEnum } from 'src/app/models/enum';
 import { SvgEducationComponent } from 'src/app/shared/svgs/ui/svg-education/svg-education.component';
@@ -41,7 +41,7 @@ export class HobbyComponent {
     if (mediaQuery.matches) {
       this.calculateTransformY();
     } else {
-      this.renderer.setStyle(this.divCardInfos?.nativeElement, 'transform', `translateY(0px)`);
+      this.renderer.setStyle(this.divCardInfos?.nativeElement, 'transform', `translateY(-7px)`);
     }
 
     // Optional: re-run if the user resizes the window
@@ -50,7 +50,7 @@ export class HobbyComponent {
         this.calculateTransformY();
       }
       else {
-        this.renderer.setStyle(this.divCardInfos?.nativeElement, 'transform', `translateY(0px)`);
+        this.renderer.setStyle(this.divCardInfos?.nativeElement, 'transform', `translateY(-7px)`);
       }
     });
   }
