@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
 import { SvgQuoteComponent } from 'src/app/shared/svgs/ui/svg-quote/svg-quote.component';
 import { AboutStore } from 'src/app/store/about.store';
 import { UiStore } from 'src/app/store/ui.store';
@@ -19,7 +19,7 @@ export class ExtractComponent {
   readonly uiStore = inject(UiStore);
 
   public uiText = this.uiStore.getUiTxt().aboutTxt;
-  public extract = this.aboutStore.getAboutTxt().extract || '';
+  public extract = computed(() => this.aboutStore.getAboutTxt().extract || '');
 
   constructor() { }
 }

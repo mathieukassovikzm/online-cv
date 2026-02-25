@@ -2,9 +2,11 @@
 <div class="card-container">
   <div class="card-infos">
     <span class="quote-in"><app-svg-quote></app-svg-quote></span>
+    @for (item of extract(); track $index) {
     <p>
-      {{extract}}
+      {{item}}
     </p>
+    }
     <span class="quote-out"><app-svg-quote></app-svg-quote></span>
   </div>
 </div>

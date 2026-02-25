@@ -194,8 +194,11 @@ const photo = <IHobbyModel>{
 };
 
 export const aboutFr: IAboutModel = {
-  extract:
-    "Je suis très alaise socialement. J'ai l'habitude de cohabiter avec énormément de personnes, de différentes cultures, background. J'aime apprendre des gens et enseigner aux gens. Je suis d'un naturel à aider les gens. Principalement en donnant de mon temps. C'est pour cela que j'ai décidé de dédier 5 mois de ma vie à la reconstruction d'une école au Mexique. Je suis flexible, j'adore apprendre et je suis capable de m'adapter très vite à différents environnements de travail. Capable de travailler en équipe, je suis très enthousiaste avec un sens des responsabilités aigu.",
+  extract: [
+    "Très à l'aise socialement, j'ai l'habitude de cohabiter et de collaborer avec de nombreuses personnes issues de cultures et de parcours variés. J'apprécie autant apprendre des autres que transmettre mes connaissances. Naturellement porté vers l'entraide, je m'investis volontiers en donnant de mon temps.",
+    "C'est dans cette optique que j'ai consacré cinq mois à la reconstruction d'une école au Mexique, une expérience enrichissante tant sur le plan humain que professionnel.",
+    "Sérieux et méthodique, je sais rester flexible. Je n'hésite pas à reconnaître mes torts et à me remettre en question. Soucieux de progresser en permanence, je ne me repose jamais sur mes acquis et je m'adapte rapidement à différents environnements de travail. Capable de travailler efficacement en équipe, je fais preuve d'enthousiasme et d'un sens aigu des responsabilités.",
+  ],
   educations: <IExperienceModel[]>[
     <IExperienceModel>{
       ...insa,
@@ -252,11 +255,13 @@ export const aboutFr: IAboutModel = {
       title: 'Développeur full stack',
       description: {
         ...freelanceBouygues.description,
-        dsc: "Leader technique d'une équipe de 3 personnes. Développement from scratch d'un portail de suivi des incidents et changements réseaux de Bouygues Telecom dans le cadre du projet gouvernemental RRF.",
+        dsc: "Leader technique d'une équipe de 3 développeurs, responsable de la conception et du développement from scratch d'un portail stratégique de pilotage des incidents et des évolutions réseau pour Bouygues Telecom (projet gouvernemental RRF). Référent technique et garant des bonnes pratiques pour les équipes intervenant sur le SI.",
         tasks: [
-          "Mise en place d'architectures d'une application Angular et d'APIs C#.",
-          "Développement 'from scratch' d'un portail web Angular comprenant des onglets de cartographies, KPIs, etc.",
-          "Mise en place d'un système de synchronisation de bdd Oracle/Postgresql.",
+          "Mise en place de multiples APIs C# en respectant l'architecture « Oignon ».",
+          "Développement d'un système OData custom pour fonctionner avec les composants DevExtreme côté front.",
+          "Développement from scratch d'un portail web Angular comprenant des onglets de cartographie, des KPIs, etc.",
+          "Gestion des montées de version d'Angular.",
+          "Mise en place d'un système de synchronisation de bases de données Oracle/PostgreSQL.",
           "Respect d'une charte de sécurité gouvernementale.",
         ],
       },
@@ -270,7 +275,7 @@ export const aboutFr: IAboutModel = {
         tasks: [
           "Migration du framework Angular ainsi que des composants Kendo vers leurs versions les plus récentes.",
           "Amélioration et harmonisation du CSS sur l'ensemble de l'application.",
-          "Correction et refactorisation de certaines pages afin de respecter les bonnes pratiques front-end."
+          "Correction et refactorisation de certaines pages afin de respecter les bonnes pratiques front-end.",
         ],
       },
     },
@@ -284,6 +289,7 @@ export const aboutFr: IAboutModel = {
           "Mise en place d'architectures d'une application Angular et d'apis C#",
           'Développement de nouveaux projets frontend et backend (API Rest et SOAP).',
           "Maintenance et amélioration du code C# et SQL d'environ 10 applications.",
+          "Formations internes."
         ],
       },
     },
@@ -448,8 +454,11 @@ export const aboutFr: IAboutModel = {
 };
 
 export const aboutEn: IAboutModel = {
-  extract:
-    "IT engineer of the National Institute of Applied Sciences (INSA) in Rennes France in the Systems and Communication Network (SRC) department, which is the equivalent of a Master's degree in electronics and computer science. I speak fluently French and English and Spanish. I have started to volunteer for All Hands And Hearts in March 21th and it has been a revelation for me. I would like to continue this adventure as a staff member and get even more implicated in this incredible organisation. With a high capability of working in a team, very enthusiasm with my sense of responsibility. I also have an excellent interpersonal relations management with people from different origins and cultures.",
+  extract:[
+    "Socially comfortable, I am used to living and collaborating with many people from diverse cultures and backgrounds. I enjoy both learning from others and sharing my knowledge. Naturally inclined to help others, I am willing to invest my time to support those around me.",
+    "This is why I dedicated five months to the reconstruction of a school in Mexico, an enriching experience both personally and professionally.",
+    "Serious and methodical, I know how to remain flexible. I do not hesitate to acknowledge my mistakes and challenge myself. Always eager to keep learning, I never rely on my achievements and can quickly adapt to different work environments. Able to work effectively in a team, I am highly enthusiastic and possess a strong sense of responsibility.",
+  ],
   educations: <IExperienceModel[]>[
     <IExperienceModel>{
       ...insa,
@@ -506,12 +515,14 @@ export const aboutEn: IAboutModel = {
       title: 'Full stack developer',
       description: {
         ...freelanceBouygues.description,
-        dsc: "Technical lead of a 3-person team, responsible for the from-scratch development of a portal for tracking network incidents and changes for Bouygues Telecom, as part of the government RRF project.",
+        dsc: "Technical Lead of a team of 3 developers, responsible for the design and from-scratch development of a strategic portal for monitoring network incidents and changes for Bouygues Telecom (government RRF project). Technical reference and best-practices owner for teams working on the Information System (IS).",
         tasks: [
-          "Design and implementation of the architecture for an Angular application and C# APIs.",
+          "Design and implementation of multiple C# APIs following the Clean Architecture.",
+          "Development of a custom OData system to integrate with DevExtreme front-end components.",
           "From-scratch development of an Angular web portal including mapping modules, KPIs, and monitoring dashboards.",
+          "Management of Angular version upgrades.",
           "Implementation of a database synchronization system between Oracle and PostgreSQL.",
-          "Compliance with and enforcement of government security guidelines and standards."
+          "Compliance with government security standards and guidelines.",
         ],
       },
     },
@@ -533,12 +544,12 @@ export const aboutEn: IAboutModel = {
       title: 'Full stack developer',
       description: {
         ...veonum.description,
-        dsc: 'Project1: Improvement and maintenance of the information system of the company called Bouygues in a team of 7 persons. Project2: Technical leader of a team of 4 in the rebuild of 3 applications “from scratch” of 3 applications into webapp.',
+        dsc: 'Improvement and maintenance of Bouygues Telecom\'s Information System within a 7-member team based at Atos (Rennes). Technical Lead of a 4-person team responsible for the complete “from scratch” redevelopment of three legacy desktop applications into modern web applications.',
         tasks: [
-          'Architecture Setup  of Angular and C# API applications.',
-          'Developpement of news frontend and backend projects.',
-          'Development of Rest and SOAP API.',
-          'Corrections in a group of 10 software.',
+          'Design and implementation of Angular application and C# APIs.',
+          'Development of new front-end and back-end projects (REST and SOAP APIs).',
+          'Maintenance and enhancement of C# and SQL code across 10 applications.',
+          'Delivery of internal training sessions.',
         ],
       },
     },
@@ -641,8 +652,11 @@ export const aboutEn: IAboutModel = {
 };
 
 export const aboutEs: IAboutModel = {
-  extract:
-    'Ingeniero de Sistemas, hablo francés e inglés como nativo y mi español es nivel intermedio. Soy una persona flexible, aprendo rápido y puedo desenvolverme en diferentes tipos o equipos de trabajos. Alto nivel de trabajo en equipo, entusiasta con un gran sentido de responsabilidad. Excelente manejo de relaciones interpersonales con personas de diferentes orígenes y culturas.',
+  extract:[
+    'Soy una persona muy sociable y estoy acostumbrado a convivir y colaborar con muchas personas de diferentes culturas y orígenes. Me gusta tanto aprender de los demás como compartir mis conocimientos. Naturalmente orientado a ayudar, no dudo en invertir mi tiempo para apoyar a los demás.',
+    'Por esta razón, dediqué cinco meses a la reconstrucción de una escuela en México, una experiencia enriquecedora tanto a nivel personal como profesional.',
+    'Serio y metódico, sé mantenerme flexible. No dudo en reconocer mis errores y cuestionarme para mejorar. Con un fuerte deseo de seguir aprendiendo, no me conformo con mis logros y puedo adaptarme rápidamente a diferentes entornos de trabajo. Capaz de trabajar eficazmente en equipo, soy entusiasta y poseo un fuerte sentido de la responsabilidad.',
+  ],
   educations: <IExperienceModel[]>[
     <IExperienceModel>{
       ...insa,
@@ -699,12 +713,14 @@ export const aboutEs: IAboutModel = {
       title: 'Desarrollador Full Stack',
       description: {
         ...freelanceBouygues.description,
-        dsc: "Líder técnico de un equipo de 3 personas, responsable del desarrollo desde cero de un portal de seguimiento de incidencias y cambios de red para Bouygues Telecom, en el marco del proyecto gubernamental RRF.",
+        dsc: "Líder Técnico de un equipo de 3 desarrolladores, responsable del diseño y del desarrollo desde cero de un portal estratégico para el seguimiento de incidentes y cambios de red para Bouygues Telecom (proyecto gubernamental RRF). Referente técnico y responsable de las buenas prácticas para los equipos que trabajan en el Sistema de Información (SI).",
         tasks: [
-          "Diseño e implementación de la arquitectura de una aplicación Angular y APIs en C#.",
-          "Desarrollo desde cero de un portal web en Angular que incluye módulos de cartografía, KPIs y paneles de seguimiento.",
-          "Implementación de un sistema de sincronización de bases de datos Oracle y PostgreSQL.",
-          "Cumplimiento y aplicación de una normativa de seguridad conforme a los requisitos gubernamentales."
+          "Diseño e implementación de múltiples APIs en C# siguiendo los principios de Clean Architecture.",
+          "Desarrollo de un sistema OData personalizado para integrarse con los componentes front-end de DevExtreme.",
+          "Desarrollo desde cero de un portal web en Angular que incluye módulos de cartografía, KPIs y paneles de monitorización.",
+          "Gestión de actualizaciones de versión de Angular.",
+          'Implementación de un sistema de sincronización de bases de datos entre Oracle y PostgreSQL.',
+          'Cumplimiento de estándares y directrices de seguridad gubernamentales.'
         ],
       },
     },
@@ -730,7 +746,8 @@ export const aboutEs: IAboutModel = {
         tasks: [
           'Implementación de arquitecturas de una aplicación Angular y de APIs en C#.',
           'Desarrollo de nuevos proyectos frontend y backend (API Rest y SOAP).',
-          'Mantenimiento y mejora del código C# y SQL de unas 10 aplicaciones.',
+          'Mejoramiento y mantenimiento del código C# de un grupo de 10 programas.',
+          'Desarrollo de Interfaz de programación de aplicaciones Rest et SOAP.',
         ],
       },
     },
