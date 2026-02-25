@@ -1,3 +1,12 @@
+export interface IEmailModel {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+}
+export interface IErrorModel {
+  message: string;
+}
 export interface IContactModel {
   contactBox1?: IContactBox1Model;
   contactBox2?: IContactBox2Model;
