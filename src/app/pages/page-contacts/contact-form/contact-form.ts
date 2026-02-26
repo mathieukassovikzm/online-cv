@@ -27,11 +27,11 @@ export class ContactFormComponent {
   readonly contactStore = inject(ContactStore);
 
   public uiText = computed(() => this.uiStore.getUiTxt().contactTxt);
-  public contactInfos = this.contactStore.getContactTxt;
+  public isSubmitting = computed(() => this.contactStore.isSubmitting());
+  public isSubmitted = computed(() => this.contactStore.isSubmitted());
+  public error = computed(() => this.contactStore.error?.() ?? null);
 
   public contactForm: FormGroup;
-  public isSubmitting = false;
-  public isSubmitted = false;
 
   constructor() {
     this.contactForm = this.fb.group({
@@ -64,20 +64,9 @@ export class ContactFormComponent {
     return '';
   }
 
-  public async onSubmit(): Promise<void> {
+  public onSubmit(): void {
     if (this.contactForm.valid) {
-      this.isSubmitting = true;
-
-      // Simulate form submission
-      try {
-        await this.simulateFormSubmission();
-        this.isSubmitted = true;
-        this.contactForm.reset();
-      } catch (error) {
-        console.error('Error submitting form:', error);
-      } finally {
-        this.isSubmitting = false;
-      }
+      this.contactStore.sendEmail(this.contactForm.value);
     } else {
       // Mark all fields as touched to show validation errors
       Object.keys(this.contactForm.controls).forEach(key => {
@@ -86,17 +75,9 @@ export class ContactFormComponent {
     }
   }
 
-  private simulateFormSubmission(): Promise<void> {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        console.log('Form submitted:', this.contactForm.value);
-        resolve();
-      }, 2000);
-    });
-  }
-
   public resetForm(): void {
     this.contactForm.reset();
-    this.isSubmitted = false;
+    this.contactStore.setIsSubmitted(false);
+    this.contactStore.resetError();
   }
 }

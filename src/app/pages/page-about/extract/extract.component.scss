@@ -15,5 +15,9 @@ $svg-quote-s: 15px;
   }
 }
 
+:host .card-infos p {
+  margin-bottom: 5px;
+}
+
 /* ---------------------- Media query ----------------------------*/
 @media only screen and (min-width: $min-width-xl) {}

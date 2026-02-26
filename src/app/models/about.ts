@@ -1,7 +1,7 @@
 import { TypeExperienceEnum, TypeHobbyEnum } from './enum';
 
 export interface IAboutModel {
-  extract?: string;
+  extract?: string[];
   educations?: IExperienceModel[];
   archievements?: IExperienceModel[];
   experiencesPro?: IExperienceModel[];
