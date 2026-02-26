@@ -28,14 +28,13 @@ export class LifeTimelineComponent implements OnInit {
   readonly aboutStore = inject(AboutStore);
   readonly uiStore = inject(UiStore);
 
-  public uiText = this.uiStore.getUiTxt().aboutTxt;
+  public uiText = computed(() => this.uiStore.getUiTxt().aboutTxt);
 
   public typeExpeEduc = TypeExperienceEnum.Education;
   public typeExpeArchi = TypeExperienceEnum.Archievement;
   public typeExpeExpePro = TypeExperienceEnum.ExperiencePro;
 
-  public sTimelineEvents: IExperienceModel[] =
-    this.aboutStore.getLifeTimeline();
+  public sTimelineEvents = computed(() => this.aboutStore.getLifeTimeline());
 
   public sFilterActif: WritableSignal<TypeExperienceEnum | undefined> =
     signal(undefined);
@@ -47,9 +46,9 @@ export class LifeTimelineComponent implements OnInit {
     const filter = this.sFilterActif();
     let timelineEvents = this.sTimelineEvents;
     if (filter != undefined) {
-      return timelineEvents.filter(event => event.typeExpe === filter);
+      return timelineEvents().filter(event => event.typeExpe === filter);
     }
-    return timelineEvents;
+    return timelineEvents();
   });
 
   public timelineEventsFilteredTotal = computed(
