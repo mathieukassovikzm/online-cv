@@ -8,6 +8,7 @@ import { contactEn, contactEs, contactFr } from '../services/cv-math/dataContact
 import { EmailService } from '../services/email.service';
 import { LanguageStore } from './language.store';
 import { HttpErrorResponse } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 type ContactState = {
   isSubmitting: boolean;
@@ -55,16 +56,16 @@ export const ContactStore = signalStore(
         // Envoi de l'email
         emailService.sendEmail(email).pipe(
           tap(() => {
-            console.log('Email well submited.');
+            if (!environment.production) console.log('Email well submited.');
             patchState(store, { isSubmitted: true })
           }),
           catchError((error: HttpErrorResponse) => {
-            console.error('Error submitting form:', error);
+            if (!environment.production) console.error('Error submitting form:', error);
             patchState(store, { isSubmitted: false, error: { message: error.message } })
             return [];
           }),
           finalize(() => {
-            console.log('Email submission process completed.');
+            if (!environment.production) console.log('Email submission process completed.');
             patchState(store, { isSubmitting: false })
           })
         )),
