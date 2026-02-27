@@ -22,7 +22,7 @@ export const lstLogosEntreprises = <IEnterpriseModel[]>[
   { name: 'Veonum', logo: './assets/logos/Veonum.png', alt: 'Logo Veonum' },
 ];
 
-// ------------ Services ------------ 
+//#region Services 
 export const devBackend = <IServiceModel>{
   title: "",
   descriptions: []
@@ -52,8 +52,9 @@ export const eventAnnouncement = <IServiceModel>{
   title: "",
   descriptions: []
 };
+//#endregion
 
-// ------------ Recommendations ------------ 
+//#region Recommendations 
 export const sebastienPinet = <IRecommendationModel>{
   nom: 'Sebastien Pinet',
   enterprise: 'Véonum',
@@ -75,6 +76,13 @@ export const michelPelgrin = <IRecommendationModel>{
   enterprise: 'Freelance',
   email: 'copernicus_13@hotmail.com',
 };
+
+export const arnaudLeroy = <IRecommendationModel>{
+  nom: 'Arnaud Leroy',
+  enterprise: 'Bouygues Telecom',
+  email: 'arleroy@bouyguestelecom.fr',
+};
+//#endregion
 
 export const homeFr: IHomeModel = {
   lstRecap: [
@@ -137,8 +145,8 @@ export const homeFr: IHomeModel = {
       text: "J'ai eu le plaisir de recruter et d'encadrer Mathieu pendant deux ans lors d'une mission chez Bouygues Telecom, où il a rejoint mon équipe en tant que développeur .NET. Son intégration et sa prise de poste furent remarquablement rapides. Dès les premières semaines, il avait assimilé nos standards de code et nos conventions spécifiques, qu'il appliquait avec une rigueur exemplaire. Ce qui m'a particulièrement marqué, c'est sa capacité à monter en compétence sur de nouvelles technologies (Blazor et PL/SQL notamment) en un temps record, sans jamais sacrifier la qualité de son travail. Mais au-delà de ses compétences techniques, c'est son état d'esprit qui le distingue. Sans qu'on le lui demande, il a par la suite pris l'initiative de documenter ses travaux et de créer des guides pour faciliter la vie de ses collègues. Cette générosité dans le partage de connaissances est une qualité rare que j'ai profondément appréciée. Lorsque j'ai quitté la mission, il m'a succédé en tant que lead développeur. Il a repris ce rôle avec brio, en faisant preuve d'un leadership naturel tout en conservant cette attitude bienveillante et ouverte qui le caractérise. Je recommande Mathieu sans la moindre réserve. Toute équipe qui l'accueillera aura la chance d'avoir non seulement un excellent lead développeur, mais aussi quelqu'un qui élève ceux qui l'entourent.",
     },
     <IRecommendationModel>{
-      ...patrickLeprince,
-      text: 'Au top',
+      ...arnaudLeroy,
+      text: "En tant que responsable du système technique sur lequel Mathieu a évolué pendant plus de six ans, j'ai eu l'occasion d'apprécier pleinement ses compétences, son engagement et sa fiabilité. Mathieu est un développeur particulièrement investi, qui s'implique avec sérieux dans chaque étape d'un projet, de la conception à la mise en production. Il fait preuve d'une grande rigueur technique, aussi bien dans la structuration du code que dans le respect des standards et des bonnes pratiques. Sur la partie Angular, il maîtrise l'architecture modulaire, la gestion des états, l'optimisation des performances et la maintenabilité du front-end. Côté .NET / C#, il conçoit des APIs robustes et bien structurées, en appliquant les principes d'architecture. Il possède également une solide culture DevOps : compréhension des environnements d'intégration continue, participation aux pipelines CI/CD. Au-delà de ses compétences techniques, Mathieu se distingue par un véritable esprit d'équipe. Il participe activement aux revues de code, partage ses connaissances et contribue à une dynamique collective constructive. Je recommande vivement Mathieu pour tout poste nécessitant expertise technique, rigueur, autonomie et capacité à évoluer dans un environnement exigeant.",
     }
   ],
   lstLogos: lstLogosEntreprises,
@@ -202,11 +210,11 @@ export const homeEn: IHomeModel = {
     },
     <IRecommendationModel>{
       ...michelPelgrin,
-      text: "I had the pleasure of recruiting and managing Mathieu for two years during a mission at Bouygues Telecom, where he joined my team as a .NET developer. His onboarding and ramp-up were remarkably fast. Within the first few weeks, he had fully mastered our coding standards and specific conventions, applying them with exemplary rigor. What impressed me most was his ability to quickly upskill on new technologies (notably Blazor and PL/SQL) without ever compromising on quality. Beyond his technical expertise, his mindset truly sets him apart. On his own initiative, he documented his work and created guides to make his colleagues’ lives easier. This generosity in knowledge sharing is a rare quality that I greatly appreciated. When I left the mission, he succeeded me as lead developer and took on the role brilliantly, demonstrating natural leadership while maintaining a kind and open attitude. I recommend Mathieu without hesitation: any team would be fortunate to have not only an excellent lead developer, but also someone who elevates those around him.",
+      text: "I had the pleasure of recruiting and managing Mathieu for two years during a mission at Bouygues Telecom, where he joined my team as a .NET developer. His onboarding and ramp-up were remarkably fast. Within the first few weeks, he had fully mastered our coding standards and specific conventions, applying them with exemplary rigor. What impressed me most was his ability to quickly upskill on new technologies (notably Blazor and PL/SQL) without ever compromising on quality. Beyond his technical expertise, his mindset truly sets him apart. On his own initiative, he documented his work and created guides to make his colleagues' lives easier. This generosity in knowledge sharing is a rare quality that I greatly appreciated. When I left the mission, he succeeded me as lead developer and took on the role brilliantly, demonstrating natural leadership while maintaining a kind and open attitude. I recommend Mathieu without hesitation: any team would be fortunate to have not only an excellent lead developer, but also someone who elevates those around him.",
     },
     <IRecommendationModel>{
-      ...patrickLeprince,
-      text: "Outstanding.",
+      ...arnaudLeroy,
+      text: "As the technical system lead on which Mathieu worked for over six years, I had the opportunity to fully appreciate his skills, commitment, and reliability. Mathieu is a particularly dedicated developer who approaches every stage of a project with seriousness, from design to production deployment. He demonstrates strong technical rigor, both in code structuring and in adhering to standards and best practices. On the Angular side, he masters modular architecture, state management, performance optimization, and front-end maintainability. On the .NET / C# side, he designs robust and well-structured APIs while applying architectural principles. He also has a strong DevOps culture, with a good understanding of continuous integration environments and active participation in CI/CD pipelines. Beyond his technical skills, Mathieu stands out for his genuine team spirit. He actively participates in code reviews, shares his knowledge, and contributes to a positive and constructive team dynamic. I strongly recommend Mathieu for any position requiring technical expertise, rigor, autonomy, and the ability to evolve in a demanding environment.",
     }
   ],
   lstLogos: lstLogosEntreprises,
@@ -273,8 +281,8 @@ export const homeEs: IHomeModel = {
       text: "Tuve el placer de contratar y supervisar a Mathieu durante dos años en una misión en Bouygues Telecom, donde se incorporó a mi equipo como desarrollador .NET. Su integración y adaptación al puesto fueron extraordinariamente rápidas. En pocas semanas, ya dominaba nuestros estándares de código y convenciones específicas, aplicándolos con un rigor ejemplar. Lo que más me impresionó fue su capacidad para adquirir rápidamente nuevas competencias tecnológicas (especialmente Blazor y PL/SQL) sin comprometer nunca la calidad de su trabajo. Más allá de sus habilidades técnicas, destaca especialmente por su actitud. Por iniciativa propia, documentó su trabajo y creó guías para facilitar el día a día de sus compañeros. Esta generosidad en el intercambio de conocimientos es una cualidad poco común que valoré enormemente. Cuando dejé la misión, me sucedió como lead developer y asumió el rol con gran éxito, demostrando un liderazgo natural sin perder su carácter cercano y abierto. Recomiendo a Mathieu sin ninguna reserva: cualquier equipo tendrá la suerte de contar no solo con un excelente lead developer, sino también con una persona que impulsa a quienes lo rodean.",
     },
     <IRecommendationModel>{
-      ...patrickLeprince,
-      text: "Excelente.",
+      ...arnaudLeroy,
+      text: "Como responsable del sistema técnico en el que Mathieu evolucionó durante más de seis años, tuve la oportunidad de apreciar plenamente sus habilidades, su compromiso y su fiabilidad. Mathieu es un desarrollador especialmente implicado, que se involucra con seriedad en cada etapa de un proyecto, desde el diseño hasta la puesta en producción. Demuestra un gran rigor técnico, tanto en la estructuración del código como en el respeto de los estándares y las buenas prácticas. En la parte de Angular, domina la arquitectura modular, la gestión de estados, la optimización del rendimiento y el mantenimiento del front-end. En el lado de .NET / C#, diseña APIs robustas y bien estructuradas, aplicando principios de arquitectura de software. También posee una sólida cultura DevOps, con una buena comprensión de los entornos de integración continua y una participación activa en los pipelines CI/CD.Más allá de sus competencias técnicas, Mathieu se distingue por su verdadero espíritu de trabajo en equipo. Participa activamente en las revisiones de código, comparte sus conocimientos y contribuye a una dinámica colectiva constructiva.Recomiendo encarecidamente a Mathieu para cualquier puesto que requiera experiencia técnica, rigor, autonomía y la capacidad de evolucionar en un entorno exigente.",
     }
   ],
   lstLogos: lstLogosEntreprises,

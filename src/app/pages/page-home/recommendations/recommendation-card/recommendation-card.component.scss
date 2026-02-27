@@ -50,6 +50,7 @@ $card-padding: 30px;
 .card-infos p.text-ellipsis.is-text-full {
   overflow: visible;
   text-overflow: inherit;
+  display: block;
 }
 
 .text-hidden-container {
