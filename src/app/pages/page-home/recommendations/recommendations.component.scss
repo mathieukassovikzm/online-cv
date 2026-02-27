@@ -57,12 +57,13 @@
   cursor: pointer;
 }
 
-$svg-size: 12px;
+$svg-height: 12px;
+$svg-width: 20px;
 
 .carousel-container .slider-btns .slider-btn {
   background-color: transparent;
-  width: $svg-size;
-  height: $svg-size;
+  width: $svg-width;
+  height: $svg-height;
 }
 
 .carousel-container .slider-btns .slider-btn.previous {
@@ -70,8 +71,8 @@ $svg-size: 12px;
 }
 
 .carousel-container .slider-btns .slider-btn svg {
-  width: $svg-size;
-  height: $svg-size;
+  width: $svg-width;
+  height: $svg-height;
   position: relative;
   top: 50%;
   transform: translateY(-50%);
