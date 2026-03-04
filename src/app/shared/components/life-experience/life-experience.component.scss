@@ -25,10 +25,12 @@ $card-svg-top: -8px;
     font-size: 1.2em;
     margin-bottom: 1.2em;
   }
+
   .timeline-event-ctn h5 {
     margin-top: 1em;
     margin-bottom: 1em;
   }
+
   .timeline-event-ctn strong {
     font-weight: 700;
   }
@@ -38,7 +40,7 @@ $card-svg-top: -8px;
   }
 
   .timeline-event-thumbnail {
-    transition: box-shadow $animation-duration ease-in 0.1s;
+    transition: box-shadow $animation-duration ease-in 0.1s, color $animation-duration-short ease-in 0.1s;
     color: var(--inverse-main-color);
     font-size: 12px;
     font-weight: bold;
@@ -80,10 +82,12 @@ $card-svg-top: -8px;
   .timeline-event:hover {
     .timeline-event-thumbnail {
       box-shadow: inset 40em 0 0 0 var(--primary-color);
+      color: var(--main-color);
     }
 
     .timeline-event-icon {
       ::ng-deep svg {
+
         path,
         circle,
         polygon {
@@ -95,5 +99,4 @@ $card-svg-top: -8px;
 }
 
 /* ---------------------- Media query ----------------------------*/
-@media only screen and (min-width: $min-width-xl) {
-}
+@media only screen and (min-width: $min-width-xl) {}
