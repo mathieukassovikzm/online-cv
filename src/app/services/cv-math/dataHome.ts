@@ -59,7 +59,6 @@ export const sebastienPinet = <IRecommendationModel>{
   nom: 'Sebastien Pinet',
   enterprise: 'Véonum',
   email: 'seb.pinet35@gmail.com',
-  phone: '+33 6 16 10 73 42',
   photo: './assets/recommendations/Sebastien.jpeg',
 };
 
@@ -67,7 +66,6 @@ export const patrickLeprince = <IRecommendationModel>{
   nom: 'Patrick Lepince',
   enterprise: 'Véonum',
   email: 'patrick.leprince@veonum.com',
-  phone: '+33 7 67 70 66 53',
   photo: './assets/recommendations/Patrick.jpeg',
 };
 
@@ -86,10 +84,10 @@ export const arnaudLeroy = <IRecommendationModel>{
 
 export const homeFr: IHomeModel = {
   lstRecap: [
-    { libelle: "Année d'expérience", value: 10 },
-    { libelle: 'Happy Customers', value: 10 },
-    { libelle: 'Completed Projects', value: 10 },
-    { libelle: 'Honors and Awards', value: 10 },
+    { libelle: "Années d'expérience", value: 9 },
+    { libelle: 'Langues maitrisées', value: 3 },
+    { libelle: 'Années Freelance', value: 3 },
+    { libelle: '% Motivé', value: 100 },
   ],
   lstServices: [
     <IServiceModel>{
@@ -154,10 +152,10 @@ export const homeFr: IHomeModel = {
 
 export const homeEn: IHomeModel = {
   lstRecap: [
-    { libelle: 'Years Experience', value: 10 },
-    { libelle: 'Happy Customers', value: 10 },
-    { libelle: 'Completed Projects', value: 10 },
-    { libelle: 'Honors and Awards', value: 10 },
+    { libelle: 'Years Experience', value: 9 },
+    { libelle: 'Languages Mastered', value: 3 },
+    { libelle: 'Years as Freelance', value: 3 },
+    { libelle: '% motivated', value: 10 },
   ],
   lstServices: [
     <IServiceModel>{
@@ -222,10 +220,10 @@ export const homeEn: IHomeModel = {
 
 export const homeEs: IHomeModel = {
   lstRecap: [
-    { libelle: 'Anos de experiencias', value: 10 },
-    { libelle: 'Happy Customers', value: 10 },
-    { libelle: 'Completed Projects', value: 10 },
-    { libelle: 'Honors and Awards', value: 10 },
+    { libelle: 'Años de experiencia', value: 9 },
+    { libelle: 'Idiomas dominados', value: 3 },
+    { libelle: 'Años como freelance', value: 3 },
+    { libelle: '% motivado', value: 10 },
   ],
   lstServices: [
     <IServiceModel>{
