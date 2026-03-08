@@ -38,6 +38,7 @@ $card-padding: 30px;
 }
 
 .card-infos p.text-ellipsis {
+  margin-top: 15px;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -50,6 +51,7 @@ $card-padding: 30px;
 .card-infos p.text-ellipsis.is-text-full {
   overflow: visible;
   text-overflow: inherit;
+  display: block;
 }
 
 .text-hidden-container {
@@ -99,6 +101,18 @@ $svg-size: 12px;
 
 .card-infos button:hover svg path {
   opacity: 1;
+}
+
+.subtitle {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+}
+
+.subtitle h6 {
+  margin-bottom: 0;
+  margin-top: 0;
 }
 
 /* ---------------------- Media query ----------------------------*/

@@ -148,6 +148,8 @@ const fpLouisette = <IProjectModel>{
   type: TypeProjectEnum.FairePart,
 };
 //#endregion
+
+//#region FR
 const projectsWebsitesFr: IProjectModel[] = [
   {
     ...websiteMagiePourTous
@@ -228,7 +230,23 @@ export const projectsFr: IProjectModel[] = [
   ...projectsVideosFr,
   ...projectsFairesPartsFr
 ];
+// #endregion
 
+//#region EN
+const projectsWebsitesEn: IProjectModel[] = [
+  {
+    ...websiteMagiePourTous
+  },
+  {
+    ...websiteWhoWantToBeAMillionnaire
+  },
+  {
+    ...websiteTichat29
+  },
+  {
+    ...websiteGo2Sport
+  },
+];
 const projectsLogosEn: IProjectModel[] = [
   {
     ...logoAlexFishing
@@ -275,11 +293,43 @@ const projectsFairesPartsEn: IProjectModel[] = [
     ...fpLouisette
   },
 ];
-export const projectsEn: IProjectModel[] = [
-  ...projectsLogosEn,
-  ...projectsFairesPartsEn
+const projectsVideosEn: IProjectModel[] = [
+  {
+    ...videoDomaineBoisQuelen
+  },
+  {
+    ...videoGo2SportFitness
+  },
+  {
+    ...videoGo2SportEcoles
+  },
+  {
+    ...videoTennisCesson
+  },
 ];
+export const projectsEn: IProjectModel[] = [
+  ...projectsWebsitesEn,
+  ...projectsLogosEn,
+  ...projectsFairesPartsEn,
+  ...projectsVideosEn
+];
+// #endregion
 
+//#region ES
+const projectsWebsitesEs: IProjectModel[] = [
+  {
+    ...websiteMagiePourTous
+  },
+  {
+    ...websiteWhoWantToBeAMillionnaire
+  },
+  {
+    ...websiteTichat29
+  },
+  {
+    ...websiteGo2Sport
+  },
+];
 const projectsLogosEs: IProjectModel[] = [
   {
     ...logoAlexFishing
@@ -326,7 +376,24 @@ const projectsFairesPartsEs: IProjectModel[] = [
     ...fpLouisette
   },
 ];
-export const projectsEs: IProjectModel[] = [
-  ...projectsLogosEs,
-  ...projectsFairesPartsEs
+const projectsVideosEs: IProjectModel[] = [
+  {
+    ...videoDomaineBoisQuelen
+  },
+  {
+    ...videoGo2SportFitness
+  },
+  {
+    ...videoGo2SportEcoles
+  },
+  {
+    ...videoTennisCesson
+  },
 ];
+export const projectsEs: IProjectModel[] = [
+  ...projectsWebsitesEs,
+  ...projectsLogosEs,
+  ...projectsFairesPartsEs,
+  ...projectsVideosEs
+];
+// #endregion

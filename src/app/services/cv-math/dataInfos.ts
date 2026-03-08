@@ -19,7 +19,7 @@ export const infosFr: IInfosModel = {
     drivingLiscence: 'Oui',
     car: 'Oui',
   },
-  curriculum: './assets/Mathieu_Le_Bellec_Cv_Fr_V2.pdf',
+  curriculum: './assets/pdfs/Mathieu_LEBELLEC_CV-FR.pdf',
 };
 
 export const infosEn: IInfosModel = {
@@ -32,7 +32,7 @@ export const infosEn: IInfosModel = {
     drivingLiscence: 'Yes',
     car: 'Yes',
   },
-  curriculum: './assets/Mathieu_Le_Bellec_Cv_Fr_V2.pdf',
+  curriculum: './assets/pdfs/Mathieu_LEBELLEC_CV-EN.pdf',
 };
 
 export const infosEs: IInfosModel = {
@@ -45,7 +45,7 @@ export const infosEs: IInfosModel = {
     drivingLiscence: 'Si',
     car: 'Si',
   },
-  curriculum: './assets/Mathieu_Le_Bellec_Cv_Fr_V2.pdf',
+  curriculum: './assets/pdfs/Mathieu_LEBELLEC_CV-ES.pdf',
 };
 
 export const lstSocialNetwork: ISocialNetwork[] = [

@@ -1,7 +1,7 @@
 import { IAboutModel, IExperienceModel, IHobbyModel } from 'src/app/models/about';
 import { TypeExperienceEnum, TypeHobbyEnum } from 'src/app/models/enum';
 
-// Educations
+//#region Educations
 const insa = <IExperienceModel>{
   title: 'BAC +5, Ingénieur SRC',
   company: 'INSA',
@@ -20,8 +20,9 @@ const iut = <IExperienceModel>{
   typeExpe: TypeExperienceEnum.Education,
   display: true,
 };
+//#endregion
 
-// Archievements
+//#region Archievements
 const go2sport = <IExperienceModel>{
   company: 'Go2sport.fr',
   dateEnd: new Date('2020-03-01'),
@@ -53,8 +54,9 @@ const teacher = <IExperienceModel>{
   typeExpe: TypeExperienceEnum.Archievement,
   display: true,
 };
+//#endregion
 
-// Experiences Pro
+//#region Experiences Pro
 const freelanceBouygues = <IExperienceModel>{
   company: 'Freelance - Bouygues Telecom',
   dateEnd: new Date('2026-02-28'),
@@ -168,10 +170,12 @@ const cesta = <IExperienceModel>{
   typeExpe: TypeExperienceEnum.ExperiencePro,
   display: true,
 };
+//#endregion
 
-// Travels
+//#region Travels
+//#endregion
 
-// Hobbies
+//#region Hobbies
 const drum = <IHobbyModel>{
   type: TypeHobbyEnum.Creativity,
   photo: './assets/hobbies/drum.jpg',
@@ -192,6 +196,7 @@ const photo = <IHobbyModel>{
   type: TypeHobbyEnum.Creativity,
   photo: './assets/hobbies/photo.jpg',
 };
+//#endregion
 
 export const aboutFr: IAboutModel = {
   extract: [
@@ -257,12 +262,19 @@ export const aboutFr: IAboutModel = {
         ...freelanceBouygues.description,
         dsc: "Leader technique d'une équipe de 3 développeurs, responsable de la conception et du développement from scratch d'un portail stratégique de pilotage des incidents et des évolutions réseau pour Bouygues Telecom (projet gouvernemental RRF). Référent technique et garant des bonnes pratiques pour les équipes intervenant sur le SI.",
         tasks: [
+          "Développement from scratch d'un portail web Angular comprenant des onglets de cartographie, des KPIs, etc.",
           "Mise en place de multiples APIs C# en respectant l'architecture « Oignon ».",
           "Développement d'un système OData custom pour fonctionner avec les composants DevExtreme côté front.",
-          "Développement from scratch d'un portail web Angular comprenant des onglets de cartographie, des KPIs, etc.",
           "Gestion des montées de version d'Angular.",
           "Mise en place d'un système de synchronisation de bases de données Oracle/PostgreSQL.",
           "Respect d'une charte de sécurité gouvernementale.",
+          "Analyses et corrections de bugs sur la production.",
+          "Analyses et développements pour améliorer les performances du système.",
+          "Accueil des nouveaux développeurs sur la mission.",
+          "Formations internes.",
+          "Peer programming et montée en compétences des jeunes développeurs.",
+          "Validation des Pull Request.",
+          "Mise en place de la couverture de test des API (objectifs contractuels à 60%)."
         ],
       },
     },
@@ -454,7 +466,7 @@ export const aboutFr: IAboutModel = {
 };
 
 export const aboutEn: IAboutModel = {
-  extract:[
+  extract: [
     "Socially comfortable, I am used to living and collaborating with many people from diverse cultures and backgrounds. I enjoy both learning from others and sharing my knowledge. Naturally inclined to help others, I am willing to invest my time to support those around me.",
     "This is why I dedicated five months to the reconstruction of a school in Mexico, an enriching experience both personally and professionally.",
     "Serious and methodical, I know how to remain flexible. I do not hesitate to acknowledge my mistakes and challenge myself. Always eager to keep learning, I never rely on my achievements and can quickly adapt to different work environments. Able to work effectively in a team, I am highly enthusiastic and possess a strong sense of responsibility.",
@@ -515,16 +527,23 @@ export const aboutEn: IAboutModel = {
       title: 'Full stack developer',
       description: {
         ...freelanceBouygues.description,
-        dsc: "Technical Lead of a team of 3 developers, responsible for the design and from-scratch development of a strategic portal for monitoring network incidents and changes for Bouygues Telecom (government RRF project). Technical reference and best-practices owner for teams working on the Information System (IS).",
-        tasks: [
+        "dsc": "Technical Lead of a team of 3 developers, responsible for the design and from-scratch development of a strategic portal for monitoring network incidents and changes for Bouygues Telecom (government RRF project). Technical reference and best-practices owner for teams working on the Information System (IS).",
+        "tasks": [
+          "From-scratch development of an Angular web portal including mapping tabs, KPIs, etc.",
           "Design and implementation of multiple C# APIs following the Clean Architecture.",
-          "Development of a custom OData system to integrate with DevExtreme front-end components.",
-          "From-scratch development of an Angular web portal including mapping modules, KPIs, and monitoring dashboards.",
+          "Development of a custom OData system to work with DevExtreme components on the front-end side.",
           "Management of Angular version upgrades.",
-          "Implementation of a database synchronization system between Oracle and PostgreSQL.",
-          "Compliance with government security standards and guidelines.",
-        ],
-      },
+          "Implementation of an Oracle/PostgreSQL database synchronization system.",
+          "Compliance with a government security policy.",
+          "Production bug analysis and fixes.",
+          "Analysis and development to improve system performance.",
+          "Onboarding of new developers on the project.",
+          "Internal training sessions.",
+          "Pair programming and mentoring of junior developers.",
+          "Pull Request validation.",
+          "Implementation of API test coverage (contractual target of 60%)."
+        ]
+      }
     },
     <IExperienceModel>{
       ...freelanceSolina,
@@ -652,7 +671,7 @@ export const aboutEn: IAboutModel = {
 };
 
 export const aboutEs: IAboutModel = {
-  extract:[
+  extract: [
     'Soy una persona muy sociable y estoy acostumbrado a convivir y colaborar con muchas personas de diferentes culturas y orígenes. Me gusta tanto aprender de los demás como compartir mis conocimientos. Naturalmente orientado a ayudar, no dudo en invertir mi tiempo para apoyar a los demás.',
     'Por esta razón, dediqué cinco meses a la reconstrucción de una escuela en México, una experiencia enriquecedora tanto a nivel personal como profesional.',
     'Serio y metódico, sé mantenerme flexible. No dudo en reconocer mis errores y cuestionarme para mejorar. Con un fuerte deseo de seguir aprendiendo, no me conformo con mis logros y puedo adaptarme rápidamente a diferentes entornos de trabajo. Capaz de trabajar eficazmente en equipo, soy entusiasta y poseo un fuerte sentido de la responsabilidad.',
@@ -713,16 +732,23 @@ export const aboutEs: IAboutModel = {
       title: 'Desarrollador Full Stack',
       description: {
         ...freelanceBouygues.description,
-        dsc: "Líder Técnico de un equipo de 3 desarrolladores, responsable del diseño y del desarrollo desde cero de un portal estratégico para el seguimiento de incidentes y cambios de red para Bouygues Telecom (proyecto gubernamental RRF). Referente técnico y responsable de las buenas prácticas para los equipos que trabajan en el Sistema de Información (SI).",
-        tasks: [
-          "Diseño e implementación de múltiples APIs en C# siguiendo los principios de Clean Architecture.",
-          "Desarrollo de un sistema OData personalizado para integrarse con los componentes front-end de DevExtreme.",
-          "Desarrollo desde cero de un portal web en Angular que incluye módulos de cartografía, KPIs y paneles de monitorización.",
-          "Gestión de actualizaciones de versión de Angular.",
-          'Implementación de un sistema de sincronización de bases de datos entre Oracle y PostgreSQL.',
-          'Cumplimiento de estándares y directrices de seguridad gubernamentales.'
-        ],
-      },
+        "dsc": "Líder técnico de un equipo de 3 desarrolladores, responsable del diseño integral y del desarrollo desde cero de un portal estratégico para la gestión de incidencias y evoluciones de red para Bouygues Telecom (proyecto gubernamental RRF). Referente técnico y garante de las buenas prácticas para los equipos que intervienen en el Sistema de Información.",
+        "tasks": [
+          "Desarrollo desde cero de un portal web en Angular que incluye pestañas de cartografía, KPIs, etc.",
+          "Implementación de múltiples APIs en C# respetando la arquitectura « Onion » (Arquitectura en Capas Concéntricas).",
+          "Desarrollo de un sistema OData personalizado para funcionar con los componentes DevExtreme en el front-end.",
+          "Gestión de las actualizaciones de versión de Angular.",
+          "Implementación de un sistema de sincronización de bases de datos Oracle/PostgreSQL.",
+          "Cumplimiento de una política de seguridad gubernamental.",
+          "Análisis y corrección de errores en producción.",
+          "Análisis y desarrollos para mejorar el rendimiento del sistema.",
+          "Integración de nuevos desarrolladores en el proyecto.",
+          "Formaciones internas.",
+          "Programación en pareja (pair programming) y desarrollo de competencias de desarrolladores junior.",
+          "Validación de Pull Requests.",
+          "Implementación de la cobertura de pruebas de las APIs (objetivo contractual del 60%)."
+        ]
+      }
     },
     <IExperienceModel>{
       ...freelanceSolina,
