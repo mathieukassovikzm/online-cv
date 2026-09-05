@@ -155,7 +155,7 @@ export const homeEn: IHomeModel = {
     { libelle: 'Years Experience', value: 9 },
     { libelle: 'Languages Mastered', value: 3 },
     { libelle: 'Years as Freelance', value: 3 },
-    { libelle: '% motivated', value: 10 },
+    { libelle: '% motivated', value: 100 },
   ],
   lstServices: [
     <IServiceModel>{
@@ -223,7 +223,7 @@ export const homeEs: IHomeModel = {
     { libelle: 'Años de experiencia', value: 9 },
     { libelle: 'Idiomas dominados', value: 3 },
     { libelle: 'Años como freelance', value: 3 },
-    { libelle: '% motivado', value: 10 },
+    { libelle: '% motivado', value: 100 },
   ],
   lstServices: [
     <IServiceModel>{
