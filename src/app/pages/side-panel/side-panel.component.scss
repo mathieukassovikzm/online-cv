@@ -10,6 +10,9 @@ $banner-w: 290px;
 .banner-desc {
   box-shadow: var(--box-shadow);
   background-color: var(--main-color);
+  border: 1px solid var(--hairline);
+  border-radius: $radius;
+  overflow: hidden;
 }
 
 .banner-desc .banner-infos {

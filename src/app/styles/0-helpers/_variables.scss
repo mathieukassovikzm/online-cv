@@ -27,6 +27,16 @@ $desc-w: 290px;
 $animation-duration-short: 0.2s;
 $animation-duration: 0.5s;
 
+/* Shape & rhythm */
+$radius: 6px;
+$radius-sm: 4px;
+$radius-pill: 999px;
+$section-gap: 64px;
+$font-code: "Fira Code", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+
+/* Easing */
+$ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+
 /*******************************
  * Navigation
  *******************************/

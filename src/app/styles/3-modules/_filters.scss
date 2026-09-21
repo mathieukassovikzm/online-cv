@@ -3,35 +3,54 @@
 .filter {
   padding-left: 0;
   display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
   margin: 0 auto;
-  overflow-x: scroll;
-  padding: 20px 20px 0 0;
+  overflow-x: auto;
+  padding: 20px 0 4px;
   transition: all helpers.$animation-duration;
 }
 
 .filter li {
-  margin: 20px 0;
+  margin: 0;
   min-width: fit-content;
 }
 
 .filter li a {
-  padding: 5px 10px;
-  margin: 0 14px;
-  transition: all helpers.$animation-duration-short ease-in-out .1s;
+  display: inline-block;
+  padding: 7px 16px;
+  border: 1px solid var(--hairline-strong);
+  border-radius: helpers.$radius-pill;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  transition: color helpers.$animation-duration-short ease,
+    background-color helpers.$animation-duration-short ease,
+    border-color helpers.$animation-duration-short ease;
   color: var(--inverse-main-color);
+}
+
+.filter li a:hover {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
 }
 
 .filter li a.active {
   background-color: var(--primary-color);
-  padding: 5px 20px;
+  border-color: var(--primary-color);
   color: var(--main-color-light);
   text-decoration: none;
+}
+
+.filter li a.active:hover {
+  color: var(--main-color-light);
 }
 
 /* ---------------------- Media query ----------------------------*/
 @media only screen and (min-width: helpers.$min-width-xl) {
   .filter {
     overflow-x: visible;
-    padding: 20px 20px 20px 0;
+    padding: 20px 0;
   }
 }

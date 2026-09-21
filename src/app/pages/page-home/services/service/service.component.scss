@@ -1,4 +1,47 @@
+@use '../0-helpers/variables' as *;
+
 :host {
   height: 100%;
   display: block;
+
+  ::ng-deep .card-container {
+    transition: transform $animation-duration-short ease, box-shadow $animation-duration-short ease;
+  }
+
+  &:hover ::ng-deep .card-container {
+    transform: translateY(-3px);
+  }
+
+  ::ng-deep .card-infos {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  ::ng-deep .title-container {
+    margin-bottom: 4px;
+  }
+
+  ::ng-deep .title {
+    position: relative;
+    padding-bottom: 12px;
+  }
+
+  ::ng-deep .title::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 28px;
+    height: 2px;
+    background: var(--primary-color);
+    border-radius: 2px;
+  }
+
+  ::ng-deep .description p {
+    color: var(--inverse-main-color);
+    opacity: 0.82;
+    font-size: 13.5px;
+    line-height: 1.6;
+  }
 }

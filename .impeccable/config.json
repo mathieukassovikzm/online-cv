@@ -1,0 +1,62 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "broken-image",
+        "value": "*",
+        "files": [
+          "src/app/pages/page-projects/portfolio-item/portfolio-item.component.html"
+        ],
+        "createdAt": "2026-09-05T18:32:19.676Z",
+        "reason": "model: img src is a guarded dynamic binding ([src]=p.photo inside @if p.photo); all portfolio data rows define photo"
+      },
+      {
+        "rule": "broken-image",
+        "value": "*",
+        "files": [
+          "src/app/pages/page-about/hobbies/hobby/hobby.component.html"
+        ],
+        "createdAt": "2026-09-05T18:33:09.366Z",
+        "reason": "model: img src is dynamic [src]=item().photo; every hobby data row defines photo"
+      },
+      {
+        "rule": "broken-image",
+        "value": "*",
+        "files": [
+          "src/app/pages/page-home/recommendations/recommendation-card/recommendation-card.component.html"
+        ],
+        "createdAt": "2026-09-05T18:35:01.652Z",
+        "reason": "model: [src]=getPhoto() always returns a real path (falls back to assets/recommendations/avatar.webp)"
+      },
+      {
+        "rule": "broken-image",
+        "value": "*",
+        "files": [
+          "src/app/pages/page-home/lst-enterprises/lst-enterprises.component.html"
+        ],
+        "createdAt": "2026-09-05T18:48:21.570Z",
+        "reason": "model: [src]=item.logo dynamic binding; every enterprise logo data row defines logo"
+      },
+      {
+        "rule": "broken-image",
+        "value": "*",
+        "files": [
+          "src/app/shared/components/portfolio-carousel/portfolio-carousel.component.html"
+        ],
+        "createdAt": "2026-09-05T18:48:21.585Z",
+        "reason": "model: [src]=currentProject.photo guarded by @if(currentProject.photo)"
+      },
+      {
+        "rule": "layout-transition",
+        "value": "*",
+        "files": [
+          "src/app/pages/side-panel/side-panel.component.scss"
+        ],
+        "createdAt": "2026-09-05T20:49:07.135Z",
+        "reason": "user confirmed: user reverted the removal of this transition:height line; incumbent code, inert on desktop where .banner-desc height is fixed"
+      }
+    ]
+  }
+}

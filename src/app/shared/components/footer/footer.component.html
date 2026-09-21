@@ -1,4 +1,4 @@
 <div class="section-footer">
-  <p>©2023 All Rights Reserved.</p>
-  <p>Email: {{infosPerso.email}}</p>
+  <p class="copy">&copy; {{ currentYear }} {{ infosPerso.name }} {{ infosPerso.famillyName }}</p>
+  <p class="mail"><a [href]="'mailto:' + infosPerso.email">{{ infosPerso.email }}</a></p>
 </div>

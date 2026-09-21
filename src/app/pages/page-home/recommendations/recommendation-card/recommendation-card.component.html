@@ -1,6 +1,6 @@
 <div class="card-container" [style.width]="width()">
   <div class="card-infos">
-    <img [src]="getPhoto()">
+    <img [src]="getPhoto()" [alt]="person().nom" loading="lazy">
     <h5>{{person().nom}}</h5>
     <div class="subtitle">
       <h6>{{person().enterprise}}</h6>

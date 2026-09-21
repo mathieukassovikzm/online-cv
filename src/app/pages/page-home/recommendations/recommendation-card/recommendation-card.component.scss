@@ -6,45 +6,55 @@
   box-shadow: none;
 }
 
-$card-padding: 30px;
+$card-padding: 28px;
 
 .card-infos {
   position: relative;
   background: var(--main-color-light);
+  border: 1px solid var(--hairline);
+  border-radius: $radius;
   box-shadow: var(--box-shadow);
   padding: $card-padding;
 }
 
 .card-infos h5 {
-  font-weight: 600;
-  font-size: 22px;
-  color: var(--primary-color);
+  font-weight: 700;
+  font-size: 17px;
+  padding-right: 80px;
+  color: var(--inverse-main-color);
 }
 
 .card-infos h6 {
-  color: $grey;
-  font-style: italic;
-  margin-top: 5px;
-  margin-bottom: 15px;
+  color: var(--inverse-main-color);
+  opacity: 0.6;
+  font-size: 12px;
+  font-style: normal;
+  margin-top: 2px;
+  margin-bottom: 0;
 }
 
 .card-infos img {
   position: absolute;
-  right: 30px;
-  top: -15px;
-  width: 65px;
-  height: 65px;
+  right: $card-padding;
+  top: -18px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
+  border: 3px solid var(--main-color-light);
+  box-shadow: var(--box-shadow);
+  object-fit: cover;
 }
 
 .card-infos p.text-ellipsis {
-  margin-top: 15px;
+  margin-top: 16px;
+  color: var(--inverse-main-color);
+  line-height: 1.65;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  line-clamp: 10;
-  -webkit-line-clamp: 10;
+  line-clamp: 6;
+  -webkit-line-clamp: 6;
   transition: all 0.5s ease-in-out;
 }
 
@@ -60,21 +70,43 @@ $card-padding: 30px;
   position: absolute;
 }
 
+.subtitle {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2px 12px;
+}
+
+.subtitle h6 {
+  margin: 0;
+}
+
+.contact-infos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 12px;
+}
+
 .container-btn {
   width: 100%;
   display: flex;
   flex-direction: row-reverse;
-  margin-top: 15px;
+  margin-top: 12px;
 }
 
 $svg-size: 12px;
 
 .card-infos button {
-  width: $svg-size+10px;
-  height: $svg-size+10px;
-  transition: transform $animation-duration-short ease-in-out;
+  width: $svg-size + 14px;
+  height: $svg-size + 14px;
+  border-radius: 50%;
+  transition: transform $animation-duration-short ease-in-out, background-color $animation-duration-short ease;
   transform: rotate(-90deg);
   background: transparent;
+
+  &:hover {
+    background: var(--main-color);
+  }
 }
 
 .card-infos button.is-truncated {
@@ -95,7 +127,7 @@ $svg-size: 12px;
   stroke: var(--primary-color);
   stroke-width: 4px;
   stroke-linecap: round;
-  opacity: 0.5;
+  opacity: 0.6;
   transition: opacity 0.4s ease-in-out;
 }
 
@@ -103,24 +135,10 @@ $svg-size: 12px;
   opacity: 1;
 }
 
-.subtitle {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-
-}
-
-.subtitle h6 {
-  margin-bottom: 0;
-  margin-top: 0;
-}
-
 /* ---------------------- Media query ----------------------------*/
 @media only screen and (min-width: $min-width-xl) {
   .card-infos p.text-ellipsis {
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    line-clamp: 5;
-    -webkit-line-clamp: 5;
+    line-clamp: 4;
+    -webkit-line-clamp: 4;
   }
 }

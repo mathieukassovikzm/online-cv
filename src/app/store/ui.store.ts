@@ -12,9 +12,31 @@ type UiState = {
   darkMode: boolean;
 };
 
+const DARK_MODE_KEY = 'cv-dark-mode';
+
+function readDarkModePreference(): boolean {
+  try {
+    const stored = localStorage.getItem(DARK_MODE_KEY);
+    if (stored !== null) {
+      return stored === 'true';
+    }
+    return window.matchMedia?.('(prefers-color-scheme: dark)').matches ?? false;
+  } catch {
+    return false;
+  }
+}
+
+function persistDarkModePreference(isDarkMode: boolean): void {
+  try {
+    localStorage.setItem(DARK_MODE_KEY, String(isDarkMode));
+  } catch {
+    /* storage unavailable — preference stays in-memory only */
+  }
+}
+
 const initialState: UiState = {
   isNavOpen: false,
-  darkMode: false
+  darkMode: readDarkModePreference()
 };
 
 export const UiStore = signalStore(
@@ -84,10 +106,13 @@ export const UiStore = signalStore(
 
     setDarkMode(isDarkMode: boolean): void {
       patchState(store, { darkMode: isDarkMode });
+      persistDarkModePreference(isDarkMode);
     },
 
     toggleDarkMode(): void {
-      patchState(store, { darkMode: !store.darkMode() });
+      const next = !store.darkMode();
+      patchState(store, { darkMode: next });
+      persistDarkModePreference(next);
     },
 
     //#endregion

@@ -1,70 +1,70 @@
 @use '../0-helpers/variables' as *;
 
-$card-svg-s: 45px;
-$card-svg-right: 20px;
-$card-svg-top: -22px;
-
 :host {
   height: 100%;
   display: block;
 }
 
-.card-container {
-  overflow-y: hidden;
-}
-
-.card-container img {
-  width: 100%;
-}
-
-.card-infos {
-  transform: translateY(0px);
-  height: auto;
-}
-
-.subtitle h5 {
-  color: $grey;
-  font-style: italic;
-  font-size: 12px;
-}
-
-.dsc {
-  margin: 10px 0;
-}
-
-.card-logo {
-  position: absolute;
-  top: $card-svg-top;
-  right: $card-svg-right;
-  width: $card-svg-s;
-  height: $card-svg-s;
-  border-radius: 50%;
-  background-color: $light;
+.hobby-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: var(--main-color-light);
+  border: 1px solid var(--hairline);
+  border-radius: $radius;
   box-shadow: var(--box-shadow);
+  overflow: hidden;
+}
 
-  .icon {
+.media {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     display: block;
-    width: $card-svg-s;
-    height: $card-svg-s;
-  }
-
-  ::ng-deep svg {
-    transform: scale(.7);
   }
 }
 
-/* ---------------------- Media query ----------------------------*/
-@media only screen and (min-width: $min-width-xxl) {
-  .card-infos {
-    cursor: pointer;
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-    transition: transform 0.5s ease-in-out;
-    transform: none;
+.media-overlay {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 16px 18px 14px;
+  background: linear-gradient(180deg, transparent, rgba(10, 10, 14, 0.78));
+
+  .tag {
+    display: inline-block;
+    margin-bottom: 6px;
+    padding: 3px 9px;
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.16);
+    border-radius: $radius-pill;
   }
 
-  .card-infos:hover {
-    transform: translateY(0px) !important;
+  .title {
+    color: #fff;
+    font-size: 17px;
+    text-shadow: 0 1px 10px rgba(0, 0, 0, 0.4);
+  }
+}
+
+.body {
+  padding: 16px 18px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  p {
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--inverse-main-color);
+    opacity: 0.82;
   }
 }

@@ -1,74 +1,118 @@
 @use '../0-helpers/variables' as *;
 
 
-$card-svg-s: 45px;
-$card-svg-top: -8px;
+$card-svg-s: 44px;
 
 :host {
+  display: block;
+
   .timeline-event {
     position: relative;
+    padding-left: 72px;
+    padding-bottom: 40px;
   }
 
   .timeline-event-ctn {
-    padding: 2em 4em 2em 5em;
     position: relative;
-    top: -1.875em;
-    // left: 4em;
     width: 100%;
   }
 
   .timeline-event-ctn h3 {
-    font-size: 1.75em;
+    font-size: 20px;
   }
 
   .timeline-event-ctn h4 {
-    font-size: 1.2em;
-    margin-bottom: 1.2em;
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--inverse-main-color);
+    opacity: 0.72;
+    margin-bottom: 16px;
   }
 
   .timeline-event-ctn h5 {
-    margin-top: 1em;
-    margin-bottom: 1em;
+    margin-top: 18px;
+    margin-bottom: 8px;
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--primary-color);
   }
 
-  .timeline-event-ctn strong {
-    font-weight: 700;
+  .timeline-event-ctn .dsc {
+    line-height: 1.65;
+    margin-bottom: 4px;
+  }
+
+  .timeline-event-ctn .tasks > div {
+    position: relative;
+    padding-left: 16px;
+    margin-bottom: 3px;
+  }
+
+  .timeline-event-ctn .tasks > div::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.62em;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    opacity: 0.6;
   }
 
   .timeline-event-ctn .tasks p {
     padding-bottom: 0;
+    font-size: 13px;
+    line-height: 1.55;
+  }
+
+  .timeline-event-ctn .technical-env p {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .timeline-event-ctn .technical-env span {
+    display: inline-block;
+    padding: 3px 9px;
+    font-size: 11.5px;
+    border: 1px solid var(--hairline-strong);
+    border-radius: $radius-pill;
+    color: var(--inverse-main-color);
+    opacity: 0.9;
   }
 
   .timeline-event-thumbnail {
     transition: box-shadow $animation-duration ease-in 0.1s, color $animation-duration-short ease-in 0.1s;
     color: var(--inverse-main-color);
-    font-size: 12px;
-    font-weight: bold;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
     background-color: var(--main-color-light);
-    box-shadow: inset 0 0 0 0em var(--primary-color);
+    border: 1px solid var(--hairline);
+    box-shadow: inset 0 0 0 0 var(--primary-color);
     display: inline-block;
-    margin-bottom: 1.2em;
-    padding: 0.25em 1em 0.2em 1em;
+    margin-bottom: 14px;
+    border-radius: $radius-pill;
+    padding: 4px 12px;
   }
 
   .timeline-event-icon {
     position: absolute;
     left: 0;
-    top: $card-svg-top;
+    top: 0;
     width: $card-svg-s;
     height: $card-svg-s;
     border-radius: 50%;
     background: var(--main-color-light);
+    border: 1px solid var(--hairline);
     box-shadow: var(--box-shadow);
-
-    .icon {
-      display: block;
-      width: $card-svg-s;
-      height: $card-svg-s;
-    }
+    z-index: 1;
 
     ::ng-deep svg {
-      transform: scale(0.7);
+      transform: scale(0.62);
 
       path,
       circle,
@@ -82,10 +126,13 @@ $card-svg-top: -8px;
   .timeline-event:hover {
     .timeline-event-thumbnail {
       box-shadow: inset 40em 0 0 0 var(--primary-color);
-      color: var(--main-color);
+      color: var(--main-color-light);
+      border-color: var(--primary-color);
     }
 
     .timeline-event-icon {
+      border-color: var(--primary-color);
+
       ::ng-deep svg {
 
         path,

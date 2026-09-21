@@ -12,6 +12,7 @@ export class FooterComponent {
   readonly uiStore = inject(UiStore);
 
   public infosPerso: IInfosModel = this.uiStore.getInfosTxt();
+  public currentYear = new Date().getFullYear();
 
   constructor() { }
 }
