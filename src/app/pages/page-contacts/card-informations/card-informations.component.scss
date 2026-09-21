@@ -1,27 +1,44 @@
 @use '../0-helpers/variables' as *;
 
 
+:host > h2 {
+  display: block;
+  margin-bottom: 20px;
+}
+
 ul.section-contact-informations {
   display: grid;
   grid-template-columns: 1fr;
-  column-gap: 10px;
-  row-gap: 10px;
+  align-items: start;
+  gap: 16px;
+}
+
+.section-contact-informations .card-infos {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 20px 22px;
 }
 
 .section-contact-informations .contact-info {
   display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  margin-bottom: 4px;
-  gap: 10px;
+  flex-direction: column;
+  gap: 2px;
 }
 
 .section-contact-informations .contact-info .label {
-  font-weight: bold;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--inverse-main-color);
+  opacity: 0.55;
 }
 
-.section-contact-informations .contact-box-3 .contact-info {
-  display: block;
+.section-contact-informations .contact-info .value {
+  font-size: 14px;
+  color: var(--inverse-main-color);
+  word-break: break-word;
 }
 
 /* ---------------------- Media query ----------------------------*/

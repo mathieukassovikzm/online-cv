@@ -1,12 +1,29 @@
 @use '../0-helpers/variables' as *;
 
-$svg-quote-s: 15px;
+$svg-quote-s: 22px;
 
-.quote-in ::ng-deep svg {
-  transform: scaleX(-1);
+:host {
+  display: block;
 }
 
-.icon ::ng-deep svg {
+:host > h2 {
+  margin-bottom: 20px;
+}
+
+.card-infos {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.quote-in,
+.quote-out {
+  display: block;
+  line-height: 0;
+}
+
+.quote-in ::ng-deep svg,
+.quote-out ::ng-deep svg {
   width: $svg-quote-s;
   height: $svg-quote-s;
 
@@ -15,9 +32,16 @@ $svg-quote-s: 15px;
   }
 }
 
-:host .card-infos p {
-  margin-bottom: 5px;
+.quote-in ::ng-deep svg {
+  transform: scaleX(-1);
 }
 
-/* ---------------------- Media query ----------------------------*/
-@media only screen and (min-width: $min-width-xl) {}
+.quote-out {
+  align-self: flex-end;
+}
+
+:host .card-infos p {
+  margin-bottom: 0;
+  max-width: 74ch;
+  line-height: 1.75;
+}

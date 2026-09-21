@@ -3,12 +3,21 @@
 
 :host {
   .section-skills {
-    padding: $bannerd-p $bannerd-p*2 ;
+    padding: 18px 26px 22px;
+
+    > div + div {
+      margin-top: 18px;
+    }
 
     h3 {
-      text-align: center;
-      margin-top: 5px;
-      margin-bottom: 5px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--inverse-main-color);
+      opacity: 0.45;
+      text-align: left;
+      margin-bottom: 6px;
     }
   }
 }

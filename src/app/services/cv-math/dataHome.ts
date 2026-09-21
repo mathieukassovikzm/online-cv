@@ -108,7 +108,7 @@ export const homeFr: IHomeModel = {
       ...devFullStack,
       title: "Développement fullstack",
       descriptions: [
-        "Développeur fullstack, je prends en charge un projet de bout en bout, du backend au frontend, en assurant la cohérence technique, la performance et la qualité de l'FFOexpérience utilisateur."
+        "Développeur fullstack, je prends en charge un projet de bout en bout, du backend au frontend, en assurant la cohérence technique, la performance et la qualité de l'expérience utilisateur."
       ]
     },
     <IServiceModel>{

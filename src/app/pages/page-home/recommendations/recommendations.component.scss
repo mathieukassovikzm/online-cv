@@ -20,13 +20,15 @@
 .carousel-container ul.carousel-slide-container li {
   width: 100%;
   position: relative;
-  padding: 20px 0;
+  padding: 24px 0 8px;
 }
 
 .carousel-container .carousel-controlers {
   padding: 0 $slide-padding-lr;
-  margin-bottom: 30px;
+  margin-top: 12px;
+  margin-bottom: 8px;
   display: flex;
+  align-items: center;
   justify-content: space-between;
 }
 

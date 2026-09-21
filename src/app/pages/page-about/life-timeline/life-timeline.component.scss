@@ -1,19 +1,27 @@
 @use '../0-helpers/variables' as *;
 
+:host > section > h2 {
+  margin-bottom: 6px;
+}
+
+:host nav {
+  margin-bottom: 8px;
+}
+
 .lst-cards-container {
   position: relative;
-  margin-top: 30px;
+  margin-top: 28px;
 }
 
 .lst-cards-container:before {
-  background: var(--main-color-light);
+  background: var(--hairline-strong);
   content: '';
-  margin-left: -4px;
   position: absolute;
-  top: 0;
-  left: 2em;
+  top: 6px;
+  bottom: 40px;
+  left: 21px;
   width: 2px;
-  height: 100%;
+  border-radius: 2px;
 }
 $scale-start: 0.98;
 $translateY-start: 5px;

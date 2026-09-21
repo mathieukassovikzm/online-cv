@@ -1,5 +1,13 @@
 @use '../0-helpers/variables' as *;
 
+:host {
+  display: block;
+}
+
+:host > h2 {
+  margin-bottom: 18px;
+}
+
 //#region Contact Form Styles
 $input-height: 50px;
 $input-padding: 10px;
@@ -13,9 +21,26 @@ $textarea-min-height: 200px;
   align-items: stretch;
   flex-wrap: nowrap;
   width: 100%;
-  box-shadow: var(--box-shadow);
   background-color: var(--main-color);
-  margin-bottom: 20px;
+  border: 1px solid var(--hairline-strong);
+  border-radius: $radius;
+  overflow: hidden;
+  margin-bottom: 16px;
+  transition: border-color $animation-duration-short ease, box-shadow $animation-duration-short ease;
+}
+
+.contact-form .form-group:focus-within {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary-color) 22%, transparent);
+}
+
+.contact-form .form-group .form-input:focus-visible,
+.contact-form .form-group .form-textarea:focus-visible {
+  outline: none;
+}
+
+.contact-form .form-group.error {
+  border-color: var(--primary-color);
 }
 
 .contact-form .form-group .form-label {
@@ -68,35 +93,42 @@ $textarea-min-height: 200px;
 .contact-form .form-group .form-input {
   position: relative;
   width: 100%;
-  padding: 0 $input-padding;
+  padding: 0 14px;
+  font-size: 14px;
 }
 
 .contact-form .form-group .form-input,
 .contact-form .form-group .form-textarea {
   width: 100%;
-  background-color: var(--main-color);
+  background-color: transparent;
   color: var(--inverse-main-color);
   transition: all 0.3s ease;
 
   &::placeholder {
-    color: $grey-dark;
+    color: var(--inverse-main-color);
+    opacity: 0.4;
   }
 }
 
 .contact-form .form-group .form-textarea {
   resize: vertical;
   min-height: $textarea-min-height;
-  padding: $textarea-padding $input-padding ;
+  padding: $textarea-padding 14px;
+  font-size: 14px;
+  line-height: 1.6;
 }
 
 .contact-form .error-message {
   display: block;
-  margin-top: 8px;
+  margin-top: 6px;
+  margin-bottom: 4px;
+  font-size: 12.5px;
   color: var(--primary-color);
 }
 
 .form-actions {
   text-align: right;
+  margin-top: 4px;
 }
 
 //#endregion
@@ -105,8 +137,9 @@ $textarea-min-height: 200px;
 
 .action-btn {
   background: var(--primary-color);
-  color: var(--main-color);
-  padding: 5px 20px;
+  color: var(--main-color-light);
+  padding: 12px 26px;
+  border-radius: $radius;
   cursor: pointer;
   transition: all $animation-duration-short ease;
   display: inline-flex;
@@ -115,8 +148,8 @@ $textarea-min-height: 200px;
   justify-content: center;
 
   .send-icon {
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
     transition: transform $animation-duration-short ease;
   }
 }
@@ -129,10 +162,10 @@ $textarea-min-height: 200px;
 
 .action-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(var(--primary-color-rgb, 99, 102, 241), 0.3);
+  box-shadow: 0 10px 22px -6px color-mix(in srgb, var(--primary-color) 55%, transparent);
 
   .send-icon {
-    transform: translateX(5px);
+    transform: translateX(4px);
   }
 }
 
@@ -226,8 +259,5 @@ $svg-success-size: 30px;
 @media only screen and (max-width: $min-width-m) {
   .form-actions .submit-btn {
     width: 100%;
-    padding: 18px;
   }
 }
-
-@media only screen and (min-width: $min-width-xl) {}

@@ -10,13 +10,24 @@
   .site-content {
     overflow-x: hidden;
     box-shadow: var(--box-shadow);
-    // overflow-y: scroll;
   }
 
   .main-content {
     .router-content {
-      padding: $content-p;
+      padding: 20px 16px 48px;
     }
+  }
+}
+
+@media only screen and (min-width: $min-width-m) {
+  :host .app .main-content .router-content {
+    padding: 28px 24px 56px;
+  }
+}
+
+@media only screen and (min-width: $min-width-xl) {
+  :host .app .main-content .router-content {
+    padding: $content-p $content-p 64px;
   }
 }
 

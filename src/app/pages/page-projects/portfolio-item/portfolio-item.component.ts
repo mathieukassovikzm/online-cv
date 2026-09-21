@@ -1,5 +1,6 @@
 
-import { afterNextRender, Component, ElementRef, HostBinding, output, Renderer2, ViewChild, inject, input } from '@angular/core';
+import { Component, HostBinding, output, input, computed } from '@angular/core';
+import { TypeProjectEnum } from 'src/app/models/enum';
 import { IProjectModel } from 'src/app/models/project';
 
 @Component({
@@ -10,49 +11,11 @@ import { IProjectModel } from 'src/app/models/project';
   standalone: true
 })
 export class PortfolioItemComponent {
-  private renderer = inject(Renderer2);
-
   @HostBinding('class') class = 'portfolio-item-component';
   readonly project = input<IProjectModel>();
   readonly openCarouselEvent = output<IProjectModel | undefined>();
 
-  @ViewChild('portfolioItemContent') portfolioItemContent?: ElementRef<HTMLDivElement>;
-
-  constructor() {
-    // Use afterNextRender for zoneless change detection compatibility
-    afterNextRender(() => {
-      this.setupMediaQueryLogic();
-    });
-  }
-
-  private setupMediaQueryLogic(): void {
-    const mediaQuery = window.matchMedia('(min-width: 1445px)');
-
-    if (mediaQuery.matches) {
-      this.calculateTransformY();
-    } else {
-      this.renderer.setStyle(this.portfolioItemContent?.nativeElement, 'transform', `translateY(0px)`);
-    }
-
-    // Optional: re-run if the user resizes the window
-    mediaQuery.addEventListener('change', (event) => {
-      if (event.matches) {
-        this.calculateTransformY();
-      }
-      else {
-        this.renderer.setStyle(this.portfolioItemContent?.nativeElement, 'transform', `translateY(0px)`);
-      }
-    });
-  }
-
-  private calculateTransformY(): void {
-    const elementHeight = this.portfolioItemContent?.nativeElement?.getBoundingClientRect()?.height;
-    if (elementHeight) {
-      const translateY = Number(elementHeight);
-      // Manipulate via Renderer2
-      this.renderer.setStyle(this.portfolioItemContent?.nativeElement, 'transform', `translateY(${translateY}px)`);
-    }
-  }
+  readonly isLogo = computed(() => this.project()?.type === TypeProjectEnum.Logo);
 
   public onItemClicked(): void {
     this.openCarouselEvent.emit(this.project());

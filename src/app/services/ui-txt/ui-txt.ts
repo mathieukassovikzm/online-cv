@@ -16,13 +16,13 @@ export const uiTxtCardFr: IUiTxtCardModel = {
 };
 
 export const uiTxtCardEn: IUiTxtCardModel = {
-  tasksTitle: 'Responsabilités / Tâches :',
-  technicalEnvTitle: 'Environnement technique :',
+  tasksTitle: 'Responsibilities / Tasks',
+  technicalEnvTitle: 'Technical environment',
 };
 
 export const uiTxtCardEs: IUiTxtCardModel = {
-  tasksTitle: 'Responsabilités / Tâches :',
-  technicalEnvTitle: 'Environnement technique :',
+  tasksTitle: 'Responsabilidades / Tareas',
+  technicalEnvTitle: 'Entorno técnico',
 };
 
 export const uiTxtFr: IUiTxtModel = {

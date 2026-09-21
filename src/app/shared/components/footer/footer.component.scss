@@ -11,10 +11,31 @@
   .section-footer {
     width: 100%;
     background: var(--main-color-light);
-    padding: math.div($content-p, 2);
+    border: 1px solid var(--hairline);
+    border-radius: $radius;
+    padding: 18px $content-p;
 
     display: flex;
+    flex-wrap: wrap;
+    gap: 6px 20px;
     justify-content: space-between;
+    align-items: center;
+
+    p {
+      margin: 0;
+      font-size: 12.5px;
+      color: var(--inverse-main-color);
+      opacity: 0.75;
+    }
+
+    .mail a {
+      color: inherit;
+      transition: color $animation-duration-short ease;
+    }
+
+    .mail a:hover {
+      color: var(--primary-color);
+    }
   }
 }
 

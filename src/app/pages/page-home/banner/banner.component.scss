@@ -6,22 +6,58 @@ $banner-txt-color: #fff;
   position: relative;
   display: block;
   width: 100%;
-  min-height: 400px;
+  min-height: 420px;
+  border-radius: $radius;
+  overflow: hidden;
   background-image: url("/assets/images/workspace.jpg");
   background-size: cover;
   background-position: center;
   text-align: center;
-  padding: 10px;
+  padding: 32px 24px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 14px;
+
+  /* legibility scrim over the photo */
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--scrim);
+    pointer-events: none;
+  }
+
+  h1,
+  .subtitle {
+    position: relative;
+    z-index: 1;
+  }
 
   h1 {
     color: $banner-txt-color;
     font-weight: 800;
-    margin-bottom: 15px;
+    margin-bottom: 0;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.35);
+
+    .family-name {
+      text-transform: uppercase;
+    }
   }
 
   .subtitle {
     color: $banner-txt-color;
-    font-size: 18px;
+    font-family: $font-code;
+    font-size: 15px;
+    letter-spacing: 0;
+    /* reserve space so the typing animation never shifts layout */
+    min-height: 1.6em;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0 0.35ch;
   }
 
   span {
@@ -30,13 +66,15 @@ $banner-txt-color: #fff;
 
   .code {
     color: var(--primary-color);
-    text-shadow: 0.5px 0.5px 0px $dark;
+    font-weight: 500;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
   }
 
   /* typing effect */
   .cursor {
     display: inline-block;
     width: 1ch;
+    color: var(--primary-color);
     animation: blink 1s steps(2, start) infinite;
   }
 
@@ -50,11 +88,10 @@ $banner-txt-color: #fff;
 /* ---------------------- Media query ----------------------------*/
 @media only screen and (min-width: $min-width-m) {
   :host {
-    padding: 20px;
+    padding: 44px 40px;
 
-    h1 {
-      font-weight: 800;
-      margin-bottom: 15px;
+    .subtitle {
+      font-size: 16px;
     }
   }
 }
@@ -62,7 +99,12 @@ $banner-txt-color: #fff;
 /* ---------------------- Media query ----------------------------*/
 @media only screen and (min-width: $min-width-xl) {
   :host {
+    min-height: 460px;
     text-align: left;
-    padding: 60px;
+    padding: 64px;
+
+    .subtitle {
+      justify-content: flex-start;
+    }
   }
 }

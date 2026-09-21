@@ -31,8 +31,8 @@
       <div class="subtitle technical-env">
         <h5>{{uiText.cardTxt.technicalEnvTitle}}</h5>
         <p>
-          @for (tech of item()?.description?.technicalEnv; track tech; let isLast = $last) {
-          <span>{{tech}}@if (!isLast) {, }</span>
+          @for (tech of item()?.description?.technicalEnv; track tech) {
+          <span>{{tech}}</span>
           }
         </p>
       </div>

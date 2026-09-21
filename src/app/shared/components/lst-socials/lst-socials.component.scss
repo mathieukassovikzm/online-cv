@@ -1,25 +1,41 @@
 @use '../0-helpers/variables' as *;
 
 
-$social-logo-s: 16px;
+$social-logo-s: 18px;
 
 :host {
   ul {
-    padding: 0 $bannerd-p*2 ;
+    padding: 0;
     display: flex;
     justify-content: center;
+    gap: 6px;
 
     li {
-      margin: 0 6px;
+      margin: 0;
+    }
+  }
 
-      .logo ::ng-deep svg {
-        width: $social-logo-s;
-      }
+  .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    transition: background-color $animation-duration-short ease;
+
+    &:hover {
+      background: var(--main-color);
+    }
+
+    ::ng-deep svg {
+      width: $social-logo-s;
+      height: $social-logo-s;
     }
   }
 
   .logo ::ng-deep svg path {
-    transition: all $animation-duration-short ease;
+    transition: fill $animation-duration-short ease;
     fill: var(--inverse-main-color);
   }
 
