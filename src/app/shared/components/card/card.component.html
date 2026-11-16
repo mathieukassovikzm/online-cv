@@ -6,7 +6,7 @@
       </h4>
 
       <h5 class="date">
-        {{item?.date}}
+        {{item?.date}}@if (item?.dateEnd === null) { - {{uiStore.getUiTxt().cardTxt.presentLabel}}}
       </h5>
     </div>
     <h6 class="subtitle">

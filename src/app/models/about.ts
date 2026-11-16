@@ -19,7 +19,8 @@ export interface IHobbyModel {
 export interface IExperienceModel {
   title: string;
   company?: string;
-  dateEnd: Date;
+  /** null = toujours en poste / en cours : affiché « date - Aujourd'hui » */
+  dateEnd: Date | null;
   date?: string;
   address?: string;
   description?: IDescriptionModel;

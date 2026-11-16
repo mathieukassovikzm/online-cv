@@ -60,6 +60,7 @@ export interface IUiTxtAboutModel {
 export interface IUiTxtCardModel {
   tasksTitle: string;
   technicalEnvTitle: string;
+  presentLabel: string;
 }
 
 export interface IUiTxtPortfolioModel {

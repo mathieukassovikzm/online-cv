@@ -43,8 +43,10 @@ export const AboutStore = signalStore(
           ...about?.experiencesPro || []
         ])
       ];
-      // Sort by dateEnd in descending order
-      timeline = timeline.sort((a, b) => new Date(b.dateEnd).getTime() - new Date(a.dateEnd).getTime());
+      // Sort by dateEnd in descending order (dateEnd null = en cours -> en premier)
+      const endTime = (e: IExperienceModel) =>
+        e.dateEnd === null ? Number.POSITIVE_INFINITY : new Date(e.dateEnd).getTime();
+      timeline = timeline.sort((a, b) => endTime(b) - endTime(a));
       return timeline;
     },
 
