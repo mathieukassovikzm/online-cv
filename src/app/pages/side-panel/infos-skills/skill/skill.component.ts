@@ -25,6 +25,7 @@ import { SvgEnComponent } from 'src/app/shared/svgs/skills/language/svg-en/svg-e
 import { SvgEsComponent } from 'src/app/shared/svgs/skills/language/svg-es/svg-es.component';
 import { SvgFrComponent } from 'src/app/shared/svgs/skills/language/svg-fr/svg-fr.component';
 import { SvgAtomComponent } from 'src/app/shared/svgs/skills/tool/svg-atom/svg-atom.component';
+import { SvgClaudeComponent } from 'src/app/shared/svgs/skills/tool/svg-claude/svg-claude.component';
 import { SvgGitkrakenComponent } from 'src/app/shared/svgs/skills/tool/svg-gitkraken/svg-gitkraken.component';
 import { SvgSourcetreeComponent } from 'src/app/shared/svgs/skills/tool/svg-sourcetree/svg-sourcetree.component';
 import { SvgVisualStudioCodeComponent } from 'src/app/shared/svgs/skills/tool/svg-visual-studio-code/svg-visual-studio-code.component';
@@ -60,6 +61,7 @@ const svgs = [
   SvgGitkrakenComponent,
   SvgAtomComponent,
   SvgSourcetreeComponent,
+  SvgClaudeComponent,
   SvgPremiereProComponent,
   SvgAfterEffectsComponent,
   SvgIllustratorComponent,

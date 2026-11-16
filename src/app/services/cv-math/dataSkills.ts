@@ -136,6 +136,13 @@ export const skills: ISkillModel[] = [
     power: 80,
     display: false,
   },
+  {
+    id: 65,
+    name: 'Claude',
+    type: TypeSkillEnum.Tools,
+    power: 85,
+    display: true,
+  },
 
   {
     id: 70,

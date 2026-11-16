@@ -13,16 +13,19 @@ import { uiTxtContactEn, uiTxtContactEs, uiTxtContactFr } from './ui-txt-contact
 export const uiTxtCardFr: IUiTxtCardModel = {
   tasksTitle: 'Responsabilités / Tâches :',
   technicalEnvTitle: 'Environnement technique :',
+  presentLabel: "Aujourd'hui",
 };
 
 export const uiTxtCardEn: IUiTxtCardModel = {
   tasksTitle: 'Responsibilities / Tasks',
   technicalEnvTitle: 'Technical environment',
+  presentLabel: 'Present',
 };
 
 export const uiTxtCardEs: IUiTxtCardModel = {
   tasksTitle: 'Responsabilidades / Tareas',
   technicalEnvTitle: 'Entorno técnico',
+  presentLabel: 'Actualidad',
 };
 
 export const uiTxtFr: IUiTxtModel = {

@@ -57,6 +57,25 @@ const teacher = <IExperienceModel>{
 //#endregion
 
 //#region Experiences Pro
+const freelanceHellowork = <IExperienceModel>{
+  company: 'Freelance - Hellowork',
+  dateEnd: null,
+  date: '04/2026',
+  address: 'Rennes, France',
+  description: {
+    technicalEnv: [
+      'C#',
+      'Razor',
+      'HTML5',
+      'Tailwind',
+      'Git',
+      'Bruno',
+      'Claude Code',
+    ],
+  },
+  typeExpe: TypeExperienceEnum.ExperiencePro,
+  display: true,
+};
 const freelanceBouygues = <IExperienceModel>{
   company: 'Freelance - Bouygues Telecom',
   dateEnd: new Date('2026-02-28'),
@@ -255,6 +274,21 @@ export const aboutFr: IAboutModel = {
     },
   ],
   experiencesPro: <IExperienceModel[]>[
+    <IExperienceModel>{
+      ...freelanceHellowork,
+      title: 'Développeur full stack',
+      description: {
+        ...freelanceHellowork.description,
+        dsc: "Développeur full stack au sein de la nouvelle équipe Vérification des talents de Hellowork, en charge du développement d'un POC autour de la prise de référence et de la vérification du numéro de téléphone des candidats.",
+        tasks: [
+          "Conception et développement d'un POC de prise de référence auprès des anciens employeurs des candidats.",
+          "Développement d'un parcours de vérification du numéro de téléphone des candidats.",
+          "Développement back-end en C# et front-end en Razor / Tailwind.",
+          "Tests des APIs avec Bruno.",
+          "Utilisation de Claude Code pour accélérer les développements.",
+        ],
+      },
+    },
     <IExperienceModel>{
       ...freelanceBouygues,
       title: 'Développeur full stack',
@@ -523,6 +557,21 @@ export const aboutEn: IAboutModel = {
   ],
   experiencesPro: [
     <IExperienceModel>{
+      ...freelanceHellowork,
+      title: 'Full stack developer',
+      description: {
+        ...freelanceHellowork.description,
+        dsc: "Full stack developer within Hellowork's new Talent Verification team, in charge of developing a POC focused on reference checking and candidate phone number verification.",
+        tasks: [
+          "Design and development of a POC for collecting references from candidates' former employers.",
+          "Development of a candidate phone number verification flow.",
+          "Back-end development in C# and front-end development in Razor / Tailwind.",
+          "API testing with Bruno.",
+          "Use of Claude Code to speed up development.",
+        ],
+      },
+    },
+    <IExperienceModel>{
       ...freelanceBouygues,
       title: 'Full stack developer',
       description: {
@@ -727,6 +776,21 @@ export const aboutEs: IAboutModel = {
     },
   ],
   experiencesPro: [
+    <IExperienceModel>{
+      ...freelanceHellowork,
+      title: 'Desarrollador Full Stack',
+      description: {
+        ...freelanceHellowork.description,
+        dsc: "Desarrollador full stack dentro del nuevo equipo de Verificación de talentos de Hellowork, encargado del desarrollo de un POC sobre la toma de referencias y la verificación del número de teléfono de los candidatos.",
+        tasks: [
+          "Diseño y desarrollo de un POC de toma de referencias ante los antiguos empleadores de los candidatos.",
+          "Desarrollo de un flujo de verificación del número de teléfono de los candidatos.",
+          "Desarrollo back-end en C# y front-end en Razor / Tailwind.",
+          "Pruebas de las APIs con Bruno.",
+          "Uso de Claude Code para acelerar los desarrollos.",
+        ],
+      },
+    },
     <IExperienceModel>{
       ...freelanceBouygues,
       title: 'Desarrollador Full Stack',
