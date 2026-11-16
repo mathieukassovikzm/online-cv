@@ -12,6 +12,11 @@ export const lstLogosEntreprises = <IEnterpriseModel[]>[
     logo: './assets/logos/Bouygues.png',
     alt: 'Logo Bouygues Telecom',
   },
+  {
+    name: 'Hellowork',
+    logo: './assets/logos/Hellowork.png',
+    alt: 'Logo Hellowork',
+  },
   { name: 'RRF', logo: './assets/logos/RRF.png', alt: 'Logo RRF' },
   { name: 'Solina', logo: './assets/logos/Solina.png', alt: 'Logo Solina' },
   {
